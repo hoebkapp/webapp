@@ -1,0 +1,247 @@
+{
+ "updated": "2026-11-06T21:16:42+00:00",
+ "status": [
+  {
+   "e": "m:507825",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-10-25T14:49:19.498Z"
+  },
+  {
+   "e": "m:507831",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-10-25T14:49:23.539Z"
+  },
+  {
+   "e": "m:507832",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-10-25T14:49:24.193Z"
+  },
+  {
+   "e": "m:513407",
+   "p": "348495",
+   "n": "Alexander Dahl Plougmann",
+   "s": "ja",
+   "ts": "2026-11-03T15:57:36.573Z"
+  },
+  {
+   "e": "m:513409",
+   "p": "348495",
+   "n": "Alexander Dahl Plougmann",
+   "s": "ja",
+   "ts": "2026-11-03T15:57:37.498Z"
+  },
+  {
+   "e": "m:513980",
+   "p": "348494",
+   "n": "Mathilde Dahl Plougmann",
+   "s": "ja",
+   "ts": "2026-11-03T15:57:38.644Z"
+  },
+  {
+   "e": "m:513982",
+   "p": "348494",
+   "n": "Mathilde Dahl Plougmann",
+   "s": "ja",
+   "ts": "2026-11-03T15:57:41.914Z"
+  },
+  {
+   "e": "m:514326",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "nej",
+   "ts": "2026-10-25T15:37:53.615Z"
+  },
+  {
+   "e": "m:514330",
+   "p": "346992",
+   "n": "Carl Grønfeldt",
+   "s": "ja",
+   "ts": "2026-11-01T10:07:06.637Z"
+  },
+  {
+   "e": "m:514330",
+   "p": "337844",
+   "n": "Ellen Krogh-Larsen",
+   "s": "ja",
+   "ts": "2026-11-03T17:30:05.520Z"
+  },
+  {
+   "e": "m:514330",
+   "p": "357481",
+   "n": "Nikolaj Feodor Nilsson",
+   "s": "ja",
+   "ts": "2026-11-01T17:10:52.516Z"
+  },
+  {
+   "e": "m:514330",
+   "p": "335593",
+   "n": "Oliver Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-06T13:32:23.520Z"
+  },
+  {
+   "e": "m:514332",
+   "p": "346992",
+   "n": "Carl Grønfeldt",
+   "s": "ja",
+   "ts": "2026-11-01T10:48:02.718Z"
+  },
+  {
+   "e": "m:514332",
+   "p": "337844",
+   "n": "Ellen Krogh-Larsen",
+   "s": "ja",
+   "ts": "2026-11-03T17:30:07.917Z"
+  },
+  {
+   "e": "m:514332",
+   "p": "357481",
+   "n": "Nikolaj Feodor Nilsson",
+   "s": "ja",
+   "ts": "2026-11-01T17:10:57.614Z"
+  },
+  {
+   "e": "m:516374",
+   "p": "334106",
+   "n": "Malthe Larsen",
+   "s": "ja",
+   "ts": "2026-11-03T17:29:47.059Z"
+  },
+  {
+   "e": "m:516375",
+   "p": "334106",
+   "n": "Malthe Larsen",
+   "s": "ja",
+   "ts": "2026-11-03T17:29:48.415Z"
+  },
+  {
+   "e": "t:2026-10-27:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-10-25T14:51:19.706Z"
+  },
+  {
+   "e": "t:2026-10-29:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-10-25T14:51:20.818Z"
+  },
+  {
+   "e": "t:2026-11-03:Senior",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-02T11:13:21.220Z"
+  },
+  {
+   "e": "t:2026-11-08:Veteran",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-02T11:13:29.172Z"
+  }
+ ],
+ "lineups": [
+  {
+   "e": "m:514330",
+   "team": "U15 B",
+   "status": "udkast",
+   "t": 1793126737453,
+   "squad": [
+    {
+     "id": "335592",
+     "name": "William Vedsted Nørrelund"
+    },
+    {
+     "id": "335593",
+     "name": "Oliver Vedsted Nørrelund"
+    },
+    {
+     "id": "337844",
+     "name": "Ellen Krogh-Larsen"
+    },
+    {
+     "id": "346992",
+     "name": "Carl Grønfeldt"
+    },
+    {
+     "id": "346993",
+     "name": "Mikkel Christian Korsholm"
+    },
+    {
+     "id": "357481",
+     "name": "Nikolaj Feodor Nilsson"
+    },
+    {
+     "id": "362142",
+     "name": "Maximilian Vessel Nielsen"
+    }
+   ],
+   "games": [
+    {
+     "k": "1. D",
+     "p": [
+      "335593",
+      "337844"
+     ]
+    },
+    {
+     "k": "4. D",
+     "p": [
+      "346992",
+      "357481"
+     ]
+    },
+    {
+     "k": "2. D",
+     "p": [
+      "335593",
+      "357481"
+     ]
+    },
+    {
+     "k": "3. D",
+     "p": [
+      "337844",
+      "362142"
+     ]
+    },
+    {
+     "k": "1. S",
+     "p": [
+      "335593"
+     ]
+    },
+    {
+     "k": "2. S",
+     "p": [
+      "357481"
+     ]
+    },
+    {
+     "k": "3. S",
+     "p": [
+      "337844"
+     ]
+    },
+    {
+     "k": "4. S",
+     "p": [
+      "362142"
+     ]
+    }
+   ],
+   "note": "",
+   "by": "Anders Vedsted Nørrelund"
+  }
+ ],
+ "scriptHasLineups": true
+}

@@ -1,0 +1,129 @@
+name: HØBK holdkampe
+
+on:
+  schedule:
+    - cron: "17 5 * * *"   # hver morgen ca. 06/07 dansk tid
+    - cron: "37 20 * * 0,6" # lørdag + søndag aften, efter weekendens kampe
+  workflow_dispatch:
+    inputs:
+      season:
+        description: "Sæson (startår)"
+        default: "2026"
+      debug:
+        description: "Gem rå HTML som artifact (indeholder kontaktinfo — slet efter brug)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: holdkampe-data
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Hent hold, kampdatoer, resultater og spillere
+        env:
+          BP_USER: ${{ secrets.BRUGER }}
+          BP_PWD: ${{ secrets.BP_PWD }}
+        run: |
+          cp data/turneringer.json /tmp/turneringer_old.json 2>/dev/null || true
+          cp data/holdkampe.json /tmp/holdkampe_old.json 2>/dev/null || true
+          python fetch_holdkampe.py \
+            --season "${{ github.event.inputs.season || '2026' }}" \
+            --club 1151 \
+            --pulje 19102:5 \
+            --out data/holdkampe.json \
+            --profiles \
+            --tournaments \
+            --dump-dir debug_html
+
+      - name: Sider fra hoebk.dk (én gang om dagen)
+        run: python3 fetch_sider.py --once-a-day || echo "Sider kunne ikke hentes — prøver i morgen"
+
+      - name: Nyt om hold og turneringer → notifikation/mail til dem der følger
+        env:
+          REG_URL: ${{ secrets.REG_URL }}
+          REG_KEY: ${{ secrets.REG_KEY }}
+          VAPID_PRIVATE: ${{ secrets.VAPID_PRIVATE }}
+        run: |
+          pip install -q pywebpush || echo "pywebpush kunne ikke installeres — kun mail"
+          python notify_turneringer.py --old /tmp/turneringer_old.json --new data/turneringer.json --old-hold /tmp/holdkampe_old.json
+
+      - name: Gem rå HTML til fejlsøgning
+        if: failure() || github.event.inputs.debug == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: debug-html
+          path: debug_html
+          if-no-files-found: ignore
+          retention-days: 2
+
+      - name: Push renset fejlsøgningsdata til diag-branch
+        if: always() && github.event.inputs.debug == 'true'
+        run: |
+          mkdir -p /tmp/diag
+          python - <<'PY'
+          import glob, os, re, shutil
+          os.makedirs("/tmp/diag", exist_ok=True)
+          mask = [(re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+"), "[EMAIL]"),
+                  (re.compile(r"(?<!\d)(?:\+45\s?)?(?:\d{2}\s?){3}\d{2}(?!\d)"), "[TLF]"),
+                  (re.compile(r'(name="__[A-Z]+"[^>]*value=")[^"]*'), r"\1[STRIPPED]"),
+                  (re.compile(r"\b\d{6}-\d{2}\b"), "[SPILLERNR]"),
+                  (re.compile(r"params=[^'\"]*"), "params=[FJERNET]")]
+          # Kun klub-, pulje- og holdsider samt SENIOR-kampsider og -profiler (voksne spillere) —
+          # aldrig login-sider eller ungdom. Mail/telefon/spillernummer maskeres altid.
+          for f in sorted(glob.glob("debug_html/*.html") + glob.glob("debug_html/player_a_*.json")):
+              b = os.path.basename(f)
+              if not re.match(r"(club_teams|pulje_|team_|match_1_|player_a_)", b):
+                  continue
+              s = open(f, encoding="utf-8").read()
+              for rx, rep in mask:
+                  s = rx.sub(rep, s)
+              open(f"/tmp/diag/{b}", "w", encoding="utf-8").write(s)
+          for j in ("holdkampe.json", "spillere.json"):
+              if os.path.exists(f"data/{j}"):
+                  shutil.copy(f"data/{j}", f"/tmp/diag/{j}")
+          PY
+          cd /tmp/diag
+          git init -q -b diag
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A && git commit -q -m "Fejlsøgning $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" diag
+
+      - name: Commit opdateret JSON
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          python3 web_digest.py || echo "Hjemmeside-udtræk fejlede"
+          git add data/holdkampe.json data/spillere.json data/turneringer.json data/steder.json data/turnering_nyt.json data/notifikationer.json
+          [ -f data/hjemmeside.json ] && git add data/hjemmeside.json
+          [ -f data/sider.json ] && git add data/sider.json
+          if git diff --cached --quiet; then
+            echo "Ingen ændringer."
+          else
+            git commit -m "Opdater holdkampe $(date -u +%Y-%m-%dT%H:%MZ)"
+            for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push && break; echo "Push afvist — prøver igen"; sleep $((i*5)); done
+          fi
+
+      - name: Discord-besked
+        if: always()
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          STATUS: ${{ job.status }}
+        run: |
+          [ -z "$DISCORD_WEBHOOK" ] && { echo "Ingen DISCORD_WEBHOOK — springer over."; exit 0; }
+          if [ "$STATUS" = "success" ]; then MSG="✅ HØBK holdkampe opdateret"; else MSG="❌ HØBK holdkampe fejlede — se Actions-loggen"; fi
+          curl -sS -m 20 -H "Content-Type: application/json" \
+            -d "{\"content\": \"$MSG\"}" "$DISCORD_WEBHOOK" || true
