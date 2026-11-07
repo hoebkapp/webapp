@@ -4170,7 +4170,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(em)) { toast('Skriv en gyldig e-mail'); return; }
         api({ action: 'setLeader', token: ME.token, email: em, name: ADM.pick.name, teams: teams }).then(function (r) {
           if (!r || !r.ok) throw new Error((r && r.error) || 'Kunne ikke gemme');
-          toast(teams.length ? 'Holdleder gemt' : 'Fjernet'); ADM.pick = null; ADM.data = null; ADM.email = ''; ADM.teams = {}; route(true);
+          toast(!teams.length ? 'Fjernet' : r.mailed ? 'Holdleder gemt — ' + (ADM.pick.name || '').split(' ')[0] + ' har fået en mail' : r.mailed === false ? 'Holdleder gemt, men mailen kunne ikke sendes' : 'Holdleder gemt'); ADM.pick = null; ADM.data = null; ADM.email = ''; ADM.teams = {}; route(true);
         }).catch(function (err) { toast(err.message); });
       }
       var as = document.getElementById('admSave'); if (as) as.addEventListener('click', function () { var t = Object.keys(ADM.teams); if (!t.length) { toast('Vælg mindst ét hold'); return; } admSend(t); });

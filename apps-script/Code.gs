@@ -52,7 +52,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-06.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-07.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -343,14 +343,51 @@ function setLeader_(b) {
   if (isSuper_(email)) return { ok: false, error: 'Det er hovedadministratoren — leder for alle hold i forvejen' };
   var teams = (b.teams || []).map(function (t) { return clean_(t, 60); }).filter(function (t) { return t && t.toLowerCase() !== 'admin'; });
   var name = clean_(b.name, 80);
-  return withLock_(function () {
-    var sh = sh_('Ledere'), rows = data_('Ledere');
+  var res = withLock_(function () {
+    var sh = sh_('Ledere'), rows = data_('Ledere'), before = [];
     for (var i = rows.length - 1; i >= 0; i--) {
-      if (String(rows[i][0]).toLowerCase().trim() === email) sh.deleteRow(i + 2);
+      if (String(rows[i][0]).toLowerCase().trim() === email) {
+        before = before.concat(String(rows[i][2]).split(',').map(function (t) { return t.trim(); }));
+        sh.deleteRow(i + 2);
+      }
     }
     if (teams.length) sh.appendRow([email, safe_(name), safe_(teams.join(', '))]);
-    return { ok: true };
+    return { ok: true, added: teams.filter(function (t) { return before.indexOf(t) < 0; }) };
   });
+  if (res.added.length) {   // kun nye hold giver en mail — at rette eller fjerne et hold gør ikke
+    try { leaderMail_(email, name, res.added, teams, ses.playerName); res.mailed = true; } catch (e) { res.mailed = false; }
+  }
+  delete res.added;
+  return res;
+}
+
+// Velkomstmail til en ny holdleder: hvad rollen giver, hvordan man logger ind, og hvor man sætter holdet op
+function leaderMail_(email, name, added, all, byName) {
+  if (MailApp.getRemainingDailyQuota() < 1) throw new Error('kvote');
+  var first = (name || '').split(' ')[0] || 'holdleder';
+  var list = function (a) { return a.length === 1 ? a[0] : a.slice(0, -1).join(', ') + ' og ' + a[a.length - 1]; };
+  var body =
+    'Hej ' + first + '\n\n' +
+    (byName ? byName.split(' ')[0] + ' har' : 'Klubben har') + ' gjort dig til holdleder for ' + list(added) + ' i HØBK-appen.' +
+    (all.length > added.length ? ' Du er nu holdleder for ' + list(all) + '.' : '') + '\n\n' +
+    'Åbn appen her: ' + APP_URL + '\n' +
+    'Læg den gerne på hjemmeskærmen: ' + APP_URL + 'kom-i-gang.html\n\n' +
+    'SÅDAN KOMMER DU I GANG\n\n' +
+    '1. Log ind\n' +
+    '   Gå til Min side → Spiller (eller Forælder), find dit navn og skriv denne e-mail: ' + email + '\n' +
+    '   Du får en kode på mail, som du skriver i appen. Er du allerede logget ind, så tryk på opdater-knappen øverst.\n\n' +
+    '2. Find Holdleder-fanen\n' +
+    '   Tryk på skjoldet øverst i appen, eller gå til Min side → Holdleder.\n\n' +
+    '3. Sæt spillerne på dit hold\n' +
+    '   Holdleder → Holdlister → vælg holdet. Tryk "+ Sæt alle på listen" for at bruge forslaget, eller søg og tilføj spillere én ad gangen.\n' +
+    '   Spillerne på listen får holdets chat, nyheder og aktiviteter.\n\n' +
+    '4. Udtag spillere til kampene\n' +
+    '   Holdleder → vælg kampen → Udtag spillere. Du kan se hvem der kan spille, og hvem der er spilleberettigede.\n' +
+    '   Tryk derefter "Gem og lav opstilling" for at sætte spillerne på de enkelte kampe. Opstillingen tjekkes mod reglerne, og du kan eksportere den til badmintonplayer.dk.\n\n' +
+    'Guide til hele appen: ' + APP_URL + 'guide.html\n\n' +
+    'Har du spørgsmål eller idéer, så tryk på spørgsmålstegnet øverst i appen og skriv til administratorerne.\n\n' +
+    'Venlig hilsen\n' + CLUB;
+  MailApp.sendEmail({ to: email, name: CLUB, subject: 'Du er nu holdleder for ' + list(added) + ' i HØBK-appen', body: body });
 }
 
 function setAdmin_(b) {
