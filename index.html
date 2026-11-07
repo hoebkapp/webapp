@@ -369,6 +369,7 @@ textarea.inp{resize:vertical;line-height:1.45}
 <div class="moved" id="moved" role="region" aria-label="Ny adresse" hidden>
 <div class="mv-in"><div class="mv-t"><b>Appen har fået ny adresse: app.hoebk.dk</b>
 <span>Læg den på hjemmeskærmen igen og slå notifikationer til på Min side. Det gamle ikon kan du slette.</span>
+<span class="mv-how">Beder det nye ikon dig logge ind? Tryk på <b>?</b> her → <b>Lav kode</b>, og skriv koden i det nye ikon under Min side.</span>
 <span class="mv-how"><b>iPhone:</b> ••• eller Del → Føj til hjemmeskærm. <b>Android:</b> ⋮ → Installer app / Føj til startskærm.</span></div>
 <button class="mv-x" id="movedX" aria-label="Luk beskeden">✕</button></div></div>
 <main id="main"><div class="loading">Henter holdkampe …</div></main>
@@ -1843,12 +1844,14 @@ textarea.inp{resize:vertical;line-height:1.45}
       opt('player', 'Spiller', 'Jeg spiller i HØBK — vælg dit navn på listen', 'var(--accent)') +
       opt('both', 'Spiller og forælder', 'Jeg spiller selv og har børn, der spiller — først dig selv, så dine børn', '#2F6FB3') +
       opt('parent', 'Forælder', 'Mit barn spiller i HØBK — opret dig med dit eget navn og din e-mail', PARENT.bg) +
+      opt('device', 'Logget ind på en anden enhed?', 'Brug en kode fra din telefon, tablet eller computer — så er du logget ind her med det samme', 'var(--ink)') +
       '<button class="card row wlc guest" data-welcome="guest"><span class="col"><b>Fortsæt som gæst</b><span class="xs">Kig rundt i hold, kalender og resultater. Du kan registrere dig senere fra forsiden eller Min side.</span></span><span class="h" style="font-size:20px">›</span></button>';
   }
   function chooseWelcome(k) {
     lsSet('hoebk_welcome', k);
     lsSet('hoebk_after', k === 'both' ? 'boern' : '');
     if (k === 'guest') { route(); return; }
+    if (k === 'device') { lsSet('hoebk_welcome', 'player'); lsSet('hoebk_after', ''); UI.step = 'name'; UI.devOpen = true; location.hash = '#/tilmeld/spiller'; route(); setTimeout(function () { var d = document.getElementById('devin'); if (d) d.focus(); }, 50); return; }
     UI.step = k === 'parent' ? 'parent' : 'name';
     location.hash = k === 'parent' ? '#/tilmeld/foraelder' : '#/tilmeld/spiller';
     route();
@@ -1890,13 +1893,14 @@ textarea.inp{resize:vertical;line-height:1.45}
       setHeader('Log ind', 'Vælg dit navn', false);
       loadPub();
       var both = lsGet('hoebk_after') === 'boern';
-      return (both ? '' : '<button class="card row" style="min-height:64px;border-left:5px solid ' + PARENT.bg + '" data-act="parentstart"><span class="col"><b style="font-size:15px">Registrér dig som forælder</b>' +
-        '<span class="xs">Er du forælder til en spiller? Opret dig med dit eget navn og vælg dit barn</span></span><span class="h" style="font-size:20px">›</span></button>') +
-        (UI.devOpen ? '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Kode fra en anden enhed</b>' +
-          '<span class="xs">Lav koden på den enhed, hvor du allerede er logget ind: <b>Min side → Spiller</b> (eller <b>Forælder</b>) <b>→ Log ind på en anden enhed</b>.</span>' +
+      return (UI.devOpen ? '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Kode fra en anden enhed</b>' +
+          '<span class="xs">Lav koden på den enhed, hvor du allerede er logget ind: tryk på <b>?</b> øverst → <b>Log ind på en anden enhed</b> → <b>Lav kode</b>. Koden gælder 10 minutter.</span>' +
           '<div class="card search"><input id="devin" type="text" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABCD-1234" aria-label="Kode fra en anden enhed" style="font-size:19px;letter-spacing:.1em;text-transform:uppercase;min-width:0">' +
           '<button class="rb ja" id="devok" aria-pressed="true" style="min-height:36px;white-space:nowrap;flex:0 0 auto">Log ind</button></div></div>'
-          : '<button class="pl s" data-act="devopen" style="align-self:flex-start;margin:0 4px;text-decoration:underline">Har du en kode fra en anden enhed?</button>') +
+          : '<button class="card row" style="min-height:60px;border-left:5px solid var(--ink)" data-act="devopen"><span class="col"><b style="font-size:15px">Logget ind på en anden enhed?</b>' +
+            '<span class="xs">Brug en kode derfra i stedet for en kode på e-mail</span></span><span class="h" style="font-size:20px">›</span></button>') +
+        (both ? '' : '<button class="card row" style="min-height:64px;border-left:5px solid ' + PARENT.bg + '" data-act="parentstart"><span class="col"><b style="font-size:15px">Registrér dig som forælder</b>' +
+        '<span class="xs">Er du forælder til en spiller? Opret dig med dit eget navn og vælg dit barn</span></span><span class="h" style="font-size:20px">›</span></button>') +
         (lsGet('hoebk_after') === 'boern' ? '<div class="card" style="padding:10px 14px;background:var(--hi)"><b style="font-size:14px">Trin 1 af 2: Vælg dig selv</b><span class="xs" style="display:block">Når du er logget ind, vælger du dine børn.</span></div>' : '') +
         '<span class="lbl">Spiller? Vælg dit navn</span>' +
         '<p class="s" style="margin:0 4px">Vælg dit eget navn, så sender vi en kode til din e-mail.' + (both ? '' : ' Forældre skal bruge knappen ovenfor.') + '</p><label class="card search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5866" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>' +
@@ -2075,7 +2079,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     var live = DEV.code && Date.now() < DEV.until, min = live ? Math.max(1, Math.ceil((DEV.until - Date.now()) / 60000)) : 0;
     return '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Log ind på en anden enhed</b>' +
       (live ? '<span class="h" style="font-size:28px;letter-spacing:.12em;text-align:center;user-select:all">' + esc(DEV.code) + '</span>' +
-        '<span class="xs">På den anden enhed: åbn appen → <b>Min side</b> → <b>Har du en kode fra en anden enhed?</b> og skriv koden. Den virker én gang og gælder ' + min + ' min. mere.</span>' +
+        '<span class="xs">På den anden enhed: åbn appen → <b>Min side</b> → <b>Logget ind på en anden enhed?</b> og skriv koden. Den virker én gang og gælder ' + min + ' min. mere.</span>' +
         '<button class="rb" data-act="devcode" style="align-self:flex-start"' + (DEV.busy ? ' disabled' : '') + '>Lav en ny kode</button>'
       : '<span class="xs">Lav en kode og skriv den på din telefon, tablet eller computer — så er du logget ind dér også, uden kode på e-mail.</span>' +
         '<button class="rb ja" aria-pressed="true" data-act="devcode" style="align-self:flex-start;min-height:42px"' + (DEV.busy ? ' disabled' : '') + '>' + (DEV.busy ? 'Laver kode …' : 'Lav kode') + '</button>') + '</div>';
@@ -2089,7 +2093,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       if (!r || !r.ok) throw new Error((r && r.error) || 'Kunne ikke lave kode');
       DEV.code = r.code; DEV.until = Date.now() + (r.minutes || 10) * 60000;
       clearInterval(DEV.timer);
-      DEV.timer = setInterval(function () { if (Date.now() >= DEV.until) { clearInterval(DEV.timer); DEV.code = ''; } if (/^#\/tilmeld\/(spiller|foraelder)/.test(location.hash)) route(true); }, 30000);
+      DEV.timer = setInterval(function () { if (Date.now() >= DEV.until) { clearInterval(DEV.timer); DEV.code = ''; } if (/^#\/(tilmeld\/(spiller|foraelder)|hjaelp)/.test(location.hash)) route(true); }, 30000);
     }).catch(function (err) { toast(err.message); }).then(function () { DEV.busy = false; route(true); });
   }
   function deviceLogin() {
@@ -3868,6 +3872,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (logged) loadFbMine(false);
     var h = '<a class="card row" style="min-height:64px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="' + GUIDE_URL + '" target="_blank" rel="noopener">' +
       '<span class="col"><b style="font-size:15px">📖 Guide til appen</b><span class="xs">Alle skærme forklaret — hvad du kan som spiller, forælder, holdleder og administrator</span></span><span class="h" style="font-size:20px">↗</span></a>';
+    if (logged) h += deviceCard();
     h += '<span class="lbl">Skriv til administratorerne</span>';
     if (!logged) return h + '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px"><span style="font-size:14px">Log ind på Min side for at sende feedback — så kan vi svare dig direkte i appen.</span>' +
       '<button class="rb ja" aria-pressed="true" data-go="#/tilmeld" style="align-self:flex-start;min-height:44px">Gå til Min side</button></div>';
