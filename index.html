@@ -42,7 +42,13 @@ a{color:var(--ink)}
 .top .helpbtn:focus-visible{outline:2px solid var(--accent)}
 .top .helpbtn.on{background:rgba(255,255,255,.16);color:var(--accent)}
 .top .helpbtn .dot{position:absolute;top:9px;right:7px;width:9px;height:9px;border-radius:50%;background:var(--accent);border:2px solid var(--ink)}
-.top .homebtn:not([hidden])~.helpbtn,.top .adminbtn:not([hidden])+.helpbtn,.top .helpbtn+.refresh{margin-left:0}
+.top .shopbtn{margin-left:auto;width:40px;height:44px;flex:0 0 auto;border-radius:999px;color:#fff;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.top .shopbtn:focus-visible{outline:2px solid var(--accent)}
+.top .homebtn:not([hidden])~.shopbtn,.top .adminbtn:not([hidden])+.shopbtn,.top .shopbtn+.helpbtn,.top .helpbtn+.refresh{margin-left:0}
+@media (max-width:420px){.top{gap:2px;padding-left:10px;padding-right:8px}.top .homebtn,.top .adminbtn,.top .shopbtn,.top .helpbtn,.top .refresh{width:36px}}
+.shoprow{display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 12px;text-decoration:none;color:inherit}
+.shoprow svg{flex:0 0 auto}
+.shoprow .col{flex:1 1 auto;min-width:0}
 .fbitem{padding:12px 14px;display:flex;flex-direction:column;gap:6px;border-top:1px solid var(--line)}
 .fbitem:first-child{border-top:0}
 .fbtext{white-space:pre-wrap;font-size:14px;line-height:1.45;margin:0}
@@ -363,6 +369,7 @@ textarea.inp{resize:vertical;line-height:1.45}
 <div class="t"><h1 id="title">HØBK</h1><span class="sub" id="subtitle">Henter data …</span></div>
 <button class="homebtn" id="homeBtn" aria-label="Gør til min forside" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg></button>
 <button class="adminbtn" id="adminBtn" aria-label="Administration" hidden><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></button>
+<a class="shopbtn" id="shopBtn" href="https://hoebk.tsklub.dk" target="_blank" rel="noopener" aria-label="Klubshop hos Transocean Sport (åbner i ny fane)" title="Klubshop"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></a>
 <button class="helpbtn" id="helpBtn" aria-label="Hjælp og feedback"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.8"/><path d="M12 17.2h.01"/></svg></button>
 <button class="refresh" id="refresh" aria-label="Opdater data"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></button>
 </header>
@@ -758,6 +765,11 @@ textarea.inp{resize:vertical;line-height:1.45}
 
   // Klubbens shop hos sponsoren Transocean Sport (klubportalen — en del af købet går tilbage til HØBK)
   var SHOP_URL = 'https://hoebk.tsklub.dk';
+  function shopRow() {   // smal udgave øverst på Min side · Spiller og Forælder
+    return '<a class="card shoprow" href="' + SHOP_URL + '" target="_blank" rel="noopener">' +
+      '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>' +
+      '<span class="col"><b style="font-size:14px">Klubshop · Transocean Sport</b><span class="xs ellip">Udstyr og klubtøj til klubpriser</span></span><span class="h" style="font-size:16px">↗</span></a>';
+  }
   function shopCard() {
     return '<a class="card row" style="min-height:60px;text-decoration:none;color:inherit;border-left:5px solid var(--ink)" href="' + SHOP_URL + '" target="_blank" rel="noopener">' +
       '<span class="col"><b style="font-size:15px">Klubshop · Transocean Sport</b><span class="xs">Udstyr og klubtøj til klubpriser — en del går tilbage til HØBK</span></span><span class="h" style="font-size:18px">↗</span></a>';
@@ -2111,7 +2123,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     }).catch(function (err) { toast(err.message); if (btn) btn.disabled = false; });
   }
   function settingsBlock() {
-    return '<span class="lbl">Indstillinger</span>' + pushCard() + shopCard() + deviceCard() +
+    return '<span class="lbl">Indstillinger</span>' + pushCard() + deviceCard() +
       '<div class="card row" style="min-height:56px"><span class="col"><b style="font-size:14px">Log ud</b><span class="xs ellip">' + esc(ME.email || '') + '</span></span>' +
       '<button class="rb" data-act="logout" style="min-height:38px">Log ud</button></div>';
   }
@@ -2122,6 +2134,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<span class="col" style="flex:1 1 auto"><b>' + esc(ME.name) + '</b><span class="xs">' + (myTeams.length ? esc(myTeams.join(', ')) : 'Ingen hold endnu') +
       (P && playerLevels(P).length ? ' · niveau ' + esc(playerLevels(P)[0]) : '') + '</span></span>' +
       (P ? '<button class="pl xs" data-go="#/spiller/' + encodeURIComponent(P.id) + '">Min spillerside ›</button>' : '') + '</div>';
+    h += shopRow();
     h += groupsBlock();
     h += followBlock(myTeams);
     if (P) h += '<button class="card row" style="min-height:52px;border-left:5px solid var(--tour)" data-go="#/spiller/' + encodeURIComponent(P.id) + '"><span class="col"><b style="font-size:14px">Turneringer for dit niveau</b><span class="xs">Turneringer der passer dig — og dine resultater</span></span><span class="xs">›</span></button>';
@@ -2134,7 +2147,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   }
   // ---- Min side · Forælder ----
   function minForaelder(parent) {
-    var today = iso(new Date()), h = '';
+    var today = iso(new Date()), h = shopRow();
     if (parent) h += '<span class="lbl">Dit navn</span><div class="card search"><input id="pnameEdit" type="text" maxlength="60" autocomplete="name" value="' + esc(UI.pnameEdit != null ? UI.pnameEdit : ME.name) + '" aria-label="Dit navn">' +
       '<button class="rb" data-act="pnamesave" style="min-height:36px">Gem</button></div><p class="note" style="margin-top:-4px">Navnet står ved dine beskeder i chatten.</p>';
     h += '<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="lbl">Mine børn</span><button class="pl xs" data-go="#/boern">Ret ›</button></div>';
