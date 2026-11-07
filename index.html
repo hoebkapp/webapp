@@ -2852,9 +2852,15 @@ textarea.inp{resize:vertical;line-height:1.45}
         '<button class="rb ja" aria-pressed="true" data-act="admadd" style="align-self:flex-start;min-height:42px">Gør til administrator</button></div>';
     }
     h += '<span class="lbl">Nuværende holdledere</span>';
+    var unmailed = ADM.data.leaders.filter(function (l) { return 'mailed' in l && !l.mailed; }).length;
+    if (unmailed) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">' + unmailed + ' holdleder' + (unmailed === 1 ? ' har' : 'e har') + ' ikke fået velkomstmailen</b>' +
+      '<span class="xs">Mailen fortæller, hvilke hold de har, giver et link til appen og forklarer, hvordan de logger ind og sætter holdet op.</span>' +
+      '<button class="rb go" data-leadmail="__all" style="align-self:flex-start"' + (ADM.mailing ? ' disabled' : '') + '>' + (ADM.mailing ? 'Sender …' : 'Send velkomstmail til ' + (unmailed === 1 ? 'holdlederen' : 'alle ' + unmailed)) + '</button></div>';
     h += ADM.data.leaders.length ? ADM.data.leaders.map(function (l, i) {
+      var mailTxt = !('mailed' in l) ? '' : l.mailed ? 'Velkomstmail sendt ' + new Date(l.mailed).toLocaleDateString('da-DK', { day: 'numeric', month: 'short' }) : 'Har ikke fået velkomstmail';
       return '<div class="card" style="padding:10px 12px;display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;gap:8px"><span class="col"><b>' + esc(l.name || l.email) + '</b><span class="xs">' + esc(l.email) + '</span></span>' +
-        '<button class="pl xs" data-admedit="' + i + '">Ret</button></div><div>' + l.teams.map(function (x) { return '<span class="cls">' + esc(x === '*' ? 'Alle hold' : x) + '</span>'; }).join('') + '</div></div>';
+        '<button class="pl xs" data-admedit="' + i + '">Ret</button></div><div>' + l.teams.map(function (x) { return '<span class="cls">' + esc(x === '*' ? 'Alle hold' : x) + '</span>'; }).join('') + '</div>' +
+        ('mailed' in l ? '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="xs">' + esc(mailTxt) + '</span><button class="pl xs" data-leadmail="' + esc(l.email) + '"' + (ADM.mailing ? ' disabled' : '') + '>' + (l.mailed ? 'Send igen' : 'Send mail') + '</button></div>' : '') + '</div>';
     }).join('') : '<p class="empty">Ingen holdledere endnu.</p>';
     h += '<span class="lbl">' + (ADM.pick ? 'Holdleder: ' + esc(ADM.pick.name) : 'Tilføj holdleder') + '</span>';
     if (!ADM.pick) {
@@ -4197,7 +4203,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (history.length > 1) history.back(); else location.hash = '#/hold';
   });
   $main.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst]');
+    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-leadmail],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst]');
     if (b) { UI.calPick = !!b.dataset.calpick; if (b.dataset.calpick) UI.calScrollTo = (b.dataset.go || '').split('/').pop(); }
     if (!b) return;
     if (b.dataset.act === 'pnamesave') {
@@ -4317,6 +4323,17 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (b.dataset.lufilter) { LU[b.dataset.lufilter] = !LU[b.dataset.lufilter]; route(true); return; }
     if (b.dataset.lustatus) { UI.luStatus = b.dataset.lustatus; document.querySelectorAll('[data-lustatus]').forEach(function (x) { x.setAttribute('aria-selected', x === b); }); return; }
     if (b.dataset.admpick) { ADM.pick = b.dataset.admpick === '__new' ? { id: '__new', name: 'Ny holdleder' } : { id: b.dataset.admpick, name: D.players[b.dataset.admpick].name }; var ke = (ADM.data.emails || {})[ADM.pick.id] || []; ADM.email = ke[0] || ''; ADM.teams = {}; route(true); return; }
+    if (b.dataset.leadmail) {
+      var all = b.dataset.leadmail === '__all', L2 = all ? null : ADM.data.leaders.filter(function (x) { return x.email === b.dataset.leadmail; })[0];
+      if (ADM.mailing || !confirm(all ? 'Send velkomstmailen til de holdledere, der ikke har fået den?' : 'Send velkomstmailen til ' + (L2 && (L2.name || L2.email)) + '?')) return;
+      ADM.mailing = true; route(true);
+      api({ action: 'leaderMail', token: ME.token, email: all ? '' : b.dataset.leadmail }).then(function (r) {
+        if (!r || !r.ok) throw new Error(r && r.error === 'Ukendt handling' ? 'Klubbens server skal opdateres først (script 2026-11-07.2)' : (r && r.error) || 'Kunne ikke sende');
+        toast(r.sent ? 'Sendt til ' + r.sent + ' holdleder' + (r.sent === 1 ? '' : 'e') + (r.failed ? ' — ' + r.failed + ' fejlede' : '') : 'Ingen at sende til');
+        ADM.data = null;
+      }).catch(function (err) { toast(err.message); }).then(function () { ADM.mailing = false; route(true); });
+      return;
+    }
     if (b.dataset.admedit !== undefined) { var L = ADM.data.leaders[+b.dataset.admedit]; ADM.pick = { id: '__edit', name: L.name || L.email }; ADM.email = L.email; ADM.teams = {}; L.teams.forEach(function (x) { ADM.teams[x] = 1; }); route(true); return; }
     if (b.dataset.admemail) { ADM.email = b.dataset.admemail; route(true); return; }
     if (b.dataset.admteam) { var tl = b.dataset.admteam; if (ADM.teams[tl]) delete ADM.teams[tl]; else ADM.teams[tl] = 1; route(true); return; }

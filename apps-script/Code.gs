@@ -52,7 +52,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-07.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-07.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -332,6 +332,7 @@ function leaders_(b) {
   data_('Spillere').forEach(function (r) { var id = String(r[0]); (emails[id] = emails[id] || []); if (emails[id].indexOf(String(r[2])) < 0) emails[id].push(String(r[2])); });
   var admins = data_('Administratorer').filter(function (r) { return String(r[0]) && !isSuper_(r[0]); }).map(function (r) { return { email: String(r[0]), name: String(r[1]), by: String(r[2]) }; });
   Object.keys(emails).forEach(function (id) { emails[id] = emails[id].filter(function (e) { return !isSuper_(e); }); });   // hovedadministratorens e-mail vises ikke
+  var lm = leaderMailed_(); leaders.forEach(function (l) { l.mailed = lm[l.email.toLowerCase().trim()] || 0; });
   return { ok: true, leaders: leaders, emails: emails, stats: stats_(), admins: admins, owner: isOwner_(ses.email, ses.playerId), super: isSuper_(ses.email) };
 }
 
@@ -355,17 +356,46 @@ function setLeader_(b) {
     return { ok: true, added: teams.filter(function (t) { return before.indexOf(t) < 0; }) };
   });
   if (res.added.length) {   // kun nye hold giver en mail — at rette eller fjerne et hold gør ikke
-    try { leaderMail_(email, name, res.added, teams, ses.playerName); res.mailed = true; } catch (e) { res.mailed = false; }
+    try { leaderMail_(email, name, res.added, teams, ses.playerName); res.mailed = true; leaderMailed_([email]); } catch (e) { res.mailed = false; }
   }
   delete res.added;
   return res;
 }
 
 // Velkomstmail til en ny holdleder: hvad rollen giver, hvordan man logger ind, og hvor man sætter holdet op
+function leaderMailed_(emails) {   // hvornår hver holdleder sidst fik velkomstmailen (i scriptets egenskaber — ingen ny fane)
+  var p = PropertiesService.getScriptProperties(), m = {};
+  try { m = JSON.parse(p.getProperty('LEADER_MAIL') || '{}'); } catch (e) {}
+  if (emails) { emails.forEach(function (e) { m[e.toLowerCase()] = Date.now(); }); p.setProperty('LEADER_MAIL', JSON.stringify(m)); }
+  return m;
+}
+// Send velkomstmailen til holdledere, der blev udnævnt før mailen fandtes (én eller alle der ikke har fået den)
+function leaderMailSend_(b) {
+  var ses = session_(b.token);
+  if (!ses || !isAdmin_(ses.email, ses.playerId)) return { ok: false, error: 'Kun administrator' };
+  var one = clean_(b.email, 120).toLowerCase(), sent = leaderMailed_();
+  var todo = data_('Ledere').filter(function (r) {
+    var em = String(r[0]).toLowerCase().trim();
+    if (!em || isSuper_(em) || !validEmail_(em)) return false;
+    return one ? em === one : !sent[em];
+  });
+  if (one && !todo.length) return { ok: false, error: 'Holdlederen findes ikke' };
+  if (MailApp.getRemainingDailyQuota() < todo.length) return { ok: false, error: 'Klubbens e-mail-kvote rækker ikke i dag — prøv i morgen' };
+  var done = [], failed = [];
+  todo.forEach(function (r) {
+    var em = String(r[0]).toLowerCase().trim(), teams = String(r[2]).split(',').map(function (t) { return t.trim(); }).filter(String);
+    try { leaderMail_(em, String(r[1]), teams, teams, ses.playerName); done.push(em); } catch (e) { failed.push(em); }
+  });
+  if (done.length) leaderMailed_(done);
+  return { ok: true, sent: done.length, failed: failed.length };
+}
 function leaderMail_(email, name, added, all, byName) {
   if (MailApp.getRemainingDailyQuota() < 1) throw new Error('kvote');
   var first = (name || '').split(' ')[0] || 'holdleder';
-  var list = function (a) { return a.length === 1 ? a[0] : a.slice(0, -1).join(', ') + ' og ' + a[a.length - 1]; };
+  var list = function (a) {
+    a = a.map(function (t) { return t === '*' ? 'alle hold' : t; });
+    return a.length === 1 ? a[0] : a.slice(0, -1).join(', ') + ' og ' + a[a.length - 1];
+  };
   var body =
     'Hej ' + first + '\n\n' +
     (byName ? byName.split(' ')[0] + ' har' : 'Klubben har') + ' gjort dig til holdleder for ' + list(added) + ' i HØBK-appen.' +
@@ -1449,6 +1479,7 @@ function doPost(e) {
       case 'lineup': return json_(saveLineup_(b));
       case 'leaders': return json_(leaders_(b));
       case 'setLeader': return json_(setLeader_(b));
+      case 'leaderMail': return json_(leaderMailSend_(b));
       case 'setAdmin': return json_(setAdmin_(b));
       case 'users': return json_(users_(b));
       case 'toParent': return json_(toParent_(b));

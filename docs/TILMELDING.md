@@ -95,7 +95,7 @@ To change the administrator, edit `ADMIN_PLAYER_IDS` in `Code.gs` and publish a 
 
 One row per leader: `email`, `navn`, `hold` — team labels separated by commas (`U15 B, U13 B`) or `*` for all teams. Normally the administrator manages it from the app; editing the tab by hand works too. The leader must log in with exactly that email.
 
-When an administrator appoints a leader in the app (`setLeader`) and the person gets one or more **new** teams, `leaderMail_` sends a Danish welcome e-mail: which teams, a link to the app and the home-screen guide, and how to log in, find the Holdleder tab, set up the team list (Holdlister) and pick players. Changing or removing teams sends nothing; rows added by hand in the sheet don't trigger a mail.
+When an administrator appoints a leader in the app (`setLeader`) and the person gets one or more **new** teams, `leaderMail_` sends a Danish welcome e-mail: which teams, a link to the app and the home-screen guide, and how to log in, find the Holdleder tab, set up the team list (Holdlister) and pick players. Changing or removing teams sends nothing; rows added by hand in the sheet don't trigger a mail. When each leader last got the mail is kept in the script property `LEADER_MAIL` (JSON, email → time). On *Administration*, leaders who never got it are counted with a **Send velkomstmail til alle N** button, and each leader has *Send mail / Send igen* (`leaderMail` action — one e-mail, or all without a recorded mail).
 
 ### Lineup flow
 
@@ -218,7 +218,7 @@ Trainers can sort and filter the *Tilmeldinger* tab directly, or use the SQLite 
 | `POST {action:"toParent", token, email, childId, childName}` | Administrator: a parent who registered as their child becomes a parent (`p:…`, "<child's first name> forælder") with that child; sessions, follows and push follow along |
 | `POST {action:"rename", token, name}` | Parents (`p:` logins) change their own name — players keep their badmintonplayer.dk name |
 | `POST {action:"users", token}` | All registered users (name, email, role, children, last active, push) — administrators only; the head administrator is shown only to himself |
-| `POST {action:"leaders" / "setLeader", token, …}` | List / set team leaders — administrator only |
+| `POST {action:"leaders" / "setLeader" / "leaderMail", token, …}` | List / set team leaders / (re)send the welcome mail — administrator only |
 | `POST {action:"rooms", token, groups[]}` | My chat rooms with latest activity, and news for me; saves my training groups (tab *Grupper*) |
 | `POST {action:"messages" / "post" / "delMsg" / "mute", token, room, …}` | Read / write / delete messages in a room; push on/off per room — members only |
 | `POST {action:"newsSave" / "newsDel" / "newsList", token, …}` | Write / delete / list news — administrator only |
