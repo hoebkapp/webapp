@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E2236">
+<title>HØBK-appen · Kom i gang</title>
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+body{margin:0}
+.wrap{padding-top:max(28px,calc(env(safe-area-inset-top,0px) + 16px))}
+.lead a{color:inherit}
+.row a.btn{display:inline-flex;align-items:center;text-decoration:none}
+
+/* Layout: én smal kolonne som appen selv — teksten først, så guiden med faner for iPhone, Android og computer */
+:root{
+  --ground:#F7F7F2; --card:#FFFFFF; --ink:#0E2236; --muted:#4A5866; --line:#E2E5DC; --soft:#F1F2EC;
+  --accent:#D4F25A; --accent-ink:#0E2236; --hi:#F4FBD9; --phone:#0E2236; --screen:#FFFFFF; --sheet:#F1F2EC;
+  --display:Archivo,"Arial Narrow",system-ui,sans-serif; --body:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0B1724; --card:#13243A; --ink:#EAF0F5; --muted:#A8B6C4; --line:#24384F; --soft:#1A2E45;
+  --accent:#D4F25A; --accent-ink:#0E2236; --hi:#24361A; --phone:#04090F; --screen:#F7F7F2; --sheet:#E9EBE4; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --ground:#0B1724; --card:#13243A; --ink:#EAF0F5; --muted:#A8B6C4; --line:#24384F; --soft:#1A2E45;
+  --accent:#D4F25A; --accent-ink:#0E2236; --hi:#24361A; --phone:#04090F; --screen:#F7F7F2; --sheet:#E9EBE4; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:760px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-direction:column;gap:28px}
+h1,h2,h3{font-family:var(--display);margin:0;text-wrap:balance;line-height:1.15}
+h1{font-size:clamp(28px,6vw,40px);font-weight:800;letter-spacing:-.01em}
+h2{font-size:22px;font-weight:800}
+h3{font-size:16px;font-weight:700}
+p{margin:0}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.head{display:flex;gap:16px;align-items:center}
+.head img{width:64px;height:64px;border-radius:15px;flex:0 0 auto;box-shadow:0 2px 8px rgba(14,34,54,.18)}
+.head .col{display:flex;flex-direction:column;gap:4px;min-width:0}
+.lead{color:var(--muted);max-width:62ch}
+section{display:flex;flex-direction:column;gap:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+.letter{padding:20px 22px;display:flex;flex-direction:column;gap:12px;font-size:15px;max-width:100%}
+.letter .subj{font-weight:700}
+.letter ul,.letter ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.letter a{color:inherit}
+.url{font-weight:600;word-break:break-all}
+.ph{background:var(--hi);border-radius:6px;padding:0 4px;font-weight:600}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn{min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);font:700 14px var(--body);cursor:pointer}
+.btn.go{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:focus-visible,.tab:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.note{font-size:13px;color:var(--muted)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{min-height:42px;padding:0 16px;border-radius:999px;border:1.5px solid var(--ink);background:var(--card);color:var(--ink);font:700 14px var(--body);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--ground)}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px}
+.step{display:flex;flex-direction:column;gap:10px;min-width:0}
+.step .txt{display:flex;gap:8px;align-items:flex-start;font-size:14px}
+.num{flex:0 0 auto;width:24px;height:24px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:800 13px/24px var(--display);text-align:center}
+.step b{font-weight:700}
+/* telefon-tegninger */
+.phone{position:relative;width:100%;max-width:190px;aspect-ratio:9/17;margin:0 auto;background:var(--phone);border-radius:26px;padding:7px}
+.scr{position:relative;width:100%;height:100%;background:var(--screen);border-radius:20px;overflow:hidden;color:#0E2236;font-size:10px;display:flex;flex-direction:column}
+.pc{position:relative;width:100%;aspect-ratio:4/3;max-width:100%;background:var(--phone);border-radius:12px;padding:6px}
+.pc .scr{border-radius:7px}
+.appbar{background:#0E2236;color:#fff;padding:8px 9px;display:flex;align-items:center;gap:6px;font:800 11px var(--display)}
+.appbar i{width:14px;height:14px;border-radius:4px;background:#fff;display:block}
+.pagebody{flex:1;padding:8px;display:flex;flex-direction:column;gap:6px}
+.pagebody span{display:block;height:7px;border-radius:4px;background:#E2E5DC}
+.pagebody span:nth-child(2){width:70%}.pagebody span:nth-child(3){width:85%}.pagebody span:nth-child(4){width:55%}
+.addr{display:flex;align-items:center;gap:5px;margin:6px;background:#E9EBE4;border-radius:10px;padding:5px 7px;font-size:9px;color:#4A5866}
+.addr .u{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ico{display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;border-radius:6px;color:#0E2236;flex:0 0 auto}
+.hl{background:var(--accent);box-shadow:0 0 0 3px rgba(212,242,90,.45);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 6px rgba(212,242,90,.15)}}
+@media (prefers-reduced-motion:reduce){.hl{animation:none}}
+.sheet{position:absolute;left:0;right:0;bottom:0;background:var(--sheet);border-radius:14px 14px 0 0;padding:8px;display:flex;flex-direction:column;gap:4px;box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+.sheet .it{background:#fff;border-radius:8px;padding:6px 8px;display:flex;align-items:center;gap:6px;font-size:9.5px;font-weight:600}
+.sheet .it.hl{background:var(--accent)}
+.menu{position:absolute;top:30px;right:6px;width:72%;background:#fff;border-radius:8px;box-shadow:0 4px 16px rgba(0,0,0,.25);padding:4px;display:flex;flex-direction:column;gap:2px;font-size:9.5px}
+.menu .it{padding:5px 7px;border-radius:6px}
+.menu .it.hl{font-weight:700}
+.dim{position:absolute;inset:0;background:rgba(14,34,54,.35)}
+.dlg{position:absolute;left:8%;right:8%;top:22%;background:#fff;border-radius:12px;padding:10px;display:flex;flex-direction:column;gap:7px;box-shadow:0 6px 20px rgba(0,0,0,.3);font-size:9.5px}
+.dlg .t{font-weight:700;font-size:10.5px}
+.dlg .app{display:flex;gap:6px;align-items:center}
+.dlg .app img{width:22px;height:22px;border-radius:6px}
+.dlg .acts{display:flex;justify-content:flex-end;gap:6px}
+.dlg .b{padding:4px 9px;border-radius:999px;font-weight:700}
+.tg{display:flex;justify-content:space-between;align-items:center}
+.sw{width:24px;height:14px;border-radius:999px;background:#34C759;position:relative}
+.sw::after{content:"";position:absolute;right:2px;top:2px;width:10px;height:10px;border-radius:50%;background:#fff}
+.ios-top{display:flex;justify-content:space-between;align-items:center;padding:8px 9px;border-bottom:1px solid #E2E5DC;font-size:9.5px}
+.home{flex:1;background:linear-gradient(160deg,#1B3550,#0E2236 60%,#2b4a2a);display:grid;grid-template-columns:repeat(4,1fr);gap:10px 6px;padding:16px 10px;align-content:start}
+.home .a{display:flex;flex-direction:column;align-items:center;gap:3px;color:#fff;font-size:8px}
+.home .a i{width:100%;max-width:30px;aspect-ratio:1;border-radius:8px;background:rgba(255,255,255,.22);display:block}
+.home .a img{width:100%;max-width:30px;aspect-ratio:1;border-radius:8px;display:block}
+.home .a.hl{background:transparent;box-shadow:none;animation:none}
+.home .a.hl img{box-shadow:0 0 0 3px var(--accent)}
+.after{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.after .card{padding:16px;display:flex;flex-direction:column;gap:6px}
+.qr{padding:16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.qr #qr{background:#fff;padding:8px;border-radius:10px;line-height:0}
+.qr #qr img,.qr #qr canvas{width:132px;height:132px}
+.qr .col{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 220px}
+.tips{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.tips ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
+</style>
+
+<body>
+<div class="wrap">
+  <header class="head">
+    <img src="icon-180.png" alt="HØBK-appens ikon">
+    <div class="col">
+      <span class="lbl">Hørsholm Badminton Klub</span>
+      <h1>HØBK-appen på hjemmeskærmen</h1>
+    </div>
+  </header>
+  <p class="lead">Læg appen på hjemmeskærmen, så åbner den som en almindelig app, og du kan få notifikationer om kampe, træning og nyheder. Vælg din enhed herunder.</p>
+  <div class="row"><a class="btn go" href="./">Åbn appen</a><a class="btn" href="guide.html">Guide til hele appen</a></div>
+
+  
+
+  <section aria-labelledby="t2">
+    <h2 id="t2">Vælg din enhed</h2>
+    <div class="tabs" role="tablist" aria-label="Vælg enhed">
+      <button class="tab" role="tab" id="tab-ios" aria-controls="p-ios" aria-selected="true">iPhone og iPad</button>
+      <button class="tab" role="tab" id="tab-and" aria-controls="p-and" aria-selected="false">Android</button>
+      <button class="tab" role="tab" id="tab-pc" aria-controls="p-pc" aria-selected="false">Computer</button>
+    </div>
+
+    <div role="tabpanel" id="p-ios" aria-labelledby="tab-ios">
+      <ol class="steps">
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span><span></span></div>
+            <div class="addr"><span class="u">app.hoebk.dk</span><span class="ico hl">•••</span></div>
+          </div></div>
+          <p class="txt"><span class="num">1</span><span>Åbn linket i <b>Safari</b>. Tryk på de <b>tre prikker •••</b> ved adresselinjen.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="sheet">
+              <div class="it">Kopiér</div>
+              <div class="it">Føj til læseliste</div>
+              <div class="it hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg>Føj til hjemmeskærm</div>
+              <div class="it">Find på side</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">2</span><span>Tryk <b>Del</b>, rul ned og vælg <b>Føj til hjemmeskærm</b>.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="ios-top"><span>Annuller</span><b>Føj til hjemmeskærm</b><span class="ico hl" style="width:auto;padding:0 5px;font-weight:700">Tilføj</span></div>
+            <div style="padding:10px;display:flex;flex-direction:column;gap:10px">
+              <div class="dlg" style="position:static;box-shadow:none;border:1px solid #E2E5DC">
+                <div class="app"><img src="icon-180.png" alt=""><b>HØBK</b></div>
+              </div>
+              <div class="tg" style="background:#F1F2EC;border-radius:8px;padding:7px 8px"><span>Åbn som webapp</span><span class="sw"></span></div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">3</span><span>Lad <b>Åbn som webapp</b> være slået til, og tryk <b>Tilføj</b>.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="home">
+              <div class="a"><i></i>Kalender</div><div class="a"><i></i>Fotos</div><div class="a"><i></i>Kort</div><div class="a"><i></i>Ur</div>
+              <div class="a"><i></i>Mail</div><div class="a hl"><img src="icon-180.png" alt="">HØBK</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">4</span><span>Åbn <b>HØBK</b> fra ikonet på hjemmeskærmen. Nu kan du også få notifikationer.</span></p>
+        </li>
+      </ol>
+      <p class="note" style="margin-top:12px">Ældre iPhone (før iOS 26): tryk direkte på <b>Del-knappen</b> (firkanten med pilen op) nederst i Safari. Notifikationer på iPhone virker kun, når appen er åbnet fra hjemmeskærmen (iOS 16.4 eller nyere).</p>
+    </div>
+
+    <div role="tabpanel" id="p-and" aria-labelledby="tab-and" hidden>
+      <ol class="steps">
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span><span class="ico hl">⋮</span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span><span></span></div>
+          </div></div>
+          <p class="txt"><span class="num">1</span><span>Åbn linket i <b>Chrome</b>. Tryk på <b>de tre prikker ⋮</b> øverst til højre.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span><span class="ico">⋮</span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="menu">
+              <div class="it">Ny fane</div>
+              <div class="it">Historik</div>
+              <div class="it">Del …</div>
+              <div class="it hl">Føj til startskærm</div>
+              <div class="it">Indstillinger</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">2</span><span>Vælg <b>Føj til startskærm</b> eller <b>Installer app</b>.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span></div>
+            <div class="dim"></div>
+            <div class="dlg">
+              <div class="t">Installer app</div>
+              <div class="app"><img src="icon-180.png" alt=""><span><b>HØBK</b><br>app.hoebk.dk</span></div>
+              <div class="acts"><span class="b">Annuller</span><span class="b hl">Installer</span></div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">3</span><span>Tryk <b>Installer</b> (eller <b>Tilføj</b>).</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="home">
+              <div class="a"><i></i>Chrome</div><div class="a"><i></i>Galleri</div><div class="a"><i></i>Maps</div><div class="a"><i></i>Ur</div>
+              <div class="a"><i></i>Gmail</div><div class="a hl"><img src="icon-180.png" alt="">HØBK</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">4</span><span>Åbn <b>HØBK</b> fra startskærmen eller app-oversigten.</span></p>
+        </li>
+      </ol>
+      <p class="note" style="margin-top:12px">Samsung Internet: tryk på menuen <b>≡</b> nederst → <b>Tilføj side til</b> → <b>Startskærm</b>. Teksten i menuen kan variere lidt fra telefon til telefon.</p>
+    </div>
+
+    <div role="tabpanel" id="p-pc" aria-labelledby="tab-pc" hidden>
+      <ol class="steps">
+        <li class="step">
+          <div class="pc" aria-hidden="true"><div class="scr">
+            <div class="addr"><span class="u">app.hoebk.dk</span><span class="ico hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 8v6M9 11l3 3 3-3M8 21h8"/></svg></span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span></div>
+          </div></div>
+          <p class="txt"><span class="num">1</span><span>Åbn linket i <b>Chrome</b> eller <b>Edge</b>. Klik på <b>installér-ikonet</b> i højre side af adresselinjen.</span></p>
+        </li>
+        <li class="step">
+          <div class="pc" aria-hidden="true"><div class="scr">
+            <div class="addr"><span class="u">app.hoebk.dk</span><span class="ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 8v6M9 11l3 3 3-3M8 21h8"/></svg></span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="dlg" style="left:auto;right:6px;top:30px;width:62%">
+              <div class="t">Installer app?</div>
+              <div class="app"><img src="icon-180.png" alt=""><b>HØBK</b></div>
+              <div class="acts"><span class="b hl">Installer</span><span class="b">Annuller</span></div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">2</span><span>Klik <b>Installer</b>. Appen åbner i sit eget vindue.</span></p>
+        </li>
+        <li class="step">
+          <div class="pc" aria-hidden="true"><div class="scr">
+            <div class="ios-top" style="justify-content:flex-start;gap:12px"><b>Safari</b><span class="ico hl" style="width:auto;padding:0 5px">Arkiv</span><span>Rediger</span><span>Vis</span></div>
+            <div class="menu" style="top:28px;left:44px;right:auto;width:55%">
+              <div class="it">Nyt vindue</div>
+              <div class="it">Del …</div>
+              <div class="it hl">Føj til Dock …</div>
+            </div>
+            <div class="pagebody" style="margin-top:4px"><span></span><span></span></div>
+          </div></div>
+          <p class="txt"><span class="num" style="width:auto;padding:0 7px;border-radius:999px">Mac</span><span><b>Safari på Mac:</b> vælg <b>Arkiv → Føj til Dock</b> og klik <b>Tilføj</b>.</span></p>
+        </li>
+      </ol>
+      <p class="note" style="margin-top:12px">Ser du ikke ikonet i Chrome? Klik på <b>⋮</b> → <b>Cast, gem og del</b> → <b>Installer side som app</b>. I Edge: <b>···</b> → <b>Apps</b> → <b>Installer dette websted som en app</b>. Du kan også bare gemme siden som bogmærke.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t3">
+    <h2 id="t3">Når appen er på plads</h2>
+    <div class="after">
+      <div class="card"><span class="lbl">Log ind</span><h3>Min side → din e-mail</h3><p class="note">Skriv den e-mail, klubben kender dig på. Du får en kode på mail, som du taster i appen. Du forbliver logget ind.</p></div>
+      <div class="card"><span class="lbl">Forældre</span><h3>Registrér dig som forælder</h3><p class="note">Vælg det på Min side og tilføj dine børn. Så kan du følge deres hold og svare for dem.</p></div>
+      <div class="card"><span class="lbl">Notifikationer</span><h3>Slå dem til på Min side</h3><p class="note">Så får du besked om nyheder, holdudtagelser og nye beskeder i chatten. På iPhone skal appen være åbnet fra hjemmeskærmen.</p></div>
+      <div class="card"><span class="lbl">Hjælp</span><h3>Spørgsmålstegnet øverst</h3><p class="note">Her ligger <a href="guide.html">guiden til hele appen</a>, en kode til at logge ind på dine andre enheder, og du kan skrive direkte til klubbens administratorer.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t4">
+    <h2 id="t4">QR-kode til opslag i hallen</h2>
+    <div class="card qr">
+      <div id="qr" role="img" aria-label="QR-kode til HØBK-appen"></div>
+      <div class="col">
+        <p>Scan med telefonens kamera for at åbne appen. Vis den til en holdkammerat, eller scan den fra en computerskærm.</p>
+        <span class="url">app.hoebk.dk</span>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+  var APP='https://app.hoebk.dk/';
+  try{ new QRCode(document.getElementById('qr'),{text:APP,width:264,height:264,colorDark:'#0E2236',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M}); }catch(e){}
+  // faner
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function show(id){ tabs.forEach(function(t){ var on=t.id===id; t.setAttribute('aria-selected',on); t.tabIndex=on?0:-1; document.getElementById(t.getAttribute('aria-controls')).hidden=!on; }); }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){ show(t.id); });
+    t.addEventListener('keydown',function(e){ var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d)return; var n=tabs[(i+d+tabs.length)%tabs.length]; show(n.id); n.focus(); });
+  });
+  var ua=navigator.userAgent||'';
+  show(/Android/i.test(ua)?'tab-and':/iPhone|iPad|iPod/i.test(ua)?'tab-ios':/Mobi/i.test(ua)?'tab-ios':'tab-ios');
+})();
+</script>
+
+</body>
+</html>

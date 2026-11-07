@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E2236">
+<title>HØBK-appen · Guide</title>
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: appens egen navy topbjælke → fanebjælke som indholdsfortegnelse → én sektion pr. fane med et træ af skærme → roller og farver til sidst */
+:root{
+  --navy:#0E2236; --bg:#F6F6F1; --card:#FFFFFF; --ink:#0E2236; --muted:#4F5C69; --line:#E2E5DC; --soft:#EEF0E8;
+  --lime:#D4F25A; --senior:#2F6FB3; --four:#7CC6F0; --motion:#E58A2E; --plan:#C2255C; --akt:#7A4FC9; --tour:#1E6B3A; --parent:#5E7D12;
+  --on-navy:#FFFFFF; --navy-sub:#C3CED9;
+  --display:'Archivo',system-ui,sans-serif; --body:'Inter',system-ui,-apple-system,sans-serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#0B1724; --card:#13212F; --ink:#E9EEF2; --muted:#A3B0BC; --line:#24384A; --soft:#1A2C3D; --navy:#08121C; --parent:#9DBA4E; color-scheme:dark }}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;padding-bottom:env(safe-area-inset-bottom,0px)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header.top{background:var(--navy);color:var(--on-navy);padding-top:env(safe-area-inset-top,0px)}
+header.top .wrap{padding-block:28px 22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.logo{width:52px;height:52px;border-radius:12px;flex:0 0 auto}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(26px,5vw,38px);line-height:1.05;margin:0;text-wrap:balance}
+.sub{color:var(--navy-sub);margin:4px 0 0;max-width:60ch}
+.cta{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;min-height:42px;padding:0 16px;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;border:1.5px solid var(--lime);color:#0E2236;background:var(--lime)}
+.btn.ghost{background:transparent;color:var(--on-navy);border-color:rgba(255,255,255,.35)}
+nav.tabs{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.tabs a{flex:0 0 auto;text-decoration:none;font-weight:700;font-size:13px;color:var(--muted);padding:8px 12px;border-radius:999px}
+nav.tabs a:hover,nav.tabs a:focus-visible{background:var(--soft);color:var(--ink);outline:none}
+main .wrap{padding-block:24px 48px;display:flex;flex-direction:column;gap:36px}
+section{scroll-margin-top:64px;display:flex;flex-direction:column;gap:14px}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0;line-height:1.15;text-wrap:balance}
+h3{font-family:var(--display);font-weight:700;font-size:16px;margin:0}
+p{margin:0;max-width:68ch}
+.lead{color:var(--muted)}
+.bar{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;gap:12px;align-items:flex-start}
+.ico{flex:0 0 32px;height:32px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:700}
+.chip b{display:block;font-size:14px}
+.chip span{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.tab{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.tabhead{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.tabhead h3{font-size:20px;font-weight:800}
+.tag{font-size:11px;font-weight:700;border-radius:999px;padding:2px 8px;background:var(--soft);color:var(--muted)}
+.tree{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.tree ul{list-style:none;margin:6px 0 0 6px;padding:0 0 0 14px;border-left:2px solid var(--line);display:flex;flex-direction:column;gap:5px}
+.tree li{min-width:0}
+.tree .x{color:var(--muted);font-size:13px}
+.who{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.03em;border-radius:6px;padding:1px 6px;margin-left:4px;vertical-align:1px}
+.w-login{background:var(--soft);color:var(--muted)}
+.w-par{background:color-mix(in srgb,var(--parent) 18%,transparent);color:var(--parent)}
+.w-lead{background:color-mix(in srgb,var(--motion) 20%,transparent);color:#A85A12}
+@media (prefers-color-scheme: dark){.w-lead{color:#F2AE6B}}
+.mtabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.mt{border-radius:14px;border:1px solid var(--line);background:var(--card);padding:14px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.mt h3{display:flex;align-items:center;gap:8px}
+.pill{font-family:var(--body);font-size:12px;font-weight:700;border-radius:999px;padding:3px 10px;background:var(--navy);color:#fff}
+.pill.par{background:var(--parent)}
+.mt ul{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:3px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:13.5px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{font-size:12px;font-weight:700;color:var(--muted);background:var(--soft)}
+td:first-child{font-weight:600;white-space:nowrap}
+.y{color:var(--tour);font-weight:700}
+.n{color:var(--muted)}
+@media (prefers-color-scheme: dark){.y{color:#6FCF8E}}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14px}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.dot{width:12px;height:12px;border-radius:50%;flex:0 0 auto}
+.dash{width:12px;height:12px;border-radius:50%;border:2px dashed var(--muted)}
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:6px}
+.how ol{margin:0;padding-left:18px;font-size:14px;display:flex;flex-direction:column;gap:3px}
+.path{font-size:13px;font-weight:600;color:var(--muted)}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+footer .wrap{padding-block:18px 28px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img class="logo" src="icon-180.png" alt="">
+  <div style="min-width:0;flex:1 1 320px">
+    <h1>HØBK-appen</h1>
+    <p class="sub">Hørsholm Badminton Klubs app: holdkampe, kalender, træning, chat, aktiviteter og samkørsel. Her kan du se, hvad der ligger hvor, og hvem der kan hvad.</p>
+  </div>
+  <div class="cta">
+    <a class="btn" href="./">Åbn appen</a>
+    <a class="btn ghost" href="kom-i-gang.html">Læg appen på hjemmeskærmen</a>
+  </div>
+</div></header>
+
+<nav class="tabs" aria-label="Indhold"><div class="wrap">
+  <a href="#topbjaelke">Topbjælken</a><a href="#nyt">Nyt</a><a href="#hold">Hold</a><a href="#kalender">Kalender</a><a href="#minside">Min side</a><a href="#spillere">Spillere</a><a href="#sider">Sider</a><a href="#roller">Hvem kan hvad</a><a href="#farver">Farver</a><a href="#saadan">Sådan gør du</a>
+</div></nav>
+
+<main><div class="wrap">
+
+<section id="topbjaelke">
+  <span class="eyebrow">Øverst på alle skærme</span>
+  <h2>Topbjælken</h2>
+  <div class="bar">
+    <div class="chip"><span class="ico">☆</span><div><b>Gør til min forside</b><span>Tryk på stjernen, og appen åbner på den skærm næste gang. Tryk igen for at gå tilbage til Nyt.</span></div></div>
+    <div class="chip"><span class="ico">⛨</span><div><b>Skjoldet</b><span>Kun for holdledere og administratorer. Går direkte til Holdleder- eller Admin-fanen.</span></div></div>
+    <div class="chip"><span class="ico">?</span><div><b>Hjælp og feedback</b><span>Denne guide, en kode til at logge ind på en anden enhed, og en formular til at skrive til klubbens administratorer.</span></div></div>
+    <div class="chip"><span class="ico">↻</span><div><b>Opdatér</b><span>Henter de nyeste kampe, svar og beskeder. Appen opdaterer også sig selv, når der er en ny version.</span></div></div>
+  </div>
+  <p class="lead">Nederst er der seks faner: Nyt · Hold · Kalender · Min side · Spillere · Sider.</p>
+</section>
+
+<section id="nyt">
+  <span class="eyebrow">Fane 1 · startsiden</span>
+  <div class="grid">
+    <article class="tab">
+      <div class="tabhead"><h3>Nyt</h3><span class="tag">åbner her</span></div>
+      <ul class="tree">
+        <li><b>Registrer dig</b> <span class="x">for at se dine hold og træninger (når du ikke er logget ind)</span></li>
+        <li><b>Vi søger hjælp til …</b> <span class="x">aktiviteter der mangler hjælpere, med status</span></li>
+        <li><b>Nyheder fra klubben</b>
+          <ul><li>Nyhed <span class="x">· administratorer skriver til alle, hold eller træningsgrupper</span></li></ul></li>
+        <li><b>Det sker de næste 14 dage</b> <span class="x">kampe og aktiviteter → Kalender</span></li>
+        <li><b>Seneste resultater</b> <span class="x">de sidste 30 dage</span></li>
+      </ul>
+    </article>
+    <article class="tab" id="hold">
+      <div class="tabhead"><h3>Hold</h3><span class="tag">fane 2</span></div>
+      <ul class="tree">
+        <li><b>Alle Hørsholm-hold</b> <span class="x">seneste resultat eller næste kamp</span>
+          <ul>
+            <li><b>Holdet</b> <span class="x">☆ Følg holdet · Holdets chat</span>
+              <ul>
+                <li><b>Kampe</b> <span class="x">programmet</span></li>
+                <li><b>Stilling</b> <span class="x">tabellen i rækken</span></li>
+                <li><b>Spillere</b> <span class="x">udtagne og hvem der har spillet · vis spilleberettigede</span></li>
+              </ul></li>
+            <li><b>Kommende kamp</b>
+              <ul>
+                <li>Tid, sted, køretid · Rutevejledning</li>
+                <li><b>Kan du spille?</b> Kan spille / Måske / Kan ikke <span class="who w-login">holdet og udtagne</span> <span class="who w-par">forældre for børn</span></li>
+                <li><b>Samkørsel</b> Jeg kører · Mangler lift · Kører selv</li>
+                <li><b>Udtaget hold</b> og opstilling <span class="who w-lead">holdleder</span></li>
+              </ul></li>
+            <li><b>Spillet kamp</b> <span class="x">resultat, hver kamp med spillere og sæt</span></li>
+          </ul></li>
+      </ul>
+    </article>
+    <article class="tab" id="kalender">
+      <div class="tabhead"><h3>Kalender</h3><span class="tag">fane 3</span></div>
+      <ul class="tree">
+        <li><b>Visninger</b> Liste · Uge · Måned · År <span class="x">med ‹ I dag ›</span>
+          <ul>
+            <li>Måned: prikker pr. dag og en liste over månedens begivenheder nedenunder</li>
+            <li>År: sæsonens måneder og en liste uden træning</li>
+          </ul></li>
+        <li><b>Filter</b> <span class="x">starter på Alt</span>
+          <ul>
+            <li>Mit / Alt</li>
+            <li>Holdkampe · Træning · Appens aktiviteter · Fra hoebk.dk · Turneringer</li>
+            <li>Hold · Træningsgruppe · Turneringsniveau</li>
+          </ul></li>
+        <li><b>Farveforklaring</b> <span class="x">se <a href="#farver">Farver</a></span></li>
+        <li><b>Aktiviteter</b> <span class="x">alle kommende i datoorden</span>
+          <ul><li>Aktivitet: opgaver, <b>Tag opgaven</b>, hvem der hjælper, link til tilmelding og betaling</li><li>Oversigt over opgaver: Alle / Mangler folk / Mine</li></ul></li>
+        <li><b>Turneringer</b> <span class="x">hele landet efter niveau</span>
+          <ul><li>Turnering: frist, rækker, ☆ Følg, <b>Samkørsel</b>, Hørsholm-spillere på niveauet</li></ul></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="minside">
+  <span class="eyebrow">Fane 4 · kræver login</span>
+  <h2>Min side</h2>
+  <p class="lead">Log ind med en kode på e-mail, eller med en kode fra en anden enhed, hvor du allerede er logget ind. Øverst er der en fane for hver rolle, du har. Du ser kun de faner, der passer til dig.</p>
+  <div class="mtabs">
+    <div class="mt"><h3><span class="pill">Program</span></h3><ul>
+      <li>Din næste måned: hold og turneringer du følger, kampe du er udtaget til, dine børns hold, din træning og aktiviteter for dig</li>
+      <li>Svar direkte på kampe og træning</li>
+      <li>Børnenes træning vises uden svar (ikke obligatorisk)</li>
+      <li>Forældre: <b>Vælg træning du vil følge</b></li></ul></div>
+    <div class="mt"><h3><span class="pill">Chat</span></h3><ul>
+      <li>Holdchat og træningsgruppernes chat</li>
+      <li>Modtager nyt / Lydløs pr. chat</li>
+      <li>Ungdomsspillere kan læse med. Forældre, holdledere og seniorspillere kan skrive</li></ul></div>
+    <div class="mt"><h3><span class="pill">Spiller</span></h3><ul>
+      <li>Dit spillerkort og din spillerside</li>
+      <li>Mine træningshold · Hold jeg følger</li>
+      <li>Turneringer for dit niveau</li>
+      <li>Er du også forælder? · Spiller du ikke i Hørsholm?</li>
+      <li>Notifikationer · Klubshop · Log ind på en anden enhed · Log ud</li></ul></div>
+    <div class="mt"><h3><span class="pill par">Forælder</span></h3><ul>
+      <li>Dine børn: næste kamp, om de er udtaget</li>
+      <li>+ Tilføj barn · børnenes holdchat</li>
+      <li>Dit navn (kan rettes) · Træning jeg følger</li>
+      <li>Svar <i>Kan spille</i> og meld samkørsel for dine børn</li></ul></div>
+    <div class="mt"><h3><span class="pill" style="background:var(--motion)">Holdleder</span></h3><ul>
+      <li>Næste kamp pr. hold med svar</li>
+      <li><b>Udtag spillere</b> → <b>Opstilling</b> med regeltjek</li>
+      <li>Holdlister: hvem er på dit hold og din træningsgruppe</li>
+      <li>Eksport til badmintonplayer.dk</li></ul></div>
+    <div class="mt"><h3><span class="pill" style="background:var(--plan)">Admin</span></h3><ul>
+      <li>Skriv en nyhed · Alle nyheder</li>
+      <li>Ny aktivitet · Alle aktiviteter · Oversigt over opgaver</li>
+      <li>Admin-chat til idéer og ønsker</li>
+      <li>Feedback fra brugerne: svar eller send videre til admin-chatten</li>
+      <li>Administratorer og holdledere · Registrerede brugere</li></ul></div>
+  </div>
+</section>
+
+<section id="spillere">
+  <span class="eyebrow">Fane 5 og 6</span>
+  <div class="grid">
+    <article class="tab">
+      <div class="tabhead"><h3>Spillere</h3><span class="tag">fane 5</span></div>
+      <ul class="tree">
+        <li><b>Klubrangliste</b> <span class="x">Alle / Senior / Ungdom · vundne kampe i %, så sæt i %, så bolde i %, så flest kampe</span></li>
+        <li><b>Registrér dig som forælder</b></li>
+        <li><b>Søg spiller</b> <span class="x">Alle / Har spillet / Har rangering / Uden rangering</span>
+          <ul><li><b>Spillerprofil</b>: statistik, ranglister (single, double, mix), resultater, alle kampe i sæsonen, turneringer for niveauet</li></ul></li>
+      </ul>
+    </article>
+    <article class="tab" id="sider">
+      <div class="tabhead"><h3>Sider</h3><span class="tag">fane 6</span></div>
+      <ul class="tree">
+        <li><b>Klubbens sider fra hoebk.dk</b> <span class="x">søgbar liste</span>
+          <ul><li>Siden vist i appen, med link til hoebk.dk</li></ul></li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="roller">
+  <span class="eyebrow">Roller</span>
+  <h2>Hvem kan hvad</h2>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>Ikke logget ind</th><th>Spiller (senior)</th><th>Ungdomsspiller</th><th>Forælder</th><th>Holdleder</th><th>Administrator</th></tr></thead>
+    <tbody>
+      <tr><td>Se kampe, kalender, spillere, nyheder til alle</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td></tr>
+      <tr><td>Svare <i>Kan spille</i></td><td class="n">–</td><td class="y">egne hold / udtaget</td><td class="y">egne hold / udtaget</td><td class="y">for sine børn</td><td class="y">hvis på holdet</td><td class="y">hvis på holdet</td></tr>
+      <tr><td>Skrive i chatten</td><td class="n">–</td><td class="y">ja</td><td class="n">kun læse</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td></tr>
+      <tr><td>Samkørsel, seniorkampe</td><td class="n">–</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td></tr>
+      <tr><td>Samkørsel, ungdomskampe</td><td class="n">–</td><td class="y">tilbyde lift</td><td class="n">kun se</td><td class="y">for børn + køre</td><td class="y">tilbyde lift</td><td class="y">tilbyde lift</td></tr>
+      <tr><td>Tage opgaver i aktiviteter</td><td class="n">–</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td></tr>
+      <tr><td>Sende feedback til administratorerne</td><td class="n">–</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td><td class="y">ja</td></tr>
+      <tr><td>Udtage spillere og lave opstilling</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">egne hold</td><td class="y">alle hold</td></tr>
+      <tr><td>Nyheder, aktiviteter, roller, brugere, feedback</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">ja</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="farver">
+  <span class="eyebrow">Farver i kalenderen og på holdene</span>
+  <h2>Farver</h2>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--senior)"></i>Senior</span>
+    <span><i class="dot" style="background:var(--four)"></i>4 spillere</span>
+    <span><i class="dot" style="background:var(--motion)"></i>Motion</span>
+    <span><i class="dot" style="background:var(--lime)"></i>Ungdom</span>
+    <span><i class="dash"></i>Træning</span>
+    <span><i class="dot" style="background:var(--plan)"></i>◆ Appens aktiviteter</span>
+    <span><i class="dot" style="background:var(--akt)"></i>Fra hoebk.dk</span>
+    <span><i class="dot" style="background:var(--tour)"></i>Turneringer</span>
+    <span><i class="dot" style="background:var(--parent)"></i>Forældre</span>
+  </div>
+  <p class="lead">Appens aktiviteter får farven fra dem, de er for, fx gul for Ungdom. Er de for hele klubben, er de hindbærrøde. ◆ viser, at det er en aktivitet fra appen og ikke en kamp.</p>
+</section>
+
+<section id="saadan">
+  <span class="eyebrow">Kom i gang</span>
+  <h2>Sådan gør du</h2>
+  <div class="how">
+    <div><h3>Få appen på telefonen</h3><span class="path"><a href="kom-i-gang.html">Trin-for-trin guide med billeder</a></span><ol><li>Åbn app.hoebk.dk i Safari eller Chrome</li><li>iPhone: ••• eller Del → <b>Føj til hjemmeskærm</b>. Android: ⋮ → <b>Installer app</b></li><li>Slå notifikationer til under Min side</li></ol></div>
+    <div><h3>Log ind som spiller</h3><span class="path">Min side</span><ol><li>Vælg dit navn på listen</li><li>Skriv din e-mail</li><li>Skriv den 6-cifrede kode fra mailen</li></ol></div>
+    <div><h3>Log ind som forælder</h3><span class="path">Min side → Registrér dig som forælder</span><ol><li>Skriv dit eget navn</li><li>Vælg dit barn eller dine børn</li><li>Log ind med koden fra mailen</li></ol></div>
+    <div><h3>Log ind på en anden enhed</h3><span class="path">? øverst → Log ind på en anden enhed</span><ol><li>Tryk <b>Lav kode</b> på den enhed, hvor du er logget ind</li><li>På den nye: Min side → <b>Logget ind på en anden enhed?</b> og skriv koden</li><li>Koden virker én gang i 10 minutter</li></ol></div>
+    <div><h3>Svar på en kamp</h3><span class="path">Min side → Program, eller Hold → kampen</span><ol><li>Tryk Kan spille, Måske eller Kan ikke</li><li>Tryk igen for at fjerne svaret</li></ol></div>
+    <div><h3>Samkørsel</h3><span class="path">Hold → kampen, eller Kalender → turneringen</span><ol><li><b>Jeg kører</b>: antal pladser, opsamling og afgang</li><li><b>Mangler lift</b>: tryk <b>+ Kør med</b> i en bil med plads</li><li>Chaufføren får besked. <b>Jeg kører ikke alligevel</b> frigiver bilen</li></ol></div>
+    <div><h3>Følg et hold eller en turnering</h3><ol><li>Tryk ☆ Følg på holdets eller turneringens side</li><li>Kampene kommer i dit program, og du får besked før dem</li></ol></div>
+    <div><h3>Hjælp til en aktivitet</h3><span class="path">Nyt → Vi søger hjælp, eller Kalender → Aktiviteter</span><ol><li>Åbn aktiviteten</li><li>Tryk <b>Tag opgaven</b></li></ol></div>
+    <div><h3>Skriv til klubben</h3><span class="path">? øverst → Skriv til administratorerne</span><ol><li>Vælg Idé, Fejl, Spørgsmål eller Andet</li><li>Skriv og tryk Send</li><li>Svaret kommer i appen under ?</li></ol></div>
+  </div>
+</section>
+
+</div></main>
+<footer><div class="wrap">Data om hold, kampe og spillere kommer fra badmintonplayer.dk og opdateres automatisk. E-mails og chatbeskeder bliver hos klubben og vises aldrig offentligt. Guiden er opdateret 7. november 2026.</div></footer>
+</body>
+</html>

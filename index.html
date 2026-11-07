@@ -2462,7 +2462,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       h += '<span class="lbl">Personer</span>' +
         card('#/holdliste', 'Holdlister', 'Hvem er på hvert hold og i hver træningsgruppe', 'var(--accent)') +
         card('#/brugere', 'Registrerede brugere', 'Alle der har logget ind — søg, se roller, børn og sidst aktiv', 'var(--ink)') +
-        '<a class="card row" style="min-height:56px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="https://claude.ai/artifact/EpD317eMUbCD5uFZwNUPwu" target="_blank" rel="noopener"><span class="col"><b style="font-size:15px">Oversigt over appen</b><span class="xs">Alle skærme, roller, farver og vejledning — kan deles med udvalgte</span></span><span class="h" style="font-size:20px">↗</span></a>' +
+        '<a class="card row" style="min-height:56px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="guide.html"><span class="col"><b style="font-size:15px">Oversigt over appen</b><span class="xs">Alle skærme, roller, farver og vejledning — kan deles med udvalgte</span></span><span class="h" style="font-size:20px">↗</span></a>' +
         card('#/ledere', 'Administratorer og holdledere', (ME.role.owner ? 'Udnævn administratorer og holdledere' : 'Udnævn holdledere') + ' · brugerstatistik', 'var(--ink)');
     }
     h += '<p class="note">' + (ME.role.super ? 'Du er hovedadministrator.' : ME.role.owner ? 'Du er fast administrator.' : 'Du er administrator.') + ' Udtagelse til holdkampe ligger under fanen Holdleder.</p>';
@@ -3835,7 +3835,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   }
 
   // ---------- Hjælp og feedback (spørgsmålstegnet øverst) ----------
-  var GUIDE_URL = 'https://claude.ai/artifact/EpD317eMUbCD5uFZwNUPwu';   // "Oversigt over appen" — skal være delt med "alle med linket"
+  var GUIDE_URL = 'guide.html', INSTALL_URL = 'kom-i-gang.html';   // ligger i repoet ved siden af appen
   var FB = { type: 'idé', text: '', mine: null, all: null, f: 'aabne', from: '', busy: false, loadingMine: false, loadingAll: false, reply: {}, open: {} };
   var FB_TYPES = [['idé', '💡 Idé'], ['fejl', '🐞 Fejl'], ['spørgsmål', '❓ Spørgsmål'], ['andet', 'Andet']];
   var FB_ST = { ny: ['Ny', '#FFE3C2', 'var(--ink)'], besvaret: ['Besvaret', 'var(--accent)', 'var(--ink)'], lukket: ['Lukket', 'var(--soft)', 'var(--muted)'] };
@@ -3870,8 +3870,10 @@ textarea.inp{resize:vertical;line-height:1.45}
     setHeader('Hjælp og feedback', 'Guide til appen · skriv til klubbens administratorer', true);
     var logged = ME && ME.token;
     if (logged) loadFbMine(false);
-    var h = '<a class="card row" style="min-height:64px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="' + GUIDE_URL + '" target="_blank" rel="noopener">' +
-      '<span class="col"><b style="font-size:15px">📖 Guide til appen</b><span class="xs">Alle skærme forklaret — hvad du kan som spiller, forælder, holdleder og administrator</span></span><span class="h" style="font-size:20px">↗</span></a>';
+    var h = '<a class="card row" style="min-height:64px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="' + GUIDE_URL + '">' +
+      '<span class="col"><b style="font-size:15px">📖 Guide til appen</b><span class="xs">Alle skærme forklaret — hvad du kan som spiller, forælder, holdleder og administrator</span></span><span class="h" style="font-size:20px">›</span></a>' +
+      '<a class="card row" style="min-height:56px;border-left:5px solid var(--accent);text-decoration:none;color:inherit" href="' + INSTALL_URL + '">' +
+      '<span class="col"><b style="font-size:14px">📱 Læg appen på hjemmeskærmen</b><span class="xs">Trin for trin til iPhone, Android og computer</span></span><span class="h" style="font-size:20px">›</span></a>';
     if (logged) h += deviceCard();
     h += '<span class="lbl">Skriv til administratorerne</span>';
     if (!logged) return h + '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px"><span style="font-size:14px">Log ind på Min side for at sende feedback — så kan vi svare dig direkte i appen.</span>' +
