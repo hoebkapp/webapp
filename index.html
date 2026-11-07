@@ -241,6 +241,11 @@ nav.tabs a[aria-current=page]{color:var(--ink)}
 .slot{display:grid;grid-template-columns:52px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border-top:1px solid var(--line2)}
 .slot:first-child{border-top:0}
 .slot select{width:100%;min-height:40px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit;font-size:14px;padding:0 8px;color:var(--ink)}
+.moved{background:var(--accent);color:var(--ink)}
+.moved .mv-in{max-width:760px;margin:0 auto;padding:10px 14px;display:flex;gap:10px;align-items:flex-start}
+.moved .mv-t{display:flex;flex-direction:column;gap:3px;font-size:13px;line-height:1.4;min-width:0;flex:1}
+.moved .mv-t b{font-size:14px}.moved .mv-how{font-size:12px}
+.moved .mv-x{flex:0 0 auto;width:36px;height:36px;border:0;border-radius:999px;background:rgba(14,34,54,.1);color:var(--ink);font-size:16px}
 .warn{font-size:12px;color:#8A4B00;background:#FFF2E2;border-radius:10px;padding:8px 10px}
 /* Chat + nyheder */
 nav.tabs a{position:relative}
@@ -361,6 +366,11 @@ textarea.inp{resize:vertical;line-height:1.45}
 <button class="helpbtn" id="helpBtn" aria-label="Hjælp og feedback"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.3a2.6 2.6 0 0 1 5 .9c0 1.7-2.5 2.3-2.5 3.8"/><path d="M12 17.2h.01"/></svg></button>
 <button class="refresh" id="refresh" aria-label="Opdater data"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg></button>
 </header>
+<div class="moved" id="moved" role="region" aria-label="Ny adresse" hidden>
+<div class="mv-in"><div class="mv-t"><b>Appen har fået ny adresse: app.hoebk.dk</b>
+<span>Læg den på hjemmeskærmen igen og slå notifikationer til på Min side. Det gamle ikon kan du slette.</span>
+<span class="mv-how"><b>iPhone:</b> ••• eller Del → Føj til hjemmeskærm. <b>Android:</b> ⋮ → Installer app / Føj til startskærm.</span></div>
+<button class="mv-x" id="movedX" aria-label="Luk beskeden">✕</button></div></div>
 <main id="main"><div class="loading">Henter holdkampe …</div></main>
 <nav class="tabs" aria-label="Faner"><div class="in">
 <a href="#/nyt" data-tab="nyt"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v10a2 2 0 0 1-2 2"/><path d="M8 9h5M8 13h5M8 17h3"/></svg>Nyt</a>
@@ -373,6 +383,26 @@ textarea.inp{resize:vertical;line-height:1.45}
 </div>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
+<script>
+// Flytning fra den gamle adresse: den gamle side sender login og indstillinger med i #/flyt/<data>
+(function () {
+  var h = location.hash || '';
+  if (h.indexOf('#/flyt/') !== 0) return;
+  var go = '#/nyt';
+  try {
+    var d = JSON.parse(decodeURIComponent(h.slice(7)));
+    var hasMe = !!localStorage.getItem('hoebk_me');
+    Object.keys(d.k || {}).forEach(function (k) {
+      if (!/^hoebk_[a-z]+$/.test(k) || typeof d.k[k] !== 'string') return;
+      if (localStorage.getItem(k) !== null && (k === 'hoebk_me' || hasMe)) return;   // overskriv aldrig et login her
+      localStorage.setItem(k, d.k[k]);
+    });
+    if (typeof d.r === 'string' && /^#\/[\w\/%.:\-~]*$/.test(d.r) && d.r.indexOf('#/flyt') !== 0) go = d.r;
+    localStorage.setItem('hoebk_moved', '1');
+  } catch (e) {}
+  history.replaceState(null, '', location.pathname + location.search + go);
+})();
+</script>
 <script>
 (function () {
   'use strict';
@@ -454,6 +484,13 @@ textarea.inp{resize:vertical;line-height:1.45}
   var D = null;            // { teams, players: {id: p}, ids, clubRank: {id: n}, updated }
   var UI = { metric: 'won', filter: 'alle', q: '', seg: 'kampe' };
   var $main = document.getElementById('main');
+  (function () {   // banner for dem, der kommer fra den gamle adresse (vises til de lukker den)
+    var m = document.getElementById('moved'), on = false;
+    try { on = localStorage.getItem('hoebk_moved') === '1'; } catch (e) {}
+    if (!m || !on) return;
+    m.hidden = false;
+    document.getElementById('movedX').addEventListener('click', function () { m.hidden = true; try { localStorage.setItem('hoebk_moved', '0'); } catch (e) {} });
+  })();
 
   var FORCE = 0;   // sættes af opdater-knappen, så alt hentes helt friskt
   function bustParam(ms) { return '?t=' + (FORCE || Math.floor(Date.now() / ms)); }
