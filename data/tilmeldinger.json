@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-06T21:16:42+00:00",
+ "updated": "2026-11-07T15:45:16+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -147,6 +147,41 @@
    "n": "Steffen Bille Rannes",
    "s": "ja",
    "ts": "2026-11-02T11:13:29.172Z"
+  },
+  {
+   "e": "t:2026-11-10:Senior",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-07T08:47:41.768Z"
+  },
+  {
+   "e": "t:2026-11-12:Senior",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-07T08:47:42.545Z"
+  },
+  {
+   "e": "t:2026-11-15:Veteran",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-07T08:55:08.322Z"
+  },
+  {
+   "e": "t:2026-11-22:Veteran",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-07T08:55:18.783Z"
+  },
+  {
+   "e": "t:2026-12-06:Veteran",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-07T09:05:25.140Z"
   }
  ],
  "lineups": [
@@ -241,6 +276,143 @@
    ],
    "note": "",
    "by": "Anders Vedsted Nørrelund"
+  },
+  {
+   "e": "m:509692",
+   "team": "Serie 2",
+   "status": "udkast",
+   "t": 1794042188341,
+   "squad": [
+    {
+     "id": "9877",
+     "name": "Thomas Steffensen"
+    },
+    {
+     "id": "11745",
+     "name": "Steffen Bille Rannes"
+    },
+    {
+     "id": "12992",
+     "name": "Henriette Stang Hellen"
+    },
+    {
+     "id": "13721",
+     "name": "Marie Madsen"
+    },
+    {
+     "id": "46015",
+     "name": "Line Lindquist"
+    },
+    {
+     "id": "92804",
+     "name": "Jack Søgaard"
+    },
+    {
+     "id": "156777",
+     "name": "Jonas Aarup Iversen"
+    },
+    {
+     "id": "237819",
+     "name": "Gitte Kruse"
+    },
+    {
+     "id": "275709",
+     "name": "Sebastian Søbjerg Lynfort"
+    },
+    {
+     "id": "338789",
+     "name": "Charles Jordahn Brandt"
+    }
+   ],
+   "games": [
+    {
+     "k": "1. MD",
+     "p": [
+      "338789",
+      "13721"
+     ]
+    },
+    {
+     "k": "2. MD",
+     "p": [
+      "11745",
+      "237819"
+     ]
+    },
+    {
+     "k": "1. DS",
+     "p": [
+      "12992"
+     ]
+    },
+    {
+     "k": "2. DS",
+     "p": [
+      "46015"
+     ]
+    },
+    {
+     "k": "1. HS",
+     "p": [
+      "275709"
+     ]
+    },
+    {
+     "k": "2. HS",
+     "p": [
+      "156777"
+     ]
+    },
+    {
+     "k": "3. HS",
+     "p": [
+      "9877"
+     ]
+    },
+    {
+     "k": "4. HS",
+     "p": [
+      "92804"
+     ]
+    },
+    {
+     "k": "1. DD",
+     "p": [
+      "12992",
+      "13721"
+     ]
+    },
+    {
+     "k": "2. DD",
+     "p": [
+      "237819",
+      "46015"
+     ]
+    },
+    {
+     "k": "1. HD",
+     "p": [
+      "338789",
+      "275709"
+     ]
+    },
+    {
+     "k": "2. HD",
+     "p": [
+      "156777",
+      "9877"
+     ]
+    },
+    {
+     "k": "3. HD",
+     "p": [
+      "92804",
+      "11745"
+     ]
+    }
+   ],
+   "note": "",
+   "by": "Steffen Bille Rannes"
   }
  ],
  "scriptHasLineups": true
