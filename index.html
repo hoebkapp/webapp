@@ -680,8 +680,8 @@ textarea.inp{resize:vertical;line-height:1.45}
           }
           return mineBlock + (kk.length ? '<span class="lbl">Kan ' + esc(kk.map(function (k) { return k.name.split(' ')[0]; }).join(' / ')) + ' spille?</span>' + kidRegBlocks('match', eid, lab, true, t.label, false) : '');
         })() +
-        rideSection(matchEid(m), t.label + ' ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' · ' + dTxt(m.date), m.matchID ? '#/holdid/' + t.leagueGroupTeamID + '/kamp/' + m.matchID : '', kidsOnTeam(t.label),
-          { youth: /^U\d/.test(t.label), team: t.leagueGroupTeamID, label: t.label }) +
+        (atHomeHall(m.venue) ? '' : rideSection(matchEid(m), t.label + ' ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' · ' + dTxt(m.date), m.matchID ? '#/holdid/' + t.leagueGroupTeamID + '/kamp/' + m.matchID : '', kidsOnTeam(t.label),
+          { youth: /^U\d/.test(t.label), team: t.leagueGroupTeamID, label: t.label })) +
         lineupSection(ti, mi);
     }
     var pts = m.points ? (m.isHome ? m.points : flipScore(m.points)) : '';
@@ -999,7 +999,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<span class="xs">' + (isFollowed(t.id) ? 'Du får en mail når der er nyt: ændret frist eller dato, nye rækker, deltagerliste, program og resultater — og 7 og 2 dage før tilmeldingsfristen. Tryk igen for at stoppe.'
         : 'Følg for at få en mail ved ændringer, når program og deltagerliste er klar, og før tilmeldingsfristen.' + (ME && ME.token ? '' : ' Kræver login på Min side.')) + '</span>' +
       '<span class="xs">Arrangør: ' + esc(t.organiser) + '. Placering og køretid er beregnet ud fra arrangørens navn — tjek spillestedet i arrangørens indbydelse.</span></div>';
-    if ((t.end || t.start || '') >= today) h += rideSection('t:' + t.id, t.organiser + ' · ' + dRange(t), '#/turnering/' + encodeURIComponent(t.id), (ME && ME.kids) || [],
+    if ((t.end || t.start || '') >= today && !atHomeHall(t.organiser + ' ' + ((t.place && t.place.name) || ''))) h += rideSection('t:' + t.id, t.organiser + ' · ' + dRange(t), '#/turnering/' + encodeURIComponent(t.id), (ME && ME.kids) || [],
       { youth: t.classes.length > 0 && t.classes.every(function (c) { return /^U\d/.test(c.raw); }) });
     var news = (D.tourNews || {})[t.id] || [];
     if (news.length) h += '<span class="lbl">Nyt</span><div class="card" style="overflow:hidden">' + news.map(function (n, i) {
@@ -3335,6 +3335,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     var P = D.players[ME.id];
     return !!(P && P.teams.length && P.teams.every(function (l) { return /^U\d/.test(l); }));
   }
+  function atHomeHall(v) { return /hørsholm/i.test(v || ''); }   // ingen samkørsel til kampe og turneringer i Hørsholm
   function rideSection(ev, title, link, kids, opt) {
     opt = opt || {};
     if (!REG.url || RIDE.off) return '';

@@ -92,7 +92,7 @@ Stored in the sheet tabs **Aktiviteter** (tasks as JSON in the last column) and 
 
 ## Car pool (samkørsel)
 
-Every upcoming team match (*Hold → kamp*) and every tournament that hasn't ended (*Kalender → turnering*) has a **Samkørsel** section for logged-in users (logged out: *Log ind for at køre med eller tilbyde et lift*). Each person chooses one of:
+Every upcoming team match (*Hold → kamp*) and every tournament that hasn't ended (*Kalender → turnering*) — except those in Hørsholm (venue or organiser contains "Hørsholm", `atHomeHall()`) — has a **Samkørsel** section for logged-in users (logged out: *Log ind for at køre med eller tilbyde et lift*). Each person chooses one of:
 
 - **Jeg kører**: number of free seats (1–8, not counting yourself and your own children), pick-up (**Henter alle på vejen** or **Mødested** + text) and an optional departure time. Pressing *Jeg kører* again opens the form to change it; *Træk tilbud tilbage* withdraws.
 - **Jeg mangler et lift**: you can then press **+ Kør med** on any car with free seats, until it is *Fuld*. You can optionally write where you can be picked up (shown next to your name when the driver picks everyone up on the way). *Jeg kører ikke med alligevel* frees the seat, and *Skift til denne bil* moves you.
