@@ -187,7 +187,7 @@ nav.tabs a[aria-current=page]{color:var(--ink)}
 
 /* ---- Tilmelding ---- */
 .reg{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.rb{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;font-weight:700;font-size:13px}
+.rb{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);font-weight:700;font-size:13px;-webkit-appearance:none;appearance:none}
 .rb[aria-pressed=true].ja{background:var(--accent);border-color:var(--accent)}
 .rb[aria-pressed=true].nej{background:var(--loss);border-color:#E3B4AD}
 .rb[aria-pressed=true].maaske{background:#FFE3C2;border-color:#F3C58F}
@@ -1908,7 +1908,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       return (UI.devOpen ? '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Kode fra en anden enhed</b>' +
           '<span class="xs">Lav koden på den enhed, hvor du allerede er logget ind: tryk på <b>?</b> øverst → <b>Log ind på en anden enhed</b> → <b>Lav kode</b>. Koden gælder 10 minutter.</span>' +
           '<div class="card search"><input id="devin" type="text" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" maxlength="9" placeholder="ABCD-1234" aria-label="Kode fra en anden enhed" style="font-size:19px;letter-spacing:.1em;text-transform:uppercase;min-width:0">' +
-          '<button class="rb ja" id="devok" aria-pressed="true" style="min-height:36px;white-space:nowrap;flex:0 0 auto">Log ind</button></div></div>'
+          '</div><button class="rb go" id="devok">Log ind</button></div>'
           : '<button class="card row" style="min-height:60px;border-left:5px solid var(--ink)" data-act="devopen"><span class="col"><b style="font-size:15px">Logget ind på en anden enhed?</b>' +
             '<span class="xs">Brug en kode derfra i stedet for en kode på e-mail</span></span><span class="h" style="font-size:20px">›</span></button>') +
         (both ? '' : '<button class="card row" style="min-height:64px;border-left:5px solid ' + PARENT.bg + '" data-act="parentstart"><span class="col"><b style="font-size:15px">Registrér dig som forælder</b>' +
