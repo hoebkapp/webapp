@@ -88,6 +88,7 @@ button.card:focus-visible,.chip:focus-visible,.seg button:focus-visible,nav.tabs
 .mrow{width:100%;min-height:60px;padding:10px 12px;display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;background:#fff;border:1px solid #D6DAD0;border-radius:14px;font-size:inherit}
 .mrow.up{border-style:dashed;cursor:default}
 .score{font-family:Archivo,sans-serif;font-weight:800;font-size:14px;padding:5px 8px;border-radius:9px;white-space:nowrap}
+.score .soon{font-family:inherit;font-weight:600;font-size:12px;color:var(--muted)}
 table{width:100%;border-collapse:collapse;font-size:13px}
 th{color:var(--muted);font-weight:600;text-align:left;padding:8px 6px}
 td{padding:9px 6px;border-top:1px solid var(--line2)}
@@ -612,7 +613,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         var where = (m.isHome ? 'Hjemme' : 'Ude') + (!m.played && driveShort(m) ? ' · ' + driveShort(m) : '') + ' · ' + m.venue + (m.walkover ? ' · ' + m.walkover : '');
         var inner = '<span class="col"><b style="font-size:13px">' + dTxt(m.date) + '</b><span class="xs">' + esc(m.time || '') + '</span></span>' +
           '<span class="col"><span style="font-weight:600;font-size:14px">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span><span class="xs ellip">' + esc(where) + '</span></span>' +
-          '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + (m.played ? esc(m.result) : regChip(matchEid(m))) + '</span>';
+          '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + (m.played ? esc(m.result) : regChip(matchEid(m), false, m.date)) + '</span>';
         return '<button class="mrow' + (m.played ? '' : ' up') + '" style="cursor:pointer" data-go="#/hold/' + ti + '/kamp/' + mi + '">' + inner + '</button>';
       }).join('');
     } else if (UI.seg === 'stilling') {
@@ -1773,9 +1774,15 @@ textarea.inp{resize:vertical;line-height:1.45}
     return out;
   }
   function mine(eid, pid) { return ME ? ((REG.map[eid + '|' + (pid || ME.id)] || {}).s || '') : ''; }
-  function regChip(eid, inline) {
+  function untilTxt(date) {   // "I dag", "I morgen", "Om 7 dage" — neutral mærkat for en kamp uden svar
+    if (!date) return 'Senere';
+    var p = date.split('-'), t = new Date(), d0 = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+    var n = Math.round((new Date(+p[0], +p[1] - 1, +p[2]) - d0) / 86400000);
+    return n <= 0 ? 'I dag' : n === 1 ? 'I morgen' : n < 14 ? 'Om ' + n + ' dage' : 'Om ' + Math.round(n / 7) + ' uger';
+  }
+  function regChip(eid, inline, date) {
     var w = who(eid), n = w.ja.length;
-    if (!n && !mine(eid)) return inline ? '' : 'Kommer';
+    if (!n && !mine(eid)) return inline ? '' : '<span class="soon">' + untilTxt(date) + '</span>';
     var m = mine(eid);
     return (inline ? ' · ' : '') + (m === 'ja' ? '✓ ' : m === 'nej' ? '✕ ' : '') + n + ' kan';
   }
