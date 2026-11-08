@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T13:16:52+00:00",
+  "updated": "2026-11-08T13:46:51+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -14011,7 +14011,7 @@
       "name": "Hørsholm 1",
       "pulje": "MOT 4 spillere Mester Pulje 1",
       "label": "MOT 4 spillere Mester",
-      "position": "8",
+      "position": "4",
       "standing": [
         {
           "pos": "1",
@@ -14026,17 +14026,6 @@
         },
         {
           "pos": "2",
-          "team": "Slangerup 3",
-          "teamID": "122645",
-          "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "12-6",
-          "sets": "25-15",
-          "points": "6"
-        },
-        {
-          "pos": "3",
           "team": "Ganløse 1",
           "teamID": "122644",
           "isUs": false,
@@ -14047,7 +14036,29 @@
           "points": "6"
         },
         {
+          "pos": "3",
+          "team": "Slangerup 3",
+          "teamID": "122645",
+          "isUs": false,
+          "played": "4",
+          "won": "2",
+          "score": "12-12",
+          "sets": "26-27",
+          "points": "6"
+        },
+        {
           "pos": "4",
+          "team": "Hørsholm 1",
+          "teamID": "122641",
+          "isUs": true,
+          "played": "2",
+          "won": "1",
+          "score": "8-4",
+          "sets": "18-9",
+          "points": "4"
+        },
+        {
+          "pos": "5",
           "team": "Herlev/Hjorten 2",
           "teamID": "122640",
           "isUs": false,
@@ -14058,7 +14069,7 @@
           "points": "4"
         },
         {
-          "pos": "5",
+          "pos": "6",
           "team": "Grantoften 1",
           "teamID": "122646",
           "isUs": false,
@@ -14069,7 +14080,7 @@
           "points": "4"
         },
         {
-          "pos": "6",
+          "pos": "7",
           "team": "Lynge Uggeløse 1",
           "teamID": "122642",
           "isUs": false,
@@ -14080,7 +14091,7 @@
           "points": "2"
         },
         {
-          "pos": "7",
+          "pos": "8",
           "team": "Team Nordkysten 1",
           "teamID": "122853",
           "isUs": false,
@@ -14089,17 +14100,6 @@
           "score": "7-17",
           "sets": "19-37",
           "points": "2"
-        },
-        {
-          "pos": "8",
-          "team": "Hørsholm 1",
-          "teamID": "122641",
-          "isUs": true,
-          "played": "1",
-          "won": "0",
-          "score": "2-4",
-          "sets": "6-8",
-          "points": "1"
         },
         {
           "pos": "9",
@@ -14382,14 +14382,229 @@
           "opponent": "Slangerup 3",
           "organiser": "",
           "venue": "Hørsholm Badminton Hal 5-6",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "6-0",
+          "points": "3-0",
+          "outcome": "V",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "510410",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18960,16,19,,510410,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "355614",
+                  "name": "Kent bisgaard"
+                },
+                {
+                  "id": "158737",
+                  "name": "Michael Schutt Nielsen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357321",
+                  "name": "Jacob Qvistgaard"
+                },
+                {
+                  "id": "362873",
+                  "name": "Jesper Piel-Steenberg"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  9
+                ],
+                [
+                  15,
+                  8
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "251767",
+                  "name": "Christian Skytt"
+                },
+                {
+                  "id": "9643",
+                  "name": "Kim Eriksen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "311969",
+                  "name": "Thomas Rosengård Poulsen"
+                },
+                {
+                  "id": "86529",
+                  "name": "Lucas Johansen"
+                }
+              ],
+              "sets": [
+                [
+                  10,
+                  15
+                ],
+                [
+                  15,
+                  9
+                ],
+                [
+                  15,
+                  8
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "251767",
+                  "name": "Christian Skytt"
+                },
+                {
+                  "id": "355614",
+                  "name": "Kent bisgaard"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357321",
+                  "name": "Jacob Qvistgaard"
+                },
+                {
+                  "id": "86529",
+                  "name": "Lucas Johansen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  9
+                ],
+                [
+                  15,
+                  10
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "9643",
+                  "name": "Kim Eriksen"
+                },
+                {
+                  "id": "158737",
+                  "name": "Michael Schutt Nielsen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "362873",
+                  "name": "Jesper Piel-Steenberg"
+                },
+                {
+                  "id": "311969",
+                  "name": "Thomas Rosengård Poulsen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  6
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "5. D",
+              "home": [
+                {
+                  "id": "251767",
+                  "name": "Christian Skytt"
+                },
+                {
+                  "id": "158737",
+                  "name": "Michael Schutt Nielsen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "362873",
+                  "name": "Jesper Piel-Steenberg"
+                },
+                {
+                  "id": "86529",
+                  "name": "Lucas Johansen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "6. D",
+              "home": [
+                {
+                  "id": "9643",
+                  "name": "Kim Eriksen"
+                },
+                {
+                  "id": "355614",
+                  "name": "Kent bisgaard"
+                }
+              ],
+              "away": [
+                {
+                  "id": "311969",
+                  "name": "Thomas Rosengård Poulsen"
+                },
+                {
+                  "id": "357321",
+                  "name": "Jacob Qvistgaard"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  15,
+                  12
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 0,
             "km": 0,
@@ -14560,12 +14775,22 @@
         {
           "id": "251767",
           "name": "Christian Skytt",
-          "games": 3,
-          "won": 1,
+          "games": 6,
+          "won": 4,
           "disciplines": [
             "D"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#251767"
+        },
+        {
+          "id": "9643",
+          "name": "Kim Eriksen",
+          "games": 6,
+          "won": 5,
+          "disciplines": [
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#9643"
         },
         {
           "id": "245961",
@@ -14578,14 +14803,14 @@
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#245961"
         },
         {
-          "id": "9643",
-          "name": "Kim Eriksen",
+          "id": "355614",
+          "name": "Kent bisgaard",
           "games": 3,
-          "won": 2,
+          "won": 3,
           "disciplines": [
             "D"
           ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#9643"
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#355614"
         },
         {
           "id": "360548",
@@ -14596,6 +14821,16 @@
             "D"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#360548"
+        },
+        {
+          "id": "158737",
+          "name": "Michael Schutt Nielsen",
+          "games": 3,
+          "won": 3,
+          "disciplines": [
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#158737"
         }
       ]
     },
