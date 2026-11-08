@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T19:46:49+00:00",
+ "updated": "2026-11-08T20:22:16+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -303,8 +303,8 @@
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "played": 6,
    "won": 5,
@@ -416,8 +416,8 @@
    "id": "9643",
    "name": "Kim Eriksen",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "played": 9,
    "won": 7,
@@ -557,8 +557,8 @@
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "played": 6,
    "won": 4,
@@ -572,8 +572,8 @@
    "id": "360548",
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
-    "4 Spillere",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere"
    ],
    "played": 6,
    "won": 4,
@@ -14294,53 +14294,6 @@
    }
   },
   {
-   "id": "324959",
-   "name": "Isabella Orholm Nielsen",
-   "teams": [],
-   "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
-   "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
-   "clubMember": true,
-   "gender": "K",
-   "profile": {
-    "level": "1255",
-    "rankings": [
-     {
-      "list": "Single",
-      "category": "U17 C",
-      "points": "1312",
-      "matches": "0",
-      "placement": ""
-     },
-     {
-      "list": "Double",
-      "category": "U17 C",
-      "points": "1193",
-      "matches": "0",
-      "placement": ""
-     },
-     {
-      "list": "Mix",
-      "category": "U17 C",
-      "points": "1177",
-      "matches": "0",
-      "placement": ""
-     }
-    ],
-    "license": "Ingen"
-   }
-  },
-  {
    "id": "365007",
    "name": "Jack Leslie Myrup",
    "teams": [],
@@ -17298,8 +17251,8 @@
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "adult": true,
    "games": [
@@ -17527,8 +17480,8 @@
    "id": "9643",
    "name": "Kim Eriksen",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "adult": true,
    "games": [
@@ -18710,8 +18663,8 @@
    "id": "360548",
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
-    "4 Spillere",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere"
    ],
    "adult": true,
    "games": [
@@ -23419,8 +23372,8 @@
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
-    "4 Spillere A-række",
-    "MOT 4 spillere Mester"
+    "MOT 4 spillere Mester",
+    "4 Spillere A-række"
    ],
    "adult": true,
    "games": [
