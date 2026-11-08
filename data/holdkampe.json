@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08T12:50:59+00:00",
+  "updated": "2026-11-08T13:16:52+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -14011,7 +14011,7 @@
       "name": "Hørsholm 1",
       "pulje": "MOT 4 spillere Mester Pulje 1",
       "label": "MOT 4 spillere Mester",
-      "position": "6",
+      "position": "8",
       "standing": [
         {
           "pos": "1",
@@ -14026,17 +14026,6 @@
         },
         {
           "pos": "2",
-          "team": "Ganløse 1",
-          "teamID": "122644",
-          "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "13-5",
-          "sets": "28-13",
-          "points": "6"
-        },
-        {
-          "pos": "3",
           "team": "Slangerup 3",
           "teamID": "122645",
           "isUs": false,
@@ -14047,7 +14036,29 @@
           "points": "6"
         },
         {
+          "pos": "3",
+          "team": "Ganløse 1",
+          "teamID": "122644",
+          "isUs": false,
+          "played": "4",
+          "won": "2",
+          "score": "14-10",
+          "sets": "31-23",
+          "points": "6"
+        },
+        {
           "pos": "4",
+          "team": "Herlev/Hjorten 2",
+          "teamID": "122640",
+          "isUs": false,
+          "played": "2",
+          "won": "1",
+          "score": "7-5",
+          "sets": "17-12",
+          "points": "4"
+        },
+        {
+          "pos": "5",
           "team": "Grantoften 1",
           "teamID": "122646",
           "isUs": false,
@@ -14058,7 +14069,7 @@
           "points": "4"
         },
         {
-          "pos": "5",
+          "pos": "6",
           "team": "Lynge Uggeløse 1",
           "teamID": "122642",
           "isUs": false,
@@ -14069,7 +14080,18 @@
           "points": "2"
         },
         {
-          "pos": "6",
+          "pos": "7",
+          "team": "Team Nordkysten 1",
+          "teamID": "122853",
+          "isUs": false,
+          "played": "4",
+          "won": "0",
+          "score": "7-17",
+          "sets": "19-37",
+          "points": "2"
+        },
+        {
+          "pos": "8",
           "team": "Hørsholm 1",
           "teamID": "122641",
           "isUs": true,
@@ -14080,37 +14102,15 @@
           "points": "1"
         },
         {
-          "pos": "7",
-          "team": "Herlev/Hjorten 2",
-          "teamID": "122640",
-          "isUs": false,
-          "played": "1",
-          "won": "0",
-          "score": "2-4",
-          "sets": "7-9",
-          "points": "1"
-        },
-        {
-          "pos": "8",
-          "team": "Team Nordkysten 1",
-          "teamID": "122853",
-          "isUs": false,
-          "played": "3",
-          "won": "0",
-          "score": "4-14",
-          "sets": "12-29",
-          "points": "1"
-        },
-        {
           "pos": "9",
           "team": "Birkerød BK13 1",
           "teamID": "122639",
           "isUs": false,
-          "played": "1",
+          "played": "2",
           "won": "0",
-          "score": "1-5",
-          "sets": "2-10",
-          "points": "0"
+          "score": "4-8",
+          "sets": "10-17",
+          "points": "1"
         }
       ],
       "leagueGroupID": "18960",
