@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T11:31:45+00:00",
+ "updated": "2026-11-08T11:46:42+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -21,6 +21,13 @@
    "n": "Anders Vedsted Nørrelund",
    "s": "ja",
    "ts": "2026-10-25T14:49:24.193Z"
+  },
+  {
+   "e": "m:509692",
+   "p": "11745",
+   "n": "Steffen Bille Rannes",
+   "s": "ja",
+   "ts": "2026-11-08T11:33:49.156Z"
   },
   {
    "e": "m:513407",
@@ -453,6 +460,37 @@
      ]
     }
    ],
+   "note": "",
+   "by": "Steffen Bille Rannes"
+  },
+  {
+   "e": "m:512941",
+   "team": "4 Spillere",
+   "status": "udkast",
+   "t": 1794138326399,
+   "squad": [
+    {
+     "id": "308293",
+     "name": "Henrik Lund Frandsen"
+    },
+    {
+     "id": "318475",
+     "name": "Emil Thaysen"
+    },
+    {
+     "id": "318476",
+     "name": "Valdemar Bæhrenz Peetz"
+    },
+    {
+     "id": "339431",
+     "name": "Hektor Shi Lorenzen"
+    },
+    {
+     "id": "365034",
+     "name": "Anders Lillelund"
+    }
+   ],
+   "games": [],
    "note": "",
    "by": "Steffen Bille Rannes"
   }
