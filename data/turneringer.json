@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T06:21:56+00:00",
+ "updated": "2026-11-09T20:04:06+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -13271,9 +13271,11 @@
   {
    "id": "119268",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119268,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119268"
    },
    "entryOpen": true,
@@ -14234,9 +14236,11 @@
   {
    "id": "119789",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119789,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119789"
    },
    "entryOpen": true,
@@ -14635,11 +14639,12 @@
    "organiser": "Badminton Esbjerg",
    "classes": [
     {
-     "raw": "U09 D",
+     "raw": "U09 C,D",
      "ages": [
       "U09"
      ],
      "levels": [
+      "C",
       "D"
      ],
      "days": "sø 27"
@@ -16112,9 +16117,11 @@
   {
    "id": "118481",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118481,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118481"
    },
    "entryOpen": true,
@@ -21126,9 +21133,11 @@
   {
    "id": "117073",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117073,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117073"
    },
    "entryOpen": true,

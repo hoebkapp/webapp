@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T19:46:47+00:00",
+  "updated": "2026-11-09T20:23:24+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -13632,6 +13632,17 @@
         },
         {
           "pos": "6",
+          "team": "Værløse 5",
+          "teamID": "122728",
+          "isUs": false,
+          "played": "3",
+          "won": "1",
+          "score": "13-23",
+          "sets": "28-49",
+          "points": "2"
+        },
+        {
+          "pos": "7",
           "team": "Holte 4",
           "teamID": "122730",
           "isUs": false,
@@ -13642,26 +13653,15 @@
           "points": "1"
         },
         {
-          "pos": "7",
+          "pos": "8",
           "team": "Måløv 2",
           "teamID": "122733",
           "isUs": false,
-          "played": "1",
-          "won": "0",
-          "score": "3-9",
-          "sets": "9-19",
-          "points": "0"
-        },
-        {
-          "pos": "8",
-          "team": "Værløse 5",
-          "teamID": "122728",
-          "isUs": false,
           "played": "2",
           "won": "0",
-          "score": "6-18",
-          "sets": "18-38",
-          "points": "0"
+          "score": "8-16",
+          "sets": "20-29",
+          "points": "1"
         }
       ],
       "leagueGroupID": "18972",
@@ -14864,17 +14864,6 @@
         },
         {
           "pos": "1",
-          "team": "Frederikssund 2",
-          "teamID": "124625",
-          "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
-        },
-        {
-          "pos": "1",
           "team": "Frem - Hellebæk 1",
           "teamID": "124628",
           "isUs": false,
@@ -14927,6 +14916,17 @@
           "score": "0-0",
           "sets": "0-0",
           "points": "0"
+        },
+        {
+          "pos": "",
+          "team": "Frederikssund 2",
+          "teamID": "124625",
+          "isUs": false,
+          "played": "",
+          "won": "",
+          "score": "",
+          "sets": "",
+          "points": ""
         }
       ],
       "leagueGroupID": "19110",
@@ -14944,32 +14944,6 @@
       "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#3,2026,19110,4,10,124626,,1151,",
       "standingUrl": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#2,2026,19110,4,10,,,1151,",
       "matches": [
-        {
-          "date": "2026-11-15",
-          "time": "10:00",
-          "home": "Frederikssund 2",
-          "away": "Hørsholm 4",
-          "isHome": false,
-          "opponent": "Frederikssund 2",
-          "organiser": "Farum",
-          "venue": "Stenvadhallen 1-3",
-          "result": null,
-          "points": null,
-          "outcome": null,
-          "walkover": "",
-          "played": false,
-          "matchID": "514611",
-          "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514611,1151,",
-          "games": [],
-          "travel": {
-            "min": 23,
-            "km": 15,
-            "precision": "by",
-            "lat": 55.8101,
-            "lon": 12.3703,
-            "query": "Stenvadhallen, Farum"
-          }
-        },
         {
           "date": "2026-11-15",
           "time": "11:30",
