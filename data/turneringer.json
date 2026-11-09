@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T21:13:58+00:00",
+ "updated": "2026-11-09T05:04:04+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -8771,16 +8771,14 @@
    "id": "119044",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119044,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119044,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119044"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119044",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119044,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -8899,16 +8897,14 @@
    "id": "119612",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119612,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119612,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119612"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119612",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119612,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9116,16 +9112,14 @@
    "id": "116914",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116914,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116914,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116914"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116914",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116914,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9200,16 +9194,14 @@
    "id": "116091",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116091,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116091,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116091"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116091",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116091,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9345,16 +9337,14 @@
    "id": "115663",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115663,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115663,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115663"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115663",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115663,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9420,16 +9410,14 @@
    "id": "117666",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117666,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117666,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117666"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117666",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117666,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9461,16 +9449,14 @@
    "id": "119204",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119204,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119204,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119204"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119204",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119204,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9591,16 +9577,14 @@
    "id": "117040",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117040,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117040,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117040"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117040",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117040,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9627,16 +9611,14 @@
    "id": "119286",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119286,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119286,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119286"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119286",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119286,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9694,16 +9676,14 @@
    "id": "115926",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115926,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115926,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115926"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115926",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115926,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9771,16 +9751,14 @@
    "id": "119288",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119288,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119288,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119288"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119288",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119288,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9885,16 +9863,14 @@
    "id": "115804",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115804,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115804,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115804"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115804",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115804,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -9926,16 +9902,14 @@
    "id": "118059",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118059,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118059,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118059"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118059",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118059,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-07",
    "end": "2026-11-08",
    "week": "45",
@@ -13060,14 +13034,10 @@
    }
   },
   {
-   "id": "123645",
-   "links": [
-    "tilmelding"
-   ],
-   "urls": {
-    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123645"
-   },
-   "entryOpen": true,
+   "id": "xb540de5e1a",
+   "links": [],
+   "urls": {},
+   "entryOpen": false,
    "hasResults": false,
    "start": "2026-12-10",
    "end": "2026-12-12",
@@ -13092,14 +13062,10 @@
    }
   },
   {
-   "id": "121353",
-   "links": [
-    "tilmelding"
-   ],
-   "urls": {
-    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#121353"
-   },
-   "entryOpen": true,
+   "id": "xddfcf04009",
+   "links": [],
+   "urls": {},
+   "entryOpen": false,
    "hasResults": false,
    "start": "2026-12-10",
    "end": "2026-12-13",
