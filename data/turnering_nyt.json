@@ -644,6 +644,10 @@
   ],
   "xb540de5e1a": [
    {
+    "d": "2026-11-10",
+    "t": "Invitationen er lagt ud"
+   },
+   {
     "d": "2026-11-06",
     "t": "Ny turnering i kalenderen"
    }
@@ -681,6 +685,22 @@
     "d": "2026-11-09",
     "t": "Invitationen er lagt ud"
    }
+  ],
+  "119842": [
+   {
+    "d": "2026-11-10",
+    "t": "Tilmeldingsfristen er ændret til søn 15. nov (var tor 5. nov)"
+   },
+   {
+    "d": "2026-11-10",
+    "t": "Tilmeldingen er åbnet"
+   }
+  ],
+  "121355": [
+   {
+    "d": "2026-11-10",
+    "t": "Invitationen er lagt ud"
+   }
   ]
  },
  "alias": {
@@ -692,5 +712,5 @@
   "123645": "xb540de5e1a",
   "121353": "xddfcf04009"
  },
- "updated": "2026-11-10T15:16:55+00:00"
+ "updated": "2026-11-10T20:24:58+00:00"
 }

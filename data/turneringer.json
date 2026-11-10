@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T06:05:41+00:00",
+ "updated": "2026-11-10T20:04:15+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -2143,13 +2143,7 @@
     }
    ],
    "place": {
-    "name": "Aarhus",
-    "lat": 56.1496,
-    "lon": 10.2134,
-    "km": 145,
-    "region": "Midtjylland",
-    "min": null,
-    "roadKm": null
+    "unknown": true
    }
   },
   {
@@ -10510,17 +10504,19 @@
   {
    "id": "119842",
    "links": [
-    "invitation"
+    "invitation",
+    "tilmelding"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119842,"
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119842,",
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119842"
    },
-   "entryOpen": false,
+   "entryOpen": true,
    "hasResults": false,
    "start": "2026-11-21",
    "end": "2026-11-21",
    "week": "47",
-   "deadline": "2026-11-05",
+   "deadline": "2026-11-15",
    "organiser": "Begynderturnering i Horn-Fårvang",
    "classes": [
     {
@@ -13035,7 +13031,9 @@
   },
   {
    "id": "xb540de5e1a",
-   "links": [],
+   "links": [
+    "invitation"
+   ],
    "urls": {},
    "entryOpen": false,
    "hasResults": false,
@@ -18319,9 +18317,11 @@
   {
    "id": "121355",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://web.badminton.dk/upload/Invitation---RSL-Iceland-International-2027-1.pdf",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#121355"
    },
    "entryOpen": true,
