@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T14:46:44+00:00",
+ "updated": "2026-11-10T15:16:50+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -47,20 +47,6 @@
   },
   {
    "rank": 4,
-   "id": "339514",
-   "name": "Sutthita Høybye",
-   "teams": [
-    "MOT 4+4 Serie 3-4"
-   ],
-   "played": 6,
-   "won": 6,
-   "winPct": 100,
-   "pointsFor": 180,
-   "avgPoints": 30.0,
-   "avgDiff": 14.2
-  },
-  {
-   "rank": 5,
    "id": "156777",
    "name": "Jonas Aarup Iversen",
    "teams": [
@@ -74,7 +60,7 @@
    "avgDiff": 12.5
   },
   {
-   "rank": 6,
+   "rank": 5,
    "id": "365654",
    "name": "Max Han Chen",
    "teams": [
@@ -88,7 +74,7 @@
    "avgDiff": 11.3
   },
   {
-   "rank": 7,
+   "rank": 6,
    "id": "237819",
    "name": "Gitte Kruse",
    "teams": [
@@ -102,7 +88,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 8,
+   "rank": 7,
    "id": "237773",
    "name": "Olivia Høberg Brams",
    "teams": [
@@ -116,7 +102,7 @@
    "avgDiff": 6.7
   },
   {
-   "rank": 9,
+   "rank": 8,
    "id": "46285",
    "name": "Maria O. Arildsen",
    "teams": [
@@ -130,7 +116,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 10,
+   "rank": 9,
    "id": "13323",
    "name": "Henrik Schroller Broerson",
    "teams": [
@@ -144,7 +130,7 @@
    "avgDiff": 12.9
   },
   {
-   "rank": 11,
+   "rank": 10,
    "id": "13721",
    "name": "Marie Madsen",
    "teams": [
@@ -158,7 +144,7 @@
    "avgDiff": 9.0
   },
   {
-   "rank": 12,
+   "rank": 11,
    "id": "324936",
    "name": "Aksel Schroller Broerson",
    "teams": [
@@ -172,7 +158,7 @@
    "avgDiff": 12.2
   },
   {
-   "rank": 13,
+   "rank": 12,
    "id": "364606",
    "name": "Torbjørn Petersson",
    "teams": [
@@ -186,7 +172,7 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 14,
+   "rank": 13,
    "id": "38545",
    "name": "Shankar Ralhan",
    "teams": [
@@ -200,7 +186,7 @@
    "avgDiff": 8.4
   },
   {
-   "rank": 15,
+   "rank": 14,
    "id": "338663",
    "name": "Sebastian Rossau",
    "teams": [
@@ -214,7 +200,7 @@
    "avgDiff": 8.6
   },
   {
-   "rank": 16,
+   "rank": 15,
    "id": "12881",
    "name": "Katrine Schou Andersen",
    "teams": [
@@ -228,7 +214,7 @@
    "avgDiff": 10.7
   },
   {
-   "rank": 17,
+   "rank": 16,
    "id": "13374",
    "name": "Signe Baldvinsson",
    "teams": [
@@ -242,7 +228,7 @@
    "avgDiff": 9.3
   },
   {
-   "rank": 18,
+   "rank": 17,
    "id": "12992",
    "name": "Henriette Stang Hellen",
    "teams": [
@@ -257,7 +243,7 @@
    "avgDiff": 5.2
   },
   {
-   "rank": 19,
+   "rank": 18,
    "id": "13123",
    "name": "Camilla Strøm",
    "teams": [
@@ -271,7 +257,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 20,
+   "rank": 19,
    "id": "362880",
    "name": "Jonas Gaudesen",
    "teams": [
@@ -285,7 +271,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 21,
+   "rank": 20,
    "id": "338789",
    "name": "Charles Jordahn Brandt",
    "teams": [
@@ -299,7 +285,7 @@
    "avgDiff": 7.5
   },
   {
-   "rank": 22,
+   "rank": 21,
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
@@ -314,7 +300,7 @@
    "avgDiff": 7.2
   },
   {
-   "rank": 23,
+   "rank": 22,
    "id": "348495",
    "name": "Alexander Dahl Plougmann",
    "teams": [
@@ -328,7 +314,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 24,
+   "rank": 23,
    "id": "350815",
    "name": "Cornelius Engen Peetz",
    "teams": [
@@ -342,7 +328,7 @@
    "avgDiff": 2.8
   },
   {
-   "rank": 25,
+   "rank": 24,
    "id": "348191",
    "name": "Manfred Bjørn Kirk",
    "teams": [
@@ -356,7 +342,7 @@
    "avgDiff": 10.8
   },
   {
-   "rank": 26,
+   "rank": 25,
    "id": "334106",
    "name": "Malthe Larsen",
    "teams": [
@@ -370,7 +356,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 27,
+   "rank": 26,
    "id": "366509",
    "name": "Oscar spliid",
    "teams": [
@@ -384,7 +370,7 @@
    "avgDiff": 6.2
   },
   {
-   "rank": 28,
+   "rank": 27,
    "id": "357023",
    "name": "Ellie Schroller Broerson",
    "teams": [
@@ -398,7 +384,7 @@
    "avgDiff": 5.2
   },
   {
-   "rank": 29,
+   "rank": 28,
    "id": "362187",
    "name": "Max van Daalen",
    "teams": [
@@ -410,6 +396,21 @@
    "pointsFor": 153,
    "avgPoints": 30.6,
    "avgDiff": 3.4
+  },
+  {
+   "rank": 29,
+   "id": "339514",
+   "name": "Sutthita Høybye",
+   "teams": [
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
+   ],
+   "played": 9,
+   "won": 7,
+   "winPct": 78,
+   "pointsFor": 239,
+   "avgPoints": 26.6,
+   "avgDiff": 6.7
   },
   {
    "rank": 30,
@@ -573,14 +574,15 @@
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
     "MOT 4 spillere Mester",
+    "MOT 4+4 Elite/Mester",
     "4 Spillere"
    ],
-   "played": 6,
-   "won": 4,
+   "played": 9,
+   "won": 6,
    "winPct": 67,
-   "pointsFor": 195,
-   "avgPoints": 32.5,
-   "avgDiff": 4.0
+   "pointsFor": 291,
+   "avgPoints": 32.3,
+   "avgDiff": 3.2
   },
   {
    "rank": 42,
@@ -883,12 +885,12 @@
    "teams": [
     "MOT 4+4 Elite/Mester"
    ],
-   "played": 6,
-   "won": 2,
+   "played": 9,
+   "won": 3,
    "winPct": 33,
-   "pointsFor": 183,
-   "avgPoints": 30.5,
-   "avgDiff": -5.5
+   "pointsFor": 274,
+   "avgPoints": 30.4,
+   "avgDiff": -5.3
   },
   {
    "rank": 64,
@@ -920,17 +922,17 @@
   },
   {
    "rank": 66,
-   "id": "341039",
-   "name": "Ole Friis",
+   "id": "364056",
+   "name": "Mikkel Honoré Hansen",
    "teams": [
     "MOT 4+4 Elite/Mester"
    ],
-   "played": 3,
-   "won": 1,
+   "played": 6,
+   "won": 2,
    "winPct": 33,
-   "pointsFor": 65,
-   "avgPoints": 21.7,
-   "avgDiff": -8.3
+   "pointsFor": 178,
+   "avgPoints": 29.7,
+   "avgDiff": -5.5
   },
   {
    "rank": 67,
@@ -1007,18 +1009,17 @@
   },
   {
    "rank": 72,
-   "id": "277780",
-   "name": "Mathilde Peetz",
+   "id": "330871",
+   "name": "Peter Østergaard",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "4 Spillere"
+    "MOT 4+4 Elite/Mester"
    ],
-   "played": 4,
-   "won": 1,
-   "winPct": 25,
-   "pointsFor": 79,
-   "avgPoints": 19.8,
-   "avgDiff": -12.5
+   "played": 9,
+   "won": 2,
+   "winPct": 22,
+   "pointsFor": 220,
+   "avgPoints": 24.4,
+   "avgDiff": -5.9
   },
   {
    "rank": 73,
@@ -1050,20 +1051,49 @@
   },
   {
    "rank": 75,
-   "id": "330871",
-   "name": "Peter Østergaard",
+   "id": "341039",
+   "name": "Ole Friis",
    "teams": [
     "MOT 4+4 Elite/Mester"
    ],
    "played": 6,
    "won": 1,
    "winPct": 17,
-   "pointsFor": 140,
-   "avgPoints": 23.3,
-   "avgDiff": -7.3
+   "pointsFor": 125,
+   "avgPoints": 20.8,
+   "avgDiff": -9.5
   },
   {
    "rank": 76,
+   "id": "277780",
+   "name": "Mathilde Peetz",
+   "teams": [
+    "MOT 4+4 Elite/Mester",
+    "4 Spillere"
+   ],
+   "played": 7,
+   "won": 1,
+   "winPct": 14,
+   "pointsFor": 132,
+   "avgPoints": 18.9,
+   "avgDiff": -12.4
+  },
+  {
+   "rank": 77,
+   "id": "330795",
+   "name": "Brit Johannessen",
+   "teams": [
+    "MOT 4+4 Elite/Mester"
+   ],
+   "played": 8,
+   "won": 1,
+   "winPct": 12,
+   "pointsFor": 173,
+   "avgPoints": 21.6,
+   "avgDiff": -9.2
+  },
+  {
+   "rank": 78,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1078,7 +1108,7 @@
    "avgDiff": -9.4
   },
   {
-   "rank": 77,
+   "rank": 79,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1092,21 +1122,7 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 78,
-   "id": "364056",
-   "name": "Mikkel Honoré Hansen",
-   "teams": [
-    "MOT 4+4 Elite/Mester"
-   ],
-   "played": 3,
-   "won": 0,
-   "winPct": 0,
-   "pointsFor": 75,
-   "avgPoints": 25.0,
-   "avgDiff": -10.3
-  },
-  {
-   "rank": 79,
+   "rank": 80,
    "id": "362602",
    "name": "Marvin Nørmark",
    "teams": [
@@ -1120,7 +1136,7 @@
    "avgDiff": -10.4
   },
   {
-   "rank": 80,
+   "rank": 81,
    "id": "352441",
    "name": "Nolan Jing",
    "teams": [
@@ -1132,20 +1148,6 @@
    "pointsFor": 107,
    "avgPoints": 21.4,
    "avgDiff": -11.0
-  },
-  {
-   "rank": 81,
-   "id": "330795",
-   "name": "Brit Johannessen",
-   "teams": [
-    "MOT 4+4 Elite/Mester"
-   ],
-   "played": 5,
-   "won": 0,
-   "winPct": 0,
-   "pointsFor": 101,
-   "avgPoints": 20.2,
-   "avgDiff": -10.2
   },
   {
    "rank": 82,
@@ -5623,6 +5625,91 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. MD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Nikolaj Enevold Waldhausen",
+      "Susan Galsøe"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       15,
+       13
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. DD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Susan Galsøe",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       6,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. DD",
+     "partner": [
+      "Camilla Engel Post"
+     ],
+     "opponents": [
+      "Christelle Carlsson",
+      "Susan Galsøe"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       8,
+       15
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -5758,23 +5845,23 @@
      "walkover": ""
     }
    ],
-   "played": 5,
-   "won": 0,
-   "lost": 5,
-   "winPct": 0,
-   "pointsFor": 101,
-   "pointsAgainst": 152,
-   "avgPoints": 20.2,
-   "avgDiff": -10.2,
-   "setsWon": 0,
-   "setsLost": 10,
+   "played": 8,
+   "won": 1,
+   "lost": 7,
+   "winPct": 12,
+   "pointsFor": 173,
+   "pointsAgainst": 247,
+   "avgPoints": 21.6,
+   "avgDiff": -9.2,
+   "setsWon": 3,
+   "setsLost": 14,
    "byDiscipline": {
     "MD": {
-     "played": 2,
-     "won": 0
+     "played": 3,
+     "won": 1
     },
     "DD": {
-     "played": 3,
+     "played": 5,
      "won": 0
     }
    },
@@ -5834,6 +5921,95 @@
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. MD",
+     "partner": [
+      "Mikkel Honoré Hansen"
+     ],
+     "opponents": [
+      "Bo Hovmand",
+      "Maria Hammer Nørbygaard"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       15,
+       11
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. DD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Christelle Carlsson",
+      "Maria Hammer Nørbygaard"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. DD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Christelle Carlsson",
+      "Susan Galsøe"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       8,
+       15
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
@@ -6013,23 +6189,23 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 2,
-   "lost": 4,
+   "played": 9,
+   "won": 3,
+   "lost": 6,
    "winPct": 33,
-   "pointsFor": 183,
-   "pointsAgainst": 216,
-   "avgPoints": 30.5,
-   "avgDiff": -5.5,
-   "setsWon": 6,
-   "setsLost": 10,
+   "pointsFor": 274,
+   "pointsAgainst": 322,
+   "avgPoints": 30.4,
+   "avgDiff": -5.3,
+   "setsWon": 9,
+   "setsLost": 15,
    "byDiscipline": {
     "MD": {
-     "played": 2,
-     "won": 0
+     "played": 3,
+     "won": 1
     },
     "DD": {
-     "played": 4,
+     "played": 6,
      "won": 2
     }
    },
@@ -18664,10 +18840,96 @@
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
     "MOT 4 spillere Mester",
+    "MOT 4+4 Elite/Mester",
     "4 Spillere"
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. MD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Nikolaj Enevold Waldhausen",
+      "Susan Galsøe"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       15,
+       13
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. HD",
+     "partner": [
+      "Mikkel Honoré Hansen"
+     ],
+     "opponents": [
+      "Nikolaj Enevold Waldhausen",
+      "Christian løth"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. HD",
+     "partner": [
+      "Ole Friis"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Nikolaj Enevold Waldhausen"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-10-24",
      "team": "4 Spillere",
@@ -18836,17 +19098,25 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 4,
-   "lost": 2,
+   "played": 9,
+   "won": 6,
+   "lost": 3,
    "winPct": 67,
-   "pointsFor": 195,
-   "pointsAgainst": 171,
-   "avgPoints": 32.5,
-   "avgDiff": 4.0,
-   "setsWon": 9,
-   "setsLost": 5,
+   "pointsFor": 291,
+   "pointsAgainst": 262,
+   "avgPoints": 32.3,
+   "avgDiff": 3.2,
+   "setsWon": 13,
+   "setsLost": 8,
    "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 1
+    },
+    "HD": {
+     "played": 2,
+     "won": 1
+    },
     "D": {
      "played": 5,
      "won": 3
@@ -22299,6 +22569,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. MD",
+     "partner": [
+      "Ole Friis"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Christelle Carlsson"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. DD",
+     "partner": [
+      "Camilla Engel Post"
+     ],
+     "opponents": [
+      "Christelle Carlsson",
+      "Maria Hammer Nørbygaard"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. DD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Maria Hammer Nørbygaard",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -22411,19 +22762,23 @@
      "walkover": ""
     }
    ],
-   "played": 4,
+   "played": 7,
    "won": 1,
-   "lost": 3,
-   "winPct": 25,
-   "pointsFor": 79,
-   "pointsAgainst": 129,
-   "avgPoints": 19.8,
-   "avgDiff": -12.5,
+   "lost": 6,
+   "winPct": 14,
+   "pointsFor": 132,
+   "pointsAgainst": 219,
+   "avgPoints": 18.9,
+   "avgDiff": -12.4,
    "setsWon": 2,
-   "setsLost": 7,
+   "setsLost": 13,
    "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 0
+    },
     "DD": {
-     "played": 2,
+     "played": 4,
      "won": 1
     },
     "D": {
@@ -23812,6 +24167,95 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. MD",
+     "partner": [
+      "Camilla Engel Post"
+     ],
+     "opponents": [
+      "Bo Hovmand",
+      "Maria Hammer Nørbygaard"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       15,
+       11
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. HD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Nikolaj Enevold Waldhausen",
+      "Christian løth"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. HD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Christian løth",
+      "Bo Hovmand"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       16,
+       18
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -23897,24 +24341,24 @@
      "walkover": ""
     }
    ],
-   "played": 3,
-   "won": 0,
-   "lost": 3,
-   "winPct": 0,
-   "pointsFor": 75,
-   "pointsAgainst": 106,
-   "avgPoints": 25.0,
-   "avgDiff": -10.3,
-   "setsWon": 1,
-   "setsLost": 6,
+   "played": 6,
+   "won": 2,
+   "lost": 4,
+   "winPct": 33,
+   "pointsFor": 178,
+   "pointsAgainst": 211,
+   "avgPoints": 29.7,
+   "avgDiff": -5.5,
+   "setsWon": 5,
+   "setsLost": 10,
    "byDiscipline": {
     "MD": {
-     "played": 1,
-     "won": 0
+     "played": 2,
+     "won": 1
     },
     "HD": {
-     "played": 2,
-     "won": 0
+     "played": 4,
+     "won": 1
     }
    },
    "clubMember": true,
@@ -25546,6 +25990,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. MD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Christelle Carlsson"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. HD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Bo Hovmand"
+     ],
+     "sets": [
+      [
+       15,
+       17
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "3. HD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Nikolaj Enevold Waldhausen"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-04",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -25627,23 +26152,23 @@
      "walkover": ""
     }
    ],
-   "played": 3,
+   "played": 6,
    "won": 1,
-   "lost": 2,
-   "winPct": 33,
-   "pointsFor": 65,
-   "pointsAgainst": 90,
-   "avgPoints": 21.7,
-   "avgDiff": -8.3,
+   "lost": 5,
+   "winPct": 17,
+   "pointsFor": 125,
+   "pointsAgainst": 182,
+   "avgPoints": 20.8,
+   "avgDiff": -9.5,
    "setsWon": 2,
-   "setsLost": 4,
+   "setsLost": 10,
    "byDiscipline": {
     "MD": {
-     "played": 1,
+     "played": 2,
      "won": 0
     },
     "HD": {
-     "played": 2,
+     "played": 4,
      "won": 1
     }
    },
@@ -26977,6 +27502,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. MD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Christian løth",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "1. HD",
+     "partner": [
+      "Ole Friis"
+     ],
+     "opponents": [
+      "Jesper Wass",
+      "Bo Hovmand"
+     ],
+     "sets": [
+      [
+       15,
+       17
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. HD",
+     "partner": [
+      "Mikkel Honoré Hansen"
+     ],
+     "opponents": [
+      "Christian løth",
+      "Bo Hovmand"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       16,
+       18
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -27139,23 +27745,23 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 1,
-   "lost": 5,
-   "winPct": 17,
-   "pointsFor": 140,
-   "pointsAgainst": 184,
-   "avgPoints": 23.3,
-   "avgDiff": -7.3,
-   "setsWon": 2,
-   "setsLost": 10,
+   "played": 9,
+   "won": 2,
+   "lost": 7,
+   "winPct": 22,
+   "pointsFor": 220,
+   "pointsAgainst": 273,
+   "avgPoints": 24.4,
+   "avgDiff": -5.9,
+   "setsWon": 4,
+   "setsLost": 14,
    "byDiscipline": {
     "MD": {
-     "played": 2,
-     "won": 0
+     "played": 3,
+     "won": 1
     },
     "HD": {
-     "played": 4,
+     "played": 6,
      "won": 1
     }
    },
@@ -30416,10 +31022,92 @@
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
+    "MOT 4+4 Elite/Mester",
     "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. MD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Christian løth",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "2. DD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Susan Galsøe",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       6,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-08",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 2",
+     "matchID": "510457",
+     "discipline": "4. DD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Maria Hammer Nørbygaard",
+      "Rosa Cecilie Plum"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-10-04",
      "team": "MOT 4+4 Serie 3-4",
@@ -30583,23 +31271,23 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 6,
-   "lost": 0,
-   "winPct": 100,
-   "pointsFor": 180,
-   "pointsAgainst": 95,
-   "avgPoints": 30.0,
-   "avgDiff": 14.2,
-   "setsWon": 12,
-   "setsLost": 0,
+   "played": 9,
+   "won": 7,
+   "lost": 2,
+   "winPct": 78,
+   "pointsFor": 239,
+   "pointsAgainst": 179,
+   "avgPoints": 26.6,
+   "avgDiff": 6.7,
+   "setsWon": 14,
+   "setsLost": 4,
    "byDiscipline": {
     "MD": {
-     "played": 2,
-     "won": 2
+     "played": 3,
+     "won": 3
     },
     "DD": {
-     "played": 4,
+     "played": 6,
      "won": 4
     }
    },
