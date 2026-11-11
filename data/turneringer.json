@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T20:04:15+00:00",
+ "updated": "2026-11-11T05:03:52+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -2143,7 +2143,13 @@
     }
    ],
    "place": {
-    "unknown": true
+    "name": "Aarhus",
+    "lat": 56.1496,
+    "lon": 10.2134,
+    "km": 145,
+    "region": "Midtjylland",
+    "min": null,
+    "roadKm": null
    }
   },
   {
@@ -9961,14 +9967,16 @@
    "id": "119981",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://badmintonpeople.dk/Clubs/CommonDrive/Components/GetWWWFile.aspx?fileID=101511",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119981"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119981",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119981,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-11",
    "end": "2026-11-14",
    "week": "46",
@@ -15895,9 +15903,15 @@
   {
    "id": "117777",
    "links": [
+    "invitation",
+    "program",
+    "resultater",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117777,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117777,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117777,-8",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117777"
    },
    "entryOpen": true,
