@@ -545,7 +545,34 @@
   "min": 190,
   "roadKm": 283
  },
+ "DGI Sydøstjylland - Egtved": {
+  "sted": "Sydøstjylland",
+  "lat": 55.8701,
+  "lon": 9.8507,
+  "region": "Midtjylland",
+  "via": "nominatim",
+  "min": 190,
+  "roadKm": 283
+ },
+ "DGI Sydøstjylland – Alminde Viuf/Bramdrupdam": {
+  "sted": "Alminde Viuf",
+  "lat": 55.569,
+  "lon": 9.4858,
+  "region": "Syddanmark",
+  "via": "nominatim",
+  "min": 170,
+  "roadKm": 248
+ },
  "DGI Sønderjylland": {
+  "sted": "Sønderjylland",
+  "lat": 55.0629,
+  "lon": 9.3776,
+  "region": "Syddanmark",
+  "via": "nominatim",
+  "min": 197,
+  "roadKm": 302
+ },
+ "DGI Sønderjylland - Sønderjysk Nytårsstævne": {
   "sted": "Sønderjylland",
   "lat": 55.0629,
   "lon": 9.3776,
@@ -1382,6 +1409,15 @@
   "via": "nominatim",
   "min": 71,
   "roadKm": 95
+ },
+ "Kredsmesterskaber Sjælland i Værløse og Solrød": {
+  "sted": "Værløse",
+  "lat": 55.7833,
+  "lon": 12.3833,
+  "region": "Hovedstaden",
+  "via": "nominatim",
+  "min": 25,
+  "roadKm": 27
  },
  "Kredsmesterskaber Sjælland i Værløse og Taastrup": {
   "sted": "Værløse",

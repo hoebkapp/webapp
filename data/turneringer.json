@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T06:13:29+00:00",
+ "updated": "2026-11-11T20:04:08+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -12801,7 +12801,7 @@
    "end": "2026-12-01",
    "week": "48",
    "deadline": "2026-11-12",
-   "organiser": "Kredsmesterskaber Sjælland i Værløse og Taastrup",
+   "organiser": "Kredsmesterskaber Sjælland i Værløse og Solrød",
    "classes": [
     {
      "raw": "U11 B",
@@ -14034,7 +14034,7 @@
    "end": "2026-12-13",
    "week": "50",
    "deadline": "2026-11-26",
-   "organiser": "DGI Sydøstjylland",
+   "organiser": "DGI Sydøstjylland - Egtved",
    "classes": [
     {
      "raw": "U09 D",
@@ -15117,9 +15117,11 @@
   {
    "id": "118506",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118506,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118506"
    },
    "entryOpen": true,
@@ -15585,9 +15587,11 @@
   {
    "id": "117353",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117353,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117353"
    },
    "entryOpen": true,
@@ -15617,6 +15621,16 @@
       "A"
      ],
      "days": "ma 28"
+    },
+    {
+     "raw": "U09 C",
+     "ages": [
+      "U09"
+     ],
+     "levels": [
+      "C"
+     ],
+     "days": "ma 28-on 30"
     },
     {
      "raw": "U15 B,C,D",
@@ -15969,7 +15983,7 @@
    "end": "2027-01-10",
    "week": "1",
    "deadline": "2026-12-17",
-   "organiser": "DGI Sønderjylland",
+   "organiser": "DGI Sønderjylland - Sønderjysk Nytårsstævne",
    "classes": [
     {
      "raw": "U09 C,D",
@@ -16826,9 +16840,11 @@
   {
    "id": "122085",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#122085,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#122085"
    },
    "entryOpen": true,
@@ -18224,7 +18240,7 @@
    "end": "2027-01-24",
    "week": "3",
    "deadline": "2027-01-07",
-   "organiser": "DGI Sydøstjylland",
+   "organiser": "DGI Sydøstjylland – Alminde Viuf/Bramdrupdam",
    "classes": [
     {
      "raw": "U09 D",
@@ -18273,13 +18289,13 @@
     }
    ],
    "place": {
-    "name": "Sydøstjylland",
-    "lat": 55.8701,
-    "lon": 9.8507,
-    "km": 165,
-    "region": "Midtjylland",
-    "min": 190,
-    "roadKm": 283
+    "name": "Alminde Viuf",
+    "lat": 55.569,
+    "lon": 9.4858,
+    "km": 192,
+    "region": "Syddanmark",
+    "min": 170,
+    "roadKm": 248
    }
   },
   {
@@ -20028,9 +20044,11 @@
   {
    "id": "117877",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117877,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117877"
    },
    "entryOpen": true,

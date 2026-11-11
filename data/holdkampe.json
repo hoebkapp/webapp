@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11T06:31:14+00:00",
+  "updated": "2026-11-11T20:23:09+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -7672,28 +7672,28 @@
         },
         {
           "date": "2026-11-15",
-          "time": "11:15",
-          "home": "Birkerød BK13 1",
-          "away": "Hørsholm 1",
-          "isHome": false,
+          "time": "10:00",
+          "home": "Hørsholm 1",
+          "away": "Birkerød BK13 1",
+          "isHome": true,
           "opponent": "Birkerød BK13 1",
-          "organiser": "Køge",
-          "venue": "Ravnsborghallen 1-3",
+          "organiser": "Hørsholm",
+          "venue": "Hørsholm Badminton Hal",
           "result": null,
           "points": null,
           "outcome": null,
-          "walkover": "Udsat",
+          "walkover": "",
           "played": false,
           "matchID": "516374",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,",
           "games": [],
           "travel": {
-            "min": 54,
-            "km": 64,
+            "min": 0,
+            "km": 0,
             "precision": "hal",
-            "lat": 55.443,
-            "lon": 12.174,
-            "query": "Ravnsborghallen, Køge"
+            "lat": 55.8783,
+            "lon": 12.5167,
+            "query": "Hørsholm Badminton Hal, Hørsholm"
           }
         },
         {
