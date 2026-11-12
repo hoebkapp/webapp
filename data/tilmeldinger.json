@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T22:31:46+00:00",
+ "updated": "2026-11-12T22:46:42+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -901,6 +901,94 @@
    ],
    "note": "",
    "by": "Anders Vedsted Nørrelund"
+  },
+  {
+   "e": "m:516374",
+   "team": "U15 A",
+   "status": "udkast",
+   "t": 1794523177297,
+   "squad": [
+    {
+     "id": "320930",
+     "name": "Julius Tolsøe"
+    },
+    {
+     "id": "324936",
+     "name": "Aksel Schroller Broerson"
+    },
+    {
+     "id": "324944",
+     "name": "August Drescher"
+    },
+    {
+     "id": "326116",
+     "name": "Christopher Johannessen"
+    },
+    {
+     "id": "334106",
+     "name": "Malthe Larsen"
+    },
+    {
+     "id": "352483",
+     "name": "Birk Lund Dujardin"
+    }
+   ],
+   "games": [
+    {
+     "k": "1. D",
+     "p": [
+      "324936",
+      "334106"
+     ]
+    },
+    {
+     "k": "4. D",
+     "p": [
+      "352483",
+      "320930"
+     ]
+    },
+    {
+     "k": "2. D",
+     "p": [
+      "324944",
+      "320930"
+     ]
+    },
+    {
+     "k": "3. D",
+     "p": [
+      "326116",
+      "324936"
+     ]
+    },
+    {
+     "k": "1. S",
+     "p": [
+      "334106"
+     ]
+    },
+    {
+     "k": "2. S",
+     "p": [
+      "352483"
+     ]
+    },
+    {
+     "k": "3. S",
+     "p": [
+      "324944"
+     ]
+    },
+    {
+     "k": "4. S",
+     "p": [
+      "326116"
+     ]
+    }
+   ],
+   "note": "",
+   "by": "Tue Krogh-Larsen"
   }
  ],
  "scriptHasLineups": true
