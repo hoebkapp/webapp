@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T20:01:54+00:00",
+ "updated": "2026-11-12T20:16:44+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -262,6 +262,13 @@
   },
   {
    "e": "t:2026-11-12:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "nej",
+   "ts": "2026-11-12T20:02:05.233Z"
+  },
+  {
+   "e": "t:2026-11-12:Senior",
    "p": "11745",
    "n": "Steffen Bille Rannes",
    "s": "ja",
@@ -282,6 +289,13 @@
    "ts": "2026-11-12T17:32:08.156Z"
   },
   {
+   "e": "t:2026-11-17:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "nej",
+   "ts": "2026-11-12T20:02:07.091Z"
+  },
+  {
    "e": "t:2026-11-18:Ungdom:Elite 4",
    "p": "360548",
    "n": "MUHAMMAD MOHSIN Ali KHAN",
@@ -294,6 +308,13 @@
    "n": "Daniel Lee Skriver",
    "s": "nej",
    "ts": "2026-11-12T18:24:33.926Z"
+  },
+  {
+   "e": "t:2026-11-19:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "nej",
+   "ts": "2026-11-12T20:02:32.710Z"
   },
   {
    "e": "t:2026-11-22:Veteran",
@@ -310,6 +331,13 @@
    "ts": "2026-11-12T17:32:57.583Z"
   },
   {
+   "e": "t:2026-11-24:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "ja",
+   "ts": "2026-11-12T20:02:29.294Z"
+  },
+  {
    "e": "t:2026-11-25:Voksenfjer",
    "p": "n:daniel-lee-skriver",
    "n": "Daniel Lee Skriver",
@@ -317,11 +345,32 @@
    "ts": "2026-11-12T18:24:37.695Z"
   },
   {
+   "e": "t:2026-11-26:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "nej",
+   "ts": "2026-11-12T20:02:34.004Z"
+  },
+  {
+   "e": "t:2026-12-01:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "ja",
+   "ts": "2026-11-12T20:02:15.305Z"
+  },
+  {
    "e": "t:2026-12-02:Voksenfjer",
    "p": "n:daniel-lee-skriver",
    "n": "Daniel Lee Skriver",
    "s": "nej",
    "ts": "2026-11-12T18:24:40.912Z"
+  },
+  {
+   "e": "t:2026-12-03:Senior",
+   "p": "13374",
+   "n": "Signe Baldvinsson",
+   "s": "nej",
+   "ts": "2026-11-12T20:02:38.796Z"
   },
   {
    "e": "t:2026-12-06:Veteran",
