@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T06:17:02+00:00",
+ "updated": "2026-11-12T20:04:09+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -7154,6 +7154,71 @@
    }
   },
   {
+   "id": "116782",
+   "links": [
+    "deltagere",
+    "resultater"
+   ],
+   "urls": {
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116782",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116782,"
+   },
+   "entryOpen": false,
+   "hasResults": true,
+   "start": "2026-10-31",
+   "end": "2026-10-31",
+   "week": "44",
+   "deadline": "2026-10-15",
+   "organiser": "Aflyst - DGI Midtjylland - Kjellerup",
+   "classes": [
+    {
+     "raw": "SEN+30 B,C,D",
+     "ages": [
+      "SEN+30"
+     ],
+     "levels": [
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 31"
+    },
+    {
+     "raw": "SEN+40 B,C,D",
+     "ages": [
+      "SEN+40"
+     ],
+     "levels": [
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 31"
+    },
+    {
+     "raw": "SEN+50 B,C,D",
+     "ages": [
+      "SEN+50"
+     ],
+     "levels": [
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 31"
+    }
+   ],
+   "place": {
+    "name": "Midtjylland Kjellerup",
+    "lat": 56.2835,
+    "lon": 9.44,
+    "km": 195,
+    "region": "Midtjylland",
+    "min": 231,
+    "roadKm": 331
+   }
+  },
+  {
    "id": "115370",
    "links": [
     "deltagere",
@@ -13126,6 +13191,43 @@
    ],
    "place": {
     "unknown": true
+   }
+  },
+  {
+   "id": "123653",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123653"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2026-12-11",
+   "end": "2026-12-13",
+   "week": "50",
+   "deadline": "2026-11-26",
+   "organiser": "Badminton Danmark U17 decemberlejr 2026",
+   "classes": [
+    {
+     "raw": "U17 E",
+     "ages": [
+      "U17"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "fr 11-sø 13"
+    }
+   ],
+   "place": {
+    "name": "Danmark",
+    "lat": 55.6702,
+    "lon": 10.3333,
+    "km": 138,
+    "region": "",
+    "min": 165,
+    "roadKm": 216
    }
   },
   {
@@ -19310,6 +19412,38 @@
    }
   },
   {
+   "id": "123650",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123650"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2027-02-10",
+   "end": "2027-02-14",
+   "week": "6",
+   "deadline": "2027-01-10",
+   "organiser": "Azerbaijan IC",
+   "classes": [
+    {
+     "raw": "SEN E",
+     "ages": [
+      "SEN"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "on 10-sø 14"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
+   }
+  },
+  {
    "id": "121535",
    "links": [
     "tilmelding"
@@ -20046,6 +20180,38 @@
    }
   },
   {
+   "id": "123651",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123651"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2027-02-16",
+   "end": "2027-02-21",
+   "week": "7",
+   "deadline": "2027-01-10",
+   "organiser": "Thailand Masters 2027 Super 300",
+   "classes": [
+    {
+     "raw": "SEN E",
+     "ages": [
+      "SEN"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "ti 16-sø 21"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
+   }
+  },
+  {
    "id": "117877",
    "links": [
     "invitation",
@@ -20625,6 +20791,38 @@
     "region": "Midtjylland",
     "min": 212,
     "roadKm": 314
+   }
+  },
+  {
+   "id": "123652",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123652"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2027-02-23",
+   "end": "2027-02-28",
+   "week": "8",
+   "deadline": "2027-01-10",
+   "organiser": "German Open 2027 Super 500",
+   "classes": [
+    {
+     "raw": "SEN E",
+     "ages": [
+      "SEN"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "ti 23-sø 28"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
    }
   },
   {

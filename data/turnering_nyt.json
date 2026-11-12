@@ -771,6 +771,36 @@
     "d": "2026-11-12",
     "t": "Programmet er klar (lodtrækning og spilletider)"
    }
+  ],
+  "116782": [
+   {
+    "d": "2026-11-12",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "123653": [
+   {
+    "d": "2026-11-12",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "123650": [
+   {
+    "d": "2026-11-12",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "123651": [
+   {
+    "d": "2026-11-12",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "123652": [
+   {
+    "d": "2026-11-12",
+    "t": "Ny turnering i kalenderen"
+   }
   ]
  },
  "alias": {
@@ -782,5 +812,5 @@
   "123645": "xb540de5e1a",
   "121353": "xddfcf04009"
  },
- "updated": "2026-11-12T06:35:21+00:00"
+ "updated": "2026-11-12T20:24:12+00:00"
 }

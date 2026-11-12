@@ -74,6 +74,9 @@
  "Artic Open 2026 Super 500": {
   "abroad": true
  },
+ "Azerbaijan IC": {
+  "abroad": true
+ },
  "BC37 Amager": {
   "sted": "BC37 Amager",
   "lat": 55.8365,
@@ -91,6 +94,15 @@
   "via": "nominatim",
   "min": 192,
   "roadKm": 291
+ },
+ "Badminton Danmark U17 decemberlejr 2026": {
+  "sted": "Danmark",
+  "lat": 55.6702,
+  "lon": 10.3333,
+  "region": "",
+  "via": "nominatim",
+  "min": 165,
+  "roadKm": 216
  },
  "Badminton Danmark: Danske Mesterskaber for Senior+ i Aabenraa": {
   "sted": "Aabenraa",
@@ -776,6 +788,9 @@
   "via": "nominatim",
   "min": 18,
   "roadKm": 17
+ },
+ "German Open 2027 Super 500": {
+  "abroad": true
  },
  "German Ruhr U17": {
   "abroad": true
@@ -1991,6 +2006,9 @@
   "via": "nominatim",
   "min": 133,
   "roadKm": 189
+ },
+ "Thailand Masters 2027 Super 300": {
+  "abroad": true
  },
  "Thorsager Rønde": {
   "sted": "Thorsager",
