@@ -3201,14 +3201,21 @@ textarea.inp{resize:vertical;line-height:1.45}
     refreshMsgs(room); scrollBottom();
     api({ action: 'post', token: ME.token, room: room, text: text }).then(function (r) {
       if (r && r.error === 'login') { ME = null; saveMe(); throw new Error('Log ind igen'); }
-      if (r && r.readOnly) { M.canWrite = false; M.readOnlyMsg = r.error; setTimeout(function () { route(true); }, 0); }
+      if (r && r.readOnly) { var C = SNAK.msgs[room] || M; C.canWrite = false; C.readOnlyMsg = r.error; setTimeout(function () { route(true); }, 0); }
       if (!r || !r.ok) throw new Error((r && r.error === 'Ukendt handling') ? 'Klubbens server skal opdateres først' : (r && r.error) || 'Kunne ikke sende');
       if (!r.message.k && tmp.k) r.message.k = tmp.k;
-      var i = M.list.indexOf(tmp); if (i >= 0) M.list[i] = r.message;
+      // Listen kan være udskiftet af en baggrundsopdatering imens — ret i den aktuelle liste og undgå dubletter
+      var L = (SNAK.msgs[room] && SNAK.msgs[room].list) || M.list;
+      var i = L.indexOf(tmp);
+      if (i < 0) for (var j = 0; j < L.length; j++) if (L[j].id === tmp.id) { i = j; break; }
+      var dup = L.some(function (m) { return m.id === r.message.id; });
+      if (i >= 0) { if (dup) L.splice(i, 1); else L[i] = r.message; }
+      else if (!dup) L.push(r.message);
       var rr = (SNAK.rooms || []).filter(function (x) { return x.id === room; })[0];
       if (rr) { rr.last = r.message.t; rr.by = ME.name; rr.x = text.slice(0, 80); rr.n++; }
     }).catch(function (err) {
-      var i = M.list.indexOf(tmp); if (i >= 0) M.list.splice(i, 1);
+      var cur = SNAK.msgs[room];
+      [M, cur].forEach(function (o) { if (o && o.list) o.list = o.list.filter(function (m) { return m.id !== tmp.id; }); });
       SNAK.draft[room] = text; var t2 = document.getElementById('msgText'); if (t2 && !t2.value) t2.value = text;
       toast(err.message || 'Kunne ikke sende — prøv igen');
     }).then(function () {
