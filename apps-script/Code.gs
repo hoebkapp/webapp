@@ -52,7 +52,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-07.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-12.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -175,7 +175,7 @@ function request_(b) {
     var hourAgo = new Date(Date.now() - 3600000);
     var recent = data_('Koder').filter(function (r) { return r[1] === email && new Date(r[0]) > hourAgo; }).length;
     if (recent >= MAX_CODES_PER_HOUR) return { ok: false, error: 'For mange koder — prøv igen om en time' };
-    if (MailApp.getRemainingDailyQuota() < 1) return { ok: false, error: 'Klubbens e-mail-kvote er brugt i dag — prøv i morgen' };
+    if (MailApp.getRemainingDailyQuota() < 1) { stat_('mailblocked'); return { ok: false, error: 'Klubbens e-mail-kvote er brugt i dag — prøv i morgen' }; }
     var code = String(Math.floor(100000 + Math.random() * 900000));
     sh_('Koder').appendRow([new Date(), email, hash_('c:' + email + ':' + code), safe_(pid), safe_(pname), 0, false, kids.length ? JSON.stringify(kids) : '']);
     MailApp.sendEmail({
@@ -1467,9 +1467,21 @@ function groupMembers_() {   // {gruppe: [playerId…]} fra Holdmedlemmer (bruge
 }
 
 function doPost(e) {
-  var b;
+  var b, t0 = Date.now();
   try { b = JSON.parse(e.postData.contents); } catch (err) { return json_({ ok: false, error: 'Ugyldig forespørgsel' }); }
+  stat_('req');
   try {
+    var out = route_(b);
+    if (Date.now() - t0 > 8000) stat_('slow');
+    return out;
+  } catch (err) {
+    stat_('err'); stat_('err_' + errKind_(err));
+    return json_({ ok: false, error: 'Serverfejl — prøv igen' });
+  }
+}
+
+function route_(b) {
+  {
     switch (b.action) {
       case 'request': return json_(request_(b));
       case 'verify': return json_(verify_(b));
@@ -1522,9 +1534,50 @@ function doPost(e) {
         return json_({ ok: true });
       default: return json_({ ok: false, error: 'Ukendt handling' });
     }
-  } catch (err) {
-    return json_({ ok: false, error: 'Serverfejl — prøv igen' });
   }
+}
+
+// ---------- driftsovervågning: ?action=health (kun tal — ingen navne, e-mails eller fejltekster) ----------
+var STAT_BUCKET = 600000;   // 10 minutter
+function stat_(name) {
+  try {
+    var c = CacheService.getScriptCache(), k = 'st:' + name + ':' + Math.floor(Date.now() / STAT_BUCKET);
+    c.put(k, String(Number(c.get(k) || 0) + 1), 21600);
+  } catch (e) {}
+}
+function statSum_(name, minutes) {
+  try {
+    var now = Math.floor(Date.now() / STAT_BUCKET), keys = [];
+    for (var i = 0; i < Math.ceil(minutes / 10); i++) keys.push('st:' + name + ':' + (now - i));
+    var got = CacheService.getScriptCache().getAll(keys), n = 0;
+    for (var k in got) n += Number(got[k] || 0);
+    return n;
+  } catch (e) { return -1; }
+}
+function errKind_(err) {
+  var m = String(err && err.message || err);
+  if (/lock/i.test(m)) return 'lock';
+  if (/too many times|quota|kvote|limit/i.test(m)) return 'quota';
+  if (/timed? ?out|exceeded maximum execution/i.test(m)) return 'timeout';
+  return 'other';
+}
+function health_() {
+  var now = new Date(), dayStart = new Date(Utilities.formatDate(now, 'Europe/Copenhagen', 'yyyy-MM-dd') + 'T00:00:00');
+  var hourAgo = new Date(now.getTime() - 3600000);
+  var codes = data_('Koder'), ses = data_('Sessioner');
+  var w = function (name) { return { m10: statSum_(name, 10), h1: statSum_(name, 60), h6: statSum_(name, 360) }; };
+  return {
+    ok: true, version: SCRIPT_VERSION, at: now.toISOString(),
+    mailLeft: MailApp.getRemainingDailyQuota(),
+    codes: { h1: codes.filter(function (r) { return new Date(r[0]) > hourAgo; }).length,
+             today: codes.filter(function (r) { return new Date(r[0]) >= dayStart; }).length },
+    mailBlocked: w('mailblocked'),
+    sessions: { active: ses.filter(function (r) { return r[6] === true; }).length,
+                newToday: ses.filter(function (r) { return new Date(r[4]) >= dayStart; }).length,
+                usedH1: ses.filter(function (r) { return r[6] === true && new Date(r[5]) > hourAgo; }).length },
+    requests: w('req'), slow: w('slow'), errors: w('err'),
+    errorKinds: { lock: statSum_('err_lock', 60), quota: statSum_('err_quota', 60), timeout: statSum_('err_timeout', 60), other: statSum_('err_other', 60) }
+  };
 }
 
 function doGet(e) {
@@ -1534,6 +1587,7 @@ function doGet(e) {
     return json_({ ok: true, version: SCRIPT_VERSION, scheduler: { token: !!pr.getProperty('GH_TOKEN'), triggers: ScriptApp.getProjectTriggers().filter(function (t) { return t.getHandlerFunction() === 'tick'; }).length,
                    lastTick: pr.getProperty('LAST_TICK') || '', last: pr.getProperty('LAST_DISPATCH') || '' } });
   }
+  if (action === 'health') return json_(health_());
   if (action === 'news') {   // offentlige nyheder (til alle) — til appen før man logger ind
     return json_({ ok: true, news: newsFor_({}, false).filter(function (n) { return n.to.indexOf('*') >= 0; }).slice(0, 10) });
   }

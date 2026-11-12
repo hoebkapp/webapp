@@ -26,9 +26,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARKIV = os.path.join(ROOT, "data", "arkiv")
 
 
-def old_format_puljer(season, club):
-    """Ældre sæsoner linker kun til puljerne (ingen holdlinks) i klubbens oversigt.
-    Returnér dem som --pulje leagueGroupID:ageGroupID, så fetch_holdkampe finder holdene i puljestillingen."""
+def pulje_only(season, club):
+    """Klubbens oversigt for en afsluttet sæson linker ofte kun til puljen, ikke til holdet
+    (i ældre sæsoner altid, i nyere for de fleste puljer). Returnér de puljer, der ikke har et holdlink,
+    som --pulje leagueGroupID:ageGroupID, så fetch_holdkampe finder holdet i puljestillingen.
+    Returnerer også puljenavne pr. leagueGroupID."""
     sys.path.insert(0, ROOT)
     import fetch_holdkampe as f
     for attempt in range(4):   # serveren nulstiller indimellem forbindelsen
@@ -41,15 +43,19 @@ def old_format_puljer(season, club):
                 raise
             print(f"Forsøg {attempt + 1} fejlede ({e}) — prøver igen.", file=sys.stderr)
             time.sleep(20 * (attempt + 1))
-    if f.parse_club_teams(html):
-        return [], {}
+    links = [(f.parse_args(raw), re.sub(r"\s+", " ", f.text(label)).strip())
+             for raw, label in f.ANCHOR_RE.findall(html)]
+    with_team = {a["leagueGroupID"] for a, _ in links if a["leagueGroupTeamID"]}
     out, names = [], {}
-    for raw, label in f.ANCHOR_RE.findall(html):
-        a = f.parse_args(raw)
-        spec = f"{a['leagueGroupID']}:{a['ageGroupID']}"
-        if a["leagueGroupID"] and spec not in out:
+    for a, label in links:
+        lg = a["leagueGroupID"]
+        if not lg or a["leagueGroupTeamID"]:
+            continue
+        if len(label) > len(names.get(lg, "")):
+            names[lg] = label
+        spec = f"{lg}:{a['ageGroupID']}"
+        if lg not in with_team and spec not in out:
             out.append(spec)
-            names[a["leagueGroupID"]] = re.sub(r"\s+", " ", f.text(label)).strip()
     return out, names
 
 
@@ -58,12 +64,15 @@ def run_season(season, club="1151"):
     os.makedirs(out_dir, exist_ok=True)
     argv = ["fetch_holdkampe.py", "--season", str(season), "--club", club,
             "--out", os.path.join(out_dir, "holdkampe.json")]
-    puljer, pulje_names = old_format_puljer(season, club)
+    puljer, pulje_names = pulje_only(season, club)
     for spec in puljer:
         argv += ["--pulje", spec]
     code = (
         "import sys, fetch_holdkampe as f\n"
         "f.locate_matches = lambda teams, data_dir: None\n"   # ingen køretider for gamle kampe
+        # kun HØBK's egne hold fra en puljestilling — aldrig modstanderne, hvis vores hold ikke er linket
+        "_own = f.find_team_id_in_pulje\n"
+        "f.find_team_id_in_pulje = lambda frag: [t for t in _own(frag) if f.US_RE.search(t['name'])]\n"
         f"sys.argv = {argv!r}\n"
         "f.main()\n"
     )
