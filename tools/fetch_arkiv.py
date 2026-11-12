@@ -20,6 +20,7 @@ import re
 import os
 import subprocess
 import sys
+import time
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ARKIV = os.path.join(ROOT, "data", "arkiv")
@@ -30,8 +31,16 @@ def old_format_puljer(season, club):
     Returnér dem som --pulje leagueGroupID:ageGroupID, så fetch_holdkampe finder holdene i puljestillingen."""
     sys.path.insert(0, ROOT)
     import fetch_holdkampe as f
-    tok = f.get_token()
-    html = f.standing(tok, {"subPage": "6", "seasonID": str(season), "clubID": club})
+    for attempt in range(4):   # serveren nulstiller indimellem forbindelsen
+        try:
+            tok = f.get_token()
+            html = f.standing(tok, {"subPage": "6", "seasonID": str(season), "clubID": club})
+            break
+        except Exception as e:
+            if attempt == 3:
+                raise
+            print(f"Forsøg {attempt + 1} fejlede ({e}) — prøver igen.", file=sys.stderr)
+            time.sleep(20 * (attempt + 1))
     if f.parse_club_teams(html):
         return [], {}
     out, names = [], {}
@@ -105,7 +114,13 @@ def main():
     last = int(sys.argv[2]) if len(sys.argv) == 3 else first
     for season in range(first, last + 1):
         print(f"=== Sæson {season}/{season + 1} ===", flush=True)
-        run_season(season)
+        for attempt in range(2):
+            try:
+                if run_season(season) == 0:
+                    break
+            except Exception as e:   # én sæson må ikke stoppe resten
+                print(f"ADVARSEL: sæson {season}: {e}", file=sys.stderr)
+            time.sleep(30)
     write_index()
 
 
