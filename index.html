@@ -87,6 +87,14 @@ button.card:focus-visible,.chip:focus-visible,.seg button:focus-visible,nav.tabs
 .chip[aria-pressed=true]{background:var(--ink);color:#fff}
 .mrow{width:100%;min-height:60px;padding:10px 12px;display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:10px;align-items:center;text-align:left;background:#fff;border:1px solid #D6DAD0;border-radius:14px;font-size:inherit}
 .mrow.up{border-style:dashed;cursor:default}
+.hseason{display:flex;flex-direction:column;gap:6px;margin-top:6px}
+.hhead{display:flex;align-items:center;gap:8px;margin:0 4px}.hhead b{font-family:Archivo,sans-serif;font-size:15px}.hhead .xs{flex:1}
+.hrow{width:100%;min-height:56px;padding:10px 12px;display:flex;align-items:center;gap:10px;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;font-size:inherit;color:inherit}
+.hnote{align-self:flex-start;margin-left:12px;border:0;background:var(--soft);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:600;color:var(--ink)}
+.harr{flex:none;width:30px;height:30px;border-radius:999px;display:grid;place-items:center;font-weight:800;font-size:16px;background:var(--draw);color:var(--ink)}
+.harr.up{background:var(--accent)}.harr.dn{background:var(--loss)}
+.hdm{display:inline-block;font-size:10px;font-weight:800;padding:1px 6px;border-radius:999px;background:var(--ink);color:#fff;vertical-align:2px}
+.hprow{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:10px 12px;border:0;background:#fff;text-align:left;font-size:inherit;color:inherit}
 .score{font-family:Archivo,sans-serif;font-weight:800;font-size:14px;padding:5px 8px;border-radius:9px;white-space:nowrap}
 .score .soon{font-family:inherit;font-weight:600;font-size:12px;color:var(--muted)}
 table{width:100%;border-collapse:collapse;font-size:13px}
@@ -627,8 +635,8 @@ textarea.inp{resize:vertical;line-height:1.45}
     var troom = ME && ME.token ? roomFor(t) : null;
     if (troom) h += '<button class="card row" style="min-height:52px" data-go="#/snak/' + encodeURIComponent(troom.id) + '"><span class="col"><b style="font-size:14px">💬 Holdets chat</b>' +
       '<span class="xs ellip">' + (troom.last ? esc(troom.by.split(' ')[0] + ': ' + troom.x) : 'Skriv til holdet') + '</span></span>' + (unread(troom) ? '<span class="badge">' + unread(troom) + '</span>' : '<span class="xs">›</span>') + '</button>';
-    h += '<div class="seg" role="tablist" style="grid-template-columns:repeat(3,minmax(0,1fr))">' +
-      [['kampe', 'Kampe'], ['stilling', 'Stilling'], ['spillere', 'Spillere']].map(function (s) {
+    h += '<div class="seg" role="tablist" style="grid-template-columns:repeat(4,minmax(0,1fr))">' +
+      [['kampe', 'Kampe'], ['stilling', 'Stilling'], ['spillere', 'Spillere'], ['historik', 'Historik']].map(function (s) {
         return '<button role="tab" aria-selected="' + (UI.seg === s[0]) + '" data-seg="' + s[0] + '">' + s[1] + '</button>';
       }).join('') + '</div>';
     if (UI.seg === 'kampe') {
@@ -639,6 +647,8 @@ textarea.inp{resize:vertical;line-height:1.45}
           '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + (m.played ? esc(m.result) : regChip(matchEid(m), false, m.date)) + '</span>';
         return '<button class="mrow' + (m.played ? '' : ' up') + '" style="cursor:pointer" data-go="#/hold/' + ti + '/kamp/' + mi + '">' + inner + '</button>';
       }).join('');
+    } else if (UI.seg === 'historik') {
+      h += teamHistory(t);
     } else if (UI.seg === 'stilling') {
       h += '<div class="card" style="overflow:hidden"><table><thead><tr><th style="padding-left:10px">#</th><th>Hold</th><th class="r">K</th><th class="r">Score</th><th class="r" style="padding-right:10px">P</th></tr></thead><tbody>' +
         t.standing.map(function (r) {
@@ -714,6 +724,11 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<span style="font-weight:' + (m.isHome ? 800 : 500) + ';font-size:14px">' + esc(m.home) + '</span><span class="big">' + esc(m.result) + '</span>' +
       '<span style="font-weight:' + (m.isHome ? 500 : 800) + ';font-size:14px">' + esc(m.away) + '</span></div>' +
       '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span></div>';
+    return h + matchGames(m);
+  }
+
+  function matchGames(m) {   // kampens enkeltkampe (bruges også af arkivet)
+    var h = '';
     var ourSide = m.isHome ? 'home' : 'away', theirSide = m.isHome ? 'away' : 'home';
     function names(list, ours) {
       return list.map(function (x) {
@@ -824,6 +839,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         return '<span class="card" style="border-radius:999px;padding:5px 12px;font-size:13px"><strong>' + esc(k) + '</strong> ' + b.won + ' af ' + b.played + '</span>'; }).join('') + '</div>';
     }
     h += playerTourBlock(p, 6);
+    h += playerHistory(id);
     if (!p.games.length) h += '<span class="lbl">Kampe i sæsonen</span><p class="empty">Ingen holdkampe i denne sæson endnu.</p>';
     h += (p.games.length ? '<span class="lbl">Kampe i sæsonen</span>' : '') + p.games.map(function (g) {
       return '<div class="card" style="padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center">' +
@@ -838,6 +854,174 @@ textarea.inp{resize:vertical;line-height:1.45}
   }
 
 
+
+  // ---------- Tidligere sæsoner (data/arkiv, hentes først når man åbner historikken) ----------
+  var ARK = { loading: {} };
+  function arkLoad(key, url) {   // undefined = henter, false = fejl
+    if (ARK[key] !== undefined) return ARK[key];
+    if (!ARK.loading[key]) {
+      ARK.loading[key] = 1;
+      fetch(url + bustParam(21600000)).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+        .then(function (d) { ARK[key] = d || false; ARK.loading[key] = 0; route(true); });
+    }
+    return undefined;
+  }
+  function arkWait(v) { return v === undefined ? '<p class="empty">Henter tidligere sæsoner …</p>' : '<p class="empty">Kunne ikke hente tidligere sæsoner — tjek forbindelsen.</p>'; }
+  var HSTAGE = /slutspil|nedrykning|oprykning|kvalifikation|finale|placering|kvartfinale|bronzekamp|puljevinder|\bplads\b|\bSM\b|^LM\b|^Slutkampe/i;
+  var HLVL = { M: 0, A: 1, B: 2, C: 3, D: 4 };
+  // Hvilken slags hold og hvor højt det spiller (lavere rank = højere række). Ungdom følger årgangen, de andre holdnummeret.
+  function hClass(pulje, name) {
+    var x = pulje || '', o = { stage: HSTAGE.test(x), num: +((/Hørsholm\s+(\d+)/i.exec(name || '') || [])[1] || 1), rank: null, lvl: '' }, m;
+    var y = /\bU\s?(\d{2})(?:\s*[-\/]\s*U?(\d{2}))?/.exec(x);
+    if (y) {
+      o.cat = 'u'; o.key = +y[1] >= 17 ? 'U17/U19' : 'U' + y[1];
+      var rest = x.slice(y.index + y[0].length);
+      m = /^\s*(?:-\s*)?([MABCD](?:[-\/]?[ABCD])?x?)(?![a-zæøå])/.exec(rest);
+      if (m) { o.lvl = m[1]; var ls = m[1].replace(/[^MABCD]/g, ''); o.rank = (HLVL[ls[0]] + HLVL[ls[ls.length - 1]]) / 2; }
+      else if ((m = /(\d{4})/.exec(rest))) o.lvl = m[1] + ' p';
+      o.dm = /^(DMU|DBU)\b|DM-?Hold/i.test(x);
+      if (/piger/i.test(x)) o.lvl += (o.lvl ? ' ' : '') + 'piger';
+      return o;
+    }
+    if (/^MOT/i.test(x)) {
+      o.cat = o.key = 'mot';
+      o.rank = /elite\/mester/i.test(x) ? 0.5 : /elite/i.test(x) ? 0 : /mester/i.test(x) ? 1 : (m = /serie\s*(\d)(?:\s*-\s*(\d))?/i.exec(x)) ? 1 + (+m[1] + +(m[2] || m[1])) / 2 : null;
+      return o;
+    }
+    if ((m = /^(\d0)\+/.exec(x))) {
+      o.cat = o.key = 'v' + m[1];
+      o.rank = /mester/i.test(x) ? 0 : /\bA-r/i.test(x) ? 1 : /\bB-r/i.test(x) ? 2 : null;
+      return o;
+    }
+    if (/badmintonligaen|\d\.\s*division|danmarksserien|^DS\b|sjællandsserien|^serie\s*\d/i.test(x)) {
+      o.cat = o.key = 'sen';
+      o.rank = /badmintonligaen/i.test(x) ? 0 : (m = /(\d)\.\s*division/i.exec(x)) ? +m[1] : /danmarksserien|^DS\b/i.test(x) ? 4 : /sjællandsserien/i.test(x) ? 5 : (m = /^serie\s*(\d)/i.exec(x)) ? 5 + +m[1] : null;
+      return o;
+    }
+    o.cat = o.key = 'fire';   // 4 spillere, 4+2, seniorholdturneringsdag o.l.
+    o.rank = /mester/i.test(x) ? 0 : (m = /\b([ABC])(?=-r|\s*\(|\s*$)/.exec(x)) ? HLVL[m[1]] : null;
+    return o;
+  }
+  function hBase(p) { return (p || '').replace(/\s+Pulje\s+\S+$/i, ''); }
+  function hOwns(r, s) { return r !== s && !r.k.stage && s.k.num === r.k.num && s.k.dm === r.k.dm && s.pulje.indexOf(hBase(r.pulje).slice(0, 14)) === 0; }   // ungdom: slutspil hører til grundspillet med samme navn
+  function hLeague(p) { return (p || '').replace(/\s+Pulje\s+(\S+)$/i, ', pulje $1').replace(/^(.{6,}?) \1/, '$1'); }
+  function hStage(p) { return /oprykning/i.test(p) ? 'Oprykningsspil' : /nedrykning/i.test(p) ? 'Nedrykningsspil' : /kvalifikation/i.test(p) ? 'Kvalifikation' : 'Slutspil'; }
+  function hRec(r) { return r.w + r.l + r.d ? r.w + 'V' + (r.d ? ' ' + r.d + 'U' : '') + ' ' + r.l + 'T' : ''; }
+  function hPos(r) { return /trukket/i.test(r.name) ? 'Trukket' : r.pos && r.of ? 'nr. ' + r.pos + ' af ' + r.of : ''; }
+  function hArrow(now, before) {
+    if (now == null || before == null || now === before) return now != null && before != null ? '<span class="harr" title="Samme række">–</span>' : '';
+    return now < before ? '<span class="harr up" title="Rykket op">↑</span>' : '<span class="harr dn" title="Rykket ned">↓</span>';
+  }
+  // Holdets historik: én linje pr. sæson, nyeste først. Ungdom: alle Hørsholm-hold i årgangen.
+  function teamHistory(t) {
+    var H = arkLoad('hist', 'data/arkiv/historik.json'); if (!H) return arkWait(H);
+    var c = hClass(t.pulje, t.name), youth = c.cat === 'u';
+    function mine(r) { var k = hClass(r.pulje, r.name); r.k = k; return k.cat === c.cat && k.key === c.key && (youth || k.num === c.num); }
+    var seasons = H.seasons.slice().reverse().map(function (S) {
+      var rows = S.teams.filter(mine), main = rows.filter(function (r) { return !r.k.stage; });
+      if (!main.length) main = rows.slice(0, 1);
+      if (!youth) main.sort(function (a, b) { return (b.w + b.l + b.d) - (a.w + a.l + a.d); });
+      else {
+        main.sort(function (a, b) { return (a.k.dm - b.k.dm) || ((a.k.rank == null ? 9 : a.k.rank) - (b.k.rank == null ? 9 : b.k.rank)) || (a.k.num - b.k.num); });
+        // slutspil uden et grundspil at hænge på (fx kun en SM-finale) vises som egen linje
+        rows.forEach(function (s) { if (s.k.stage && main.indexOf(s) < 0 && !main.some(function (r) { return hOwns(r, s); })) main.push(s); });
+      }
+      return { S: S, rows: rows, main: youth ? main : main.slice(0, 1), extra: youth ? [] : main.slice(1) };
+    }).filter(function (x) { return x.rows.length; });
+    if (!seasons.length) return '<p class="empty">Ingen tidligere sæsoner fundet for ' + esc(youth ? c.key : t.name + ' · ' + t.label) + ' (arkivet går tilbage til 2010/11).</p>';
+    function stagesFor(x, r) {
+      return x.rows.filter(function (s) { return s !== r && s.k.stage && (!youth || hOwns(r, s)) && x.main.indexOf(s) < 0; })
+        .map(function (s) { return '<button class="hnote" data-go="#/arkiv/' + x.S.season + '/' + s.i + '">' + hStage(s.pulje) + (hPos(s) ? ': ' + hPos(s) : '') + ' ›</button>'; }).join('');
+    }
+    function line(x, r, arrow) {
+      return '<button class="hrow" data-go="#/arkiv/' + x.S.season + '/' + r.i + '">' +
+        '<span class="col" style="flex:1;min-width:0"><b style="font-size:14px" class="ellip">' + (youth ? esc(r.name) + ' · ' + esc(r.k.lvl ? r.k.key + ' ' + r.k.lvl : hLeague(r.pulje)) : esc(hLeague(r.pulje))) + (r.k.dm ? ' <span class="hdm">DM</span>' : '') + '</b>' +
+        (youth && r.k.lvl ? '<span class="xs ellip">' + esc(hLeague(r.pulje)) + '</span>' : '') +
+        '<span class="xs">' + [hPos(r), hRec(r)].filter(Boolean).join(' · ') + '</span></span>' + (arrow || '') + '<span class="xs">›</span></button>';
+    }
+    var ranks = seasons.map(function (x) { return x.main[0].k.rank; });
+    var h = '<p class="note" style="margin:0">' + (youth ? 'Alle Hørsholm-hold i ' + esc(c.key) + ' pr. sæson. Spillerne skifter årgang, så holdene følges ikke fra år til år. Tryk for stilling og kampe.'
+      : '↑ rykket op og ↓ rykket ned i forhold til sæsonen før. Tryk for stilling og kampe.') + '</p>';
+    if (!youth && hArrow(c.rank, ranks[0])) h += '<div class="hseason"><div class="hhead"><b>I år</b><span class="xs">' + esc(t.label) + '</span>' + hArrow(c.rank, ranks[0]) + '</div></div>';
+    h += seasons.map(function (x, n) {
+      return '<div class="hseason"><div class="hhead"><b>' + esc(x.S.label) + '</b></div>' +
+        x.main.map(function (r, k) { return line(x, r, !youth && k === 0 ? hArrow(r.k.rank, ranks[n + 1]) : '') + stagesFor(x, r); }).join('') +
+        x.extra.map(function (r) { return line(x, r, ''); }).join('') + '</div>';
+    }).join('');
+    return h;
+  }
+  function viewArkivTeam(season, i, mi) {
+    setTab('hold');
+    var S = arkLoad('s' + season, 'data/arkiv/' + season + '/holdkampe.json');
+    if (!S) { setHeader('Sæson ' + season + '/' + (+season + 1), '', true); return arkWait(S); }
+    var t = S.teams[i]; if (!t) { setHeader('Arkiv', '', true); return '<p class="empty">Holdet findes ikke i arkivet.</p>'; }
+    var sl = season + '/' + (+season + 1);
+    if (mi !== undefined && t.matches[mi]) {
+      var m = t.matches[mi], pts = m.points;
+      setHeader((m.isHome ? 'mod ' : '@ ') + m.opponent, t.name + ' · ' + sl, true);
+      return '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">' +
+        '<span class="xs" style="font-weight:600">' + esc(dTxt(m.date)) + ' ' + esc(m.date.slice(0, 4)) + (m.venue ? ' · ' + esc(m.venue) : '') + '</span>' +
+        '<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px;text-align:center">' +
+        '<span style="font-weight:' + (m.isHome ? 800 : 500) + ';font-size:14px">' + esc(m.home) + '</span><span class="big">' + esc(m.result || '–') + '</span>' +
+        '<span style="font-weight:' + (m.isHome ? 500 : 800) + ';font-size:14px">' + esc(m.away) + '</span></div>' +
+        (m.played ? '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span>' : '') + '</div>' + matchGames(m);
+    }
+    setHeader(t.label || t.pulje, t.name + ' · ' + sl, true);
+    var me = t.standing.filter(function (r) { return r.isUs; })[0] || {};
+    var h = '<div class="tiles">' +
+      '<div class="card tile"><span class="lbl" style="margin:0">Placering</span><b>' + esc(+t.position ? t.position : '–') + ' / ' + (t.standing.length || '–') + '</b></div>' +
+      '<div class="card tile"><span class="lbl" style="margin:0">Point</span><b>' + esc(me.points || '–') + '</b></div>' +
+      '<div class="card tile"><span class="lbl" style="margin:0">Kampe</span><b>' + t.matches.length + '</b></div></div>' +
+      '<p class="note" style="margin:0">' + esc(hLeague(t.pulje)) + ' · sæson ' + sl + '</p>';
+    if (t.standing.length) h += '<span class="lbl">Slutstilling</span><div class="card" style="overflow:hidden"><table><thead><tr><th style="padding-left:10px">#</th><th>Hold</th><th class="r">K</th><th class="r">Score</th><th class="r" style="padding-right:10px">P</th></tr></thead><tbody>' +
+      t.standing.map(function (r) {
+        return '<tr class="' + (r.isUs ? 'us' : '') + '"><td style="padding-left:10px">' + esc(r.pos) + '</td><td>' + esc(r.team) + '</td><td class="r">' + esc(r.played) +
+          '</td><td class="r">' + esc(r.score) + '</td><td class="r" style="padding-right:10px;font-weight:700">' + esc(r.points) + '</td></tr>';
+      }).join('') + '</tbody></table></div>';
+    h += '<span class="lbl">Kampe</span>' + (t.matches.length ? t.matches.map(function (m, k) {
+      return '<button class="mrow" style="cursor:pointer" data-go="#/arkiv/' + season + '/' + i + '/kamp/' + k + '">' +
+        '<span class="col"><b style="font-size:13px">' + dTxt(m.date) + '</b><span class="xs">' + esc(m.date.slice(0, 4)) + '</span></span>' +
+        '<span class="col"><span style="font-weight:600;font-size:14px">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span><span class="xs ellip">' + (m.isHome ? 'Hjemme' : 'Ude') + (m.walkover ? ' · ' + esc(m.walkover) : '') + '</span></span>' +
+        '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + esc(m.played ? m.result : '–') + '</span></button>';
+    }).join('') : '<p class="empty">Ingen kampe registreret.</p>');
+    return h;
+  }
+  // Spillerens tidligere sæsoner (fra spillerhistorik.json)
+  function playerHistory(id) {
+    var P = arkLoad('sp', 'data/arkiv/spillerhistorik.json');
+    if (P === undefined) return '<span class="lbl">Tidligere sæsoner</span>' + arkWait(P);
+    var x = P && P[id]; if (!x || !x.s.length) return '';
+    var tot = x.s.reduce(function (a, s) { return [a[0] + s[1], a[1] + s[2]]; }, [0, 0]);
+    return '<span class="lbl">Tidligere sæsoner · ' + x.s.length + ' sæsoner · ' + tot[0] + ' kampe · ' + Math.round(100 * tot[1] / (tot[0] || 1)) + '% vundet</span>' +
+      '<div class="card" style="overflow:hidden">' + x.s.slice().reverse().map(function (s, n) {
+        return '<button class="hprow" data-go="#/spiller/' + esc(id) + '/' + s[0] + '" style="' + (n ? 'border-top:1px solid var(--line2)' : '') + '">' +
+          '<span class="col" style="min-width:0"><b style="font-size:14px">' + s[0] + '/' + (+s[0] + 1) + '</b><span class="xs ellip">' + esc(s[3].join(', ')) + '</span></span>' +
+          '<span class="col" style="align-items:flex-end"><span class="h" style="font-size:15px">' + s[2] + '/' + s[1] + '</span><span style="font-size:11px;color:var(--muted)">vundet</span></span>' +
+          '<span class="col" style="align-items:flex-end;min-width:52px"><span class="h" style="font-size:15px">' + (s[4] ? 'nr. ' + s[4] : '–') + '</span><span style="font-size:11px;color:var(--muted)">i klubben</span></span></button>';
+      }).join('') + '</div>';
+  }
+  function viewPlayerSeason(id, season) {
+    var p = D.players[id], S = arkLoad('p' + season, 'data/arkiv/' + season + '/spillere.json'), sl = season + '/' + (+season + 1);
+    setHeader(p ? p.name : 'Spiller', 'Sæson ' + sl, true);
+    if (!S) return arkWait(S);
+    var q = S.players.filter(function (x) { return x.id === id; })[0];
+    if (!q) return '<p class="empty">Ingen holdkampe i ' + sl + '.</p>';
+    var rk = (S.clubRanking.filter(function (r) { return r.id === id; })[0] || {}).rank;
+    var h = '<div class="tiles">' + [['Kampe', q.played], ['Vundet', q.won], ['Sejr', q.winPct + '%'], ['Point', q.pointsFor], ['Snit', q.avgPoints], ['Klubben', rk ? 'nr. ' + rk : '–']]
+      .map(function (t) { return '<div class="card tile" style="padding:10px"><span class="lbl" style="margin:0">' + t[0] + '</span><b style="font-size:20px">' + esc(t[1]) + '</b></div>'; }).join('') + '</div>';
+    var bd = Object.keys(q.byDiscipline || {}).sort();
+    if (bd.length) h += '<span class="lbl">Pr. disciplin</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + bd.map(function (k) {
+      var b = q.byDiscipline[k]; return '<span class="card" style="border-radius:999px;padding:5px 12px;font-size:13px"><strong>' + esc(k) + '</strong> ' + b.won + ' af ' + b.played + '</span>'; }).join('') + '</div>';
+    h += '<span class="lbl">Kampe i ' + sl + '</span>' + q.games.map(function (g) {
+      return '<div class="card" style="padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center">' +
+        '<div class="col" style="line-height:1.35"><span class="xs">' + dTxt(g.date) + ' ' + g.date.slice(0, 4) + ' · ' + esc(g.teamName || '') + ' · ' + esc(g.discipline) + '</span>' +
+        '<span style="font-size:13px;font-weight:600">' + (g.partner.length ? 'med ' + esc(g.partner.join(' / ')) : 'Single') + '</span>' +
+        '<span class="xs" style="color:#3C4A57">mod ' + esc(g.opponents.join(' / ')) + ' (' + esc(g.opponentTeam) + ')</span></div>' +
+        '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(g.sets) || 'W.O.') + '</span>' +
+        '<span class="mark" style="background:' + (g.won ? 'var(--accent)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
+    }).join('');
+    return h;
+  }
 
   // ---------- Turneringer ----------
   var LEVEL_ORDER = ['E', 'M', 'A', 'B', 'C', 'D'];
@@ -4044,6 +4228,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (needWelcome()) { lastTab = 'nyt'; html = viewWelcome(); }
     else if (parts[0] === 'hold' && parts[1] !== undefined && parts[2] === 'kamp') html = viewMatch(+parts[1], +parts[3]);
     else if (parts[0] === 'hold' && parts[1] !== undefined) html = viewTeam(+parts[1]);
+    else if (parts[0] === 'arkiv') html = viewArkivTeam(parts[1], +parts[2], parts[3] === 'kamp' ? +parts[4] : undefined);
     else if (parts[0] === 'rangliste') { lastTab = 'spillere'; html = viewRang(); }
     else if (parts[0] === 'nyt') { lastTab = 'nyt'; html = viewNyt(); }
     else if (parts[0] === 'spillere') { lastTab = 'spillere'; html = viewSpillere(); }
@@ -4074,7 +4259,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     else if (parts[0] === 'notifikationer') { lastTab = 'tilmeld'; html = viewNotifikationer(); }
     else if (parts[0] === 'sider') { lastTab = 'sider'; html = viewSider(); }
     else if (parts[0] === 'side') { lastTab = 'sider'; html = viewSide(parts.slice(1).join('/')); }
-    else if (parts[0] === 'spiller') { setTab(lastTab); html = viewPlayer(decodeURIComponent(parts[1] || '')); }
+    else if (parts[0] === 'spiller') { setTab(lastTab); html = parts[2] ? viewPlayerSeason(decodeURIComponent(parts[1] || ''), parts[2]) : viewPlayer(decodeURIComponent(parts[1] || '')); }
     else { lastTab = 'hold'; html = viewHoldList(); }
     $main.classList.toggle('chat', /id="msgText"/.test(html));
     $main.innerHTML = html;
@@ -4220,7 +4405,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   var prevHash = null;
   window.addEventListener('hashchange', function () {
     var parts = location.hash.replace(/^#\/?/, '').split('/');
-    if (parts[0] === 'hold' && parts.length === 2 && !(prevHash || '').startsWith('#/hold/' + parts[1])) UI.seg = 'kampe';
+    if (parts[0] === 'hold' && parts.length === 2 && !(prevHash || '').startsWith('#/hold/' + parts[1]) && !/^#\/arkiv\//.test(prevHash || '')) UI.seg = 'kampe';
     prevHash = location.hash;
     route(); $main.scrollTop = 0;
     if (UI.scrollGrp) { UI.scrollGrp = 0; var gb = document.getElementById('grpBlock'); if (gb) gb.scrollIntoView({ behavior: 'smooth', block: 'start' }); }

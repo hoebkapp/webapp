@@ -13,6 +13,7 @@ Pr. sæson skrives:
   data/arkiv/<sæson>/holdkampe.json   hold, stillinger, kampe og opstillinger
   data/arkiv/<sæson>/spillere.json    spillere og klubrangliste ud fra opstillingerne (ingen profiler)
   data/arkiv/index.json               oversigt over hentede sæsoner
+  data/arkiv/historik.json, spillerhistorik.json   samlefiler til appen (tools/build_historik.py)
 Køretider til spillesteder springes over (bruges kun til kommende kampe).
 """
 import json
@@ -114,6 +115,9 @@ def write_index():
     with open(os.path.join(ARKIV, "index.json"), "w", encoding="utf-8") as fh:
         json.dump({"source": "badmintonplayer.dk", "seasons": seasons}, fh, ensure_ascii=False, indent=1)
     print(f"Skrev data/arkiv/index.json: {len(seasons)} sæsoner.")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import build_historik   # små samlefiler til appens historik
+    build_historik.build()
 
 
 def main():
