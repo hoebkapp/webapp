@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T18:16:47+00:00",
+ "updated": "2026-11-12T18:31:43+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -275,6 +275,13 @@
    "ts": "2026-11-12T17:32:43.740Z"
   },
   {
+   "e": "t:2026-11-18:Voksenfjer",
+   "p": "n:daniel-lee-skriver",
+   "n": "Daniel Lee Skriver",
+   "s": "nej",
+   "ts": "2026-11-12T18:24:33.926Z"
+  },
+  {
    "e": "t:2026-11-22:Veteran",
    "p": "11745",
    "n": "Steffen Bille Rannes",
@@ -289,11 +296,32 @@
    "ts": "2026-11-12T17:32:57.583Z"
   },
   {
+   "e": "t:2026-11-25:Voksenfjer",
+   "p": "n:daniel-lee-skriver",
+   "n": "Daniel Lee Skriver",
+   "s": "nej",
+   "ts": "2026-11-12T18:24:37.695Z"
+  },
+  {
+   "e": "t:2026-12-02:Voksenfjer",
+   "p": "n:daniel-lee-skriver",
+   "n": "Daniel Lee Skriver",
+   "s": "nej",
+   "ts": "2026-11-12T18:24:40.912Z"
+  },
+  {
    "e": "t:2026-12-06:Veteran",
    "p": "11745",
    "n": "Steffen Bille Rannes",
    "s": "ja",
    "ts": "2026-11-07T09:05:25.140Z"
+  },
+  {
+   "e": "t:2026-12-09:Voksenfjer",
+   "p": "n:daniel-lee-skriver",
+   "n": "Daniel Lee Skriver",
+   "s": "nej",
+   "ts": "2026-11-12T18:24:43.822Z"
   }
  ],
  "lineups": [
