@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T20:43:12+00:00",
+ "updated": "2026-11-12T20:46:43+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -811,6 +811,82 @@
    "games": [],
    "note": "",
    "by": "Casper Engen Peetz"
+  },
+  {
+   "e": "m:514332",
+   "team": "U15 B",
+   "status": "udkast",
+   "t": 1794516315655,
+   "squad": [
+    {
+     "id": "335592",
+     "name": "William Vedsted Nørrelund"
+    },
+    {
+     "id": "346992",
+     "name": "Carl Grønfeldt"
+    },
+    {
+     "id": "346993",
+     "name": "Mikkel Christian Korsholm"
+    }
+   ],
+   "games": [
+    {
+     "k": "1. D",
+     "p": [
+      "",
+      ""
+     ]
+    },
+    {
+     "k": "4. D",
+     "p": [
+      "",
+      ""
+     ]
+    },
+    {
+     "k": "2. D",
+     "p": [
+      "",
+      ""
+     ]
+    },
+    {
+     "k": "3. D",
+     "p": [
+      "",
+      ""
+     ]
+    },
+    {
+     "k": "1. S",
+     "p": [
+      ""
+     ]
+    },
+    {
+     "k": "2. S",
+     "p": [
+      ""
+     ]
+    },
+    {
+     "k": "3. S",
+     "p": [
+      ""
+     ]
+    },
+    {
+     "k": "4. S",
+     "p": [
+      ""
+     ]
+    }
+   ],
+   "note": "",
+   "by": "Anders Vedsted Nørrelund"
   }
  ],
  "scriptHasLineups": true
