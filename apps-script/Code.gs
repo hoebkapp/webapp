@@ -52,7 +52,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-12.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-12.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -1561,6 +1561,45 @@ function errKind_(err) {
   if (/timed? ?out|exceeded maximum execution/i.test(m)) return 'timeout';
   return 'other';
 }
+// Kaldes fra tick (hvert kvarter): rammer appen en grænse, skriver "HØBK-drift" i admin-chatten og alle i chatten får push.
+// Samme slags advarsel højst hver 3. time. Tallene er de samme som i ?action=health.
+var ALERT_COOLDOWN_H = 3;
+function healthAlert_() {
+  var pr = PropertiesService.getScriptProperties(), now = Date.now(), alerts = [];
+  var mailLeft = MailApp.getRemainingDailyQuota(), blocked = statSum_('mailblocked', 60);
+  var req = statSum_('req', 60), err = statSum_('err', 60), slow = statSum_('slow', 60), lock = statSum_('err_lock', 60);
+  if (mailLeft < 1 || blocked > 0) {
+    alerts.push(['mail0', '🔴 Klubbens e-mail-kvote er brugt op' + (blocked > 0 ? ' — ' + blocked + ' har ikke kunnet få en login-kode den seneste time' : '') + '.',
+      'Nye kan ikke logge ind med e-mail, før kvoten fyldes op igen (løbende over et døgn). Henvis til ?-ikonet → "Lav kode" på en enhed, de allerede er logget ind på. Send ikke holdleder-mails i dag.']);
+  } else if (mailLeft <= 15) {
+    alerts.push(['mail', '🟠 Klubbens e-mail-kvote er ved at slippe op: ' + mailLeft + ' mails tilbage.',
+      'Hold igen med holdleder-mails i dag, så login-koderne rækker. Henvis gerne til ?-ikonet → "Lav kode" for at logge ind på en ekstra enhed.']);
+  }
+  if (err >= 10 || (req >= 40 && err / req > 0.05)) {
+    alerts.push(['err', '🟠 Appen giver fejl: ' + err + ' fejl ud af ' + req + ' forespørgsler den seneste time' + (lock >= 3 ? ' (mange samtidige skrivninger)' : '') + '.',
+      'Vent med at sende push eller nyheder til alle, til det har lagt sig. Brugere kan prøve igen om et par minutter.']);
+  }
+  if (slow >= 10) {
+    alerts.push(['slow', '🟠 Appen er langsom: ' + slow + ' svar tog over 8 sekunder den seneste time.',
+      'Vent med at sende push eller nyheder til alle, til det har lagt sig.']);
+  }
+  alerts.forEach(function (a) {
+    var key = 'ALERT_' + a[0], last = Number(pr.getProperty(key) || 0);
+    if (now - last < ALERT_COOLDOWN_H * 3600000) return;
+    pr.setProperty(key, String(now));
+    systemPost_(ADMIN_ROOM, a[1] + '\n\nHvad gør vi: ' + a[2] + '\n\nChristoffer kan lægge en driftsbesked øverst i appen til alle.');
+  });
+}
+function systemPost_(room, text) {   // besked fra "HØBK-drift" (ikke en person) + push til alle i rummet, der ikke har gjort det lydløst
+  text = text_(text, MSG_MAX);
+  withLock_(function () { sh_('Beskeder').appendRow([newId_('b'), new Date(), room, 'system', 'HØBK-drift', '', safe_(text), false]); });
+  var cx = ctx_(), muted = {};
+  data_('Lydløs').forEach(function (r) { if (String(r[1]) === room) muted[String(r[0]).toLowerCase()] = 1; });
+  queuePush_(pushTargets_(cx, function (e, pid) { return !muted[e] && !!memberRooms_(cx, e, pid, true)[room]; }).map(function (r) {
+    return [new Date(), r.endpoint, r.p256dh, r.auth, 'HØBK-drift · Admin-chat', clean_(text, 140), APP_URL + '#/snak/' + encodeURIComponent(room), 'drift'];
+  }));
+}
+
 function health_() {
   var now = new Date(), dayStart = new Date(Utilities.formatDate(now, 'Europe/Copenhagen', 'yyyy-MM-dd') + 'T00:00:00');
   var hourAgo = new Date(now.getTime() - 3600000);
@@ -1768,6 +1807,7 @@ function tick() {
   if (h >= 6 && pr.getProperty('FULL_AM') !== day) { pr.setProperty('FULL_AM', day); res.push(ghDispatch_('holdkampe.yml')); }
   else if (h >= 21 && pr.getProperty('FULL_PM') !== day) { pr.setProperty('FULL_PM', day); res.push(ghDispatch_('holdkampe.yml')); }
   if (pr.getProperty('PUSH_PENDING') === '1') res.push(ghDispatch_('push.yml'));   // push der ikke blev sendt med det samme
+  try { healthAlert_(); } catch (e) {}   // advar administratorerne i admin-chatten, hvis appen rammer en grænse
   pr.setProperty('LAST_TICK', now.toISOString());
   pr.setProperty('LAST_DISPATCH', res.join(' '));
 }
