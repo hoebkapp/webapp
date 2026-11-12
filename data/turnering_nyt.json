@@ -765,6 +765,12 @@
     "d": "2026-11-11",
     "t": "Invitationen er lagt ud"
    }
+  ],
+  "115815": [
+   {
+    "d": "2026-11-12",
+    "t": "Programmet er klar (lodtrækning og spilletider)"
+   }
   ]
  },
  "alias": {
@@ -776,5 +782,5 @@
   "123645": "xb540de5e1a",
   "121353": "xddfcf04009"
  },
- "updated": "2026-11-11T20:23:15+00:00"
+ "updated": "2026-11-12T05:24:55+00:00"
 }
