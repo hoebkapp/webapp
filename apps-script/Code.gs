@@ -175,7 +175,7 @@ function request_(b) {
     var hourAgo = new Date(Date.now() - 3600000);
     var recent = data_('Koder').filter(function (r) { return r[1] === email && new Date(r[0]) > hourAgo; }).length;
     if (recent >= MAX_CODES_PER_HOUR) return { ok: false, error: 'For mange koder — prøv igen om en time' };
-    if (MailApp.getRemainingDailyQuota() < 1) { stat_('mailblocked'); return { ok: false, error: 'Klubbens e-mail-kvote er brugt i dag — prøv i morgen' }; }
+    if (MailApp.getRemainingDailyQuota() < 1) { stat_('mailblocked'); return { ok: false, error: 'Klubbens e-mail-kvote er brugt lige nu — prøv igen om nogle timer' }; }
     var code = String(Math.floor(100000 + Math.random() * 900000));
     sh_('Koder').appendRow([new Date(), email, hash_('c:' + email + ':' + code), safe_(pid), safe_(pname), 0, false, kids.length ? JSON.stringify(kids) : '']);
     MailApp.sendEmail({
@@ -380,7 +380,7 @@ function leaderMailSend_(b) {
     return one ? em === one : !sent[em];
   });
   if (one && !todo.length) return { ok: false, error: 'Holdlederen findes ikke' };
-  if (MailApp.getRemainingDailyQuota() < todo.length) return { ok: false, error: 'Klubbens e-mail-kvote rækker ikke i dag — prøv i morgen' };
+  if (MailApp.getRemainingDailyQuota() < todo.length) return { ok: false, error: 'Klubbens e-mail-kvote rækker ikke lige nu — prøv igen om nogle timer' };
   var done = [], failed = [];
   todo.forEach(function (r) {
     var em = String(r[0]).toLowerCase().trim(), teams = String(r[2]).split(',').map(function (t) { return t.trim(); }).filter(String);
