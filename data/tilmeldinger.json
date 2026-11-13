@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T06:16:44+00:00",
+ "updated": "2026-11-13T06:31:47+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -989,6 +989,37 @@
    ],
    "note": "",
    "by": "Tue Krogh-Larsen"
+  },
+  {
+   "e": "m:510584",
+   "team": "U13 A",
+   "status": "udkast",
+   "t": 1794551344303,
+   "squad": [
+    {
+     "id": "330735",
+     "name": "Claudia Orholm Nielsen"
+    },
+    {
+     "id": "332881",
+     "name": "Agnes Schroller Broerson"
+    },
+    {
+     "id": "335589",
+     "name": "Ellen Sams Riemer"
+    },
+    {
+     "id": "357320",
+     "name": "Sebastian Feodor Nilsson"
+    },
+    {
+     "id": "358591",
+     "name": "Bertil Emil Bæhrenz Peetz"
+    }
+   ],
+   "games": [],
+   "note": "",
+   "by": "Sandra Feodor Nilsson"
   }
  ],
  "scriptHasLineups": true
