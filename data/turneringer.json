@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T06:14:25+00:00",
+ "updated": "2026-11-13T20:03:53+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -10974,10 +10974,14 @@
    "id": "117266",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117266,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117266,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117266,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117266"
    },
    "entryOpen": false,
@@ -12116,19 +12120,21 @@
    "links": [
     "invitation",
     "program",
-    "resultater"
+    "resultater",
+    "tilmelding"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116800,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116800,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116800,-8"
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116800,-8",
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#116800"
    },
-   "entryOpen": false,
+   "entryOpen": true,
    "hasResults": false,
    "start": "2026-11-28",
    "end": "2026-11-28",
    "week": "48",
-   "deadline": "2026-11-12",
+   "deadline": "2026-11-15",
    "organiser": "Jyske Mesterskaber i Brande",
    "classes": [
     {
@@ -12207,19 +12213,21 @@
    "links": [
     "invitation",
     "program",
-    "resultater"
+    "resultater",
+    "tilmelding"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116886,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116886,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116886,-8"
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116886,-8",
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#116886"
    },
-   "entryOpen": false,
+   "entryOpen": true,
    "hasResults": false,
    "start": "2026-11-28",
    "end": "2026-11-28",
    "week": "48",
-   "deadline": "2026-11-12",
+   "deadline": "2026-11-15",
    "organiser": "Jyske Mesterskaber i Hammel",
    "classes": [
     {
@@ -12300,19 +12308,21 @@
    "links": [
     "invitation",
     "program",
-    "resultater"
+    "resultater",
+    "tilmelding"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119657,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8"
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8",
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119657"
    },
-   "entryOpen": false,
+   "entryOpen": true,
    "hasResults": false,
    "start": "2026-11-28",
    "end": "2026-11-28",
    "week": "48",
-   "deadline": "2026-11-12",
+   "deadline": "2026-11-14",
    "organiser": "Jyske Mesterskaber i Ribe",
    "classes": [
     {
@@ -13193,43 +13203,6 @@
    ],
    "place": {
     "unknown": true
-   }
-  },
-  {
-   "id": "123653",
-   "links": [
-    "tilmelding"
-   ],
-   "urls": {
-    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123653"
-   },
-   "entryOpen": true,
-   "hasResults": false,
-   "start": "2026-12-11",
-   "end": "2026-12-13",
-   "week": "50",
-   "deadline": "2026-11-26",
-   "organiser": "Badminton Danmark U17 decemberlejr 2026",
-   "classes": [
-    {
-     "raw": "U17 E",
-     "ages": [
-      "U17"
-     ],
-     "levels": [
-      "E"
-     ],
-     "days": "fr 11-sø 13"
-    }
-   ],
-   "place": {
-    "name": "Danmark",
-    "lat": 55.6702,
-    "lon": 10.3333,
-    "km": 138,
-    "region": "",
-    "min": 165,
-    "roadKm": 216
    }
   },
   {
@@ -16450,9 +16423,11 @@
   {
    "id": "118114",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118114,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118114"
    },
    "entryOpen": true,

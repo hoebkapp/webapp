@@ -590,6 +590,14 @@
   ],
   "116886": [
    {
+    "d": "2026-11-13",
+    "t": "Tilmeldingsfristen er ændret til søn 15. nov (var tor 12. nov)"
+   },
+   {
+    "d": "2026-11-13",
+    "t": "Tilmeldingen er åbnet"
+   },
+   {
     "d": "2026-11-06",
     "t": "Nye rækker: U13 B,C,D"
    },
@@ -599,6 +607,14 @@
    }
   ],
   "119657": [
+   {
+    "d": "2026-11-13",
+    "t": "Tilmeldingsfristen er ændret til lør 14. nov (var tor 12. nov)"
+   },
+   {
+    "d": "2026-11-13",
+    "t": "Tilmeldingen er åbnet"
+   },
    {
     "d": "2026-11-06",
     "t": "Programmet er klar (lodtrækning og spilletider)"
@@ -776,12 +792,6 @@
     "t": "Ny turnering i kalenderen"
    }
   ],
-  "123653": [
-   {
-    "d": "2026-11-12",
-    "t": "Ny turnering i kalenderen"
-   }
-  ],
   "123650": [
    {
     "d": "2026-11-12",
@@ -871,6 +881,10 @@
   "117266": [
    {
     "d": "2026-11-13",
+    "t": "Programmet er klar (lodtrækning og spilletider)"
+   },
+   {
+    "d": "2026-11-13",
     "t": "Deltagerlisten er offentliggjort"
    }
   ],
@@ -921,6 +935,22 @@
     "d": "2026-11-13",
     "t": "Deltagerlisten er offentliggjort"
    }
+  ],
+  "116800": [
+   {
+    "d": "2026-11-13",
+    "t": "Tilmeldingsfristen er ændret til søn 15. nov (var tor 12. nov)"
+   },
+   {
+    "d": "2026-11-13",
+    "t": "Tilmeldingen er åbnet"
+   }
+  ],
+  "118114": [
+   {
+    "d": "2026-11-13",
+    "t": "Invitationen er lagt ud"
+   }
   ]
  },
  "alias": {
@@ -932,5 +962,5 @@
   "121353": "xddfcf04009",
   "x0532541790": "116323"
  },
- "updated": "2026-11-13T06:31:42+00:00"
+ "updated": "2026-11-13T20:23:15+00:00"
 }
