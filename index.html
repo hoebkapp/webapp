@@ -641,9 +641,9 @@ textarea.inp{resize:vertical;line-height:1.45}
       }).join('') + '</div>';
     if (UI.seg === 'kampe') {
       h += t.matches.map(function (m, mi) {
-        var where = (m.isHome ? 'Hjemme' : 'Ude') + (!m.played && driveShort(m) ? ' · ' + driveShort(m) : '') + ' · ' + m.venue + (m.walkover ? ' · ' + m.walkover : '');
+        var where = (playsHome(m) ? 'Hjemme' : 'Ude') + (!m.played && driveShort(m) ? ' · ' + driveShort(m) : '') + ' · ' + m.venue + (m.walkover ? ' · ' + m.walkover : '');
         var inner = '<span class="col"><b style="font-size:13px">' + dTxt(m.date) + '</b><span class="xs">' + esc(m.time || '') + '</span></span>' +
-          '<span class="col"><span style="font-weight:600;font-size:14px">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span><span class="xs ellip">' + esc(where) + '</span></span>' +
+          '<span class="col"><span style="font-weight:600;font-size:14px">' + vs(m) + esc(m.opponent) + '</span><span class="xs ellip">' + esc(where) + '</span></span>' +
           '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + (m.played ? esc(m.result) : regChip(matchEid(m), false, m.date)) + '</span>';
         return '<button class="mrow' + (m.played ? '' : ' up') + '" style="cursor:pointer" data-go="#/hold/' + ti + '/kamp/' + mi + '">' + inner + '</button>';
       }).join('');
@@ -692,18 +692,19 @@ textarea.inp{resize:vertical;line-height:1.45}
   function viewMatch(ti, mi) {
     var t = D.teams[ti], m = t && t.matches[mi]; if (!m) return viewTeam(ti);
     setTab(lastTab === 'kalender' || lastTab === 'tilmeld' ? lastTab : 'hold');
-    setHeader((m.isHome ? 'mod ' : '@ ') + m.opponent, t.label + ' · ' + dTxt(m.date), true);
+    setHeader(vs(m) + m.opponent, t.label + ' · ' + dTxt(m.date), true);
     if (!m.played) {
       var eid = matchEid(m);
       return '<div class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px">' +
-        '<span class="lbl" style="margin:0">' + esc(t.label) + ' · ' + esc(t.name) + ' · ' + (m.isHome ? 'Hjemmekamp' : 'Udekamp') + '</span>' +
+        '<span class="lbl" style="margin:0">' + esc(t.label) + ' · ' + esc(t.name) + ' · ' + (playsHome(m) ? 'Hjemmekamp' : 'Udekamp') + '</span>' +
         '<span class="h" style="font-size:22px;line-height:1.15">' + esc(m.home) + ' – ' + esc(m.away) + '</span>' +
         '<span style="font-weight:600">' + DAY_FULL[parseD(m.date).getDay()] + ' ' + dTxt(m.date).split(' ').slice(1).join(' ') + ' kl. ' + esc(m.time || '') + '</span>' +
         '<span class="s">' + esc(m.venue) + (m.organiser ? ' · arrangør ' + esc(m.organiser) : '') + '</span>' +
+        sideNote(m) +
         (driveTxt(m) ? '<span class="drive">' + CAR + esc(driveTxt(m)) + (m.travel.min > 3 ? ' fra Hørsholm' : '') + '</span>' : '') +
         routeBtn(mapsDest(m)) + '</div>' +
         (function () {
-          var lab = t.label + ' ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' ' + m.date, kk = kidsOnTeam(t.label);
+          var lab = t.label + ' ' + vs(m) + m.opponent + ' ' + m.date, kk = kidsOnTeam(t.label);
           var me = onTeamOrSelected(t.label, m);
           var mineBlock = me ? '<span class="lbl">Kan du spille?</span>' + regBlock('match', eid, lab, true, kk.length ? { id: ME.id, name: ME.name, noSummary: true } : undefined) : '';
           if (!ME || !ME.token) return '<span class="lbl">Kan du spille?</span>' + regBlock('match', eid, lab, true);   // logget ud: "Log ind for at svare"
@@ -713,7 +714,7 @@ textarea.inp{resize:vertical;line-height:1.45}
           }
           return mineBlock + (kk.length ? '<span class="lbl">Kan ' + esc(kk.map(function (k) { return k.name.split(' ')[0]; }).join(' / ')) + ' spille?</span>' + kidRegBlocks('match', eid, lab, true, t.label, false) : '');
         })() +
-        (atHomeHall(m.venue) ? '' : rideSection(matchEid(m), t.label + ' ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' · ' + dTxt(m.date), m.matchID ? '#/holdid/' + t.leagueGroupTeamID + '/kamp/' + m.matchID : '', kidsOnTeam(t.label),
+        (atHomeHall(m.venue) ? '' : rideSection(matchEid(m), t.label + ' ' + vs(m) + m.opponent + ' · ' + dTxt(m.date), m.matchID ? '#/holdid/' + t.leagueGroupTeamID + '/kamp/' + m.matchID : '', kidsOnTeam(t.label),
           { youth: /^U\d/.test(t.label), team: t.leagueGroupTeamID, label: t.label })) +
         lineupSection(ti, mi);
     }
@@ -723,7 +724,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px;text-align:center">' +
       '<span style="font-weight:' + (m.isHome ? 800 : 500) + ';font-size:14px">' + esc(m.home) + '</span><span class="big">' + esc(m.result) + '</span>' +
       '<span style="font-weight:' + (m.isHome ? 500 : 800) + ';font-size:14px">' + esc(m.away) + '</span></div>' +
-      '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span></div>';
+      '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span>' + sideNote(m, true) + '</div>';
     return h + matchGames(m);
   }
 
@@ -958,13 +959,13 @@ textarea.inp{resize:vertical;line-height:1.45}
     var sl = season + '/' + (+season + 1);
     if (mi !== undefined && t.matches[mi]) {
       var m = t.matches[mi], pts = m.points;
-      setHeader((m.isHome ? 'mod ' : '@ ') + m.opponent, t.name + ' · ' + sl, true);
+      setHeader(vs(m) + m.opponent, t.name + ' · ' + sl, true);
       return '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:8px">' +
         '<span class="xs" style="font-weight:600">' + esc(dTxt(m.date)) + ' ' + esc(m.date.slice(0, 4)) + (m.venue ? ' · ' + esc(m.venue) : '') + '</span>' +
         '<div style="display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);align-items:center;gap:8px;text-align:center">' +
         '<span style="font-weight:' + (m.isHome ? 800 : 500) + ';font-size:14px">' + esc(m.home) + '</span><span class="big">' + esc(m.result || '–') + '</span>' +
         '<span style="font-weight:' + (m.isHome ? 500 : 800) + ';font-size:14px">' + esc(m.away) + '</span></div>' +
-        (m.played ? '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span>' : '') + '</div>' + matchGames(m);
+        (m.played ? '<span class="pill" style="align-self:center;background:' + oBg(m.outcome) + ';font-size:13px">' + oTxt(m.outcome) + (pts ? ' · ' + esc(pts) + ' point' : '') + '</span>' : '') + sideNote(m, true) + '</div>' + matchGames(m);
     }
     setHeader(t.label || t.pulje, t.name + ' · ' + sl, true);
     var me = t.standing.filter(function (r) { return r.isUs; })[0] || {};
@@ -981,7 +982,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     h += '<span class="lbl">Kampe</span>' + (t.matches.length ? t.matches.map(function (m, k) {
       return '<button class="mrow" style="cursor:pointer" data-go="#/arkiv/' + season + '/' + i + '/kamp/' + k + '">' +
         '<span class="col"><b style="font-size:13px">' + dTxt(m.date) + '</b><span class="xs">' + esc(m.date.slice(0, 4)) + '</span></span>' +
-        '<span class="col"><span style="font-weight:600;font-size:14px">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span><span class="xs ellip">' + (m.isHome ? 'Hjemme' : 'Ude') + (m.walkover ? ' · ' + esc(m.walkover) : '') + '</span></span>' +
+        '<span class="col"><span style="font-weight:600;font-size:14px">' + vs(m) + esc(m.opponent) + '</span><span class="xs ellip">' + (playsHome(m) ? 'Hjemme' : 'Ude') + (m.walkover ? ' · ' + esc(m.walkover) : '') + '</span></span>' +
         '<span class="score" style="background:' + (m.played ? oBg(m.outcome) : 'var(--soft)') + '">' + esc(m.played ? m.result : '–') + '</span></button>';
     }).join('') : '<p class="empty">Ingen kampe registreret.</p>');
     return h;
@@ -1616,8 +1617,8 @@ textarea.inp{resize:vertical;line-height:1.45}
     D.teams.forEach(function (t, ti) {
       t.matches.forEach(function (m, mi) {
         var c = teamColor(t.label);
-        add({ kind: 'match', date: m.date, time: m.time || '', team: t.label, teamName: t.name, title: (m.isHome ? 'mod ' : '@ ') + m.opponent,
-              home: m.isHome, place: (!m.played && driveShort(m) ? driveShort(m) + ' · ' : '') + m.venue, result: m.played ? m.result : '', outcome: m.outcome || '', bg: c.bg, fg: c.fg,
+        add({ kind: 'match', date: m.date, time: m.time || '', team: t.label, teamName: t.name, title: vs(m) + m.opponent,
+              home: playsHome(m), place: (!m.played && driveShort(m) ? driveShort(m) + ' · ' : '') + m.venue, result: m.played ? m.result : '', outcome: m.outcome || '', bg: c.bg, fg: c.fg,
               go: '#/hold/' + ti + '/kamp/' + mi, eid: matchEid(m) });
       });
     });
@@ -2249,11 +2250,11 @@ textarea.inp{resize:vertical;line-height:1.45}
       if (x.d !== day) { day = x.d; h += '<span class="xs" style="margin:6px 4px 0;font-weight:700;color:var(--ink)">' + (x.d === today ? 'I dag' : x.d === iso(addDays(new Date(), 1)) ? 'I morgen' : esc(DAY_FULL[parseD(x.d).getDay()] + ' ' + dTxt(x.d).replace(/^\S+ /, ''))) + '</span>'; }
       var need = (x.eid && !mine(x.eid)) || (x.kidEid && kidsOnTeam(x.team.label).some(function (k) { return !mine(x.kidEid, k.id); })) ? ' ans' : '';
       if (x.k === 'match') {
-        var u = x, label = u.team.label + ' ' + (u.m.isHome ? 'mod ' : '@ ') + u.m.opponent + ' ' + u.m.date;
+        var u = x, label = u.team.label + ' ' + vs(u.m) + u.m.opponent + ' ' + u.m.date;
         h += '<div class="evwrap' + need + '" style="border-left-color:' + teamColor(u.team.label).bg + '"><button class="evtop" data-go="#/hold/' + u.ti + '/kamp/' + u.mi + '">' +
           '<span class="col"><b style="font-size:13px">' + esc(u.m.time || '–') + '</b></span>' +
-          '<span class="col"><b class="ellip" style="font-size:14px">' + esc(u.team.label) + ' <span style="font-weight:500">' + (u.m.isHome ? 'mod ' : '@ ') + esc(u.m.opponent) + '</span></b><span class="xs ellip">' + esc((driveShort(u.m) ? driveShort(u.m) + ' · ' : '') + u.m.venue) + '</span></span>' +
-          '<span class="pill" style="background:var(--soft)">' + (u.m.isHome ? 'Hjemme' : 'Ude') + '</span></button>' +
+          '<span class="col"><b class="ellip" style="font-size:14px">' + esc(u.team.label) + ' <span style="font-weight:500">' + vs(u.m) + esc(u.m.opponent) + '</span></b><span class="xs ellip">' + esc((driveShort(u.m) ? driveShort(u.m) + ' · ' : '') + u.m.venue) + '</span></span>' +
+          '<span class="pill" style="background:var(--soft)">' + (playsHome(u.m) ? 'Hjemme' : 'Ude') + '</span></button>' +
           '<div style="display:flex;gap:6px;flex-wrap:wrap;padding:0 2px"><span class="why' + (u.sel ? ' sel' : '') + '">' + esc(u.why) + '</span></div>' +
           (u.eid ? regBlock('match', u.eid, label, false, u.kidEid ? { id: ME.id, name: ME.name, noSummary: true } : undefined) : '') + (u.kidEid ? kidRegBlocks('match', u.kidEid, label, false, u.team.label, false) : '') + '</div>';
       } else if (x.k === 'tour') {
@@ -2381,8 +2382,8 @@ textarea.inp{resize:vertical;line-height:1.45}
         '<div style="display:flex;align-items:center;gap:12px"><span class="av" style="width:42px;height:42px;' + avStyle(kp) + '">' + esc(ini(k.name)) + '</span>' +
         '<span class="col" style="flex:1 1 auto"><b style="font-size:15px">' + esc(k.name) + '</b><span class="xs">' + esc(teams.length ? teams.join(', ') : 'Ingen holdkampe i år') + '</span></span>' +
         (kp ? '<button class="pl xs" data-go="#/spiller/' + encodeURIComponent(k.id) + '">Spillerside ›</button>' : '') + '</div>' +
-        (next ? '<button class="kidnext" data-go="#/hold/' + next.ti + '/kamp/' + next.mi + '"><span class="col"><b style="font-size:13px">' + esc(dTxt(next.m.date)) + ' · ' + esc(next.t.label) + ' ' + (next.m.isHome ? 'mod ' : '@ ') + esc(next.m.opponent) + '</b>' +
-          '<span class="xs">kl. ' + esc(next.m.time || '–') + (driveShort(next.m) ? ' · ' + esc(driveShort(next.m)) : next.m.isHome ? ' · hjemme' : '') + '</span></span>' +
+        (next ? '<button class="kidnext" data-go="#/hold/' + next.ti + '/kamp/' + next.mi + '"><span class="col"><b style="font-size:13px">' + esc(dTxt(next.m.date)) + ' · ' + esc(next.t.label) + ' ' + vs(next.m) + esc(next.m.opponent) + '</b>' +
+          '<span class="xs">kl. ' + esc(next.m.time || '–') + (driveShort(next.m) ? ' · ' + esc(driveShort(next.m)) : playsHome(next.m) ? ' · hjemme' : '') + '</span></span>' +
           (inSquad(next.m, k.id) ? '<span class="why sel">Udtaget</span>' : lineupFor(next.m) ? '<span class="why">Ikke udtaget</span>' : '<span class="why">Ikke udtaget endnu</span>') + '</button>'
           : '<span class="xs">Ingen kommende holdkampe.</span>') + '</div>';
     });
@@ -2406,7 +2407,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       var t = D.teams[ti], mi = nextMatchIdx(t), m = t.matches[mi], lu = lineupFor(m), w = who(matchEid(m));
       var ans = w.ja.length + w.maaske.length + w.nej.length;
       return '<div class="card" style="padding:12px;display:flex;flex-direction:column;gap:8px;border-left:5px solid ' + teamColor(t.label).bg + '">' +
-        '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="col"><b style="font-size:14px">' + esc(t.label) + ' <span style="font-weight:500">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span></b>' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><span class="col"><b style="font-size:14px">' + esc(t.label) + ' <span style="font-weight:500">' + vs(m) + esc(m.opponent) + '</span></b>' +
         '<span class="xs">' + esc(dTxt(m.date)) + ' kl. ' + esc(m.time || '') + '</span></span>' + (lu ? stPill(lu.status) : '<span class="st st-udkast">Ikke udtaget</span>') + '</div>' +
         '<span class="xs"><b style="color:var(--ink)">' + w.ja.length + '</b> kan · <b style="color:var(--ink)">' + w.maaske.length + '</b> til rådighed · <b style="color:var(--ink)">' + w.nej.length + '</b> kan ikke' + (ans ? '' : ' · ingen svar endnu') + '</span>' +
         '<div class="reg"><button class="rb' + (lu ? '' : ' ja') + '" aria-pressed="' + !lu + '" data-go="#/udtag/' + ti + '/' + mi + '" style="flex:1">' + (lu ? 'Ret udtagelse' : 'Udtag spillere') + '</button>' +
@@ -2704,7 +2705,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       var t = D.teams[ti], mi = nextMatchIdx(t);
       if (mi < 0) return '';
       var m = t.matches[mi], lu = lineupFor(m);
-      return '<button class="card row" style="min-height:56px" data-go="#/udtag/' + ti + '/' + mi + '"><span class="col"><b style="font-size:14px">' + esc(t.label) + ' <span style="font-weight:500">' + (m.isHome ? 'mod ' : '@ ') + esc(m.opponent) + '</span></b>' +
+      return '<button class="card row" style="min-height:56px" data-go="#/udtag/' + ti + '/' + mi + '"><span class="col"><b style="font-size:14px">' + esc(t.label) + ' <span style="font-weight:500">' + vs(m) + esc(m.opponent) + '</span></b>' +
         '<span class="xs">' + dTxt(m.date) + ' kl. ' + esc(m.time || '') + '</span></span>' + (lu ? stPill(lu.status) : '<span class="st st-udkast">Ikke udtaget</span>') + '</button>';
     }).join('');
     return h;
@@ -2724,7 +2725,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (mi < 0) return h + '<p class="empty">Holdet har ingen kommende kampe.</p>';
     var m = t.matches[mi], eid = matchEid(m), lu = lineupFor(m);
     h += '<div class="filters"><select id="luMatch" aria-label="Kamp">' + ups.map(function (i) {
-      var x = t.matches[i]; return '<option value="' + i + '"' + (i === mi ? ' selected' : '') + '>' + dTxt(x.date) + ' kl. ' + esc(x.time || '') + ' · ' + (x.isHome ? 'mod ' : '@ ') + esc(x.opponent) + '</option>'; }).join('') + '</select></div>';
+      var x = t.matches[i]; return '<option value="' + i + '"' + (i === mi ? ' selected' : '') + '>' + dTxt(x.date) + ' kl. ' + esc(x.time || '') + ' · ' + vs(x) + esc(x.opponent) + '</option>'; }).join('') + '</select></div>';
     var key = ti + '/' + mi;
     if (LU.selKey !== key) { LU.selKey = key; LU.sel = {}; (lu ? lu.squad : []).forEach(function (p) { LU.sel[p.id] = p.name; }); }
     var av = availMap(eid);
@@ -2791,7 +2792,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     setTab('tilmeld');
     if (!m || !isLeader(t.label)) { setHeader('Holdopstilling', '', true); return '<p class="empty">Kun holdlederen for holdet kan lave opstillingen.</p>'; }
     var lu = lineupFor(m);
-    setHeader('Holdopstilling', t.label + ' · ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' · ' + dTxt(m.date), true);
+    setHeader('Holdopstilling', t.label + ' · ' + vs(m) + m.opponent + ' · ' + dTxt(m.date), true);
     if (!lu || !lu.squad.length) return '<p class="empty">Udtag spillere først.</p><button class="rb" data-go="#/udtag/' + ti + '/' + mi + '">Udtag spillere</button>';
     var slots = slotsFor(ti), cur = {};
     (lu.games || []).forEach(function (g) { cur[g.k] = g.p || []; });
@@ -3003,7 +3004,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     setHeader('Til badmintonplayer', t.label + ' · ' + dTxt(m.date), true);
     if (!lu) return '<p class="empty">Udtag spillere først.</p>';
     var lines = (lu.games || []).map(function (g) { return g.k + ': ' + g.p.filter(String).map(function (id) { return pname(id, lu) + (/^\d+$/.test(id) ? ' (' + id + ')' : ''); }).join(' / '); });
-    var text = t.label + ' · ' + t.name + ' ' + (m.isHome ? 'mod ' : '@ ') + m.opponent + ' · ' + m.date + ' ' + (m.time || '') + ' · kamp ' + (m.matchID || '') + '\n' + lines.join('\n') +
+    var text = t.label + ' · ' + t.name + ' ' + vs(m) + m.opponent + ' · ' + m.date + ' ' + (m.time || '') + ' · kamp ' + (m.matchID || '') + '\n' + lines.join('\n') +
       '\n\nUdtaget: ' + lu.squad.map(function (p) { return p.name; }).join(', ');
     var w = lineupWarnings(ti, lu.games || [], mi);
     var h = '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:6px">' +
@@ -3559,6 +3560,18 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (!ME || isParentId(ME.id) || (ME.kids && ME.kids.length) || isLeader() || (ME.role && ME.role.admin)) return false;
     var P = D.players[ME.id];
     return !!(P && P.teams.length && P.teams.every(function (l) { return /^U\d/.test(l); }));
+  }
+  // Hjemme/Ude i appen = hvor kampen spilles (Hørsholms hal eller ej), ikke om Hørsholm står som hjemmehold.
+  // Ved ungdomstræf spiller Hørsholm ofte som "udehold" i egen hal — og omvendt.
+  function playsHome(m) {
+    if (!m) return false;
+    if (m.venue) return atHomeHall(m.venue);
+    var tr = m.travel; if (tr && typeof tr.min === 'number') return tr.min <= 3;
+    return !!m.isHome;
+  }
+  function vs(m) { return playsHome(m) ? 'mod ' : '@ '; }
+  function sideNote(m, center) {   // kun til orientering — påvirker ikke point eller stilling
+    return '<span class="xs"' + (center ? ' style="text-align:center"' : '') + '>Hørsholm står som ' + (m.isHome ? 'hjemmehold' : 'udehold') + ' i kampprogrammet</span>';
   }
   function atHomeHall(v) { return /hørsholm/i.test(v || ''); }   // ingen samkørsel til kampe og turneringer i Hørsholm
   function rideSection(ev, title, link, kids, opt) {

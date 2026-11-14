@@ -21,6 +21,17 @@ APP = "https://app.hoebk.dk/"
 N = 8
 
 
+
+def plays_home(m):
+    """Hjemme = kampen spilles i Hørsholms hal (ikke om Hørsholm står som hjemmehold)."""
+    v = m.get("venue") or ""
+    if v:
+        return "hørsholm" in v.lower()
+    tr = m.get("travel") or {}
+    if isinstance(tr.get("min"), (int, float)):
+        return tr["min"] <= 3
+    return bool(m.get("isHome"))
+
 def team_name(t):
     lbl = (t.get("label") or t.get("pulje") or "").strip()
     return lbl or t.get("name", "Hørsholm")
@@ -36,7 +47,7 @@ def main():
             if not m.get("date"):
                 continue
             item = dict(base, date=m["date"], time=m.get("time") or "", opponent=m.get("opponent", ""),
-                        home=bool(m.get("isHome")), venue=m.get("venue") or "", url=m.get("url") or t.get("url", ""))
+                        home=plays_home(m), listedHome=bool(m.get("isHome")), venue=m.get("venue") or "", url=m.get("url") or t.get("url", ""))
             if m.get("played"):
                 res.append(dict(item, result=m.get("result") or "", outcome=m.get("outcome") or "",
                                 walkover=m.get("walkover") or ""))

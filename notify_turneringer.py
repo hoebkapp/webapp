@@ -31,6 +31,17 @@ REMIND = (7, 2)            # dage før tilmeldingsfristen
 KEEP_NEWS = 12             # nyheder pr. turnering i turnering_nyt.json
 
 
+
+def plays_home(m):
+    """Hjemme = kampen spilles i Hørsholms hal (ikke om Hørsholm står som hjemmehold)."""
+    v = m.get("venue") or ""
+    if v:
+        return "hørsholm" in v.lower()
+    tr = m.get("travel") or {}
+    if isinstance(tr.get("min"), (int, float)):
+        return tr["min"] <= 3
+    return bool(m.get("isHome"))
+
 def dk(d):
     x = date.fromisoformat(d)
     return f"{DAYS[x.weekday()]} {x.day}. {MONS[x.month - 1]}"
@@ -109,7 +120,7 @@ def match_line(m):
     drive = ""
     if isinstance(tr.get("min"), int) and tr["min"] > 3:
         drive = f" · ca. {tr['min']} min i bil"
-    return (f"{'Hjemme mod' if m.get('isHome') else 'Ude mod'} {m.get('opponent', '')} kl. {m.get('time') or '?'}"
+    return (f"{'Hjemme mod' if plays_home(m) else 'Ude mod'} {m.get('opponent', '')} kl. {m.get('time') or '?'}"
             f" · {m.get('venue') or 'spillested ikke oplyst'}{drive}")
 
 
