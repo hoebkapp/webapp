@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T19:17:20+00:00",
+  "updated": "2026-11-14T19:45:30+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -9315,11 +9315,11 @@
           "team": "Hørsholm 3",
           "teamID": "124258",
           "isUs": true,
-          "played": "3",
-          "won": "1",
-          "score": "5-19",
-          "sets": "11-41",
-          "points": "2"
+          "played": "4",
+          "won": "2",
+          "score": "13-19",
+          "sets": "27-44",
+          "points": "4"
         },
         {
           "pos": "6",
@@ -9337,10 +9337,10 @@
           "team": "Brøndby Strand 2",
           "teamID": "122597",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "0",
-          "score": "4-20",
-          "sets": "12-41",
+          "score": "4-28",
+          "sets": "15-57",
           "points": "0"
         },
         {
@@ -10092,14 +10092,275 @@
           "opponent": "Brøndby Strand 2",
           "organiser": "",
           "venue": "Hørsholm Badminton Hal",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "8-0",
+          "points": "2-0",
+          "outcome": "V",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "512941",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18954,1,10,,512941,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. S",
+              "home": [
+                {
+                  "id": "365034",
+                  "name": "Anders Lillelund"
+                }
+              ],
+              "away": [
+                {
+                  "id": "277517",
+                  "name": "Anand Chandekar"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  17,
+                  15
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. S",
+              "home": [
+                {
+                  "id": "308293",
+                  "name": "Henrik Lund Frandsen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "358358",
+                  "name": "Vasu Gowda"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  6
+                ],
+                [
+                  15,
+                  2
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "360548",
+                  "name": "MUHAMMAD MOHSIN Ali KHAN"
+                },
+                {
+                  "id": "310497",
+                  "name": "Alexander Frode Barfod"
+                }
+              ],
+              "away": [
+                {
+                  "id": "364950",
+                  "name": "Shamal Kumar Shingha"
+                },
+                {
+                  "id": "364516",
+                  "name": "Nikhil sethi"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  5
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. S",
+              "home": [
+                {
+                  "id": "318475",
+                  "name": "Emil Thaysen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "364950",
+                  "name": "Shamal Kumar Shingha"
+                }
+              ],
+              "sets": [
+                [
+                  13,
+                  15
+                ],
+                [
+                  16,
+                  14
+                ],
+                [
+                  15,
+                  12
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. S",
+              "home": [
+                {
+                  "id": "339431",
+                  "name": "Hektor Shi Lorenzen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "364516",
+                  "name": "Nikhil sethi"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  11,
+                  15
+                ],
+                [
+                  15,
+                  13
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "365034",
+                  "name": "Anders Lillelund"
+                },
+                {
+                  "id": "360548",
+                  "name": "MUHAMMAD MOHSIN Ali KHAN"
+                }
+              ],
+              "away": [
+                {
+                  "id": "277517",
+                  "name": "Anand Chandekar"
+                },
+                {
+                  "id": "358358",
+                  "name": "Vasu Gowda"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  8
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "308293",
+                  "name": "Henrik Lund Frandsen"
+                },
+                {
+                  "id": "310497",
+                  "name": "Alexander Frode Barfod"
+                }
+              ],
+              "away": [
+                {
+                  "id": "277517",
+                  "name": "Anand Chandekar"
+                },
+                {
+                  "id": "364950",
+                  "name": "Shamal Kumar Shingha"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  8
+                ],
+                [
+                  14,
+                  16
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "318475",
+                  "name": "Emil Thaysen"
+                },
+                {
+                  "id": "339431",
+                  "name": "Hektor Shi Lorenzen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "358358",
+                  "name": "Vasu Gowda"
+                },
+                {
+                  "id": "364516",
+                  "name": "Nikhil sethi"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  16,
+                  14
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 0,
             "km": 0,
@@ -10166,13 +10427,24 @@
         {
           "id": "308293",
           "name": "Henrik Lund Frandsen",
-          "games": 5,
-          "won": 1,
+          "games": 7,
+          "won": 3,
           "disciplines": [
             "S",
             "D"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#308293"
+        },
+        {
+          "id": "360548",
+          "name": "MUHAMMAD MOHSIN Ali KHAN",
+          "games": 5,
+          "won": 5,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#360548"
         },
         {
           "id": "310855",
@@ -10184,17 +10456,6 @@
             "D"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#310855"
-        },
-        {
-          "id": "360548",
-          "name": "MUHAMMAD MOHSIN Ali KHAN",
-          "games": 3,
-          "won": 3,
-          "disciplines": [
-            "D",
-            "S"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#360548"
         },
         {
           "id": "367264",
@@ -10219,6 +10480,16 @@
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#318476"
         },
         {
+          "id": "310497",
+          "name": "Alexander Frode Barfod",
+          "games": 2,
+          "won": 2,
+          "disciplines": [
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#310497"
+        },
+        {
           "id": "330569",
           "name": "Anders Johannessen",
           "games": 2,
@@ -10227,6 +10498,39 @@
             "D"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#330569"
+        },
+        {
+          "id": "365034",
+          "name": "Anders Lillelund",
+          "games": 2,
+          "won": 2,
+          "disciplines": [
+            "S",
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#365034"
+        },
+        {
+          "id": "318475",
+          "name": "Emil Thaysen",
+          "games": 2,
+          "won": 2,
+          "disciplines": [
+            "S",
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#318475"
+        },
+        {
+          "id": "339431",
+          "name": "Hektor Shi Lorenzen",
+          "games": 2,
+          "won": 2,
+          "disciplines": [
+            "S",
+            "D"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#339431"
         },
         {
           "id": "277780",

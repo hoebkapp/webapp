@@ -1,20 +1,9 @@
 {
- "updated": "2026-11-14T19:17:20+00:00",
+ "updated": "2026-11-14T19:45:30+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 14,
  "upcoming": [
-  {
-   "team": "4 Spillere",
-   "club": "Hørsholm 3",
-   "date": "2026-11-14",
-   "time": "11:00",
-   "opponent": "Brøndby Strand 2",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18954,1,10,,512941,1151,"
-  },
   {
    "team": "U11 Dx",
    "club": "Hørsholm 2",
@@ -91,6 +80,17 @@
    "listedHome": false,
    "venue": "Hareskovhallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510450,1151,"
+  },
+  {
+   "team": "U13 D",
+   "club": "Hørsholm 4",
+   "date": "2026-11-15",
+   "time": "11:30",
+   "opponent": "Farum 4",
+   "home": false,
+   "listedHome": true,
+   "venue": "Stenvadhallen 6-9",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,"
   }
  ],
  "results": [
@@ -165,6 +165,20 @@
    "walkover": ""
   },
   {
+   "team": "4 Spillere",
+   "club": "Hørsholm 3",
+   "date": "2026-11-14",
+   "time": "11:00",
+   "opponent": "Brøndby Strand 2",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18954,1,10,,512941,1151,",
+   "result": "8-0",
+   "outcome": "V",
+   "walkover": ""
+  },
+  {
    "team": "U11 C",
    "club": "Hørsholm 1",
    "date": "2026-11-14",
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19079,3,10,,513407,1151,",
    "result": "3-5",
    "outcome": "V",
-   "walkover": ""
-  },
-  {
-   "team": "MOT 4+4 Elite/Mester",
-   "club": "Hørsholm 2",
-   "date": "2026-11-08",
-   "time": "11:00",
-   "opponent": "Lillerød 2",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal 1-4",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510457,1151,",
-   "result": "4-8",
-   "outcome": "T",
    "walkover": ""
   }
  ]
