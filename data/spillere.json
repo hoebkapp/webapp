@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T15:47:10+00:00",
+ "updated": "2026-11-14T16:17:28+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -66,8 +66,8 @@
    "teams": [
     "Serie 2"
    ],
-   "played": 4,
-   "won": 4,
+   "played": 6,
+   "won": 6,
    "winPct": 100,
    "pointsFor": 120,
    "avgPoints": 30.0,
@@ -103,6 +103,20 @@
   },
   {
    "rank": 8,
+   "id": "13721",
+   "name": "Marie Madsen",
+   "teams": [
+    "Serie 2"
+   ],
+   "played": 10,
+   "won": 10,
+   "winPct": 100,
+   "pointsFor": 281,
+   "avgPoints": 31.2,
+   "avgDiff": 9.4
+  },
+  {
+   "rank": 9,
    "id": "13323",
    "name": "Henrik Schroller Broerson",
    "teams": [
@@ -114,20 +128,6 @@
    "pointsFor": 251,
    "avgPoints": 31.4,
    "avgDiff": 12.9
-  },
-  {
-   "rank": 9,
-   "id": "13721",
-   "name": "Marie Madsen",
-   "teams": [
-    "Serie 2"
-   ],
-   "played": 8,
-   "won": 8,
-   "winPct": 100,
-   "pointsFor": 221,
-   "avgPoints": 31.6,
-   "avgDiff": 9.0
   },
   {
    "rank": 10,
@@ -145,6 +145,35 @@
   },
   {
    "rank": 11,
+   "id": "46015",
+   "name": "Line Lindquist",
+   "teams": [
+    "Serie 2"
+   ],
+   "played": 2,
+   "won": 2,
+   "winPct": 100,
+   "pointsFor": 0,
+   "avgPoints": 0,
+   "avgDiff": 0
+  },
+  {
+   "rank": 12,
+   "id": "12992",
+   "name": "Henriette Stang Hellen",
+   "teams": [
+    "Serie 2",
+    "Danmarksserien"
+   ],
+   "played": 10,
+   "won": 9,
+   "winPct": 90,
+   "pointsFor": 222,
+   "avgPoints": 31.7,
+   "avgDiff": 6.1
+  },
+  {
+   "rank": 13,
    "id": "38545",
    "name": "Shankar Ralhan",
    "teams": [
@@ -158,21 +187,7 @@
    "avgDiff": 8.4
   },
   {
-   "rank": 12,
-   "id": "338663",
-   "name": "Sebastian Rossau",
-   "teams": [
-    "Serie 2"
-   ],
-   "played": 8,
-   "won": 7,
-   "winPct": 88,
-   "pointsFor": 248,
-   "avgPoints": 31.0,
-   "avgDiff": 8.6
-  },
-  {
-   "rank": 13,
+   "rank": 14,
    "id": "12881",
    "name": "Katrine Schou Andersen",
    "teams": [
@@ -186,7 +201,7 @@
    "avgDiff": 10.7
   },
   {
-   "rank": 14,
+   "rank": 15,
    "id": "13374",
    "name": "Signe Baldvinsson",
    "teams": [
@@ -198,21 +213,6 @@
    "pointsFor": 215,
    "avgPoints": 30.7,
    "avgDiff": 9.3
-  },
-  {
-   "rank": 15,
-   "id": "12992",
-   "name": "Henriette Stang Hellen",
-   "teams": [
-    "Serie 2",
-    "Danmarksserien"
-   ],
-   "played": 8,
-   "won": 7,
-   "winPct": 88,
-   "pointsFor": 153,
-   "avgPoints": 30.6,
-   "avgDiff": 5.2
   },
   {
    "rank": 16,
@@ -230,20 +230,6 @@
   },
   {
    "rank": 17,
-   "id": "338789",
-   "name": "Charles Jordahn Brandt",
-   "teams": [
-    "Serie 2"
-   ],
-   "played": 6,
-   "won": 5,
-   "winPct": 83,
-   "pointsFor": 185,
-   "avgPoints": 30.8,
-   "avgDiff": 7.5
-  },
-  {
-   "rank": 18,
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
@@ -258,7 +244,7 @@
    "avgDiff": 7.2
   },
   {
-   "rank": 19,
+   "rank": 18,
    "id": "348191",
    "name": "Manfred Bjørn Kirk",
    "teams": [
@@ -272,7 +258,7 @@
    "avgDiff": 10.8
   },
   {
-   "rank": 20,
+   "rank": 19,
    "id": "334106",
    "name": "Malthe Larsen",
    "teams": [
@@ -286,7 +272,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 21,
+   "rank": 20,
    "id": "366509",
    "name": "Oscar spliid",
    "teams": [
@@ -298,6 +284,20 @@
    "pointsFor": 101,
    "avgPoints": 25.2,
    "avgDiff": 6.2
+  },
+  {
+   "rank": 21,
+   "id": "338663",
+   "name": "Sebastian Rossau",
+   "teams": [
+    "Serie 2"
+   ],
+   "played": 10,
+   "won": 8,
+   "winPct": 80,
+   "pointsFor": 304,
+   "avgPoints": 30.4,
+   "avgDiff": 6.0
   },
   {
    "rank": 22,
@@ -344,6 +344,20 @@
   },
   {
    "rank": 25,
+   "id": "338789",
+   "name": "Charles Jordahn Brandt",
+   "teams": [
+    "Serie 2"
+   ],
+   "played": 8,
+   "won": 6,
+   "winPct": 75,
+   "pointsFor": 236,
+   "avgPoints": 29.5,
+   "avgDiff": 5.8
+  },
+  {
+   "rank": 26,
    "id": "324944",
    "name": "August Drescher",
    "teams": [
@@ -357,7 +371,7 @@
    "avgDiff": 8.0
   },
   {
-   "rank": 26,
+   "rank": 27,
    "id": "320930",
    "name": "Julius Tolsøe",
    "teams": [
@@ -371,36 +385,7 @@
    "avgDiff": 8.0
   },
   {
-   "rank": 27,
-   "id": "9877",
-   "name": "Thomas Steffensen",
-   "teams": [
-    "Serie 2"
-   ],
-   "played": 8,
-   "won": 6,
-   "winPct": 75,
-   "pointsFor": 269,
-   "avgPoints": 33.6,
-   "avgDiff": 6.4
-  },
-  {
    "rank": 28,
-   "id": "350815",
-   "name": "Cornelius Engen Peetz",
-   "teams": [
-    "U13 B",
-    "U11 C"
-   ],
-   "played": 7,
-   "won": 5,
-   "winPct": 71,
-   "pointsFor": 211,
-   "avgPoints": 30.1,
-   "avgDiff": 1.1
-  },
-  {
-   "rank": 29,
    "id": "352483",
    "name": "Birk Lund Dujardin",
    "teams": [
@@ -414,7 +399,7 @@
    "avgDiff": 5.3
   },
   {
-   "rank": 30,
+   "rank": 29,
    "id": "352440",
    "name": "Ethan Jing",
    "teams": [
@@ -428,21 +413,7 @@
    "avgDiff": 5.3
   },
   {
-   "rank": 31,
-   "id": "275709",
-   "name": "Sebastian Søbjerg Lynfort",
-   "teams": [
-    "Serie 2"
-   ],
-   "played": 6,
-   "won": 4,
-   "winPct": 67,
-   "pointsFor": 175,
-   "avgPoints": 29.2,
-   "avgDiff": 4.3
-  },
-  {
-   "rank": 32,
+   "rank": 30,
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
@@ -457,7 +428,7 @@
    "avgDiff": 4.3
   },
   {
-   "rank": 33,
+   "rank": 31,
    "id": "348495",
    "name": "Alexander Dahl Plougmann",
    "teams": [
@@ -471,7 +442,7 @@
    "avgDiff": 4.2
   },
   {
-   "rank": 34,
+   "rank": 32,
    "id": "360548",
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
@@ -487,7 +458,7 @@
    "avgDiff": 3.2
   },
   {
-   "rank": 35,
+   "rank": 33,
    "id": "320827",
    "name": "Emma Sejberg Rasmussen",
    "teams": [
@@ -501,7 +472,7 @@
    "avgDiff": 5.5
   },
   {
-   "rank": 36,
+   "rank": 34,
    "id": "251767",
    "name": "Christian Skytt",
    "teams": [
@@ -515,21 +486,7 @@
    "avgDiff": 1.8
   },
   {
-   "rank": 37,
-   "id": "318476",
-   "name": "Valdemar Bæhrenz Peetz",
-   "teams": [
-    "4 Spillere"
-   ],
-   "played": 3,
-   "won": 2,
-   "winPct": 67,
-   "pointsFor": 103,
-   "avgPoints": 34.3,
-   "avgDiff": 2.3
-  },
-  {
-   "rank": 38,
+   "rank": 35,
    "id": "11839",
    "name": "Morten Plougmann",
    "teams": [
@@ -543,7 +500,7 @@
    "avgDiff": 3.6
   },
   {
-   "rank": 39,
+   "rank": 36,
    "id": "12813",
    "name": "Anders Vedsted Nørrelund",
    "teams": [
@@ -557,7 +514,7 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 40,
+   "rank": 37,
    "id": "250810",
    "name": "Andreas Qianyou Kristensen",
    "teams": [
@@ -571,7 +528,7 @@
    "avgDiff": 2.9
   },
   {
-   "rank": 41,
+   "rank": 38,
    "id": "236648",
    "name": "Rasmus Thorsted Mortensen",
    "teams": [
@@ -585,7 +542,7 @@
    "avgDiff": 4.2
   },
   {
-   "rank": 42,
+   "rank": 39,
    "id": "359708",
    "name": "Marius Løkke Knutsson",
    "teams": [
@@ -599,7 +556,36 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 43,
+   "rank": 40,
+   "id": "9877",
+   "name": "Thomas Steffensen",
+   "teams": [
+    "Serie 2"
+   ],
+   "played": 10,
+   "won": 6,
+   "winPct": 60,
+   "pointsFor": 312,
+   "avgPoints": 31.2,
+   "avgDiff": 3.4
+  },
+  {
+   "rank": 41,
+   "id": "350815",
+   "name": "Cornelius Engen Peetz",
+   "teams": [
+    "U13 B",
+    "U11 C"
+   ],
+   "played": 10,
+   "won": 6,
+   "winPct": 60,
+   "pointsFor": 263,
+   "avgPoints": 26.3,
+   "avgDiff": -2.2
+  },
+  {
+   "rank": 42,
    "id": "365721",
    "name": "Sylvester Engen Peetz",
    "teams": [
@@ -613,7 +599,7 @@
    "avgDiff": -8.3
   },
   {
-   "rank": 44,
+   "rank": 43,
    "id": "336079",
    "name": "Stefanie Flamand",
    "teams": [
@@ -627,7 +613,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 45,
+   "rank": 44,
    "id": "346992",
    "name": "Carl Grønfeldt",
    "teams": [
@@ -641,21 +627,21 @@
    "avgDiff": -4.0
   },
   {
-   "rank": 46,
-   "id": "352443",
-   "name": "Anton Kromann-Bach",
+   "rank": 45,
+   "id": "275709",
+   "name": "Sebastian Søbjerg Lynfort",
    "teams": [
-    "U13 B"
+    "Serie 2"
    ],
-   "played": 2,
-   "won": 1,
+   "played": 8,
+   "won": 4,
    "winPct": 50,
-   "pointsFor": 52,
-   "avgPoints": 26.0,
-   "avgDiff": 4.0
+   "pointsFor": 211,
+   "avgPoints": 26.4,
+   "avgDiff": 0.2
   },
   {
-   "rank": 47,
+   "rank": 46,
    "id": "335593",
    "name": "Oliver Vedsted Nørrelund",
    "teams": [
@@ -669,7 +655,7 @@
    "avgDiff": 1.5
   },
   {
-   "rank": 48,
+   "rank": 47,
    "id": "330569",
    "name": "Anders Johannessen",
    "teams": [
@@ -683,21 +669,21 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 49,
+   "rank": 48,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
     "Serie 2"
    ],
-   "played": 2,
-   "won": 1,
+   "played": 4,
+   "won": 2,
    "winPct": 50,
-   "pointsFor": 60,
-   "avgPoints": 30.0,
-   "avgDiff": -3.5
+   "pointsFor": 77,
+   "avgPoints": 25.7,
+   "avgDiff": -6.7
   },
   {
-   "rank": 50,
+   "rank": 49,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -711,7 +697,7 @@
    "avgDiff": 2.0
   },
   {
-   "rank": 51,
+   "rank": 50,
    "id": "337844",
    "name": "Ellen Krogh-Larsen",
    "teams": [
@@ -725,7 +711,36 @@
    "avgDiff": -2.2
   },
   {
+   "rank": 51,
+   "id": "352443",
+   "name": "Anton Kromann-Bach",
+   "teams": [
+    "U13 B"
+   ],
+   "played": 5,
+   "won": 2,
+   "winPct": 40,
+   "pointsFor": 117,
+   "avgPoints": 23.4,
+   "avgDiff": -1.8
+  },
+  {
    "rank": 52,
+   "id": "318476",
+   "name": "Valdemar Bæhrenz Peetz",
+   "teams": [
+    "4 Spillere",
+    "Serie 2"
+   ],
+   "played": 5,
+   "won": 2,
+   "winPct": 40,
+   "pointsFor": 140,
+   "avgPoints": 28.0,
+   "avgDiff": -3.2
+  },
+  {
+   "rank": 53,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -739,7 +754,7 @@
    "avgDiff": -5.8
   },
   {
-   "rank": 53,
+   "rank": 54,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -753,7 +768,7 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 54,
+   "rank": 55,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -767,7 +782,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 55,
+   "rank": 56,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -781,7 +796,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 56,
+   "rank": 57,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -795,7 +810,7 @@
    "avgDiff": -3.0
   },
   {
-   "rank": 57,
+   "rank": 58,
    "id": "326116",
    "name": "Christopher Johannessen",
    "teams": [
@@ -809,7 +824,7 @@
    "avgDiff": -3.0
   },
   {
-   "rank": 58,
+   "rank": 59,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -823,7 +838,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 59,
+   "rank": 60,
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
@@ -837,7 +852,7 @@
    "avgDiff": -8.3
   },
   {
-   "rank": 60,
+   "rank": 61,
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
@@ -851,7 +866,7 @@
    "avgDiff": -4.5
   },
   {
-   "rank": 61,
+   "rank": 62,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -865,7 +880,7 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 62,
+   "rank": 63,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -879,7 +894,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 63,
+   "rank": 64,
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
@@ -893,7 +908,7 @@
    "avgDiff": -6.2
   },
   {
-   "rank": 64,
+   "rank": 65,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -907,7 +922,7 @@
    "avgDiff": -10.0
   },
   {
-   "rank": 65,
+   "rank": 66,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -921,7 +936,7 @@
    "avgDiff": -9.0
   },
   {
-   "rank": 66,
+   "rank": 67,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -935,7 +950,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 67,
+   "rank": 68,
    "id": "277780",
    "name": "Mathilde Peetz",
    "teams": [
@@ -950,7 +965,7 @@
    "avgDiff": -12.4
   },
   {
-   "rank": 68,
+   "rank": 69,
    "id": "330795",
    "name": "Brit Johannessen",
    "teams": [
@@ -964,7 +979,7 @@
    "avgDiff": -9.2
   },
   {
-   "rank": 69,
+   "rank": 70,
    "id": "348494",
    "name": "Mathilde Dahl Plougmann",
    "teams": [
@@ -979,21 +994,21 @@
    "avgDiff": -10.2
   },
   {
-   "rank": 70,
+   "rank": 71,
    "id": "345764",
    "name": "Emilie Drescher",
    "teams": [
     "U13 B"
    ],
-   "played": 8,
+   "played": 10,
    "won": 1,
-   "winPct": 12,
-   "pointsFor": 141,
-   "avgPoints": 17.6,
-   "avgDiff": -10.5
+   "winPct": 10,
+   "pointsFor": 159,
+   "avgPoints": 15.9,
+   "avgDiff": -12.6
   },
   {
-   "rank": 71,
+   "rank": 72,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1007,7 +1022,7 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 72,
+   "rank": 73,
    "id": "362602",
    "name": "Marvin Nørmark",
    "teams": [
@@ -1021,7 +1036,7 @@
    "avgDiff": -10.4
   },
   {
-   "rank": 73,
+   "rank": 74,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1035,21 +1050,21 @@
    "avgDiff": -12.8
   },
   {
-   "rank": 74,
+   "rank": 75,
    "id": "352441",
    "name": "Nolan Jing",
    "teams": [
     "U13 B"
    ],
-   "played": 8,
+   "played": 10,
    "won": 0,
    "winPct": 0,
-   "pointsFor": 158,
-   "avgPoints": 19.8,
-   "avgDiff": -11.8
+   "pointsFor": 177,
+   "avgPoints": 17.7,
+   "avgDiff": -13.5
   },
   {
-   "rank": 75,
+   "rank": 76,
    "id": "358845",
    "name": "Thor Evan Seitzberg",
    "teams": [
@@ -1063,7 +1078,7 @@
    "avgDiff": -10.0
   },
   {
-   "rank": 76,
+   "rank": 77,
    "id": "364196",
    "name": "Fie B. Kobberup",
    "teams": [
@@ -1077,7 +1092,7 @@
    "avgDiff": -10.3
   },
   {
-   "rank": 77,
+   "rank": 78,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
@@ -1091,7 +1106,7 @@
    "avgDiff": -12.7
   },
   {
-   "rank": 78,
+   "rank": 79,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1105,7 +1120,7 @@
    "avgDiff": -13.3
   },
   {
-   "rank": 79,
+   "rank": 80,
    "id": "336560",
    "name": "Tue Krogh-Larsen",
    "teams": [
@@ -1119,21 +1134,21 @@
    "avgDiff": -13.0
   },
   {
-   "rank": 80,
+   "rank": 81,
    "id": "352356",
    "name": "Carl Emil Jensen",
    "teams": [
     "U13 B"
    ],
-   "played": 7,
+   "played": 9,
    "won": 0,
    "winPct": 0,
-   "pointsFor": 104,
-   "avgPoints": 14.9,
-   "avgDiff": -15.1
+   "pointsFor": 148,
+   "avgPoints": 16.4,
+   "avgDiff": -13.6
   },
   {
-   "rank": 81,
+   "rank": 82,
    "id": "367264",
    "name": "Pulin Dhar",
    "teams": [
@@ -4447,6 +4462,84 @@
      "date": "2026-11-14",
      "team": "U13 B",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "4. D",
+     "partner": [
+      "Carl Emil Jensen"
+     ],
+     "opponents": [
+      "Carolyn Xuanling Wu",
+      "Oliver Pilgren"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "3. D",
+     "partner": [
+      "Cornelius Engen Peetz"
+     ],
+     "opponents": [
+      "Carolyn Xuanling Wu",
+      "Martha Højrup Hartvig"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       13
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Alberte Otte"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Birkerød BK13 1",
      "matchID": "513982",
      "discipline": "4. D",
@@ -4498,20 +4591,24 @@
      "walkover": ""
     }
    ],
-   "played": 2,
-   "won": 1,
-   "lost": 1,
-   "winPct": 50,
-   "pointsFor": 52,
-   "pointsAgainst": 44,
-   "avgPoints": 26.0,
-   "avgDiff": 4.0,
-   "setsWon": 2,
-   "setsLost": 2,
+   "played": 5,
+   "won": 2,
+   "lost": 3,
+   "winPct": 40,
+   "pointsFor": 117,
+   "pointsAgainst": 126,
+   "avgPoints": 23.4,
+   "avgDiff": -1.8,
+   "setsWon": 4,
+   "setsLost": 6,
    "byDiscipline": {
     "D": {
-     "played": 2,
-     "won": 1
+     "played": 4,
+     "won": 2
+    },
+    "S": {
+     "played": 1,
+     "won": 0
     }
    },
    "clubMember": true,
@@ -6605,6 +6702,57 @@
      "date": "2026-11-14",
      "team": "U13 B",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "4. D",
+     "partner": [
+      "Anton Kromann-Bach"
+     ],
+     "opponents": [
+      "Carolyn Xuanling Wu",
+      "Oliver Pilgren"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Martha Højrup Hartvig"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Birkerød BK13 1",
      "matchID": "513982",
      "discipline": "1. D",
@@ -6785,23 +6933,23 @@
      "walkover": ""
     }
    ],
-   "played": 7,
+   "played": 9,
    "won": 0,
-   "lost": 7,
+   "lost": 9,
    "winPct": 0,
-   "pointsFor": 104,
-   "pointsAgainst": 210,
-   "avgPoints": 14.9,
-   "avgDiff": -15.1,
+   "pointsFor": 148,
+   "pointsAgainst": 270,
+   "avgPoints": 16.4,
+   "avgDiff": -13.6,
    "setsWon": 0,
-   "setsLost": 14,
+   "setsLost": 18,
    "byDiscipline": {
     "D": {
-     "played": 5,
+     "played": 6,
      "won": 0
     },
     "S": {
-     "played": 2,
+     "played": 3,
      "won": 0
     }
    },
@@ -7659,6 +7807,60 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. MD",
+     "partner": [
+      "Marie Madsen"
+     ],
+     "opponents": [
+      "Olivia Papaurelyte Borch",
+      "Bjarne Due Rützou"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. HD",
+     "partner": [
+      "Sebastian Søbjerg Lynfort"
+     ],
+     "opponents": [
+      "Markus Nielsen",
+      "Philip Mürer Nielsen"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -7825,23 +8027,23 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 5,
-   "lost": 1,
-   "winPct": 83,
-   "pointsFor": 185,
-   "pointsAgainst": 140,
-   "avgPoints": 30.8,
-   "avgDiff": 7.5,
-   "setsWon": 11,
-   "setsLost": 2,
+   "played": 8,
+   "won": 6,
+   "lost": 2,
+   "winPct": 75,
+   "pointsFor": 236,
+   "pointsAgainst": 190,
+   "avgPoints": 29.5,
+   "avgDiff": 5.8,
+   "setsWon": 13,
+   "setsLost": 4,
    "byDiscipline": {
     "MD": {
-     "played": 3,
-     "won": 3
+     "played": 4,
+     "won": 4
     },
     "HD": {
-     "played": 3,
+     "played": 4,
      "won": 2
     }
    },
@@ -9183,6 +9385,84 @@
      "date": "2026-11-14",
      "team": "U13 B",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "1. D",
+     "partner": [
+      "Nolan Jing"
+     ],
+     "opponents": [
+      "Alberte Otte",
+      "Martha Højrup Hartvig"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "3. D",
+     "partner": [
+      "Anton Kromann-Bach"
+     ],
+     "opponents": [
+      "Carolyn Xuanling Wu",
+      "Martha Højrup Hartvig"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       13
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Oliver Pilgren"
+     ],
+     "sets": [
+      [
+       7,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Birkerød BK13 1",
      "matchID": "513982",
      "discipline": "4. S",
@@ -9368,24 +9648,24 @@
      "walkover": ""
     }
    ],
-   "played": 7,
-   "won": 5,
-   "lost": 2,
-   "winPct": 71,
-   "pointsFor": 211,
-   "pointsAgainst": 203,
-   "avgPoints": 30.1,
-   "avgDiff": 1.1,
-   "setsWon": 10,
-   "setsLost": 6,
+   "played": 10,
+   "won": 6,
+   "lost": 4,
+   "winPct": 60,
+   "pointsFor": 263,
+   "pointsAgainst": 285,
+   "avgPoints": 26.3,
+   "avgDiff": -2.2,
+   "setsWon": 12,
+   "setsLost": 10,
    "byDiscipline": {
-    "S": {
-     "played": 3,
-     "won": 1
-    },
     "D": {
+     "played": 6,
+     "won": 5
+    },
+    "S": {
      "played": 4,
-     "won": 4
+     "won": 1
     }
    },
    "clubMember": true,
@@ -10992,6 +11272,57 @@
      "date": "2026-11-14",
      "team": "U13 B",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "2. D",
+     "partner": [
+      "Nolan Jing"
+     ],
+     "opponents": [
+      "Alberte Otte",
+      "Oliver Pilgren"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       3,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Carolyn Xuanling Wu"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       4,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Birkerød BK13 1",
      "matchID": "513982",
      "discipline": "4. D",
@@ -11199,23 +11530,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
+   "played": 10,
    "won": 1,
-   "lost": 7,
-   "winPct": 12,
-   "pointsFor": 141,
-   "pointsAgainst": 225,
-   "avgPoints": 17.6,
-   "avgDiff": -10.5,
+   "lost": 9,
+   "winPct": 10,
+   "pointsFor": 159,
+   "pointsAgainst": 285,
+   "avgPoints": 15.9,
+   "avgDiff": -12.6,
    "setsWon": 2,
-   "setsLost": 14,
+   "setsLost": 18,
    "byDiscipline": {
     "D": {
-     "played": 6,
+     "played": 7,
      "won": 1
     },
     "S": {
-     "played": 2,
+     "played": 3,
      "won": 0
     }
    },
@@ -12639,6 +12970,38 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. MD",
+     "partner": [
+      "Steffen Bille Rannes"
+     ],
+     "opponents": [
+      "Julius Westergaard Jensen"
+     ],
+     "sets": [],
+     "won": true,
+     "walkover": "H"
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. DD",
+     "partner": [
+      "Line Lindquist"
+     ],
+     "opponents": [],
+     "sets": [],
+     "won": true,
+     "walkover": "H"
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -12747,8 +13110,8 @@
      "walkover": ""
     }
    ],
-   "played": 4,
-   "won": 4,
+   "played": 6,
+   "won": 6,
    "lost": 0,
    "winPct": 100,
    "pointsFor": 120,
@@ -12759,12 +13122,12 @@
    "setsLost": 0,
    "byDiscipline": {
     "MD": {
-     "played": 2,
-     "won": 2
+     "played": 3,
+     "won": 3
     },
     "DD": {
-     "played": 2,
-     "won": 2
+     "played": 3,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -13246,6 +13609,61 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. DS",
+     "partner": [],
+     "opponents": [
+      "Gabrielle Andersen"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       9,
+       15
+      ],
+      [
+       15,
+       11
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. DD",
+     "partner": [
+      "Marie Madsen"
+     ],
+     "opponents": [
+      "Olivia Papaurelyte Borch",
+      "Gabrielle Andersen"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       10
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -13420,24 +13838,24 @@
      "walkover": "(2)"
     }
    ],
-   "played": 8,
-   "won": 7,
+   "played": 10,
+   "won": 9,
    "lost": 1,
-   "winPct": 88,
-   "pointsFor": 153,
-   "pointsAgainst": 127,
-   "avgPoints": 30.6,
-   "avgDiff": 5.2,
-   "setsWon": 8,
-   "setsLost": 3,
+   "winPct": 90,
+   "pointsFor": 222,
+   "pointsAgainst": 179,
+   "avgPoints": 31.7,
+   "avgDiff": 6.1,
+   "setsWon": 12,
+   "setsLost": 4,
    "byDiscipline": {
     "DS": {
-     "played": 4,
-     "won": 3
+     "played": 5,
+     "won": 4
     },
     "DD": {
-     "played": 4,
-     "won": 4
+     "played": 5,
+     "won": 5
     }
    },
    "clubMember": true,
@@ -18409,20 +18827,60 @@
   {
    "id": "46015",
    "name": "Line Lindquist",
-   "teams": [],
+   "teams": [
+    "Serie 2"
+   ],
    "adult": true,
-   "games": [],
-   "played": 0,
-   "won": 0,
+   "games": [
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. DS",
+     "partner": [],
+     "opponents": [],
+     "sets": [],
+     "won": true,
+     "walkover": "H"
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. DD",
+     "partner": [
+      "Gitte Kruse"
+     ],
+     "opponents": [],
+     "sets": [],
+     "won": true,
+     "walkover": "H"
+    }
+   ],
+   "played": 2,
+   "won": 2,
    "lost": 0,
-   "winPct": 0,
+   "winPct": 100,
    "pointsFor": 0,
    "pointsAgainst": 0,
    "avgPoints": 0,
    "avgDiff": 0,
    "setsWon": 0,
    "setsLost": 0,
-   "byDiscipline": {},
+   "byDiscipline": {
+    "DS": {
+     "played": 1,
+     "won": 1
+    },
+    "DD": {
+     "played": 1,
+     "won": 1
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {
@@ -20491,6 +20949,60 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. MD",
+     "partner": [
+      "Charles Jordahn Brandt"
+     ],
+     "opponents": [
+      "Olivia Papaurelyte Borch",
+      "Bjarne Due Rützou"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. DD",
+     "partner": [
+      "Henriette Stang Hellen"
+     ],
+     "opponents": [
+      "Olivia Papaurelyte Borch",
+      "Gabrielle Andersen"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       10
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -20699,24 +21211,24 @@
      "walkover": ""
     }
    ],
-   "played": 8,
-   "won": 8,
+   "played": 10,
+   "won": 10,
    "lost": 0,
    "winPct": 100,
-   "pointsFor": 221,
-   "pointsAgainst": 158,
-   "avgPoints": 31.6,
-   "avgDiff": 9.0,
-   "setsWon": 14,
+   "pointsFor": 281,
+   "pointsAgainst": 196,
+   "avgPoints": 31.2,
+   "avgDiff": 9.4,
+   "setsWon": 18,
    "setsLost": 1,
    "byDiscipline": {
     "MD": {
-     "played": 4,
-     "won": 4
+     "played": 5,
+     "won": 5
     },
     "DD": {
-     "played": 4,
-     "won": 4
+     "played": 5,
+     "won": 5
     }
    },
    "clubMember": true,
@@ -25359,6 +25871,60 @@
      "date": "2026-11-14",
      "team": "U13 B",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "1. D",
+     "partner": [
+      "Cornelius Engen Peetz"
+     ],
+     "opponents": [
+      "Alberte Otte",
+      "Martha Højrup Hartvig"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Farum 1",
+     "matchID": "513980",
+     "discipline": "2. D",
+     "partner": [
+      "Emilie Drescher"
+     ],
+     "opponents": [
+      "Alberte Otte",
+      "Oliver Pilgren"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       3,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 B",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Birkerød BK13 1",
      "matchID": "513982",
      "discipline": "1. D",
@@ -25567,19 +26133,19 @@
      "walkover": ""
     }
    ],
-   "played": 8,
+   "played": 10,
    "won": 0,
-   "lost": 8,
+   "lost": 10,
    "winPct": 0,
-   "pointsFor": 158,
-   "pointsAgainst": 252,
-   "avgPoints": 19.8,
-   "avgDiff": -11.8,
+   "pointsFor": 177,
+   "pointsAgainst": 312,
+   "avgPoints": 17.7,
+   "avgDiff": -13.5,
    "setsWon": 1,
-   "setsLost": 16,
+   "setsLost": 20,
    "byDiscipline": {
     "D": {
-     "played": 5,
+     "played": 7,
      "won": 0
     },
     "S": {
@@ -28471,6 +29037,61 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. HS",
+     "partner": [],
+     "opponents": [
+      "Kasper Birkedal Strømme"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       10
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. HD",
+     "partner": [
+      "Thomas Steffensen"
+     ],
+     "opponents": [
+      "Julius Westergaard Jensen",
+      "Jacob Møller Schmidt"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -28679,23 +29300,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
-   "won": 7,
-   "lost": 1,
-   "winPct": 88,
-   "pointsFor": 248,
-   "pointsAgainst": 179,
-   "avgPoints": 31.0,
-   "avgDiff": 8.6,
-   "setsWon": 14,
-   "setsLost": 3,
+   "played": 10,
+   "won": 8,
+   "lost": 2,
+   "winPct": 80,
+   "pointsFor": 304,
+   "pointsAgainst": 244,
+   "avgPoints": 30.4,
+   "avgDiff": 6.0,
+   "setsWon": 16,
+   "setsLost": 6,
    "byDiscipline": {
     "HS": {
-     "played": 4,
-     "won": 4
+     "played": 5,
+     "won": 5
     },
     "HD": {
-     "played": 4,
+     "played": 5,
      "won": 3
     }
    },
@@ -28777,6 +29398,57 @@
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. HS",
+     "partner": [],
+     "opponents": [
+      "Markus Nielsen"
+     ],
+     "sets": [
+      [
+       7,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "1. HD",
+     "partner": [
+      "Charles Jordahn Brandt"
+     ],
+     "opponents": [
+      "Markus Nielsen",
+      "Philip Mürer Nielsen"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-10-03",
      "team": "Serie 2",
@@ -28935,23 +29607,23 @@
      "walkover": ""
     }
    ],
-   "played": 6,
+   "played": 8,
    "won": 4,
-   "lost": 2,
-   "winPct": 67,
-   "pointsFor": 175,
-   "pointsAgainst": 149,
-   "avgPoints": 29.2,
-   "avgDiff": 4.3,
+   "lost": 4,
+   "winPct": 50,
+   "pointsFor": 211,
+   "pointsAgainst": 209,
+   "avgPoints": 26.4,
+   "avgDiff": 0.2,
    "setsWon": 9,
-   "setsLost": 4,
+   "setsLost": 8,
    "byDiscipline": {
     "HS": {
-     "played": 3,
+     "played": 4,
      "won": 1
     },
     "HD": {
-     "played": 3,
+     "played": 4,
      "won": 3
     }
    },
@@ -30190,6 +30862,50 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. MD",
+     "partner": [
+      "Gitte Kruse"
+     ],
+     "opponents": [
+      "Julius Westergaard Jensen"
+     ],
+     "sets": [],
+     "won": true,
+     "walkover": "H"
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "3. HD",
+     "partner": [
+      "Valdemar Bæhrenz Peetz"
+     ],
+     "opponents": [
+      "Kasper Birkedal Strømme",
+      "Nikolai Anderberg Krag"
+     ],
+     "sets": [
+      [
+       10,
+       15
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-03",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -30248,23 +30964,23 @@
      "walkover": ""
     }
    ],
-   "played": 2,
-   "won": 1,
-   "lost": 1,
+   "played": 4,
+   "won": 2,
+   "lost": 2,
    "winPct": 50,
-   "pointsFor": 60,
-   "pointsAgainst": 67,
-   "avgPoints": 30.0,
-   "avgDiff": -3.5,
+   "pointsFor": 77,
+   "pointsAgainst": 97,
+   "avgPoints": 25.7,
+   "avgDiff": -6.7,
    "setsWon": 2,
-   "setsLost": 3,
+   "setsLost": 5,
    "byDiscipline": {
     "MD": {
-     "played": 1,
-     "won": 1
+     "played": 2,
+     "won": 2
     },
     "HD": {
-     "played": 1,
+     "played": 2,
      "won": 0
     }
    },
@@ -31104,6 +31820,57 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "3. HS",
+     "partner": [],
+     "opponents": [
+      "Jacob Møller Schmidt"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "2. HD",
+     "partner": [
+      "Sebastian Rossau"
+     ],
+     "opponents": [
+      "Julius Westergaard Jensen",
+      "Jacob Møller Schmidt"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "Serie 2",
      "teamName": "Hørsholm 2",
@@ -31320,23 +32087,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
+   "played": 10,
    "won": 6,
-   "lost": 2,
-   "winPct": 75,
-   "pointsFor": 269,
-   "pointsAgainst": 218,
-   "avgPoints": 33.6,
-   "avgDiff": 6.4,
+   "lost": 4,
+   "winPct": 60,
+   "pointsFor": 312,
+   "pointsAgainst": 278,
+   "avgPoints": 31.2,
+   "avgDiff": 3.4,
    "setsWon": 13,
-   "setsLost": 6,
+   "setsLost": 10,
    "byDiscipline": {
     "HS": {
-     "played": 4,
+     "played": 5,
      "won": 3
     },
     "HD": {
-     "played": 4,
+     "played": 5,
      "won": 3
     }
    },
@@ -32052,10 +32819,62 @@
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
-    "4 Spillere"
+    "4 Spillere",
+    "Serie 2"
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "4. HS",
+     "partner": [],
+     "opponents": [
+      "Nikolai Anderberg Krag"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "Serie 2",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Ledøje-Smørum 2",
+     "matchID": "509692",
+     "discipline": "3. HD",
+     "partner": [
+      "Steffen Bille Rannes"
+     ],
+     "opponents": [
+      "Kasper Birkedal Strømme",
+      "Nikolai Anderberg Krag"
+     ],
+     "sets": [
+      [
+       10,
+       15
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-10-24",
      "team": "4 Spillere",
@@ -32143,17 +32962,25 @@
      "walkover": ""
     }
    ],
-   "played": 3,
+   "played": 5,
    "won": 2,
-   "lost": 1,
-   "winPct": 67,
-   "pointsFor": 103,
-   "pointsAgainst": 96,
-   "avgPoints": 34.3,
-   "avgDiff": 2.3,
+   "lost": 3,
+   "winPct": 40,
+   "pointsFor": 140,
+   "pointsAgainst": 156,
+   "avgPoints": 28.0,
+   "avgDiff": -3.2,
    "setsWon": 4,
-   "setsLost": 4,
+   "setsLost": 8,
    "byDiscipline": {
+    "HS": {
+     "played": 1,
+     "won": 0
+    },
+    "HD": {
+     "played": 1,
+     "won": 0
+    },
     "S": {
      "played": 1,
      "won": 1
