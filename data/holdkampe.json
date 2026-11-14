@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T11:17:08+00:00",
+  "updated": "2026-11-14T11:41:42+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -6004,6 +6004,17 @@
       "standing": [
         {
           "pos": "1",
+          "team": "Humlebæk 1",
+          "teamID": "124384",
+          "isUs": false,
+          "played": "3",
+          "won": "3",
+          "score": "19-5",
+          "sets": "39-12",
+          "points": "11"
+        },
+        {
+          "pos": "2",
           "team": "Lillerød 1",
           "teamID": "124382",
           "isUs": false,
@@ -6014,25 +6025,14 @@
           "points": "9"
         },
         {
-          "pos": "2",
-          "team": "Humlebæk 1",
-          "teamID": "124384",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "12-4",
-          "sets": "25-10",
-          "points": "7"
-        },
-        {
           "pos": "3",
           "team": "Hørsholm 1",
           "teamID": "124385",
           "isUs": true,
-          "played": "2",
+          "played": "3",
           "won": "2",
-          "score": "11-5",
-          "sets": "23-13",
+          "score": "12-12",
+          "sets": "25-27",
           "points": "7"
         },
         {
@@ -6696,14 +6696,263 @@
           "opponent": "Humlebæk 1",
           "organiser": "Hillerød",
           "venue": "Hillerød Badmintonklub 1-4",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "1-7",
+          "points": "0-4",
+          "outcome": "T",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "513409",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19079,3,10,,513409,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "348494",
+                  "name": "Mathilde Dahl Plougmann"
+                },
+                {
+                  "id": "348495",
+                  "name": "Alexander Dahl Plougmann"
+                }
+              ],
+              "away": [
+                {
+                  "id": "356803",
+                  "name": "Liam Tosun Brydensholt"
+                },
+                {
+                  "id": "352867",
+                  "name": "Milo Reipurth"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  13
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "357024",
+                  "name": "Ella Baldvinsson Frewald"
+                },
+                {
+                  "id": "358845",
+                  "name": "Thor Evan Seitzberg"
+                }
+              ],
+              "away": [
+                {
+                  "id": "355961",
+                  "name": "Peilin Artsilarat"
+                },
+                {
+                  "id": "357080",
+                  "name": "Alex Markovas"
+                }
+              ],
+              "sets": [
+                [
+                  8,
+                  15
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "348495",
+                  "name": "Alexander Dahl Plougmann"
+                },
+                {
+                  "id": "358845",
+                  "name": "Thor Evan Seitzberg"
+                }
+              ],
+              "away": [
+                {
+                  "id": "355961",
+                  "name": "Peilin Artsilarat"
+                },
+                {
+                  "id": "357018",
+                  "name": "Bjørg Hartvig"
+                }
+              ],
+              "sets": [
+                [
+                  7,
+                  15
+                ],
+                [
+                  15,
+                  17
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "348494",
+                  "name": "Mathilde Dahl Plougmann"
+                },
+                {
+                  "id": "357024",
+                  "name": "Ella Baldvinsson Frewald"
+                }
+              ],
+              "away": [
+                {
+                  "id": "352867",
+                  "name": "Milo Reipurth"
+                },
+                {
+                  "id": "357080",
+                  "name": "Alex Markovas"
+                }
+              ],
+              "sets": [
+                [
+                  12,
+                  15
+                ],
+                [
+                  9,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. S",
+              "home": [
+                {
+                  "id": "348495",
+                  "name": "Alexander Dahl Plougmann"
+                }
+              ],
+              "away": [
+                {
+                  "id": "356803",
+                  "name": "Liam Tosun Brydensholt"
+                }
+              ],
+              "sets": [
+                [
+                  18,
+                  20
+                ],
+                [
+                  10,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. S",
+              "home": [
+                {
+                  "id": "348494",
+                  "name": "Mathilde Dahl Plougmann"
+                }
+              ],
+              "away": [
+                {
+                  "id": "355961",
+                  "name": "Peilin Artsilarat"
+                }
+              ],
+              "sets": [
+                [
+                  12,
+                  15
+                ],
+                [
+                  7,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. S",
+              "home": [
+                {
+                  "id": "358845",
+                  "name": "Thor Evan Seitzberg"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357018",
+                  "name": "Bjørg Hartvig"
+                }
+              ],
+              "sets": [
+                [
+                  11,
+                  15
+                ],
+                [
+                  13,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. S",
+              "home": [
+                {
+                  "id": "357024",
+                  "name": "Ella Baldvinsson Frewald"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357080",
+                  "name": "Alex Markovas"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  17
+                ],
+                [
+                  10,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 23,
             "km": 19,
@@ -6926,13 +7175,24 @@
         {
           "id": "348495",
           "name": "Alexander Dahl Plougmann",
-          "games": 6,
-          "won": 5,
+          "games": 9,
+          "won": 6,
           "disciplines": [
             "D",
             "S"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#348495"
+        },
+        {
+          "id": "357024",
+          "name": "Ella Baldvinsson Frewald",
+          "games": 9,
+          "won": 3,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#357024"
         },
         {
           "id": "350815",
@@ -6946,17 +7206,6 @@
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#350815"
         },
         {
-          "id": "357024",
-          "name": "Ella Baldvinsson Frewald",
-          "games": 6,
-          "won": 3,
-          "disciplines": [
-            "D",
-            "S"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#357024"
-        },
-        {
           "id": "352440",
           "name": "Ethan Jing",
           "games": 6,
@@ -6966,6 +7215,28 @@
             "S"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#352440"
+        },
+        {
+          "id": "348494",
+          "name": "Mathilde Dahl Plougmann",
+          "games": 3,
+          "won": 1,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#348494"
+        },
+        {
+          "id": "358845",
+          "name": "Thor Evan Seitzberg",
+          "games": 3,
+          "won": 0,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#358845"
         }
       ]
     },
