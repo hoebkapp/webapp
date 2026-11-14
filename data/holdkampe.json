@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T17:17:06+00:00",
+  "updated": "2026-11-14T17:40:16+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -13469,11 +13469,11 @@
           "team": "Hørsholm",
           "teamID": "122004",
           "isUs": true,
-          "played": "4",
+          "played": "5",
           "won": "4",
-          "score": "42-10",
-          "sets": "81-26",
-          "points": "54"
+          "score": "47-18",
+          "sets": "93-43",
+          "points": "59"
         },
         {
           "pos": "3",
@@ -13513,11 +13513,11 @@
           "team": "KBK Kbh. 4 (O)",
           "teamID": "122007",
           "isUs": false,
-          "played": "4",
-          "won": "1",
-          "score": "21-31",
-          "sets": "53-71",
-          "points": "24"
+          "played": "5",
+          "won": "2",
+          "score": "29-36",
+          "sets": "70-83",
+          "points": "35"
         },
         {
           "pos": "7",
@@ -15283,14 +15283,434 @@
           "opponent": "KBK Kbh. 4",
           "organiser": "KBK Kbh.",
           "venue": "KBK-Hallen 4-6",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "8-5",
+          "points": "11-5",
+          "outcome": "T",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "507825",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507825,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. MD",
+              "home": [
+                {
+                  "id": "251764",
+                  "name": "Regitze Kørup Abildgaard"
+                },
+                {
+                  "id": "11184",
+                  "name": "Morten Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13374",
+                  "name": "Signe Baldvinsson"
+                },
+                {
+                  "id": "24376",
+                  "name": "Christian Skovgaard"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. MD",
+              "home": [
+                {
+                  "id": "274286",
+                  "name": "Viktor Bomberg"
+                },
+                {
+                  "id": "242131",
+                  "name": "Jesse Simone Nelson"
+                }
+              ],
+              "away": [
+                {
+                  "id": "236648",
+                  "name": "Rasmus Thorsted Mortensen"
+                },
+                {
+                  "id": "320827",
+                  "name": "Emma Sejberg Rasmussen"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. DS",
+              "home": [
+                {
+                  "id": "13436",
+                  "name": "Amalie Dynnes Ørsted"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13123",
+                  "name": "Camilla Strøm"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  8
+                ],
+                [
+                  15,
+                  10
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. DS",
+              "home": [
+                {
+                  "id": "317524",
+                  "name": "Venya Gunda"
+                }
+              ],
+              "away": [
+                {
+                  "id": "328467",
+                  "name": "Mathilde Baldvinsson Frewald"
+                }
+              ],
+              "sets": [
+                [
+                  12,
+                  15
+                ],
+                [
+                  10,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. HS",
+              "home": [
+                {
+                  "id": "274898",
+                  "name": "Árant Á Mýrini"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13323",
+                  "name": "Henrik Schroller Broerson"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  8
+                ],
+                [
+                  15,
+                  17
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. HS",
+              "home": [
+                {
+                  "id": "265518",
+                  "name": "Jonas Djurhuus"
+                }
+              ],
+              "away": [
+                {
+                  "id": "12813",
+                  "name": "Anders Vedsted Nørrelund"
+                }
+              ],
+              "sets": [
+                [
+                  14,
+                  16
+                ],
+                [
+                  15,
+                  9
+                ],
+                [
+                  15,
+                  7
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. HS",
+              "home": [
+                {
+                  "id": "317470",
+                  "name": "Julian King Arleth"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13008",
+                  "name": "Anders Frewald"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  12
+                ],
+                [
+                  15,
+                  13
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. HS",
+              "home": [
+                {
+                  "id": "91615",
+                  "name": "Mathis Kragh"
+                }
+              ],
+              "away": [
+                {
+                  "id": "11839",
+                  "name": "Morten Plougmann"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  5,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. DD",
+              "home": [
+                {
+                  "id": "13436",
+                  "name": "Amalie Dynnes Ørsted"
+                },
+                {
+                  "id": "251764",
+                  "name": "Regitze Kørup Abildgaard"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13123",
+                  "name": "Camilla Strøm"
+                },
+                {
+                  "id": "13374",
+                  "name": "Signe Baldvinsson"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  9
+                ],
+                [
+                  15,
+                  10
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. DD",
+              "home": [
+                {
+                  "id": "242131",
+                  "name": "Jesse Simone Nelson"
+                },
+                {
+                  "id": "317524",
+                  "name": "Venya Gunda"
+                }
+              ],
+              "away": [
+                {
+                  "id": "328467",
+                  "name": "Mathilde Baldvinsson Frewald"
+                },
+                {
+                  "id": "320827",
+                  "name": "Emma Sejberg Rasmussen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  13
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. HD",
+              "home": [
+                {
+                  "id": "265518",
+                  "name": "Jonas Djurhuus"
+                },
+                {
+                  "id": "274898",
+                  "name": "Árant Á Mýrini"
+                }
+              ],
+              "away": [
+                {
+                  "id": "13008",
+                  "name": "Anders Frewald"
+                },
+                {
+                  "id": "13323",
+                  "name": "Henrik Schroller Broerson"
+                }
+              ],
+              "sets": [
+                [
+                  6,
+                  15
+                ],
+                [
+                  10,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. HD",
+              "home": [
+                {
+                  "id": "91615",
+                  "name": "Mathis Kragh"
+                },
+                {
+                  "id": "11184",
+                  "name": "Morten Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "12813",
+                  "name": "Anders Vedsted Nørrelund"
+                },
+                {
+                  "id": "24376",
+                  "name": "Christian Skovgaard"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. HD",
+              "home": [
+                {
+                  "id": "274286",
+                  "name": "Viktor Bomberg"
+                },
+                {
+                  "id": "317470",
+                  "name": "Julian King Arleth"
+                }
+              ],
+              "away": [
+                {
+                  "id": "236648",
+                  "name": "Rasmus Thorsted Mortensen"
+                },
+                {
+                  "id": "11839",
+                  "name": "Morten Plougmann"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  12,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 18,
             "km": 18,
@@ -15357,24 +15777,80 @@
         {
           "id": "13008",
           "name": "Anders Frewald",
-          "games": 8,
-          "won": 8,
+          "games": 10,
+          "won": 9,
           "disciplines": [
             "MD",
-            "HD"
+            "HD",
+            "HS"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13008"
         },
         {
           "id": "12813",
           "name": "Anders Vedsted Nørrelund",
-          "games": 8,
+          "games": 10,
           "won": 5,
           "disciplines": [
             "HS",
             "HD"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#12813"
+        },
+        {
+          "id": "13123",
+          "name": "Camilla Strøm",
+          "games": 10,
+          "won": 7,
+          "disciplines": [
+            "DS",
+            "DD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13123"
+        },
+        {
+          "id": "13323",
+          "name": "Henrik Schroller Broerson",
+          "games": 10,
+          "won": 10,
+          "disciplines": [
+            "HS",
+            "HD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13323"
+        },
+        {
+          "id": "11839",
+          "name": "Morten Plougmann",
+          "games": 10,
+          "won": 7,
+          "disciplines": [
+            "HS",
+            "HD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#11839"
+        },
+        {
+          "id": "236648",
+          "name": "Rasmus Thorsted Mortensen",
+          "games": 10,
+          "won": 6,
+          "disciplines": [
+            "MD",
+            "HD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#236648"
+        },
+        {
+          "id": "13374",
+          "name": "Signe Baldvinsson",
+          "games": 10,
+          "won": 7,
+          "disciplines": [
+            "MD",
+            "DD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13374"
         },
         {
           "id": "250810",
@@ -15388,28 +15864,6 @@
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#250810"
         },
         {
-          "id": "13123",
-          "name": "Camilla Strøm",
-          "games": 8,
-          "won": 7,
-          "disciplines": [
-            "DS",
-            "DD"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13123"
-        },
-        {
-          "id": "13323",
-          "name": "Henrik Schroller Broerson",
-          "games": 8,
-          "won": 8,
-          "disciplines": [
-            "HS",
-            "HD"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13323"
-        },
-        {
           "id": "12881",
           "name": "Katrine Schou Andersen",
           "games": 8,
@@ -15421,48 +15875,37 @@
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#12881"
         },
         {
-          "id": "11839",
-          "name": "Morten Plougmann",
-          "games": 8,
-          "won": 5,
-          "disciplines": [
-            "HS",
-            "HD"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#11839"
-        },
-        {
-          "id": "236648",
-          "name": "Rasmus Thorsted Mortensen",
-          "games": 8,
-          "won": 5,
-          "disciplines": [
-            "MD",
-            "HD"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#236648"
-        },
-        {
-          "id": "13374",
-          "name": "Signe Baldvinsson",
-          "games": 8,
-          "won": 7,
-          "disciplines": [
-            "MD",
-            "DD"
-          ],
-          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#13374"
-        },
-        {
           "id": "328467",
           "name": "Mathilde Baldvinsson Frewald",
-          "games": 6,
-          "won": 6,
+          "games": 8,
+          "won": 7,
           "disciplines": [
             "DS",
             "DD"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#328467"
+        },
+        {
+          "id": "24376",
+          "name": "Christian Skovgaard",
+          "games": 2,
+          "won": 0,
+          "disciplines": [
+            "MD",
+            "HD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#24376"
+        },
+        {
+          "id": "320827",
+          "name": "Emma Sejberg Rasmussen",
+          "games": 2,
+          "won": 0,
+          "disciplines": [
+            "MD",
+            "DD"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#320827"
         },
         {
           "id": "12992",

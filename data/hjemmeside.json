@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T16:43:14+00:00",
+ "updated": "2026-11-14T17:40:16+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 14,
@@ -60,17 +60,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19105,4,10,,514462,1151,"
   },
   {
-   "team": "Danmarksserien",
-   "club": "Hørsholm",
-   "date": "2026-11-14",
-   "time": "16:00",
-   "opponent": "KBK Kbh. 4",
-   "home": false,
-   "listedHome": false,
-   "venue": "KBK-Hallen 4-6",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507825,1151,"
-  },
-  {
    "team": "U15 B",
    "club": "Hørsholm 2",
    "date": "2026-11-15",
@@ -91,9 +80,34 @@
    "listedHome": true,
    "venue": "Hørsholm Badminton Hal",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,"
+  },
+  {
+   "team": "U13 A",
+   "club": "Hørsholm 1",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "KBK Kbh. 1",
+   "home": false,
+   "listedHome": true,
+   "venue": "Værløsehallerne 5-7",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,"
   }
  ],
  "results": [
+  {
+   "team": "Danmarksserien",
+   "club": "Hørsholm",
+   "date": "2026-11-14",
+   "time": "16:00",
+   "opponent": "KBK Kbh. 4",
+   "home": false,
+   "listedHome": false,
+   "venue": "KBK-Hallen 4-6",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507825,1151,",
+   "result": "8-5",
+   "outcome": "T",
+   "walkover": ""
+  },
   {
    "team": "U11 Dx",
    "club": "Hørsholm 2",
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18960,16,19,,510410,1151,",
    "result": "6-0",
    "outcome": "V",
-   "walkover": ""
-  },
-  {
-   "team": "MOT 4+4 Elite/Mester",
-   "club": "Hørsholm 2",
-   "date": "2026-11-01",
-   "time": "10:00",
-   "opponent": "Holte 3",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal 1-4",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510455,1151,",
-   "result": "2-10",
-   "outcome": "T",
    "walkover": ""
   }
  ]
