@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-14T19:45:30+00:00",
+ "updated": "2026-11-14T20:23:11+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
- "teams": 14,
+ "teams": 15,
  "upcoming": [
   {
    "team": "U11 Dx",
@@ -49,17 +49,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19102,5,10,,514330,1151,"
   },
   {
-   "team": "U15 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "10:00",
-   "opponent": "Birkerød BK13 1",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,"
-  },
-  {
    "team": "U13 A",
    "club": "Hørsholm 1",
    "date": "2026-11-15",
@@ -69,6 +58,17 @@
    "listedHome": true,
    "venue": "Værløsehallerne 5-7",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,"
+  },
+  {
+   "team": "U15 A",
+   "club": "Hørsholm 1",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "Birkerød BK13 1",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,"
   },
   {
    "team": "MOT 4+4 Elite/Mester",
