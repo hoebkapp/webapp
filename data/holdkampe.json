@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T13:17:07+00:00",
+  "updated": "2026-11-14T13:47:14+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -6000,7 +6000,7 @@
       "name": "Hørsholm 1",
       "pulje": "U11 C, 5000 (4 spillere) Pulje 1",
       "label": "U11 C",
-      "position": "3",
+      "position": "4",
       "standing": [
         {
           "pos": "1",
@@ -6015,6 +6015,17 @@
         },
         {
           "pos": "2",
+          "team": "Slangerup/Skibby 1",
+          "teamID": "124388",
+          "isUs": false,
+          "played": "3",
+          "won": "2",
+          "score": "16-8",
+          "sets": "36-20",
+          "points": "9"
+        },
+        {
+          "pos": "3",
           "team": "Lillerød 1",
           "teamID": "124382",
           "isUs": false,
@@ -6025,7 +6036,7 @@
           "points": "9"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Hørsholm 1",
           "teamID": "124385",
           "isUs": true,
@@ -6034,17 +6045,6 @@
           "score": "12-12",
           "sets": "25-27",
           "points": "7"
-        },
-        {
-          "pos": "4",
-          "team": "Slangerup/Skibby 1",
-          "teamID": "124388",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "9-7",
-          "sets": "21-16",
-          "points": "5"
         },
         {
           "pos": "5",
@@ -6073,10 +6073,10 @@
           "team": "Badminton Roskilde 1",
           "teamID": "124386",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "0",
-          "score": "6-18",
-          "sets": "17-38",
+          "score": "7-25",
+          "sets": "21-53",
           "points": "0"
         }
       ],
