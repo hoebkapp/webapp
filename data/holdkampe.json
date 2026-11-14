@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T10:47:15+00:00",
+  "updated": "2026-11-14T11:17:08+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -6000,10 +6000,21 @@
       "name": "Hørsholm 1",
       "pulje": "U11 C, 5000 (4 spillere) Pulje 1",
       "label": "U11 C",
-      "position": "2",
+      "position": "3",
       "standing": [
         {
           "pos": "1",
+          "team": "Lillerød 1",
+          "teamID": "124382",
+          "isUs": false,
+          "played": "3",
+          "won": "2",
+          "score": "15-9",
+          "sets": "30-22",
+          "points": "9"
+        },
+        {
+          "pos": "2",
           "team": "Humlebæk 1",
           "teamID": "124384",
           "isUs": false,
@@ -6014,7 +6025,7 @@
           "points": "7"
         },
         {
-          "pos": "2",
+          "pos": "3",
           "team": "Hørsholm 1",
           "teamID": "124385",
           "isUs": true,
@@ -6025,7 +6036,7 @@
           "points": "7"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Slangerup/Skibby 1",
           "teamID": "124388",
           "isUs": false,
@@ -6033,17 +6044,6 @@
           "won": "1",
           "score": "9-7",
           "sets": "21-16",
-          "points": "5"
-        },
-        {
-          "pos": "4",
-          "team": "Lillerød 1",
-          "teamID": "124382",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "9-7",
-          "sets": "18-15",
           "points": "5"
         },
         {
@@ -6059,17 +6059,6 @@
         },
         {
           "pos": "6",
-          "team": "Badminton Roskilde 1",
-          "teamID": "124386",
-          "isUs": false,
-          "played": "2",
-          "won": "0",
-          "score": "4-12",
-          "sets": "10-26",
-          "points": "0"
-        },
-        {
-          "pos": "7",
           "team": "Hillerød 2",
           "teamID": "124383",
           "isUs": false,
@@ -6077,6 +6066,17 @@
           "won": "0",
           "score": "3-13",
           "sets": "8-26",
+          "points": "0"
+        },
+        {
+          "pos": "7",
+          "team": "Badminton Roskilde 1",
+          "teamID": "124386",
+          "isUs": false,
+          "played": "3",
+          "won": "0",
+          "score": "6-18",
+          "sets": "17-38",
           "points": "0"
         }
       ],
