@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T18:47:11+00:00",
+ "updated": "2026-11-14T19:17:20+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -476,11 +476,11 @@
    "teams": [
     "U11 C"
    ],
-   "played": 9,
-   "won": 6,
+   "played": 12,
+   "won": 8,
    "winPct": 67,
-   "pointsFor": 308,
-   "avgPoints": 34.2,
+   "pointsFor": 388,
+   "avgPoints": 32.3,
    "avgDiff": 4.2
   },
   {
@@ -685,6 +685,20 @@
   },
   {
    "rank": 49,
+   "id": "358845",
+   "name": "Thor Evan Seitzberg",
+   "teams": [
+    "U11 C"
+   ],
+   "played": 6,
+   "won": 3,
+   "winPct": 50,
+   "pointsFor": 162,
+   "avgPoints": 27.0,
+   "avgDiff": 0.8
+  },
+  {
+   "rank": 50,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -698,7 +712,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 50,
+   "rank": 51,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -712,7 +726,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 51,
+   "rank": 52,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -726,7 +740,7 @@
    "avgDiff": 2.0
   },
   {
-   "rank": 52,
+   "rank": 53,
    "id": "337844",
    "name": "Ellen Krogh-Larsen",
    "teams": [
@@ -740,7 +754,7 @@
    "avgDiff": -2.2
   },
   {
-   "rank": 53,
+   "rank": 54,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -754,7 +768,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 54,
+   "rank": 55,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -769,7 +783,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 55,
+   "rank": 56,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -783,7 +797,7 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 56,
+   "rank": 57,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -797,7 +811,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 57,
+   "rank": 58,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -809,20 +823,6 @@
    "pointsFor": 82,
    "avgPoints": 27.3,
    "avgDiff": -1.3
-  },
-  {
-   "rank": 58,
-   "id": "357024",
-   "name": "Ella Baldvinsson Frewald",
-   "teams": [
-    "U11 C"
-   ],
-   "played": 9,
-   "won": 3,
-   "winPct": 33,
-   "pointsFor": 218,
-   "avgPoints": 24.2,
-   "avgDiff": -3.0
   },
   {
    "rank": 59,
@@ -840,6 +840,20 @@
   },
   {
    "rank": 60,
+   "id": "357024",
+   "name": "Ella Baldvinsson Frewald",
+   "teams": [
+    "U11 C"
+   ],
+   "played": 12,
+   "won": 4,
+   "winPct": 33,
+   "pointsFor": 288,
+   "avgPoints": 24.0,
+   "avgDiff": -3.6
+  },
+  {
+   "rank": 61,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -853,7 +867,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 61,
+   "rank": 62,
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
@@ -867,7 +881,22 @@
    "avgDiff": -8.3
   },
   {
-   "rank": 62,
+   "rank": 63,
+   "id": "348494",
+   "name": "Mathilde Dahl Plougmann",
+   "teams": [
+    "U13 B",
+    "U11 C"
+   ],
+   "played": 11,
+   "won": 3,
+   "winPct": 27,
+   "pointsFor": 231,
+   "avgPoints": 21.0,
+   "avgDiff": -6.6
+  },
+  {
+   "rank": 64,
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
@@ -881,7 +910,7 @@
    "avgDiff": -4.5
   },
   {
-   "rank": 63,
+   "rank": 65,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -895,7 +924,7 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 64,
+   "rank": 66,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -909,7 +938,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 65,
+   "rank": 67,
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
@@ -923,7 +952,7 @@
    "avgDiff": -6.2
   },
   {
-   "rank": 66,
+   "rank": 68,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -937,7 +966,7 @@
    "avgDiff": -10.0
   },
   {
-   "rank": 67,
+   "rank": 69,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -951,7 +980,7 @@
    "avgDiff": -9.0
   },
   {
-   "rank": 68,
+   "rank": 70,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -965,7 +994,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 69,
+   "rank": 71,
    "id": "277780",
    "name": "Mathilde Peetz",
    "teams": [
@@ -980,7 +1009,7 @@
    "avgDiff": -12.4
   },
   {
-   "rank": 70,
+   "rank": 72,
    "id": "330795",
    "name": "Brit Johannessen",
    "teams": [
@@ -994,22 +1023,7 @@
    "avgDiff": -9.2
   },
   {
-   "rank": 71,
-   "id": "348494",
-   "name": "Mathilde Dahl Plougmann",
-   "teams": [
-    "U13 B",
-    "U11 C"
-   ],
-   "played": 8,
-   "won": 1,
-   "winPct": 12,
-   "pointsFor": 153,
-   "avgPoints": 19.1,
-   "avgDiff": -10.2
-  },
-  {
-   "rank": 72,
+   "rank": 73,
    "id": "345764",
    "name": "Emilie Drescher",
    "teams": [
@@ -1023,7 +1037,7 @@
    "avgDiff": -12.6
   },
   {
-   "rank": 73,
+   "rank": 74,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1037,7 +1051,7 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 74,
+   "rank": 75,
    "id": "362602",
    "name": "Marvin Nørmark",
    "teams": [
@@ -1051,7 +1065,7 @@
    "avgDiff": -10.4
   },
   {
-   "rank": 75,
+   "rank": 76,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1065,7 +1079,7 @@
    "avgDiff": -12.8
   },
   {
-   "rank": 76,
+   "rank": 77,
    "id": "352441",
    "name": "Nolan Jing",
    "teams": [
@@ -1079,7 +1093,7 @@
    "avgDiff": -13.5
   },
   {
-   "rank": 77,
+   "rank": 78,
    "id": "24376",
    "name": "Christian Skovgaard",
    "teams": [
@@ -1091,20 +1105,6 @@
    "pointsFor": 42,
    "avgPoints": 21.0,
    "avgDiff": -9.0
-  },
-  {
-   "rank": 78,
-   "id": "358845",
-   "name": "Thor Evan Seitzberg",
-   "teams": [
-    "U11 C"
-   ],
-   "played": 3,
-   "won": 0,
-   "winPct": 0,
-   "pointsFor": 62,
-   "avgPoints": 20.7,
-   "avgDiff": -10.0
   },
   {
    "rank": 79,
@@ -1803,6 +1803,84 @@
      "date": "2026-11-14",
      "team": "U11 C",
      "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "1. D",
+     "partner": [
+      "Thor Evan Seitzberg"
+     ],
+     "opponents": [
+      "Oskar Florang Dessau",
+      "Lucas Petersen"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "2. D",
+     "partner": [
+      "Ella Baldvinsson Frewald"
+     ],
+     "opponents": [
+      "Lucas Petersen",
+      "Carl Østergaard"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Oskar Florang Dessau"
+     ],
+     "sets": [
+      [
+       15,
+       4
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
      "opponentTeam": "Humlebæk 1",
      "matchID": "513409",
      "discipline": "1. D",
@@ -2046,24 +2124,24 @@
      "walkover": ""
     }
    ],
-   "played": 9,
-   "won": 6,
-   "lost": 3,
+   "played": 12,
+   "won": 8,
+   "lost": 4,
    "winPct": 67,
-   "pointsFor": 308,
-   "pointsAgainst": 270,
-   "avgPoints": 34.2,
+   "pointsFor": 388,
+   "pointsAgainst": 337,
+   "avgPoints": 32.3,
    "avgDiff": 4.2,
-   "setsWon": 13,
-   "setsLost": 8,
+   "setsWon": 17,
+   "setsLost": 10,
    "byDiscipline": {
     "D": {
-     "played": 6,
-     "won": 4
+     "played": 8,
+     "won": 5
     },
     "S": {
-     "played": 3,
-     "won": 2
+     "played": 4,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -10274,6 +10352,84 @@
      "date": "2026-11-14",
      "team": "U11 C",
      "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "4. D",
+     "partner": [
+      "Mathilde Dahl Plougmann"
+     ],
+     "opponents": [
+      "Valde Puck Nørby",
+      "Carl Østergaard"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       16,
+       14
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "2. D",
+     "partner": [
+      "Alexander Dahl Plougmann"
+     ],
+     "opponents": [
+      "Lucas Petersen",
+      "Carl Østergaard"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Valde Puck Nørby"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
      "opponentTeam": "Humlebæk 1",
      "matchID": "513409",
      "discipline": "4. D",
@@ -10505,23 +10661,23 @@
      "walkover": ""
     }
    ],
-   "played": 9,
-   "won": 3,
-   "lost": 6,
+   "played": 12,
+   "won": 4,
+   "lost": 8,
    "winPct": 33,
-   "pointsFor": 218,
-   "pointsAgainst": 245,
-   "avgPoints": 24.2,
-   "avgDiff": -3.0,
-   "setsWon": 6,
-   "setsLost": 12,
+   "pointsFor": 288,
+   "pointsAgainst": 331,
+   "avgPoints": 24.0,
+   "avgDiff": -3.6,
+   "setsWon": 8,
+   "setsLost": 16,
    "byDiscipline": {
     "D": {
-     "played": 6,
-     "won": 3
+     "played": 8,
+     "won": 4
     },
     "S": {
-     "played": 3,
+     "played": 4,
      "won": 0
     }
    },
@@ -22857,6 +23013,84 @@
      "date": "2026-11-14",
      "team": "U11 C",
      "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "4. D",
+     "partner": [
+      "Ella Baldvinsson Frewald"
+     ],
+     "opponents": [
+      "Valde Puck Nørby",
+      "Carl Østergaard"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       16,
+       14
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "3. D",
+     "partner": [
+      "Thor Evan Seitzberg"
+     ],
+     "opponents": [
+      "Valde Puck Nørby",
+      "Oskar Florang Dessau"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Lucas Petersen"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       6,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
      "opponentTeam": "Humlebæk 1",
      "matchID": "513409",
      "discipline": "1. D",
@@ -23061,23 +23295,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
-   "won": 1,
-   "lost": 7,
-   "winPct": 12,
-   "pointsFor": 153,
-   "pointsAgainst": 235,
-   "avgPoints": 19.1,
-   "avgDiff": -10.2,
-   "setsWon": 2,
-   "setsLost": 14,
+   "played": 11,
+   "won": 3,
+   "lost": 8,
+   "winPct": 27,
+   "pointsFor": 231,
+   "pointsAgainst": 304,
+   "avgPoints": 21.0,
+   "avgDiff": -6.6,
+   "setsWon": 6,
+   "setsLost": 16,
    "byDiscipline": {
     "D": {
-     "played": 5,
-     "won": 1
+     "played": 7,
+     "won": 3
     },
     "S": {
-     "played": 3,
+     "played": 4,
      "won": 0
     }
    },
@@ -33005,6 +33239,88 @@
      "date": "2026-11-14",
      "team": "U11 C",
      "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "1. D",
+     "partner": [
+      "Alexander Dahl Plougmann"
+     ],
+     "opponents": [
+      "Oskar Florang Dessau",
+      "Lucas Petersen"
+     ],
+     "sets": [
+      [
+       15,
+       12
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "3. D",
+     "partner": [
+      "Mathilde Dahl Plougmann"
+     ],
+     "opponents": [
+      "Valde Puck Nørby",
+      "Oskar Florang Dessau"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "Hillerød 2",
+     "matchID": "513407",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Carl Østergaard"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       10,
+       15
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 C",
+     "teamName": "Hørsholm 1",
      "opponentTeam": "Humlebæk 1",
      "matchID": "513409",
      "discipline": "4. D",
@@ -33080,24 +33396,24 @@
      "walkover": ""
     }
    ],
-   "played": 3,
-   "won": 0,
+   "played": 6,
+   "won": 3,
    "lost": 3,
-   "winPct": 0,
-   "pointsFor": 62,
-   "pointsAgainst": 92,
-   "avgPoints": 20.7,
-   "avgDiff": -10.0,
-   "setsWon": 0,
-   "setsLost": 6,
+   "winPct": 50,
+   "pointsFor": 162,
+   "pointsAgainst": 157,
+   "avgPoints": 27.0,
+   "avgDiff": 0.8,
+   "setsWon": 6,
+   "setsLost": 7,
    "byDiscipline": {
     "D": {
-     "played": 2,
-     "won": 0
+     "played": 4,
+     "won": 2
     },
     "S": {
-     "played": 1,
-     "won": 0
+     "played": 2,
+     "won": 1
     }
    },
    "clubMember": true,
