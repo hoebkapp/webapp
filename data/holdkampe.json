@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T16:47:09+00:00",
+  "updated": "2026-11-14T17:17:06+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -10978,10 +10978,21 @@
       "name": "Hørsholm 2",
       "pulje": "Serie 2 Pulje 2",
       "label": "Serie 2",
-      "position": "1",
+      "position": "2",
       "standing": [
         {
           "pos": "1",
+          "team": "Virum",
+          "teamID": "122525",
+          "isUs": false,
+          "played": "5",
+          "won": "5",
+          "score": "48-17",
+          "sets": "103-40",
+          "points": "14"
+        },
+        {
+          "pos": "2",
           "team": "Hørsholm 2",
           "teamID": "122521",
           "isUs": true,
@@ -10990,17 +11001,6 @@
           "score": "46-19",
           "sets": "96-44",
           "points": "14"
-        },
-        {
-          "pos": "2",
-          "team": "Virum",
-          "teamID": "122525",
-          "isUs": false,
-          "played": "4",
-          "won": "4",
-          "score": "35-17",
-          "sets": "77-39",
-          "points": "11"
         },
         {
           "pos": "3",
@@ -11018,10 +11018,10 @@
           "team": "Humlebæk 3",
           "teamID": "122520",
           "isUs": false,
-          "played": "4",
+          "played": "5",
           "won": "2",
-          "score": "28-24",
-          "sets": "54-55",
+          "score": "28-37",
+          "sets": "55-81",
           "points": "6"
         },
         {
@@ -13488,6 +13488,17 @@
         },
         {
           "pos": "4",
+          "team": "BC37 Amager 2",
+          "teamID": "122005",
+          "isUs": false,
+          "played": "5",
+          "won": "3",
+          "score": "40-25",
+          "sets": "87-66",
+          "points": "49"
+        },
+        {
+          "pos": "5",
           "team": "Nivå-Kokkedal",
           "teamID": "122006",
           "isUs": false,
@@ -13496,17 +13507,6 @@
           "score": "32-33",
           "sets": "78-77",
           "points": "40"
-        },
-        {
-          "pos": "5",
-          "team": "BC37 Amager 2",
-          "teamID": "122005",
-          "isUs": false,
-          "played": "4",
-          "won": "2",
-          "score": "27-25",
-          "sets": "61-58",
-          "points": "33"
         },
         {
           "pos": "6",
@@ -13535,10 +13535,10 @@
           "team": "Holte 2",
           "teamID": "122002",
           "isUs": false,
-          "played": "4",
+          "played": "5",
           "won": "0",
-          "score": "8-44",
-          "sets": "27-85",
+          "score": "8-57",
+          "sets": "35-111",
           "points": "8"
         }
       ],
