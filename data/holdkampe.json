@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T16:17:13+00:00",
+  "updated": "2026-11-15T16:44:57+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -16053,10 +16053,21 @@
       "name": "Hørsholm 4",
       "pulje": "U13 D, 4600 (4 spillere) Pulje 3",
       "label": "U13 D",
-      "position": "1",
+      "position": "6",
       "standing": [
         {
           "pos": "1",
+          "team": "Farum 4",
+          "teamID": "124624",
+          "isUs": false,
+          "played": "2",
+          "won": "2",
+          "score": "14-2",
+          "sets": "29-11",
+          "points": "8"
+        },
+        {
+          "pos": "2",
           "team": "Espergærde 1",
           "teamID": "124630",
           "isUs": false,
@@ -16067,18 +16078,7 @@
           "points": "0"
         },
         {
-          "pos": "1",
-          "team": "Farum 4",
-          "teamID": "124624",
-          "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
-        },
-        {
-          "pos": "1",
+          "pos": "2",
           "team": "Frem - Hellebæk 1",
           "teamID": "124628",
           "isUs": false,
@@ -16089,7 +16089,7 @@
           "points": "0"
         },
         {
-          "pos": "1",
+          "pos": "2",
           "team": "Græsted 1",
           "teamID": "124631",
           "isUs": false,
@@ -16100,7 +16100,7 @@
           "points": "0"
         },
         {
-          "pos": "1",
+          "pos": "2",
           "team": "Helsingør 1",
           "teamID": "124629",
           "isUs": false,
@@ -16111,25 +16111,25 @@
           "points": "0"
         },
         {
-          "pos": "1",
+          "pos": "6",
           "team": "Hørsholm 4",
           "teamID": "124626",
           "isUs": true,
-          "played": "0",
+          "played": "1",
           "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
+          "score": "1-7",
+          "sets": "7-15",
           "points": "0"
         },
         {
-          "pos": "1",
+          "pos": "7",
           "team": "Nivå-Kokkedal 2",
           "teamID": "124627",
           "isUs": false,
-          "played": "0",
+          "played": "1",
           "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
+          "score": "1-7",
+          "sets": "4-14",
           "points": "0"
         },
         {
@@ -16168,14 +16168,287 @@
           "opponent": "Farum 4",
           "organiser": "Farum",
           "venue": "Stenvadhallen 6-9",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "1-7",
+          "points": "0-4",
+          "outcome": "T",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "514612",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "362341",
+                  "name": "Villas Alexander Worm"
+                },
+                {
+                  "id": "362167",
+                  "name": "William Løvenholdt Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "365811",
+                  "name": "Theodor Rousing Kay"
+                },
+                {
+                  "id": "360015",
+                  "name": "Christian Brøndum"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  12,
+                  15
+                ],
+                [
+                  18,
+                  20
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "362348",
+                  "name": "Zahra Gita Deb"
+                },
+                {
+                  "id": "362351",
+                  "name": "Clara Høgh Staufeldt"
+                }
+              ],
+              "away": [
+                {
+                  "id": "365160",
+                  "name": "Christoffer Lysdal"
+                },
+                {
+                  "id": "360016",
+                  "name": "Eskild Tolborg"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  6,
+                  15
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "362167",
+                  "name": "William Løvenholdt Petersen"
+                },
+                {
+                  "id": "362348",
+                  "name": "Zahra Gita Deb"
+                }
+              ],
+              "away": [
+                {
+                  "id": "360015",
+                  "name": "Christian Brøndum"
+                },
+                {
+                  "id": "365160",
+                  "name": "Christoffer Lysdal"
+                }
+              ],
+              "sets": [
+                [
+                  14,
+                  16
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "362341",
+                  "name": "Villas Alexander Worm"
+                },
+                {
+                  "id": "362351",
+                  "name": "Clara Høgh Staufeldt"
+                }
+              ],
+              "away": [
+                {
+                  "id": "360016",
+                  "name": "Eskild Tolborg"
+                },
+                {
+                  "id": "365811",
+                  "name": "Theodor Rousing Kay"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  14,
+                  16
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. S",
+              "home": [
+                {
+                  "id": "362341",
+                  "name": "Villas Alexander Worm"
+                }
+              ],
+              "away": [
+                {
+                  "id": "365811",
+                  "name": "Theodor Rousing Kay"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  15,
+                  13
+                ],
+                [
+                  15,
+                  9
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. S",
+              "home": [
+                {
+                  "id": "362167",
+                  "name": "William Løvenholdt Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "360015",
+                  "name": "Christian Brøndum"
+                }
+              ],
+              "sets": [
+                [
+                  12,
+                  15
+                ],
+                [
+                  15,
+                  10
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. S",
+              "home": [
+                {
+                  "id": "362348",
+                  "name": "Zahra Gita Deb"
+                }
+              ],
+              "away": [
+                {
+                  "id": "360016",
+                  "name": "Eskild Tolborg"
+                }
+              ],
+              "sets": [
+                [
+                  11,
+                  15
+                ],
+                [
+                  6,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. S",
+              "home": [
+                {
+                  "id": "362351",
+                  "name": "Clara Høgh Staufeldt"
+                }
+              ],
+              "away": [
+                {
+                  "id": "365160",
+                  "name": "Christoffer Lysdal"
+                }
+              ],
+              "sets": [
+                [
+                  5,
+                  15
+                ],
+                [
+                  17,
+                  15
+                ],
+                [
+                  11,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 23,
             "km": 15,
@@ -16316,7 +16589,52 @@
           }
         }
       ],
-      "players": []
+      "players": [
+        {
+          "id": "362351",
+          "name": "Clara Høgh Staufeldt",
+          "games": 3,
+          "won": 0,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#362351"
+        },
+        {
+          "id": "362341",
+          "name": "Villas Alexander Worm",
+          "games": 3,
+          "won": 1,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#362341"
+        },
+        {
+          "id": "362167",
+          "name": "William Løvenholdt Petersen",
+          "games": 3,
+          "won": 0,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#362167"
+        },
+        {
+          "id": "362348",
+          "name": "Zahra Gita Deb",
+          "games": 3,
+          "won": 0,
+          "disciplines": [
+            "D",
+            "S"
+          ],
+          "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#362348"
+        }
+      ]
     },
     {
       "name": "Hørsholm 1",

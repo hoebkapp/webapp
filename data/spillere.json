@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T16:17:13+00:00",
+ "updated": "2026-11-15T16:44:57+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -981,6 +981,20 @@
   },
   {
    "rank": 70,
+   "id": "362341",
+   "name": "Villas Alexander Worm",
+   "teams": [
+    "U13 D"
+   ],
+   "played": 3,
+   "won": 1,
+   "winPct": 33,
+   "pointsFor": 121,
+   "avgPoints": 40.3,
+   "avgDiff": -2.7
+  },
+  {
+   "rank": 71,
    "id": "268924",
    "name": "Marianne Seydel Jørgensen",
    "teams": [
@@ -994,7 +1008,7 @@
    "avgDiff": -3.7
   },
   {
-   "rank": 71,
+   "rank": 72,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -1008,7 +1022,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 72,
+   "rank": 73,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -1022,7 +1036,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 73,
+   "rank": 74,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -1036,7 +1050,7 @@
    "avgDiff": -3.6
   },
   {
-   "rank": 74,
+   "rank": 75,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -1050,7 +1064,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 75,
+   "rank": 76,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1065,7 +1079,7 @@
    "avgDiff": -4.3
   },
   {
-   "rank": 76,
+   "rank": 77,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
@@ -1080,7 +1094,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 77,
+   "rank": 78,
    "id": "346992",
    "name": "Carl Grønfeldt",
    "teams": [
@@ -1094,7 +1108,7 @@
    "avgDiff": -7.7
   },
   {
-   "rank": 78,
+   "rank": 79,
    "id": "348494",
    "name": "Mathilde Dahl Plougmann",
    "teams": [
@@ -1109,7 +1123,7 @@
    "avgDiff": -6.6
   },
   {
-   "rank": 79,
+   "rank": 80,
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
@@ -1124,7 +1138,7 @@
    "avgDiff": -4.4
   },
   {
-   "rank": 80,
+   "rank": 81,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -1138,7 +1152,7 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 81,
+   "rank": 82,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -1152,7 +1166,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 82,
+   "rank": 83,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -1166,7 +1180,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 83,
+   "rank": 84,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -1180,7 +1194,7 @@
    "avgDiff": -10.0
   },
   {
-   "rank": 84,
+   "rank": 85,
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
@@ -1194,7 +1208,7 @@
    "avgDiff": -7.0
   },
   {
-   "rank": 85,
+   "rank": 86,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -1208,7 +1222,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 86,
+   "rank": 87,
    "id": "277780",
    "name": "Mathilde Peetz",
    "teams": [
@@ -1223,7 +1237,7 @@
    "avgDiff": -12.4
   },
   {
-   "rank": 87,
+   "rank": 88,
    "id": "330795",
    "name": "Brit Johannessen",
    "teams": [
@@ -1237,7 +1251,7 @@
    "avgDiff": -9.2
   },
   {
-   "rank": 88,
+   "rank": 89,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1252,7 +1266,7 @@
    "avgDiff": -9.4
   },
   {
-   "rank": 89,
+   "rank": 90,
    "id": "345764",
    "name": "Emilie Drescher",
    "teams": [
@@ -1266,7 +1280,35 @@
    "avgDiff": -12.6
   },
   {
-   "rank": 90,
+   "rank": 91,
+   "id": "362351",
+   "name": "Clara Høgh Staufeldt",
+   "teams": [
+    "U13 D"
+   ],
+   "played": 3,
+   "won": 0,
+   "winPct": 0,
+   "pointsFor": 99,
+   "avgPoints": 33.0,
+   "avgDiff": -10.3
+  },
+  {
+   "rank": 92,
+   "id": "362167",
+   "name": "William Løvenholdt Petersen",
+   "teams": [
+    "U13 D"
+   ],
+   "played": 3,
+   "won": 0,
+   "winPct": 0,
+   "pointsFor": 102,
+   "avgPoints": 34.0,
+   "avgDiff": -5.7
+  },
+  {
+   "rank": 93,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1280,7 +1322,21 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 91,
+   "rank": 94,
+   "id": "362348",
+   "name": "Zahra Gita Deb",
+   "teams": [
+    "U13 D"
+   ],
+   "played": 3,
+   "won": 0,
+   "winPct": 0,
+   "pointsFor": 68,
+   "avgPoints": 22.7,
+   "avgDiff": -11.3
+  },
+  {
+   "rank": 95,
    "id": "362602",
    "name": "Marvin Nørmark",
    "teams": [
@@ -1294,7 +1350,7 @@
    "avgDiff": -10.4
   },
   {
-   "rank": 92,
+   "rank": 96,
    "id": "352441",
    "name": "Nolan Jing",
    "teams": [
@@ -1308,7 +1364,7 @@
    "avgDiff": -13.5
   },
   {
-   "rank": 93,
+   "rank": 97,
    "id": "24376",
    "name": "Christian Skovgaard",
    "teams": [
@@ -1322,7 +1378,7 @@
    "avgDiff": -9.0
   },
   {
-   "rank": 94,
+   "rank": 98,
    "id": "364196",
    "name": "Fie B. Kobberup",
    "teams": [
@@ -1336,7 +1392,7 @@
    "avgDiff": -10.3
   },
   {
-   "rank": 95,
+   "rank": 99,
    "id": "336560",
    "name": "Tue Krogh-Larsen",
    "teams": [
@@ -1350,7 +1406,7 @@
    "avgDiff": -13.0
   },
   {
-   "rank": 96,
+   "rank": 100,
    "id": "352356",
    "name": "Carl Emil Jensen",
    "teams": [
@@ -1364,7 +1420,7 @@
    "avgDiff": -13.6
   },
   {
-   "rank": 97,
+   "rank": 101,
    "id": "335592",
    "name": "William Vedsted Nørrelund",
    "teams": [
@@ -1378,7 +1434,7 @@
    "avgDiff": -14.0
   },
   {
-   "rank": 98,
+   "rank": 102,
    "id": "367264",
    "name": "Pulin Dhar",
    "teams": [
@@ -10222,20 +10278,122 @@
   {
    "id": "362351",
    "name": "Clara Høgh Staufeldt",
-   "teams": [],
+   "teams": [
+    "U13 D"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "4. D",
+     "partner": [
+      "Zahra Gita Deb"
+     ],
+     "opponents": [
+      "Christoffer Lysdal",
+      "Eskild Tolborg"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       6,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "3. D",
+     "partner": [
+      "Villas Alexander Worm"
+     ],
+     "opponents": [
+      "Eskild Tolborg",
+      "Theodor Rousing Kay"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       14,
+       16
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Christoffer Lysdal"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       17,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
    "won": 0,
-   "lost": 0,
+   "lost": 3,
    "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "pointsFor": 99,
+   "pointsAgainst": 130,
+   "avgPoints": 33.0,
+   "avgDiff": -10.3,
+   "setsWon": 3,
+   "setsLost": 6,
+   "byDiscipline": {
+    "D": {
+     "played": 2,
+     "won": 0
+    },
+    "S": {
+     "played": 1,
+     "won": 0
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {
@@ -37228,20 +37386,122 @@
   {
    "id": "362341",
    "name": "Villas Alexander Worm",
-   "teams": [],
+   "teams": [
+    "U13 D"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
-   "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "1. D",
+     "partner": [
+      "William Løvenholdt Petersen"
+     ],
+     "opponents": [
+      "Theodor Rousing Kay",
+      "Christian Brøndum"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       18,
+       20
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "3. D",
+     "partner": [
+      "Clara Høgh Staufeldt"
+     ],
+     "opponents": [
+      "Eskild Tolborg",
+      "Theodor Rousing Kay"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       14,
+       16
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Theodor Rousing Kay"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
+   "won": 1,
+   "lost": 2,
+   "winPct": 33,
+   "pointsFor": 121,
+   "pointsAgainst": 129,
+   "avgPoints": 40.3,
+   "avgDiff": -2.7,
+   "setsWon": 4,
+   "setsLost": 5,
+   "byDiscipline": {
+    "D": {
+     "played": 2,
+     "won": 0
+    },
+    "S": {
+     "played": 1,
+     "won": 1
+    }
+   },
    "clubMember": true,
    "gender": "M",
    "profile": {
@@ -37719,20 +37979,118 @@
   {
    "id": "362167",
    "name": "William Løvenholdt Petersen",
-   "teams": [],
+   "teams": [
+    "U13 D"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "1. D",
+     "partner": [
+      "Villas Alexander Worm"
+     ],
+     "opponents": [
+      "Theodor Rousing Kay",
+      "Christian Brøndum"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       18,
+       20
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "2. D",
+     "partner": [
+      "Zahra Gita Deb"
+     ],
+     "opponents": [
+      "Christian Brøndum",
+      "Christoffer Lysdal"
+     ],
+     "sets": [
+      [
+       14,
+       16
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Christian Brøndum"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
    "won": 0,
-   "lost": 0,
+   "lost": 3,
    "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "pointsFor": 102,
+   "pointsAgainst": 119,
+   "avgPoints": 34.0,
+   "avgDiff": -5.7,
+   "setsWon": 2,
+   "setsLost": 6,
+   "byDiscipline": {
+    "D": {
+     "played": 2,
+     "won": 0
+    },
+    "S": {
+     "played": 1,
+     "won": 0
+    }
+   },
    "clubMember": true,
    "gender": "M",
    "profile": {
@@ -37943,20 +38301,114 @@
   {
    "id": "362348",
    "name": "Zahra Gita Deb",
-   "teams": [],
+   "teams": [
+    "U13 D"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "4. D",
+     "partner": [
+      "Clara Høgh Staufeldt"
+     ],
+     "opponents": [
+      "Christoffer Lysdal",
+      "Eskild Tolborg"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       6,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "2. D",
+     "partner": [
+      "William Løvenholdt Petersen"
+     ],
+     "opponents": [
+      "Christian Brøndum",
+      "Christoffer Lysdal"
+     ],
+     "sets": [
+      [
+       14,
+       16
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 D",
+     "teamName": "Hørsholm 4",
+     "opponentTeam": "Farum 4",
+     "matchID": "514612",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Eskild Tolborg"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       6,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
    "won": 0,
-   "lost": 0,
+   "lost": 3,
    "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "pointsFor": 68,
+   "pointsAgainst": 102,
+   "avgPoints": 22.7,
+   "avgDiff": -11.3,
+   "setsWon": 1,
+   "setsLost": 6,
+   "byDiscipline": {
+    "D": {
+     "played": 2,
+     "won": 0
+    },
+    "S": {
+     "played": 1,
+     "won": 0
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {

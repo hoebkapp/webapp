@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T14:46:21+00:00",
+ "updated": "2026-11-15T16:44:57+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
@@ -25,17 +25,6 @@
    "listedHome": false,
    "venue": "Hareskovhallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510450,1151,"
-  },
-  {
-   "team": "U13 D",
-   "club": "Hørsholm 4",
-   "date": "2026-11-15",
-   "time": "11:30",
-   "opponent": "Farum 4",
-   "home": false,
-   "listedHome": true,
-   "venue": "Stenvadhallen 6-9",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,"
   },
   {
    "team": "U13 A",
@@ -91,6 +80,17 @@
    "listedHome": false,
    "venue": "Grantoftehallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18960,16,19,,510413,1151,"
+  },
+  {
+   "team": "MOT 4+4 Elite/Mester",
+   "club": "Hørsholm 2",
+   "date": "2026-11-29",
+   "time": "10:00",
+   "opponent": "Stenløse 1",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal 1-4",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510463,1151,"
   }
  ],
  "results": [
@@ -106,6 +106,20 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19102,5,10,,514332,1151,",
    "result": "4-4",
    "outcome": "U",
+   "walkover": ""
+  },
+  {
+   "team": "U13 D",
+   "club": "Hørsholm 4",
+   "date": "2026-11-15",
+   "time": "11:30",
+   "opponent": "Farum 4",
+   "home": false,
+   "listedHome": true,
+   "venue": "Stenvadhallen 6-9",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,",
+   "result": "1-7",
+   "outcome": "T",
    "walkover": ""
   },
   {
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18931,1,10,,509692,1151,",
    "result": "6-7",
    "outcome": "V",
-   "walkover": ""
-  },
-  {
-   "team": "U13 B",
-   "club": "Hørsholm 2",
-   "date": "2026-11-14",
-   "time": "13:00",
-   "opponent": "Farum 1",
-   "home": false,
-   "listedHome": false,
-   "venue": "BBK-Hallen 5-8",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19092,4,10,,513980,1151,",
-   "result": "7-1",
-   "outcome": "T",
    "walkover": ""
   }
  ]
