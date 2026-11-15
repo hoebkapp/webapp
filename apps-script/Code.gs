@@ -47,12 +47,15 @@
  *  messages {token, room}                        → beskeder i et rum (kun medlemmer) · post {token, room, text} · delMsg {token, id}
  *  mute     {token, room, on}                    → ingen push for et rum
  *  newsSave {token, title, text, to[], push, img?} (img = data:image/jpeg;base64,… → gemmes i Drive-mappen "HØBK nyhedsbilleder") / newsDel {token, id} / newsList {token} → administrator skriver nyheder
+ *  members  {token}                              → klubbens medlemmer fra Conventus (navn + hold). Administratorer får også appens brugere,
+ *           så appen kan vise, om en spiller findes i Conventus, på badmintonplayer.dk, begge steder eller ingen af stederne.
+ *           Kræver Script properties CONVENTUS_ID + CONVENTUS_KEY. Hentes fra Conventus højst hver 6. time (tick) — eller kør conventusSync.
  *  GET ?action=news            → offentlige nyheder (til alle) · GET ?action=pushqueue&key=NØGLE → push-køen (tømmes)
  *  GET ?action=status          → seneste svar pr. (begivenhed, spiller) — offentlig, uden e-mails
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-12.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-15.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -78,6 +81,8 @@ var SHEETS = {
   Medlemmer: ['email', 'navn', 'medlemsnr', 'importeret'],
   Godkendelser: ['tidspunkt', 'email', 'playerId', 'navn', 'rolle', 'status', 'note', 'behandletAf', 'behandlet'],
   Holdmedlemmer: ['playerId', 'navn', 'gruppe', 'tilføjetAf', 'tidspunkt'],
+  // Kopi af medlemmerne i Conventus (kun navn og aktive hold/grupper — ingen adresser, telefon, e-mail eller fødselsdato)
+  Conventus: ['conventusId', 'navn', 'grupper', 'leder af', 'hentet'],
   'PushKø': ['tidspunkt', 'endpoint', 'p256dh', 'auth', 'titel', 'tekst', 'url', 'tag'],
   // Samkørsel til holdkampe og turneringer: én række pr. person pr. kamp/turnering
   'Kørsel': ['tidspunkt', 'begivenhed', 'titel', 'playerId', 'navn', 'email', 'valg', 'pladser', 'opsamling', 'afgang', 'chauffør', 'note'],
@@ -1503,6 +1508,7 @@ function route_(b) {
       case 'prefs': return json_(prefs_(b));
       case 'pushGone': return json_(pushGone_(b));
       case 'children': return json_(children_(b));
+      case 'members': return json_(members_(b));
       case 'approve': return APPROVAL.enabled ? json_(approve_(b)) : json_({ ok: false, error: 'Godkendelse er ikke slået til' });
       case 'pending': return APPROVAL.enabled ? json_(pendingList_(b)) : json_({ ok: true, pending: [], off: true });
       case 'groupList': return json_(groupLists_(b));
@@ -1807,9 +1813,81 @@ function tick() {
   if (h >= 6 && pr.getProperty('FULL_AM') !== day) { pr.setProperty('FULL_AM', day); res.push(ghDispatch_('holdkampe.yml')); }
   else if (h >= 21 && pr.getProperty('FULL_PM') !== day) { pr.setProperty('FULL_PM', day); res.push(ghDispatch_('holdkampe.yml')); }
   if (pr.getProperty('PUSH_PENDING') === '1') res.push(ghDispatch_('push.yml'));   // push der ikke blev sendt med det samme
+  try { if (convStale_()) res.push('conventus:' + conventusSync()); } catch (e) { res.push('conventus:fejl'); }
   try { healthAlert_(); } catch (e) {}   // advar administratorerne i admin-chatten, hvis appen rammer en grænse
   pr.setProperty('LAST_TICK', now.toISOString());
   pr.setProperty('LAST_DISPATCH', res.join(' '));
+}
+
+// ---------- Conventus (klubbens medlemskartotek) ----------
+// Kun læsning. Conventus blokerer GitHubs servere, men ikke Googles — derfor hentes medlemmerne her.
+var CONV_API = 'https://www.conventus.dk/dataudv/api/adressebog/', CONV_HOURS = 6;
+function convGet_(file, params) {
+  var pr = PropertiesService.getScriptProperties(), id = pr.getProperty('CONVENTUS_ID'), key = pr.getProperty('CONVENTUS_KEY');
+  if (!id || !key) throw new Error('CONVENTUS_ID og CONVENTUS_KEY mangler under Script properties');
+  var q = Object.keys(params || {}).map(function (k) { return k + '=' + encodeURIComponent(params[k]); }).join('&');
+  var r = UrlFetchApp.fetch(CONV_API + file + '?forening=' + encodeURIComponent(id) + '&key=' + encodeURIComponent(key) + (q ? '&' + q : ''), { muteHttpExceptions: true });
+  if (r.getResponseCode() !== 200) throw new Error('Conventus svarede HTTP ' + r.getResponseCode());
+  return XmlService.parse(r.getContentText()).getRootElement();
+}
+function convKids_(el, name) {   // alle under-elementer med et bestemt navn, uanset dybde
+  var out = [];
+  (function walk(e) { e.getChildren().forEach(function (c) { if (c.getName() === name) out.push(c); else walk(c); }); })(el);
+  return out;
+}
+function convStale_() {
+  var pr = PropertiesService.getScriptProperties();
+  if (!pr.getProperty('CONVENTUS_KEY')) return false;
+  return Date.now() - Number(pr.getProperty('CONV_SYNC') || 0) > CONV_HOURS * 3600000;
+}
+// Kan også køres manuelt fra editoren. Gemmer kun medlemmer med mindst én aktiv gruppe (tidligere medlemmer ligger ofte stadig i Conventus).
+function conventusSync() {
+  var gnames = {};
+  convKids_(convGet_('get_grupper.php'), 'gruppe').forEach(function (g) {
+    var id = g.getChildText('id'), nm = g.getChildText('navn');
+    if (id && nm) gnames[id.trim()] = nm.trim();
+  });
+  var rows = [], now = new Date();
+  convKids_(convGet_('get_medlemmer.php', { type: 'medlem', relationer: 'true' }), 'medlem').forEach(function (m) {
+    if (!m.getChild('id') || m.getChildText('slettet') === 'true') return;
+    var rel = m.getChild('relationer'), part = function (kind) {
+      var k = rel && rel.getChild(kind); if (!k) return [];
+      return k.getChildren('gruppe').map(function (g) { return gnames[g.getText().trim()] || ''; }).filter(String);
+    };
+    var groups = part('medlem'), leads = part('leder');
+    if (!groups.length && !leads.length) return;
+    rows.push([m.getChildText('id').trim(), safe_(clean_(m.getChildText('navn'), 120)), safe_(groups.join('; ')), safe_(leads.join('; ')), now]);
+  });
+  if (!rows.length) throw new Error('Conventus gav ingen medlemmer med aktive grupper — beholder den gamle liste');
+  withLock_(function () {
+    var sh = sh_('Conventus'), n = SHEETS.Conventus.length;
+    if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
+    sh.getRange(2, 1, rows.length, n).setValues(rows);
+  });
+  PropertiesService.getScriptProperties().setProperty('CONV_SYNC', String(now.getTime()));
+  Logger.log('Conventus: ' + rows.length + ' medlemmer, ' + Object.keys(gnames).length + ' grupper');
+  return rows.length;
+}
+// Medlemslisten til appen — kun for indloggede. Administratorer får også appens brugere (til kilde-filteret).
+function members_(b) {
+  var ses = session_(b.token);
+  if (!ses) return { ok: false, error: 'login' };
+  var rows = data_('Conventus');
+  if (!rows.length) {
+    try { conventusSync(); rows = data_('Conventus'); } catch (e) { return { ok: false, error: 'Conventus: ' + e.message }; }
+  }
+  var split = function (x) { return String(x || '').split(';').map(function (t) { return t.trim(); }).filter(String); };
+  var out = { ok: true, updated: Number(PropertiesService.getScriptProperties().getProperty('CONV_SYNC') || 0),
+    members: rows.filter(function (r) { return r[0] && r[1]; }).map(function (r) { return { cid: String(r[0]), name: String(r[1]), groups: split(r[2]), leads: split(r[3]) }; }) };
+  if (isAdmin_(ses.email, ses.playerId)) {
+    var seen = {};
+    out.users = [];
+    data_('Spillere').forEach(function (r) {
+      var id = String(r[0]); if (!id || /^p:/.test(id) || seen[id]) return;
+      seen[id] = 1; out.users.push({ id: id, name: String(r[1]) });
+    });
+  }
+  return out;
 }
 
 // --- slut på filen (denne linje må gerne mangle ved kopiering) ---
