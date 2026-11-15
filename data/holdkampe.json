@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T14:02:09+00:00",
+  "updated": "2026-11-15T14:46:21+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -13530,7 +13530,7 @@
       "name": "Hørsholm 2",
       "pulje": "U15 B, 6200 (4 spillere) Pulje 2",
       "label": "U15 B",
-      "position": "5",
+      "position": "4",
       "standing": [
         {
           "pos": "1",
@@ -13548,43 +13548,43 @@
           "team": "Frederikssund 1",
           "teamID": "124564",
           "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "18-6",
-          "sets": "38-16",
-          "points": "9"
+          "played": "4",
+          "won": "3",
+          "score": "24-8",
+          "sets": "50-20",
+          "points": "13"
         },
         {
           "pos": "3",
           "team": "Virum 1",
           "teamID": "124568",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "2",
-          "score": "15-9",
-          "sets": "33-24",
-          "points": "8"
+          "score": "19-13",
+          "sets": "43-34",
+          "points": "10"
         },
         {
           "pos": "4",
-          "team": "Herlev/Hjorten 1",
-          "teamID": "124565",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "9-7",
-          "sets": "23-18",
-          "points": "4"
-        },
-        {
-          "pos": "5",
           "team": "Hørsholm 2",
           "teamID": "124566",
           "isUs": true,
+          "played": "4",
+          "won": "1",
+          "score": "12-20",
+          "sets": "34-45",
+          "points": "6"
+        },
+        {
+          "pos": "5",
+          "team": "Herlev/Hjorten 1",
+          "teamID": "124565",
+          "isUs": false,
           "played": "3",
           "won": "1",
-          "score": "8-16",
-          "sets": "24-35",
+          "score": "11-13",
+          "sets": "27-30",
           "points": "4"
         },
         {
@@ -14503,14 +14503,279 @@
           "opponent": "Virum 1",
           "organiser": "Hørsholm",
           "venue": "Hørsholm Badminton Hal 1-4",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "4-4",
+          "points": "2-2",
+          "outcome": "U",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "514332",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19102,5,10,,514332,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "336309",
+                  "name": "Sander Nørgaard Andreasen"
+                },
+                {
+                  "id": "336310",
+                  "name": "Buster Winkel-Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335593",
+                  "name": "Oliver Vedsted Nørrelund"
+                },
+                {
+                  "id": "346993",
+                  "name": "Mikkel Christian Korsholm"
+                }
+              ],
+              "sets": [
+                [
+                  11,
+                  15
+                ],
+                [
+                  16,
+                  14
+                ],
+                [
+                  10,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "343847",
+                  "name": "Mathias Winthereik"
+                },
+                {
+                  "id": "336311",
+                  "name": "Johannes Hald Clemmensen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "337844",
+                  "name": "Ellen Krogh-Larsen"
+                },
+                {
+                  "id": "357481",
+                  "name": "Nikolaj Feodor Nilsson"
+                }
+              ],
+              "sets": [
+                [
+                  6,
+                  15
+                ],
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  8
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "336309",
+                  "name": "Sander Nørgaard Andreasen"
+                },
+                {
+                  "id": "343847",
+                  "name": "Mathias Winthereik"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335593",
+                  "name": "Oliver Vedsted Nørrelund"
+                },
+                {
+                  "id": "337844",
+                  "name": "Ellen Krogh-Larsen"
+                }
+              ],
+              "sets": [
+                [
+                  14,
+                  16
+                ],
+                [
+                  7,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "336310",
+                  "name": "Buster Winkel-Petersen"
+                },
+                {
+                  "id": "336311",
+                  "name": "Johannes Hald Clemmensen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "346992",
+                  "name": "Carl Grønfeldt"
+                },
+                {
+                  "id": "335592",
+                  "name": "William Vedsted Nørrelund"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. S",
+              "home": [
+                {
+                  "id": "336310",
+                  "name": "Buster Winkel-Petersen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "346993",
+                  "name": "Mikkel Christian Korsholm"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  9,
+                  15
+                ],
+                [
+                  8,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. S",
+              "home": [
+                {
+                  "id": "336311",
+                  "name": "Johannes Hald Clemmensen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335593",
+                  "name": "Oliver Vedsted Nørrelund"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  5,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. S",
+              "home": [
+                {
+                  "id": "336309",
+                  "name": "Sander Nørgaard Andreasen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357481",
+                  "name": "Nikolaj Feodor Nilsson"
+                }
+              ],
+              "sets": [
+                [
+                  10,
+                  15
+                ],
+                [
+                  16,
+                  14
+                ],
+                [
+                  15,
+                  9
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. S",
+              "home": [
+                {
+                  "id": "343847",
+                  "name": "Mathias Winthereik"
+                }
+              ],
+              "away": [
+                {
+                  "id": "362142",
+                  "name": "Maximilian Vessel Nielsen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  9
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 0,
             "km": 0,
@@ -14733,8 +14998,8 @@
         {
           "id": "335593",
           "name": "Oliver Vedsted Nørrelund",
-          "games": 8,
-          "won": 4,
+          "games": 11,
+          "won": 7,
           "disciplines": [
             "D",
             "S"
@@ -14744,8 +15009,8 @@
         {
           "id": "337844",
           "name": "Ellen Krogh-Larsen",
-          "games": 7,
-          "won": 2,
+          "games": 9,
+          "won": 3,
           "disciplines": [
             "D",
             "S"
@@ -14755,7 +15020,7 @@
         {
           "id": "357481",
           "name": "Nikolaj Feodor Nilsson",
-          "games": 7,
+          "games": 9,
           "won": 2,
           "disciplines": [
             "D",
@@ -14766,7 +15031,7 @@
         {
           "id": "346992",
           "name": "Carl Grønfeldt",
-          "games": 6,
+          "games": 7,
           "won": 2,
           "disciplines": [
             "D",
@@ -14777,7 +15042,7 @@
         {
           "id": "362142",
           "name": "Maximilian Vessel Nielsen",
-          "games": 5,
+          "games": 6,
           "won": 1,
           "disciplines": [
             "D",
@@ -14788,8 +15053,8 @@
         {
           "id": "346993",
           "name": "Mikkel Christian Korsholm",
-          "games": 2,
-          "won": 0,
+          "games": 4,
+          "won": 2,
           "disciplines": [
             "D",
             "S"
@@ -14799,7 +15064,7 @@
         {
           "id": "335592",
           "name": "William Vedsted Nørrelund",
-          "games": 1,
+          "games": 2,
           "won": 0,
           "disciplines": [
             "D"
@@ -16061,25 +16326,25 @@
       "standing": [
         {
           "pos": "1",
-          "team": "BC37 Amager 1",
-          "teamID": "122744",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "8-9",
-          "sets": "17-20",
-          "points": "4"
-        },
-        {
-          "pos": "2",
           "team": "Værløse 1",
           "teamID": "122743",
           "isUs": false,
-          "played": "1",
+          "played": "2",
+          "won": "2",
+          "score": "10-7",
+          "sets": "23-17",
+          "points": "6"
+        },
+        {
+          "pos": "2",
+          "team": "BC37 Amager 1",
+          "teamID": "122744",
+          "isUs": false,
+          "played": "3",
           "won": "1",
-          "score": "5-3",
-          "sets": "11-8",
-          "points": "3"
+          "score": "12-14",
+          "sets": "26-32",
+          "points": "6"
         },
         {
           "pos": "3",

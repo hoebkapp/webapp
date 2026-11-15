@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T14:02:09+00:00",
+ "updated": "2026-11-15T14:46:21+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -684,6 +684,20 @@
   },
   {
    "rank": 49,
+   "id": "335593",
+   "name": "Oliver Vedsted Nørrelund",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 11,
+   "won": 7,
+   "winPct": 64,
+   "pointsFor": 404,
+   "avgPoints": 36.7,
+   "avgDiff": 4.0
+  },
+  {
+   "rank": 50,
    "id": "250810",
    "name": "Andreas Qianyou Kristensen",
    "teams": [
@@ -697,7 +711,7 @@
    "avgDiff": 2.9
   },
   {
-   "rank": 50,
+   "rank": 51,
    "id": "359708",
    "name": "Marius Løkke Knutsson",
    "teams": [
@@ -711,7 +725,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 51,
+   "rank": 52,
    "id": "326116",
    "name": "Christopher Johannessen",
    "teams": [
@@ -725,7 +739,7 @@
    "avgDiff": 1.6
   },
   {
-   "rank": 52,
+   "rank": 53,
    "id": "236648",
    "name": "Rasmus Thorsted Mortensen",
    "teams": [
@@ -739,7 +753,7 @@
    "avgDiff": 4.1
   },
   {
-   "rank": 53,
+   "rank": 54,
    "id": "9877",
    "name": "Thomas Steffensen",
    "teams": [
@@ -753,7 +767,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 54,
+   "rank": 55,
    "id": "350815",
    "name": "Cornelius Engen Peetz",
    "teams": [
@@ -768,7 +782,7 @@
    "avgDiff": -2.2
   },
   {
-   "rank": 55,
+   "rank": 56,
    "id": "336079",
    "name": "Stefanie Flamand",
    "teams": [
@@ -782,7 +796,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 56,
+   "rank": 57,
    "id": "275709",
    "name": "Sebastian Søbjerg Lynfort",
    "teams": [
@@ -796,7 +810,7 @@
    "avgDiff": 0.2
   },
   {
-   "rank": 57,
+   "rank": 58,
    "id": "12813",
    "name": "Anders Vedsted Nørrelund",
    "teams": [
@@ -810,7 +824,7 @@
    "avgDiff": 0.3
   },
   {
-   "rank": 58,
+   "rank": 59,
    "id": "320827",
    "name": "Emma Sejberg Rasmussen",
    "teams": [
@@ -823,20 +837,6 @@
    "pointsFor": 239,
    "avgPoints": 29.9,
    "avgDiff": 3.0
-  },
-  {
-   "rank": 59,
-   "id": "335593",
-   "name": "Oliver Vedsted Nørrelund",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 8,
-   "won": 4,
-   "winPct": 50,
-   "pointsFor": 299,
-   "avgPoints": 37.4,
-   "avgDiff": 1.4
   },
   {
    "rank": 60,
@@ -868,6 +868,20 @@
   },
   {
    "rank": 62,
+   "id": "346993",
+   "name": "Mikkel Christian Korsholm",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 4,
+   "won": 2,
+   "winPct": 50,
+   "pointsFor": 140,
+   "avgPoints": 35.0,
+   "avgDiff": -0.2
+  },
+  {
+   "rank": 63,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -881,7 +895,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 63,
+   "rank": 64,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -895,7 +909,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 64,
+   "rank": 65,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -909,7 +923,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 65,
+   "rank": 66,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -923,7 +937,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 66,
+   "rank": 67,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -938,7 +952,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 67,
+   "rank": 68,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -952,7 +966,21 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 68,
+   "rank": 69,
+   "id": "337844",
+   "name": "Ellen Krogh-Larsen",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 9,
+   "won": 3,
+   "winPct": 33,
+   "pointsFor": 294,
+   "avgPoints": 32.7,
+   "avgDiff": -2.3
+  },
+  {
+   "rank": 70,
    "id": "268924",
    "name": "Marianne Seydel Jørgensen",
    "teams": [
@@ -966,21 +994,7 @@
    "avgDiff": -3.7
   },
   {
-   "rank": 69,
-   "id": "346992",
-   "name": "Carl Grønfeldt",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 6,
-   "won": 2,
-   "winPct": 33,
-   "pointsFor": 141,
-   "avgPoints": 23.5,
-   "avgDiff": -7.7
-  },
-  {
-   "rank": 70,
+   "rank": 71,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -994,7 +1008,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 71,
+   "rank": 72,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -1008,7 +1022,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 72,
+   "rank": 73,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -1022,7 +1036,7 @@
    "avgDiff": -3.6
   },
   {
-   "rank": 73,
+   "rank": 74,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -1036,7 +1050,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 74,
+   "rank": 75,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1051,7 +1065,7 @@
    "avgDiff": -4.3
   },
   {
-   "rank": 75,
+   "rank": 76,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
@@ -1066,32 +1080,18 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 76,
-   "id": "337844",
-   "name": "Ellen Krogh-Larsen",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 7,
-   "won": 2,
-   "winPct": 29,
-   "pointsFor": 229,
-   "avgPoints": 32.7,
-   "avgDiff": -4.1
-  },
-  {
    "rank": 77,
-   "id": "357481",
-   "name": "Nikolaj Feodor Nilsson",
+   "id": "346992",
+   "name": "Carl Grønfeldt",
    "teams": [
     "U15 B"
    ],
    "played": 7,
    "won": 2,
    "winPct": 29,
-   "pointsFor": 224,
-   "avgPoints": 32.0,
-   "avgDiff": -2.4
+   "pointsFor": 163,
+   "avgPoints": 23.3,
+   "avgDiff": -7.7
   },
   {
    "rank": 78,
@@ -1139,6 +1139,20 @@
   },
   {
    "rank": 81,
+   "id": "357481",
+   "name": "Nikolaj Feodor Nilsson",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 9,
+   "won": 2,
+   "winPct": 22,
+   "pointsFor": 296,
+   "avgPoints": 32.9,
+   "avgDiff": -2.4
+  },
+  {
+   "rank": 82,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -1150,20 +1164,6 @@
    "pointsFor": 220,
    "avgPoints": 24.4,
    "avgDiff": -5.9
-  },
-  {
-   "rank": 82,
-   "id": "362142",
-   "name": "Maximilian Vessel Nielsen",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 5,
-   "won": 1,
-   "winPct": 20,
-   "pointsFor": 118,
-   "avgPoints": 23.6,
-   "avgDiff": -6.2
   },
   {
    "rank": 83,
@@ -1181,6 +1181,20 @@
   },
   {
    "rank": 84,
+   "id": "362142",
+   "name": "Maximilian Vessel Nielsen",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 6,
+   "won": 1,
+   "winPct": 17,
+   "pointsFor": 137,
+   "avgPoints": 22.8,
+   "avgDiff": -7.0
+  },
+  {
+   "rank": 85,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -1194,7 +1208,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 85,
+   "rank": 86,
    "id": "277780",
    "name": "Mathilde Peetz",
    "teams": [
@@ -1209,7 +1223,7 @@
    "avgDiff": -12.4
   },
   {
-   "rank": 86,
+   "rank": 87,
    "id": "330795",
    "name": "Brit Johannessen",
    "teams": [
@@ -1223,7 +1237,7 @@
    "avgDiff": -9.2
   },
   {
-   "rank": 87,
+   "rank": 88,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1238,7 +1252,7 @@
    "avgDiff": -9.4
   },
   {
-   "rank": 88,
+   "rank": 89,
    "id": "345764",
    "name": "Emilie Drescher",
    "teams": [
@@ -1252,7 +1266,7 @@
    "avgDiff": -12.6
   },
   {
-   "rank": 89,
+   "rank": 90,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1264,20 +1278,6 @@
    "pointsFor": 97,
    "avgPoints": 32.3,
    "avgDiff": -6.3
-  },
-  {
-   "rank": 90,
-   "id": "346993",
-   "name": "Mikkel Christian Korsholm",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 2,
-   "won": 0,
-   "winPct": 0,
-   "pointsFor": 53,
-   "avgPoints": 26.5,
-   "avgDiff": -9.5
   },
   {
    "rank": 91,
@@ -1365,6 +1365,20 @@
   },
   {
    "rank": 97,
+   "id": "335592",
+   "name": "William Vedsted Nørrelund",
+   "teams": [
+    "U15 B"
+   ],
+   "played": 2,
+   "won": 0,
+   "winPct": 0,
+   "pointsFor": 32,
+   "avgPoints": 16.0,
+   "avgDiff": -14.0
+  },
+  {
+   "rank": 98,
    "id": "367264",
    "name": "Pulin Dhar",
    "teams": [
@@ -1376,20 +1390,6 @@
    "pointsFor": 40,
    "avgPoints": 13.3,
    "avgDiff": -16.7
-  },
-  {
-   "rank": 98,
-   "id": "335592",
-   "name": "William Vedsted Nørrelund",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 1,
-   "won": 0,
-   "winPct": 0,
-   "pointsFor": 10,
-   "avgPoints": 10.0,
-   "avgDiff": -20.0
   }
  ],
  "players": [
@@ -7883,6 +7883,33 @@
      "walkover": ""
     },
     {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "3. D",
+     "partner": [
+      "William Vedsted Nørrelund"
+     ],
+     "opponents": [
+      "Buster Winkel-Petersen",
+      "Johannes Hald Clemmensen"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-25",
      "team": "U15 B",
      "teamName": "Hørsholm 2",
@@ -7992,19 +8019,19 @@
      "walkover": ""
     }
    ],
-   "played": 6,
+   "played": 7,
    "won": 2,
-   "lost": 4,
-   "winPct": 33,
-   "pointsFor": 141,
-   "pointsAgainst": 187,
-   "avgPoints": 23.5,
+   "lost": 5,
+   "winPct": 29,
+   "pointsFor": 163,
+   "pointsAgainst": 217,
+   "avgPoints": 23.3,
    "avgDiff": -7.7,
    "setsWon": 5,
-   "setsLost": 8,
+   "setsLost": 10,
    "byDiscipline": {
     "D": {
-     "played": 5,
+     "played": 6,
      "won": 1
     },
     "S": {
@@ -11581,6 +11608,64 @@
      "walkover": ""
     },
     {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "4. D",
+     "partner": [
+      "Nikolaj Feodor Nilsson"
+     ],
+     "opponents": [
+      "Mathias Winthereik",
+      "Johannes Hald Clemmensen"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       11,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "2. D",
+     "partner": [
+      "Oliver Vedsted Nørrelund"
+     ],
+     "opponents": [
+      "Sander Nørgaard Andreasen",
+      "Mathias Winthereik"
+     ],
+     "sets": [
+      [
+       16,
+       14
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-25",
      "team": "U15 B",
      "teamName": "Hørsholm 2",
@@ -11729,20 +11814,20 @@
      "walkover": ""
     }
    ],
-   "played": 7,
-   "won": 2,
-   "lost": 5,
-   "winPct": 29,
-   "pointsFor": 229,
-   "pointsAgainst": 258,
+   "played": 9,
+   "won": 3,
+   "lost": 6,
+   "winPct": 33,
+   "pointsFor": 294,
+   "pointsAgainst": 315,
    "avgPoints": 32.7,
-   "avgDiff": -4.1,
-   "setsWon": 8,
-   "setsLost": 11,
+   "avgDiff": -2.3,
+   "setsWon": 11,
+   "setsLost": 13,
    "byDiscipline": {
     "D": {
-     "played": 6,
-     "won": 2
+     "played": 8,
+     "won": 3
     },
     "S": {
      "played": 1,
@@ -26126,6 +26211,30 @@
      "walkover": ""
     },
     {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Mathias Winthereik"
+     ],
+     "sets": [
+      [
+       10,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-25",
      "team": "U15 B",
      "teamName": "Hørsholm 2",
@@ -26232,19 +26341,19 @@
      "walkover": ""
     }
    ],
-   "played": 5,
+   "played": 6,
    "won": 1,
-   "lost": 4,
-   "winPct": 20,
-   "pointsFor": 118,
-   "pointsAgainst": 149,
-   "avgPoints": 23.6,
-   "avgDiff": -6.2,
+   "lost": 5,
+   "winPct": 17,
+   "pointsFor": 137,
+   "pointsAgainst": 179,
+   "avgPoints": 22.8,
+   "avgDiff": -7.0,
    "setsWon": 3,
-   "setsLost": 8,
+   "setsLost": 10,
    "byDiscipline": {
     "S": {
-     "played": 3,
+     "played": 4,
      "won": 1
     },
     "D": {
@@ -26985,26 +27094,85 @@
      ],
      "won": false,
      "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "1. D",
+     "partner": [
+      "Oliver Vedsted Nørrelund"
+     ],
+     "opponents": [
+      "Sander Nørgaard Andreasen",
+      "Buster Winkel-Petersen"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       14,
+       16
+      ],
+      [
+       15,
+       10
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Buster Winkel-Petersen"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       8
+      ]
+     ],
+     "won": true,
+     "walkover": ""
     }
    ],
-   "played": 2,
-   "won": 0,
+   "played": 4,
+   "won": 2,
    "lost": 2,
-   "winPct": 0,
-   "pointsFor": 53,
-   "pointsAgainst": 72,
-   "avgPoints": 26.5,
-   "avgDiff": -9.5,
-   "setsWon": 1,
-   "setsLost": 4,
+   "winPct": 50,
+   "pointsFor": 140,
+   "pointsAgainst": 141,
+   "avgPoints": 35.0,
+   "avgDiff": -0.2,
+   "setsWon": 5,
+   "setsLost": 6,
    "byDiscipline": {
     "D": {
-     "played": 1,
-     "won": 0
+     "played": 2,
+     "won": 1
     },
     "S": {
-     "played": 1,
-     "won": 0
+     "played": 2,
+     "won": 1
     }
    },
    "clubMember": true,
@@ -28457,6 +28625,65 @@
      "walkover": ""
     },
     {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "4. D",
+     "partner": [
+      "Ellen Krogh-Larsen"
+     ],
+     "opponents": [
+      "Mathias Winthereik",
+      "Johannes Hald Clemmensen"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       11,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Sander Nørgaard Andreasen"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       14,
+       16
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-25",
      "team": "U15 B",
      "teamName": "Hørsholm 2",
@@ -28594,23 +28821,23 @@
      "walkover": ""
     }
    ],
-   "played": 7,
+   "played": 9,
    "won": 2,
-   "lost": 5,
-   "winPct": 29,
-   "pointsFor": 224,
-   "pointsAgainst": 241,
-   "avgPoints": 32.0,
+   "lost": 7,
+   "winPct": 22,
+   "pointsFor": 296,
+   "pointsAgainst": 318,
+   "avgPoints": 32.9,
    "avgDiff": -2.4,
-   "setsWon": 7,
-   "setsLost": 10,
+   "setsWon": 9,
+   "setsLost": 14,
    "byDiscipline": {
     "D": {
-     "played": 4,
+     "played": 5,
      "won": 1
     },
     "S": {
-     "played": 3,
+     "played": 4,
      "won": 1
     }
    },
@@ -29595,6 +29822,88 @@
      "walkover": ""
     },
     {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "1. D",
+     "partner": [
+      "Mikkel Christian Korsholm"
+     ],
+     "opponents": [
+      "Sander Nørgaard Andreasen",
+      "Buster Winkel-Petersen"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       14,
+       16
+      ],
+      [
+       15,
+       10
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "2. D",
+     "partner": [
+      "Ellen Krogh-Larsen"
+     ],
+     "opponents": [
+      "Sander Nørgaard Andreasen",
+      "Mathias Winthereik"
+     ],
+     "sets": [
+      [
+       16,
+       14
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Johannes Hald Clemmensen"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       5
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-25",
      "team": "U15 B",
      "teamName": "Hørsholm 2",
@@ -29767,24 +30076,24 @@
      "walkover": ""
     }
    ],
-   "played": 8,
-   "won": 4,
+   "played": 11,
+   "won": 7,
    "lost": 4,
-   "winPct": 50,
-   "pointsFor": 299,
-   "pointsAgainst": 288,
-   "avgPoints": 37.4,
-   "avgDiff": 1.4,
-   "setsWon": 11,
-   "setsLost": 11,
+   "winPct": 64,
+   "pointsFor": 404,
+   "pointsAgainst": 360,
+   "avgPoints": 36.7,
+   "avgDiff": 4.0,
+   "setsWon": 17,
+   "setsLost": 12,
    "byDiscipline": {
     "D": {
-     "played": 5,
-     "won": 2
+     "played": 7,
+     "won": 4
     },
     "S": {
-     "played": 3,
-     "won": 2
+     "played": 4,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -37556,21 +37865,48 @@
      ],
      "won": false,
      "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U15 B",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Virum 1",
+     "matchID": "514332",
+     "discipline": "3. D",
+     "partner": [
+      "Carl Grønfeldt"
+     ],
+     "opponents": [
+      "Buster Winkel-Petersen",
+      "Johannes Hald Clemmensen"
+     ],
+     "sets": [
+      [
+       11,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
     }
    ],
-   "played": 1,
+   "played": 2,
    "won": 0,
-   "lost": 1,
+   "lost": 2,
    "winPct": 0,
-   "pointsFor": 10,
-   "pointsAgainst": 30,
-   "avgPoints": 10.0,
-   "avgDiff": -20.0,
+   "pointsFor": 32,
+   "pointsAgainst": 60,
+   "avgPoints": 16.0,
+   "avgDiff": -14.0,
    "setsWon": 0,
-   "setsLost": 2,
+   "setsLost": 4,
    "byDiscipline": {
     "D": {
-     "played": 1,
+     "played": 2,
      "won": 0
     }
    },
