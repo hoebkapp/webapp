@@ -2483,8 +2483,12 @@ textarea.inp{resize:vertical;line-height:1.45}
     h += shopRow();
     h += groupsBlock();
     h += followBlock(myTeams);
-    if (!(ME.kids && ME.kids.length)) h += '<button class="card row" style="min-height:52px;border-left:5px solid ' + PARENT.bg + '" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
-      '<span class="xs">Tilføj dine børn — så får du en Forælder-fane og kommer med i deres holds chat</span></span><span class="xs">›</span></button>';
+    if (!(ME.kids && ME.kids.length)) {
+      if (notParent()) h += '<button class="card row" style="min-height:44px;padding:8px 12px" data-go="#/boern"><span class="col"><b style="font-size:13px">Forælder til en spiller?</b><span class="xs">Tilføj dine børn, hvis det ændrer sig</span></span><span class="xs">›</span></button>';
+      else h += '<div class="card" style="padding:0;border-left:5px solid ' + PARENT.bg + '"><button class="row" style="min-height:52px;width:100%;padding:10px 14px;background:none;border:0;text-align:left;font:inherit;color:inherit" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
+        '<span class="xs">Tilføj dine børn — så får du en Forælder-fane og kommer med i deres holds chat</span></span><span class="xs">›</span></button>' +
+        '<button class="pl xs" data-act="notparent" style="align-self:flex-start;margin:0 14px 10px">Jeg er ikke forælder</button></div>';
+    }
     if ((ME.kids && ME.kids.length) || (ME.role && ME.role.admin)) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Spiller du ikke i Hørsholm?</b>' +
       '<span class="xs">Så fjerner vi din spillerprofil, og du står kun som forælder' + (ME.kids && ME.kids.length ? ' til ' + esc(ME.kids.map(function (k) { return k.name.split(' ')[0]; }).join(' og ')) : '') + '. Dit navn, dine børn, hold du følger og dit login bliver.</span>' +
       '<button class="rb" data-act="notplayer" style="align-self:flex-start">Jeg spiller ikke i Hørsholm</button></div>';
@@ -3222,11 +3226,14 @@ textarea.inp{resize:vertical;line-height:1.45}
   }
 
   // ---------- Forældre ----------
+  // "Jeg er ikke forælder" — skjuler opfordringen til at tilføje børn (gemt på enheden); valget ligger stadig på Min side
+  function notParent() { try { return localStorage.getItem('hoebk_notparent') === '1'; } catch (e) { return false; } }
   // En forælder logger ind med sit eget navn (id "p:<navn>") og vælger sine børn blandt spillerne.
   // Kort: "Registrér dig som forælder" — logget ud: forældre-login; logget ind uden børn: Mine børn
   function parentCard() {
     if (!REG.url) return '';
     var logged = ME && ME.token;
+    if (logged && notParent()) return '';
     if (logged && (isParentId(ME.id) || (ME.kids && ME.kids.length))) return '';
     return '<button class="card row" style="min-height:56px;border-left:5px solid ' + PARENT.bg + '" data-go="' + (logged ? '#/boern' : '#/tilmeld/foraelder') + '"><span class="col"><b style="font-size:14px">' +
       (logged ? 'Er du også forælder?' : 'Registrér dig som forælder') + '</b><span class="xs">' + (logged ? 'Tilføj dine børn — så kommer du med i deres holds chat og program' : 'Med dit eget navn — vælg dit barn og følg dets kampe, træning og chat') + '</span></span><span class="h" style="font-size:20px">›</span></button>';
@@ -4576,6 +4583,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (b.dataset.usrf) { USR.f = b.dataset.usrf; route(true); return; }
     if (b.dataset.fbtype) { var fta = document.getElementById('fbText'); if (fta) FB.text = fta.value; FB.type = b.dataset.fbtype; route(true); return; }
     if (b.dataset.act === 'fbsend') { sendFb(); return; }
+    if (b.dataset.act === 'notparent') { try { localStorage.setItem('hoebk_notparent', '1'); } catch (e) {} toast('Skjult — du kan altid tilføje børn under Min spillerside'); route(true); return; }
     if (b.dataset.fbf) { FB.f = b.dataset.fbf; route(true); return; }
     if (b.dataset.fbopen) { FB.open[b.dataset.fbopen] = !FB.open[b.dataset.fbopen]; route(true); var fr = document.querySelector('[data-fbreply="' + b.dataset.fbopen + '"]'); if (fr) fr.focus(); return; }
     if (b.dataset.fbsendreply) {
