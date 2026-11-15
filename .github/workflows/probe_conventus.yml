@@ -1,0 +1,16 @@
+name: Tjek Apps Script (midlertidig)
+on:
+  push:
+    branches: [test-conventus-login]
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - env:
+          REG_URL: ${{ secrets.REG_URL }}
+        run: |
+          echo "VERSION: $(curl -sSL -m 30 "$REG_URL?action=version" | head -c 200)"
+          echo "MEMBERS-UDEN-LOGIN: $(curl -sSL -m 60 -H 'Content-Type: text/plain' -d '{"action":"members","token":"x"}' "$REG_URL" | head -c 200)"
