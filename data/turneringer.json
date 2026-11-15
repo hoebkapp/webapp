@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T21:15:44+00:00",
+ "updated": "2026-11-15T05:04:01+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -10066,11 +10066,9 @@
    "id": "120546",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://badmintonpeople.dk/Clubs/CommonDrive/Components/GetWWWFile.aspx?fileID=101573",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/120546",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#120546,"
    },
@@ -10657,10 +10655,14 @@
    "id": "118258",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118258,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118258,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118258,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118258"
    },
    "entryOpen": false,
@@ -12306,16 +12308,14 @@
    "links": [
     "invitation",
     "program",
-    "resultater",
-    "tilmelding"
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119657,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8",
-    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119657"
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119657,-8"
    },
-   "entryOpen": true,
+   "entryOpen": false,
    "hasResults": false,
    "start": "2026-11-28",
    "end": "2026-11-28",

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T21:47:10+00:00",
+  "updated": "2026-11-15T05:21:35+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -5288,6 +5288,17 @@
         },
         {
           "pos": "2",
+          "team": "Lillerød 3",
+          "teamID": "124648",
+          "isUs": false,
+          "played": "3",
+          "won": "2",
+          "score": "15-9",
+          "sets": "36-20",
+          "points": "9"
+        },
+        {
+          "pos": "3",
           "team": "Herlev/Hjorten 2",
           "teamID": "124650",
           "isUs": false,
@@ -5298,7 +5309,7 @@
           "points": "7"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Slagelse 2",
           "teamID": "124652",
           "isUs": false,
@@ -5309,26 +5320,15 @@
           "points": "7"
         },
         {
-          "pos": "4",
-          "team": "Lillerød 3",
-          "teamID": "124648",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "11-5",
-          "sets": "25-11",
-          "points": "7"
-        },
-        {
           "pos": "5",
           "team": "Ølstykke 2",
           "teamID": "124653",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "1",
-          "score": "10-14",
-          "sets": "22-25",
-          "points": "5"
+          "score": "14-18",
+          "sets": "31-36",
+          "points": "7"
         },
         {
           "pos": "6",
@@ -16007,21 +16007,32 @@
       "name": "Hørsholm 1",
       "pulje": "U15 A, 7200 (4 spillere) Pulje 1",
       "label": "U15 A",
-      "position": "3",
+      "position": "4",
       "standing": [
         {
           "pos": "1",
           "team": "KBK Kbh. 2",
           "teamID": "124586",
           "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "18-6",
-          "sets": "38-16",
-          "points": "9"
+          "played": "4",
+          "won": "3",
+          "score": "25-7",
+          "sets": "52-22",
+          "points": "13"
         },
         {
           "pos": "2",
+          "team": "Gladsaxe Søborg 1",
+          "teamID": "124589",
+          "isUs": false,
+          "played": "4",
+          "won": "3",
+          "score": "18-14",
+          "sets": "44-37",
+          "points": "10"
+        },
+        {
+          "pos": "3",
           "team": "Holte 1",
           "teamID": "124882",
           "isUs": false,
@@ -16032,7 +16043,7 @@
           "points": "8"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Hørsholm 1",
           "teamID": "124884",
           "isUs": true,
@@ -16040,17 +16051,6 @@
           "won": "2",
           "score": "12-4",
           "sets": "25-9",
-          "points": "7"
-        },
-        {
-          "pos": "4",
-          "team": "Gladsaxe Søborg 1",
-          "teamID": "124589",
-          "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "13-11",
-          "sets": "32-28",
           "points": "7"
         },
         {
@@ -16099,6 +16099,17 @@
         },
         {
           "pos": "9",
+          "team": "BC37/IBB 1",
+          "teamID": "124885",
+          "isUs": false,
+          "played": "2",
+          "won": "0",
+          "score": "4-12",
+          "sets": "15-26",
+          "points": "1"
+        },
+        {
+          "pos": "10",
           "team": "Køge 1",
           "teamID": "124588",
           "isUs": false,
@@ -16107,17 +16118,6 @@
           "score": "4-12",
           "sets": "10-25",
           "points": "1"
-        },
-        {
-          "pos": "10",
-          "team": "BC37/IBB 1",
-          "teamID": "124885",
-          "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
         },
         {
           "pos": "11",
