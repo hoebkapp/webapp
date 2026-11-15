@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap">
 <style>
-:root{--akt:#7A4FC9;--plan:#C2255C;--tour:#1E6B3A;--ink:#0E2236;--muted:#4A5866;--muted2:#6A7682;--ground:#F7F7F2;--card:#FFFFFF;--line:#E2E5DC;--line2:#EDEFE8;--accent:#D4F25A;--loss:#F3D6D2;--draw:#E7ECF1;--soft:#F1F2EC;--hi:#F4FBD9;--navy2:#1B3550;--seg:#E7EAE1}
+:root{--akt:#7A4FC9;--plan:#C2255C;--tour:#1E6B3A;--ink:#0E2236;--muted:#4A5866;--muted2:#6A7682;--ground:#F7F7F2;--card:#FFFFFF;--line:#E2E5DC;--line2:#EDEFE8;--accent:#D4F25A;--win:#9FE0AE;--loss:#F3D6D2;--draw:#E7ECF1;--soft:#F1F2EC;--hi:#F4FBD9;--navy2:#1B3550;--seg:#E7EAE1}
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--ground);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.4;-webkit-text-size-adjust:100%}
 button{font-family:inherit;color:inherit;cursor:pointer}
@@ -538,7 +538,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function dTxt(x) { var p = x.split('-'); var dt = new Date(+p[0], +p[1] - 1, +p[2]); return DAYS[dt.getDay()] + ' ' + (+p[2]) + '. ' + MONS[+p[1] - 1]; }
   function ini(n) { var p = n.trim().split(/\s+/); return (p[0] || '').charAt(0) + (p.length > 1 ? p[p.length - 1].charAt(0) : ''); }
-  function oBg(o) { return o === 'V' ? 'var(--accent)' : o === 'T' ? 'var(--loss)' : 'var(--draw)'; }
+  function oBg(o) { return o === 'V' ? 'var(--win)' : o === 'T' ? 'var(--loss)' : 'var(--draw)'; }
   function oTxt(o) { return o === 'V' ? 'Sejr' : o === 'T' ? 'Nederlag' : o === 'U' ? 'Uafgjort' : ''; }
   function flipScore(s) { return s ? s.split('-').reverse().join('-') : s; }
   function setsTxt(sets) { return sets.map(function (x) { return x[0] + '-' + x[1]; }).join(' '); }
@@ -745,7 +745,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         return '<div class="card game"><span class="h" style="font-size:14px">' + esc(g.discipline) + '</span>' +
           '<div class="col" style="gap:2px"><div>' + names(g[ourSide], true) + '</div><div class="xs">' + names(g[theirSide], false) + '</div></div>' +
           '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(sets) || esc(g.walkover || '')) + '</span>' +
-          '<span class="mark" style="background:' + (g.winner ? (won ? 'var(--accent)' : 'var(--loss)') : 'var(--soft)') + '">' + (g.winner ? (won ? 'V' : 'T') : '–') + '</span></div></div>';
+          '<span class="mark" style="background:' + (g.winner ? (won ? 'var(--win)' : 'var(--loss)') : 'var(--soft)') + '">' + (g.winner ? (won ? 'V' : 'T') : '–') + '</span></div></div>';
       }).join('');
       h += '<p class="note">Hørsholm-spillere står øverst — tryk på et understreget navn for profil.</p>';
     } else {
@@ -936,7 +936,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<span style="font-size:13px;font-weight:600">' + (g.partner.length ? 'med ' + esc(g.partner.join(' / ')) : 'Single') + '</span>' +
       '<span class="xs" style="color:#3C4A57">mod ' + esc(g.opponents.join(' / ')) + ' (' + esc(g.opponentTeam) + ')</span></div>' +
       '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(g.sets) || 'W.O.') + '</span>' +
-      '<span class="mark" style="background:' + (g.won ? 'var(--accent)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
+      '<span class="mark" style="background:' + (g.won ? 'var(--win)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
   }
   function gamesNewest(p) { return (p.games || []).slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); }); }
   // Underside: alle spillerens kampe i sæsonen
@@ -1157,7 +1157,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         '<span style="font-size:13px;font-weight:600">' + (g.partner.length ? 'med ' + esc(g.partner.join(' / ')) : 'Single') + '</span>' +
         '<span class="xs" style="color:#3C4A57">mod ' + esc(g.opponents.join(' / ')) + ' (' + esc(g.opponentTeam) + ')</span></div>' +
         '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(g.sets) || 'W.O.') + '</span>' +
-        '<span class="mark" style="background:' + (g.won ? 'var(--accent)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
+        '<span class="mark" style="background:' + (g.won ? 'var(--win)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
     }).join('');
     return h;
   }
@@ -2496,7 +2496,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       if (notParent()) h += '<button class="card row" style="min-height:44px;padding:8px 12px" data-go="#/boern"><span class="col"><b style="font-size:13px">Forælder til en spiller?</b><span class="xs">Tilføj dine børn, hvis det ændrer sig</span></span><span class="xs">›</span></button>';
       else h += '<div class="card" style="padding:0;border-left:5px solid ' + PARENT.bg + '"><button class="row" style="min-height:52px;width:100%;padding:10px 14px;background:none;border:0;text-align:left;font:inherit;color:inherit" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
         '<span class="xs">Tilføj dine børn — så får du en Forælder-fane og kommer med i deres holds chat</span></span><span class="xs">›</span></button>' +
-        '<button class="pl xs" data-act="notparent" style="align-self:flex-start;margin:0 14px 10px">Jeg er ikke forælder</button></div>';
+        '<button class="rb" data-act="notparent" style="align-self:flex-start;margin:0 14px 12px;min-height:36px;padding:6px 14px;font-size:13px">Jeg er ikke forælder</button></div>';
     }
     if ((ME.kids && ME.kids.length) || (ME.role && ME.role.admin)) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Spiller du ikke i Hørsholm?</b>' +
       '<span class="xs">Så fjerner vi din spillerprofil, og du står kun som forælder' + (ME.kids && ME.kids.length ? ' til ' + esc(ME.kids.map(function (k) { return k.name.split(' ')[0]; }).join(' og ')) : '') + '. Dit navn, dine børn, hold du følger og dit login bliver.</span>' +
@@ -3246,7 +3246,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (logged && (isParentId(ME.id) || (ME.kids && ME.kids.length))) return '';
     if (logged) return '<div class="card" style="padding:0;border-left:5px solid ' + PARENT.bg + '"><button class="row" style="min-height:56px;width:100%;padding:10px 14px;background:none;border:0;text-align:left;font:inherit;color:inherit" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
       '<span class="xs">Tilføj dine børn — så kommer du med i deres holds chat og program</span></span><span class="h" style="font-size:20px">›</span></button>' +
-      '<button class="pl xs" data-act="notparent" style="align-self:flex-start;margin:0 14px 10px">Jeg er ikke forælder</button></div>';
+      '<button class="rb" data-act="notparent" style="align-self:flex-start;margin:0 14px 12px;min-height:36px;padding:6px 14px;font-size:13px">Jeg er ikke forælder</button></div>';
     return '<button class="card row" style="min-height:56px;border-left:5px solid ' + PARENT.bg + '" data-go="#/tilmeld/foraelder"><span class="col"><b style="font-size:14px">Registrér dig som forælder</b>' +
       '<span class="xs">Med dit eget navn — vælg dit barn og følg dets kampe, træning og chat</span></span><span class="h" style="font-size:20px">›</span></button>';
   }
