@@ -758,9 +758,9 @@ textarea.inp{resize:vertical;line-height:1.45}
     setTab('spillere'); setHeader('Klubrangliste', 'Alle hold · ' + updTxt(), true);
     var pool = D.ids.filter(function (id) { var p = D.players[id];
       if (!p.played) return false;   // kun spillere med holdkampe
-      return UI.filter === 'alle' || (UI.filter === 'senior' ? p.adult : !p.adult); });
+      return UI.filter === 'alle' || (p.teams || []).some(function (l) { return teamCat(l) === UI.filter; }); });
     pool.sort(function (a, b) { return rankCmp(D.players[a], D.players[b]); });
-    var h = '<div class="seg" style="grid-template-columns:repeat(3,minmax(0,1fr))">' + [['alle', 'Alle'], ['senior', 'Senior'], ['ungdom', 'Ungdom']].map(function (f) {
+    var h = '<div class="seg" style="grid-template-columns:repeat(5,minmax(0,1fr))">' + [['alle', 'Alle'], ['senior', 'Senior'], ['veteran', 'Veteran'], ['motionist', 'Motionist'], ['ungdom', 'Ungdom']].map(function (f) {
       return '<button aria-selected="' + (UI.filter === f[0]) + '" data-filter="' + f[0] + '">' + f[1] + '</button>'; }).join('') + '</div>';
     h += '<div class="card" style="overflow:hidden">' + pool.map(function (id, i) {
       var p = D.players[id], v = rankVals(p);
@@ -843,6 +843,14 @@ textarea.inp{resize:vertical;line-height:1.45}
     var rows = memberRows();
     if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old'; });
     return UI.psrc === 'alle' ? rows : rows.filter(function (r) { return r.src === UI.psrc; });
+  }
+  // Holdets kategori til klubranglisten: ungdom (U..), motionist (MOT ..), veteran (4 Spillere, A-/B-/C-række, 40+ …) ellers senior
+  function teamCat(l) {
+    l = String(l || '');
+    if (/^U\d/.test(l)) return 'ungdom';
+    if (/^MOT/i.test(l)) return 'motionist';
+    if (/4 Spillere|[A-C]-række|\b\d0\+/i.test(l)) return 'veteran';
+    return 'senior';
   }
   function viewSpillere() {
     if (!UI.pf) { try { UI.pf = localStorage.getItem('hoebk_pf') || 'alle'; } catch (e) { UI.pf = 'alle'; } }
