@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T17:47:13+00:00",
+ "updated": "2026-11-15T18:17:10+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -46,6 +46,20 @@
   },
   {
    "rank": 4,
+   "id": "335589",
+   "name": "Ellen Sams Riemer",
+   "teams": [
+    "U13 A"
+   ],
+   "played": 2,
+   "won": 2,
+   "winPct": 100,
+   "pointsFor": 62,
+   "avgPoints": 31.0,
+   "avgDiff": 12.5
+  },
+  {
+   "rank": 5,
    "id": "237819",
    "name": "Gitte Kruse",
    "teams": [
@@ -59,7 +73,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 5,
+   "rank": 6,
    "id": "365034",
    "name": "Anders Lillelund",
    "teams": [
@@ -73,7 +87,7 @@
    "avgDiff": 7.5
   },
   {
-   "rank": 6,
+   "rank": 7,
    "id": "237773",
    "name": "Olivia Høberg Brams",
    "teams": [
@@ -87,7 +101,7 @@
    "avgDiff": 6.7
   },
   {
-   "rank": 7,
+   "rank": 8,
    "id": "46285",
    "name": "Maria O. Arildsen",
    "teams": [
@@ -101,7 +115,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 8,
+   "rank": 9,
    "id": "13721",
    "name": "Marie Madsen",
    "teams": [
@@ -115,7 +129,7 @@
    "avgDiff": 9.4
   },
   {
-   "rank": 9,
+   "rank": 10,
    "id": "324936",
    "name": "Aksel Schroller Broerson",
    "teams": [
@@ -129,7 +143,7 @@
    "avgDiff": 11.7
   },
   {
-   "rank": 10,
+   "rank": 11,
    "id": "13323",
    "name": "Henrik Schroller Broerson",
    "teams": [
@@ -143,7 +157,7 @@
    "avgDiff": 11.9
   },
   {
-   "rank": 11,
+   "rank": 12,
    "id": "367929",
    "name": "liam yuliang zhang",
    "teams": [
@@ -157,7 +171,7 @@
    "avgDiff": 14.0
   },
   {
-   "rank": 12,
+   "rank": 13,
    "id": "310497",
    "name": "Alexander Frode Barfod",
    "teams": [
@@ -171,7 +185,7 @@
    "avgDiff": 12.0
   },
   {
-   "rank": 13,
+   "rank": 14,
    "id": "318475",
    "name": "Emil Thaysen",
    "teams": [
@@ -185,7 +199,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 14,
+   "rank": 15,
    "id": "339431",
    "name": "Hektor Shi Lorenzen",
    "teams": [
@@ -199,7 +213,7 @@
    "avgDiff": 3.5
   },
   {
-   "rank": 15,
+   "rank": 16,
    "id": "364606",
    "name": "Torbjørn Petersson",
    "teams": [
@@ -213,7 +227,7 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 16,
+   "rank": 17,
    "id": "46015",
    "name": "Line Lindquist",
    "teams": [
@@ -227,7 +241,7 @@
    "avgDiff": 0
   },
   {
-   "rank": 17,
+   "rank": 18,
    "id": "13008",
    "name": "Anders Frewald",
    "teams": [
@@ -241,7 +255,7 @@
    "avgDiff": 12.3
   },
   {
-   "rank": 18,
+   "rank": 19,
    "id": "328467",
    "name": "Mathilde Baldvinsson Frewald",
    "teams": [
@@ -256,7 +270,7 @@
    "avgDiff": 12.2
   },
   {
-   "rank": 19,
+   "rank": 20,
    "id": "12992",
    "name": "Henriette Stang Hellen",
    "teams": [
@@ -271,7 +285,7 @@
    "avgDiff": 6.1
   },
   {
-   "rank": 20,
+   "rank": 21,
    "id": "38545",
    "name": "Shankar Ralhan",
    "teams": [
@@ -285,7 +299,7 @@
    "avgDiff": 8.4
   },
   {
-   "rank": 21,
+   "rank": 22,
    "id": "12881",
    "name": "Katrine Schou Andersen",
    "teams": [
@@ -299,7 +313,7 @@
    "avgDiff": 10.7
   },
   {
-   "rank": 22,
+   "rank": 23,
    "id": "334106",
    "name": "Malthe Larsen",
    "teams": [
@@ -313,7 +327,7 @@
    "avgDiff": 7.3
   },
   {
-   "rank": 23,
+   "rank": 24,
    "id": "362880",
    "name": "Jonas Gaudesen",
    "teams": [
@@ -327,7 +341,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 24,
+   "rank": 25,
    "id": "320930",
    "name": "Julius Tolsøe",
    "teams": [
@@ -341,7 +355,7 @@
    "avgDiff": 10.3
   },
   {
-   "rank": 25,
+   "rank": 26,
    "id": "324944",
    "name": "August Drescher",
    "teams": [
@@ -355,7 +369,7 @@
    "avgDiff": 10.0
   },
   {
-   "rank": 26,
+   "rank": 27,
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
@@ -370,7 +384,7 @@
    "avgDiff": 7.2
   },
   {
-   "rank": 27,
+   "rank": 28,
    "id": "352483",
    "name": "Birk Lund Dujardin",
    "teams": [
@@ -384,7 +398,7 @@
    "avgDiff": 7.4
   },
   {
-   "rank": 28,
+   "rank": 29,
    "id": "348191",
    "name": "Manfred Bjørn Kirk",
    "teams": [
@@ -398,7 +412,7 @@
    "avgDiff": 10.8
   },
   {
-   "rank": 29,
+   "rank": 30,
    "id": "366509",
    "name": "Oscar spliid",
    "teams": [
@@ -412,7 +426,7 @@
    "avgDiff": 6.2
   },
   {
-   "rank": 30,
+   "rank": 31,
    "id": "338663",
    "name": "Sebastian Rossau",
    "teams": [
@@ -426,7 +440,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 31,
+   "rank": 32,
    "id": "357023",
    "name": "Ellie Schroller Broerson",
    "teams": [
@@ -440,7 +454,7 @@
    "avgDiff": 5.2
   },
   {
-   "rank": 32,
+   "rank": 33,
    "id": "362187",
    "name": "Max van Daalen",
    "teams": [
@@ -454,7 +468,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 33,
+   "rank": 34,
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
@@ -469,7 +483,7 @@
    "avgDiff": 6.7
   },
   {
-   "rank": 34,
+   "rank": 35,
    "id": "9643",
    "name": "Kim Eriksen",
    "teams": [
@@ -484,7 +498,7 @@
    "avgDiff": 5.9
   },
   {
-   "rank": 35,
+   "rank": 36,
    "id": "338789",
    "name": "Charles Jordahn Brandt",
    "teams": [
@@ -498,7 +512,7 @@
    "avgDiff": 5.8
   },
   {
-   "rank": 36,
+   "rank": 37,
    "id": "309153",
    "name": "Mark saejueng",
    "teams": [
@@ -512,7 +526,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 37,
+   "rank": 38,
    "id": "365721",
    "name": "Sylvester Engen Peetz",
    "teams": [
@@ -526,7 +540,7 @@
    "avgDiff": 4.0
   },
   {
-   "rank": 38,
+   "rank": 39,
    "id": "360548",
    "name": "MUHAMMAD MOHSIN Ali KHAN",
    "teams": [
@@ -542,7 +556,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 39,
+   "rank": 40,
    "id": "11839",
    "name": "Morten Plougmann",
    "teams": [
@@ -556,7 +570,7 @@
    "avgDiff": 5.4
   },
   {
-   "rank": 40,
+   "rank": 41,
    "id": "13374",
    "name": "Signe Baldvinsson",
    "teams": [
@@ -570,7 +584,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 41,
+   "rank": 42,
    "id": "13123",
    "name": "Camilla Strøm",
    "teams": [
@@ -584,7 +598,7 @@
    "avgDiff": 3.2
   },
   {
-   "rank": 42,
+   "rank": 43,
    "id": "348034",
    "name": "Dorte Glintborg",
    "teams": [
@@ -598,7 +612,7 @@
    "avgDiff": 14.5
   },
   {
-   "rank": 43,
+   "rank": 44,
    "id": "337294",
    "name": "Julie Bille Rannes",
    "teams": [
@@ -612,7 +626,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 44,
+   "rank": 45,
    "id": "352440",
    "name": "Ethan Jing",
    "teams": [
@@ -626,7 +640,7 @@
    "avgDiff": 5.3
   },
   {
-   "rank": 45,
+   "rank": 46,
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
@@ -641,7 +655,7 @@
    "avgDiff": 4.3
   },
   {
-   "rank": 46,
+   "rank": 47,
    "id": "348495",
    "name": "Alexander Dahl Plougmann",
    "teams": [
@@ -655,7 +669,7 @@
    "avgDiff": 4.2
   },
   {
-   "rank": 47,
+   "rank": 48,
    "id": "251767",
    "name": "Christian Skytt",
    "teams": [
@@ -669,7 +683,7 @@
    "avgDiff": 1.8
   },
   {
-   "rank": 48,
+   "rank": 49,
    "id": "358565",
    "name": "Vincent Ziyu Ding",
    "teams": [
@@ -683,7 +697,7 @@
    "avgDiff": 0.3
   },
   {
-   "rank": 49,
+   "rank": 50,
    "id": "335593",
    "name": "Oliver Vedsted Nørrelund",
    "teams": [
@@ -697,7 +711,7 @@
    "avgDiff": 4.0
   },
   {
-   "rank": 50,
+   "rank": 51,
    "id": "250810",
    "name": "Andreas Qianyou Kristensen",
    "teams": [
@@ -711,7 +725,7 @@
    "avgDiff": 2.9
   },
   {
-   "rank": 51,
+   "rank": 52,
    "id": "359708",
    "name": "Marius Løkke Knutsson",
    "teams": [
@@ -725,7 +739,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 52,
+   "rank": 53,
    "id": "326116",
    "name": "Christopher Johannessen",
    "teams": [
@@ -739,7 +753,7 @@
    "avgDiff": 1.6
   },
   {
-   "rank": 53,
+   "rank": 54,
    "id": "236648",
    "name": "Rasmus Thorsted Mortensen",
    "teams": [
@@ -753,7 +767,7 @@
    "avgDiff": 4.1
   },
   {
-   "rank": 54,
+   "rank": 55,
    "id": "9877",
    "name": "Thomas Steffensen",
    "teams": [
@@ -767,7 +781,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 55,
+   "rank": 56,
    "id": "350815",
    "name": "Cornelius Engen Peetz",
    "teams": [
@@ -782,7 +796,7 @@
    "avgDiff": -2.2
   },
   {
-   "rank": 56,
+   "rank": 57,
    "id": "336079",
    "name": "Stefanie Flamand",
    "teams": [
@@ -796,7 +810,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 57,
+   "rank": 58,
    "id": "275709",
    "name": "Sebastian Søbjerg Lynfort",
    "teams": [
@@ -810,7 +824,7 @@
    "avgDiff": 0.2
   },
   {
-   "rank": 58,
+   "rank": 59,
    "id": "12813",
    "name": "Anders Vedsted Nørrelund",
    "teams": [
@@ -824,7 +838,21 @@
    "avgDiff": 0.3
   },
   {
-   "rank": 59,
+   "rank": 60,
+   "id": "332881",
+   "name": "Agnes Schroller Broerson",
+   "teams": [
+    "U13 A"
+   ],
+   "played": 2,
+   "won": 1,
+   "winPct": 50,
+   "pointsFor": 45,
+   "avgPoints": 22.5,
+   "avgDiff": 5.0
+  },
+  {
+   "rank": 61,
    "id": "320827",
    "name": "Emma Sejberg Rasmussen",
    "teams": [
@@ -839,7 +867,21 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 60,
+   "rank": 62,
+   "id": "330735",
+   "name": "Claudia Orholm Nielsen",
+   "teams": [
+    "U13 A"
+   ],
+   "played": 2,
+   "won": 1,
+   "winPct": 50,
+   "pointsFor": 43,
+   "avgPoints": 21.5,
+   "avgDiff": -0.5
+  },
+  {
+   "rank": 63,
    "id": "330569",
    "name": "Anders Johannessen",
    "teams": [
@@ -853,7 +895,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 61,
+   "rank": 64,
    "id": "358845",
    "name": "Thor Evan Seitzberg",
    "teams": [
@@ -867,7 +909,7 @@
    "avgDiff": 0.8
   },
   {
-   "rank": 62,
+   "rank": 65,
    "id": "346993",
    "name": "Mikkel Christian Korsholm",
    "teams": [
@@ -881,7 +923,7 @@
    "avgDiff": -0.2
   },
   {
-   "rank": 63,
+   "rank": 66,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -895,7 +937,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 64,
+   "rank": 67,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -909,7 +951,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 65,
+   "rank": 68,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -923,7 +965,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 66,
+   "rank": 69,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -937,7 +979,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 67,
+   "rank": 70,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -952,7 +994,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 68,
+   "rank": 71,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -966,7 +1008,7 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 69,
+   "rank": 72,
    "id": "337844",
    "name": "Ellen Krogh-Larsen",
    "teams": [
@@ -980,7 +1022,7 @@
    "avgDiff": -2.3
   },
   {
-   "rank": 70,
+   "rank": 73,
    "id": "362341",
    "name": "Villas Alexander Worm",
    "teams": [
@@ -994,7 +1036,7 @@
    "avgDiff": -2.7
   },
   {
-   "rank": 71,
+   "rank": 74,
    "id": "268924",
    "name": "Marianne Seydel Jørgensen",
    "teams": [
@@ -1008,7 +1050,7 @@
    "avgDiff": -3.7
   },
   {
-   "rank": 72,
+   "rank": 75,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -1022,7 +1064,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 73,
+   "rank": 76,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -1036,7 +1078,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 74,
+   "rank": 77,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -1050,7 +1092,7 @@
    "avgDiff": -3.6
   },
   {
-   "rank": 75,
+   "rank": 78,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -1064,7 +1106,21 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 76,
+   "rank": 79,
+   "id": "357320",
+   "name": "Sebastian Feodor Nilsson",
+   "teams": [
+    "U13 A"
+   ],
+   "played": 3,
+   "won": 1,
+   "winPct": 33,
+   "pointsFor": 42,
+   "avgPoints": 14.0,
+   "avgDiff": -13.7
+  },
+  {
+   "rank": 80,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1079,7 +1135,7 @@
    "avgDiff": -4.3
   },
   {
-   "rank": 77,
+   "rank": 81,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
@@ -1094,7 +1150,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 78,
+   "rank": 82,
    "id": "346992",
    "name": "Carl Grønfeldt",
    "teams": [
@@ -1108,7 +1164,7 @@
    "avgDiff": -7.7
   },
   {
-   "rank": 79,
+   "rank": 83,
    "id": "348494",
    "name": "Mathilde Dahl Plougmann",
    "teams": [
@@ -1123,7 +1179,7 @@
    "avgDiff": -6.6
   },
   {
-   "rank": 80,
+   "rank": 84,
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
@@ -1138,7 +1194,7 @@
    "avgDiff": -4.4
   },
   {
-   "rank": 81,
+   "rank": 85,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -1152,7 +1208,7 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 82,
+   "rank": 86,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -1166,7 +1222,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 83,
+   "rank": 87,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -1180,7 +1236,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 84,
+   "rank": 88,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -1194,7 +1250,7 @@
    "avgDiff": -10.0
   },
   {
-   "rank": 85,
+   "rank": 89,
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
@@ -1208,7 +1264,7 @@
    "avgDiff": -7.0
   },
   {
-   "rank": 86,
+   "rank": 90,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -1222,7 +1278,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 87,
+   "rank": 91,
    "id": "277780",
    "name": "Mathilde Peetz",
    "teams": [
@@ -1237,7 +1293,7 @@
    "avgDiff": -12.4
   },
   {
-   "rank": 88,
+   "rank": 92,
    "id": "330795",
    "name": "Brit Johannessen",
    "teams": [
@@ -1251,7 +1307,7 @@
    "avgDiff": -9.2
   },
   {
-   "rank": 89,
+   "rank": 93,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1266,7 +1322,7 @@
    "avgDiff": -9.4
   },
   {
-   "rank": 90,
+   "rank": 94,
    "id": "345764",
    "name": "Emilie Drescher",
    "teams": [
@@ -1280,7 +1336,7 @@
    "avgDiff": -12.6
   },
   {
-   "rank": 91,
+   "rank": 95,
    "id": "362351",
    "name": "Clara Høgh Staufeldt",
    "teams": [
@@ -1294,7 +1350,7 @@
    "avgDiff": -10.3
   },
   {
-   "rank": 92,
+   "rank": 96,
    "id": "362167",
    "name": "William Løvenholdt Petersen",
    "teams": [
@@ -1308,7 +1364,7 @@
    "avgDiff": -5.7
   },
   {
-   "rank": 93,
+   "rank": 97,
    "id": "245961",
    "name": "Jesper Østergaard",
    "teams": [
@@ -1322,7 +1378,7 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 94,
+   "rank": 98,
    "id": "362348",
    "name": "Zahra Gita Deb",
    "teams": [
@@ -1336,7 +1392,7 @@
    "avgDiff": -11.3
   },
   {
-   "rank": 95,
+   "rank": 99,
    "id": "362602",
    "name": "Marvin Nørmark",
    "teams": [
@@ -1350,7 +1406,7 @@
    "avgDiff": -10.4
   },
   {
-   "rank": 96,
+   "rank": 100,
    "id": "352441",
    "name": "Nolan Jing",
    "teams": [
@@ -1364,7 +1420,7 @@
    "avgDiff": -13.5
   },
   {
-   "rank": 97,
+   "rank": 101,
    "id": "24376",
    "name": "Christian Skovgaard",
    "teams": [
@@ -1378,7 +1434,7 @@
    "avgDiff": -9.0
   },
   {
-   "rank": 98,
+   "rank": 102,
    "id": "364196",
    "name": "Fie B. Kobberup",
    "teams": [
@@ -1392,7 +1448,7 @@
    "avgDiff": -10.3
   },
   {
-   "rank": 99,
+   "rank": 103,
    "id": "336560",
    "name": "Tue Krogh-Larsen",
    "teams": [
@@ -1406,7 +1462,7 @@
    "avgDiff": -13.0
   },
   {
-   "rank": 100,
+   "rank": 104,
    "id": "352356",
    "name": "Carl Emil Jensen",
    "teams": [
@@ -1420,7 +1476,7 @@
    "avgDiff": -13.6
   },
   {
-   "rank": 101,
+   "rank": 105,
    "id": "335592",
    "name": "William Vedsted Nørrelund",
    "teams": [
@@ -1434,7 +1490,21 @@
    "avgDiff": -14.0
   },
   {
-   "rank": 102,
+   "rank": 106,
+   "id": "358591",
+   "name": "Bertil Emil Bæhrenz Peetz",
+   "teams": [
+    "U13 A"
+   ],
+   "played": 3,
+   "won": 0,
+   "winPct": 0,
+   "pointsFor": 41,
+   "avgPoints": 13.7,
+   "avgDiff": -16.3
+  },
+  {
+   "rank": 107,
    "id": "367264",
    "name": "Pulin Dhar",
    "teams": [
@@ -1589,20 +1659,83 @@
   {
    "id": "332881",
    "name": "Agnes Schroller Broerson",
-   "teams": [],
+   "teams": [
+    "U13 A"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
-   "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. MD",
+     "partner": [
+      "Bertil Emil Bæhrenz Peetz"
+     ],
+     "opponents": [
+      "Miguel Thorsen",
+      "Livia Holm-Teisner"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "2. DS",
+     "partner": [],
+     "opponents": [
+      "Mathilde Stensen Bhatia"
+     ],
+     "sets": [
+      [
+       15,
+       2
+      ],
+      [
+       15,
+       3
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    }
+   ],
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "winPct": 50,
+   "pointsFor": 45,
+   "pointsAgainst": 35,
+   "avgPoints": 22.5,
+   "avgDiff": 5.0,
+   "setsWon": 2,
+   "setsLost": 2,
+   "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 0
+    },
+    "DS": {
+     "played": 1,
+     "won": 1
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {
@@ -5901,20 +6034,114 @@
   {
    "id": "358591",
    "name": "Bertil Emil Bæhrenz Peetz",
-   "teams": [],
+   "teams": [
+    "U13 A"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. MD",
+     "partner": [
+      "Agnes Schroller Broerson"
+     ],
+     "opponents": [
+      "Miguel Thorsen",
+      "Livia Holm-Teisner"
+     ],
+     "sets": [
+      [
+       5,
+       15
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "2. HS",
+     "partner": [],
+     "opponents": [
+      "Lucas Alexandru Dinu"
+     ],
+     "sets": [
+      [
+       10,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. HD",
+     "partner": [
+      "Sebastian Feodor Nilsson"
+     ],
+     "opponents": [
+      "Miguel Thorsen",
+      "Lucas Alexandru Dinu"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       2,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
    "won": 0,
-   "lost": 0,
+   "lost": 3,
    "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
+   "pointsFor": 41,
+   "pointsAgainst": 90,
+   "avgPoints": 13.7,
+   "avgDiff": -16.3,
    "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "setsLost": 6,
+   "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 0
+    },
+    "HS": {
+     "played": 1,
+     "won": 0
+    },
+    "HD": {
+     "played": 1,
+     "won": 0
+    }
+   },
    "clubMember": true,
    "gender": "M",
    "profile": {
@@ -10420,20 +10647,83 @@
   {
    "id": "330735",
    "name": "Claudia Orholm Nielsen",
-   "teams": [],
+   "teams": [
+    "U13 A"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
-   "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. DS",
+     "partner": [],
+     "opponents": [
+      "Livia Holm-Teisner"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       4,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. DD",
+     "partner": [
+      "Ellen Sams Riemer"
+     ],
+     "opponents": [
+      "Livia Holm-Teisner",
+      "Ingrid Reeh Kargaard"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    }
+   ],
+   "played": 2,
+   "won": 1,
+   "lost": 1,
+   "winPct": 50,
+   "pointsFor": 43,
+   "pointsAgainst": 44,
+   "avgPoints": 21.5,
+   "avgDiff": -0.5,
+   "setsWon": 2,
+   "setsLost": 2,
+   "byDiscipline": {
+    "DS": {
+     "played": 1,
+     "won": 0
+    },
+    "DD": {
+     "played": 1,
+     "won": 1
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {
@@ -12050,20 +12340,86 @@
   {
    "id": "335589",
    "name": "Ellen Sams Riemer",
-   "teams": [],
+   "teams": [
+    "U13 A"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "2. MD",
+     "partner": [
+      "Sebastian Feodor Nilsson"
+     ],
+     "opponents": [
+      "Lucas Alexandru Dinu",
+      "Ingrid Reeh Kargaard"
+     ],
+     "sets": [
+      [
+       17,
+       15
+      ],
+      [
+       15,
+       8
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. DD",
+     "partner": [
+      "Claudia Orholm Nielsen"
+     ],
+     "opponents": [
+      "Livia Holm-Teisner",
+      "Ingrid Reeh Kargaard"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    }
+   ],
+   "played": 2,
+   "won": 2,
    "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
+   "winPct": 100,
+   "pointsFor": 62,
+   "pointsAgainst": 37,
+   "avgPoints": 31.0,
+   "avgDiff": 12.5,
+   "setsWon": 4,
    "setsLost": 0,
-   "byDiscipline": {},
+   "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 1
+    },
+    "DD": {
+     "played": 1,
+     "won": 1
+    }
+   },
    "clubMember": true,
    "gender": "K",
    "profile": {
@@ -32422,20 +32778,114 @@
   {
    "id": "357320",
    "name": "Sebastian Feodor Nilsson",
-   "teams": [],
+   "teams": [
+    "U13 A"
+   ],
    "adult": false,
-   "games": [],
-   "played": 0,
-   "won": 0,
-   "lost": 0,
-   "winPct": 0,
-   "pointsFor": 0,
-   "pointsAgainst": 0,
-   "avgPoints": 0,
-   "avgDiff": 0,
-   "setsWon": 0,
-   "setsLost": 0,
-   "byDiscipline": {},
+   "games": [
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "2. MD",
+     "partner": [
+      "Ellen Sams Riemer"
+     ],
+     "opponents": [
+      "Lucas Alexandru Dinu",
+      "Ingrid Reeh Kargaard"
+     ],
+     "sets": [
+      [
+       17,
+       15
+      ],
+      [
+       15,
+       8
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. HS",
+     "partner": [],
+     "opponents": [
+      "Miguel Thorsen"
+     ],
+     "sets": [
+      [
+       2,
+       15
+      ],
+      [
+       0,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "U13 A",
+     "teamName": "Hørsholm 1",
+     "opponentTeam": "KBK Kbh. 1",
+     "matchID": "510584",
+     "discipline": "1. HD",
+     "partner": [
+      "Bertil Emil Bæhrenz Peetz"
+     ],
+     "opponents": [
+      "Miguel Thorsen",
+      "Lucas Alexandru Dinu"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       2,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    }
+   ],
+   "played": 3,
+   "won": 1,
+   "lost": 2,
+   "winPct": 33,
+   "pointsFor": 42,
+   "pointsAgainst": 83,
+   "avgPoints": 14.0,
+   "avgDiff": -13.7,
+   "setsWon": 2,
+   "setsLost": 4,
+   "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 1
+    },
+    "HS": {
+     "played": 1,
+     "won": 0
+    },
+    "HD": {
+     "played": 1,
+     "won": 0
+    }
+   },
    "clubMember": true,
    "gender": "M",
    "profile": {
