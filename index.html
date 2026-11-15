@@ -785,9 +785,9 @@ textarea.inp{resize:vertical;line-height:1.45}
   }
   function memAdmin() { return !!(ME && ME.role && ME.role.admin && MEM.data && MEM.data.users); }
   function loadUsersForSpillere() {   // administratorer: brugerlisten (til forældrene i Spillere)
-    if (!ME || !ME.role || !ME.role.admin || !ME.token || USR.loading || USR.data) return;
-    USR.loading = true;
-    api({ action: 'users', token: ME.token }).then(function (r) { USR.data = r && r.ok ? r.users : null; })
+    if (!ME || !ME.role || !ME.role.admin || !ME.token || !REG.url || USR.loading || Array.isArray(USR.data) || USR.spTried) return;
+    USR.loading = true; USR.spTried = true;   // højst ét forsøg pr. visning af appen — ingen genindlæsnings-løkke ved fejl
+    api({ action: 'users', token: ME.token }).then(function (r) { if (r && r.ok) USR.data = r.users; })
       .catch(function () {}).then(function () { USR.loading = false; if (/^#\/spillere/.test(location.hash)) route(true); });
   }
   function loadMembers(force) {
@@ -828,18 +828,27 @@ textarea.inp{resize:vertical;line-height:1.45}
         var k = nameKeys(u.name)[0]; if (!k || seen[k]) return; seen[k] = 1;
         rows.push({ name: u.name, bp: null, p: pseudoPlayer(u.name), groups: ['bruger i appen'], src: 'ingen' });
       });
-      // Forældre (kun i appen — de er ikke medlemmer). Hentes fra administratorernes brugerliste.
-      if (Array.isArray(USR.data)) USR.data.forEach(function (u) {
-        if (!/^p:/.test(u.id || '')) return;
-        var k = nameKeys(u.name)[0]; if (!k || seen['p|' + k]) return; seen['p|' + k] = 1;
-        var kids = (u.kids || []).map(function (c) { return c.name; }).filter(String);
-        rows.push({ name: u.name, bp: null, p: pseudoPlayer(u.name), parent: true, src: 'foraeldre',
-                    groups: [kids.length ? 'Forælder til ' + kids.join(', ') : 'Forælder (intet barn valgt)'] });
-      });
+      // Forældre: alle med børn tilknyttet i appen (fra administratorernes brugerliste). Er forælderen også spiller/medlem,
+      // markeres den eksisterende række; ellers får forælderen sin egen række.
+      if (Array.isArray(USR.data)) {
+        var byId = {}, byName = {};
+        rows.forEach(function (r) { if (r.bp) byId[r.bp] = r; byName[nameKeys(r.name)[0]] = byName[nameKeys(r.name)[0]] || r; });
+        USR.data.forEach(function (u) {
+          if (!u.parent && !/^p:/.test(u.id || '')) return;
+          var kids = (u.kids || []).map(function (c) { return c.name; }).filter(String);
+          var txt = kids.length ? 'Forælder til ' + kids.join(', ') : 'Forælder (intet barn valgt)';
+          var ids = (u.profiles || []).map(function (x) { return x.id; }).concat([u.id]);
+          var hit = null; ids.forEach(function (id) { if (!hit && byId[id]) hit = byId[id]; });
+          if (!hit && !/^p:/.test(u.id || '')) hit = byName[nameKeys(u.name)[0]] || null;
+          if (hit) { if (!hit.parent) { hit.parent = true; hit.groups = hit.groups.concat([txt]); hit.ptxt = txt; } return; }
+          var k = nameKeys(u.name)[0]; if (!k || seen['p|' + k]) return; seen['p|' + k] = 1;
+          rows.push({ name: u.name, bp: null, p: pseudoPlayer(u.name), parent: true, ponly: true, src: 'foraeldre', groups: [txt] });
+        });
+      }
     }
     return rows;
   }
-  function srcIs(r, k) { return k === 'alle' || (k === 'allcon' ? r.src === 'begge' || r.src === 'conventus' : r.src === k); }
+  function srcIs(r, k) { return k === 'alle' || (k === 'allcon' ? r.src === 'begge' || r.src === 'conventus' : k === 'foraeldre' ? !!r.parent : r.src === k); }
   function srcRows() {   // rækker efter administratorens kilde-filter
     var rows = memberRows();
     if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old'; });
@@ -875,7 +884,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       var all = memberRows();
       h += '<span class="lbl">Administrator · hvor findes spilleren?</span><div class="chips regchips" role="group" aria-label="Filtrér efter kilde">' + Object.keys(PSRC).map(function (k) {
         var n = all.filter(function (r) { return srcIs(r, k); }).length;
-        return '<button class="chip" data-psrc="' + k + '" aria-pressed="' + (UI.psrc === k) + '">' + PSRC[k][0] + ' <span class="xs">' + n + '</span></button>'; }).join('') + '</div>';
+        return '<button class="chip" data-psrc="' + k + '" aria-pressed="' + (UI.psrc === k) + '">' + PSRC[k][0] + ' <span class="xs">' + (k === 'foraeldre' && !Array.isArray(USR.data) ? (USR.loading ? '…' : '?') : n) + '</span></button>'; }).join('') + '</div>';
     }
     if (mode === 'old' && ME.role && ME.role.admin) h += '<p class="note">Medlemmer fra Conventus vises, når den nye version af Apps Script er implementeret. Indtil da vises spillerne fra badmintonplayer.dk.</p>';
     h += '<div class="chips regchips" role="group" aria-label="Filtrér spillere">' + Object.keys(PF).map(function (k) {
@@ -895,8 +904,8 @@ textarea.inp{resize:vertical;line-height:1.45}
     el.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="lbl">' + list.length + (memAdmin() ? ' personer' : memMode() === 'members' ? ' medlemmer' : ' spillere') + '</span>' + colorLegend() + '</div>' +
       list.map(function (r) {
         var p = r.p, tag = admin ? '<span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;white-space:nowrap;background:' + PSRC[r.src][1] + ';color:' + PSRC[r.src][2] + '">' + PSRC_TAG[r.src] + '</span>' : '';
-        var sub = r.bp ? teamsTxt(p) : (r.groups.join(', ') || 'Ingen hold');
-        var inner = '<span class="av" style="width:36px;height:36px;font-size:12px;' + (r.parent ? 'background:' + PARENT.bg + ';color:' + PARENT.fg : avStyle(p)) + '">' + esc(ini(r.name)) + '</span>' +
+        var sub = r.bp ? teamsTxt(p) + (r.ptxt ? ' · ' + r.ptxt : '') : (r.groups.join(', ') || 'Ingen hold');
+        var inner = '<span class="av" style="width:36px;height:36px;font-size:12px;' + (r.ponly ? 'background:' + PARENT.bg + ';color:' + PARENT.fg : avStyle(p)) + '">' + esc(ini(r.name)) + '</span>' +
           '<span class="col" style="flex:1 1 auto;min-width:0"><b style="font-size:14px">' + esc(r.name) + '</b><span class="xs ellip">' + esc(sub) + '</span></span>' + tag;
         return r.bp ? '<button class="card row" style="min-height:54px;padding:8px 12px" data-go="#/spiller/' + esc(r.bp) + '">' + inner +
             '<span style="font-size:13px;font-weight:700;white-space:nowrap">' + (p.played ? p.won + '/' + p.played : '–') + '</span></button>'
