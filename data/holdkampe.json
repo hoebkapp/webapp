@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T14:46:21+00:00",
+  "updated": "2026-11-15T15:17:11+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -16558,7 +16558,7 @@
       "name": "Hørsholm 1",
       "pulje": "U15 A, 7200 (4 spillere) Pulje 1",
       "label": "U15 A",
-      "position": "2",
+      "position": "3",
       "standing": [
         {
           "pos": "1",
@@ -16573,6 +16573,17 @@
         },
         {
           "pos": "2",
+          "team": "Holte 1",
+          "teamID": "124882",
+          "isUs": false,
+          "played": "3",
+          "won": "3",
+          "score": "21-3",
+          "sets": "43-9",
+          "points": "12"
+        },
+        {
+          "pos": "3",
           "team": "Hørsholm 1",
           "teamID": "124884",
           "isUs": true,
@@ -16583,7 +16594,7 @@
           "points": "11"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Gladsaxe Søborg 1",
           "teamID": "124589",
           "isUs": false,
@@ -16594,36 +16605,25 @@
           "points": "10"
         },
         {
-          "pos": "4",
-          "team": "Holte 1",
-          "teamID": "124882",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "13-3",
-          "sets": "27-7",
-          "points": "8"
-        },
-        {
           "pos": "5",
           "team": "VBC/FKIF 1",
           "teamID": "124887",
           "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "10-6",
-          "sets": "22-16",
-          "points": "5"
+          "played": "3",
+          "won": "2",
+          "score": "16-8",
+          "sets": "35-21",
+          "points": "9"
         },
         {
           "pos": "6",
           "team": "Værløse 2",
           "teamID": "124587",
           "isUs": false,
-          "played": "2",
+          "played": "3",
           "won": "1",
-          "score": "5-11",
-          "sets": "13-24",
+          "score": "7-17",
+          "sets": "18-37",
           "points": "3"
         },
         {
@@ -16675,10 +16675,10 @@
           "team": "Nykøbing F 1",
           "teamID": "124883",
           "isUs": false,
-          "played": "2",
+          "played": "3",
           "won": "0",
-          "score": "2-14",
-          "sets": "7-29",
+          "score": "2-22",
+          "sets": "9-45",
           "points": "0"
         }
       ],
