@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T06:04:15+00:00",
+ "updated": "2026-11-15T20:04:27+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -11289,10 +11289,14 @@
    "id": "118244",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118244,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118244,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118244,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118244"
    },
    "entryOpen": false,
@@ -12320,7 +12324,7 @@
    "start": "2026-11-28",
    "end": "2026-11-28",
    "week": "48",
-   "deadline": "2026-11-14",
+   "deadline": "2026-11-12",
    "organiser": "Jyske Mesterskaber i Ribe",
    "classes": [
     {

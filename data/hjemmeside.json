@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T18:17:10+00:00",
+ "updated": "2026-11-15T20:23:23+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
@@ -137,20 +137,6 @@
    "walkover": ""
   },
   {
-   "team": "U13 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "10:00",
-   "opponent": "KBK Kbh. 1",
-   "home": false,
-   "listedHome": true,
-   "venue": "Værløsehallerne 5-7",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,",
-   "result": "3-5",
-   "outcome": "T",
-   "walkover": ""
-  },
-  {
    "team": "U15 A",
    "club": "Hørsholm 1",
    "date": "2026-11-15",
@@ -162,6 +148,20 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,",
    "result": "8-0",
    "outcome": "V",
+   "walkover": ""
+  },
+  {
+   "team": "U13 A",
+   "club": "Hørsholm 1",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "KBK Kbh. 1",
+   "home": false,
+   "listedHome": true,
+   "venue": "Værløsehallerne 5-7",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,",
+   "result": "3-5",
+   "outcome": "T",
    "walkover": ""
   },
   {
