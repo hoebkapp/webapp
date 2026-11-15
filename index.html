@@ -3244,8 +3244,11 @@ textarea.inp{resize:vertical;line-height:1.45}
     var logged = ME && ME.token;
     if (logged && notParent()) return '';
     if (logged && (isParentId(ME.id) || (ME.kids && ME.kids.length))) return '';
-    return '<button class="card row" style="min-height:56px;border-left:5px solid ' + PARENT.bg + '" data-go="' + (logged ? '#/boern' : '#/tilmeld/foraelder') + '"><span class="col"><b style="font-size:14px">' +
-      (logged ? 'Er du også forælder?' : 'Registrér dig som forælder') + '</b><span class="xs">' + (logged ? 'Tilføj dine børn — så kommer du med i deres holds chat og program' : 'Med dit eget navn — vælg dit barn og følg dets kampe, træning og chat') + '</span></span><span class="h" style="font-size:20px">›</span></button>';
+    if (logged) return '<div class="card" style="padding:0;border-left:5px solid ' + PARENT.bg + '"><button class="row" style="min-height:56px;width:100%;padding:10px 14px;background:none;border:0;text-align:left;font:inherit;color:inherit" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
+      '<span class="xs">Tilføj dine børn — så kommer du med i deres holds chat og program</span></span><span class="h" style="font-size:20px">›</span></button>' +
+      '<button class="pl xs" data-act="notparent" style="align-self:flex-start;margin:0 14px 10px">Jeg er ikke forælder</button></div>';
+    return '<button class="card row" style="min-height:56px;border-left:5px solid ' + PARENT.bg + '" data-go="#/tilmeld/foraelder"><span class="col"><b style="font-size:14px">Registrér dig som forælder</b>' +
+      '<span class="xs">Med dit eget navn — vælg dit barn og følg dets kampe, træning og chat</span></span><span class="h" style="font-size:20px">›</span></button>';
   }
   // Må jeg svare for mig selv på en holdkamp? Kun hvis jeg er på holdet (har spillet for det) eller er udtaget til kampen
   function onTeamOrSelected(label, m) {
@@ -4592,7 +4595,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (b.dataset.usrf) { USR.f = b.dataset.usrf; route(true); return; }
     if (b.dataset.fbtype) { var fta = document.getElementById('fbText'); if (fta) FB.text = fta.value; FB.type = b.dataset.fbtype; route(true); return; }
     if (b.dataset.act === 'fbsend') { sendFb(); return; }
-    if (b.dataset.act === 'notparent') { try { localStorage.setItem('hoebk_notparent', '1'); } catch (e) {} toast('Skjult — du kan altid tilføje børn under Min spillerside'); route(true); return; }
+    if (b.dataset.act === 'notparent') { try { localStorage.setItem('hoebk_notparent', '1'); } catch (e) {} toast('Skjult — du kan stadig tilføje børn under Min side → Min spillerside'); route(true); return; }
     if (b.dataset.fbf) { FB.f = b.dataset.fbf; route(true); return; }
     if (b.dataset.fbopen) { FB.open[b.dataset.fbopen] = !FB.open[b.dataset.fbopen]; route(true); var fr = document.querySelector('[data-fbreply="' + b.dataset.fbopen + '"]'); if (fr) fr.focus(); return; }
     if (b.dataset.fbsendreply) {
