@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T20:47:10+00:00",
+  "updated": "2026-11-15T21:37:42+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -8639,10 +8639,21 @@
       "name": "Hørsholm 2",
       "pulje": "U11 Dx, 4200 (4 spillere) Pulje 1",
       "label": "U11 Dx",
-      "position": "2",
+      "position": "3",
       "standing": [
         {
           "pos": "1",
+          "team": "Herlev/Hjorten 2",
+          "teamID": "124650",
+          "isUs": false,
+          "played": "3",
+          "won": "3",
+          "score": "19-5",
+          "sets": "38-15",
+          "points": "11"
+        },
+        {
+          "pos": "2",
           "team": "Slagelse 2",
           "teamID": "124652",
           "isUs": false,
@@ -8653,7 +8664,7 @@
           "points": "11"
         },
         {
-          "pos": "2",
+          "pos": "3",
           "team": "Hørsholm 2",
           "teamID": "124651",
           "isUs": true,
@@ -8664,7 +8675,7 @@
           "points": "9"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Lillerød 3",
           "teamID": "124648",
           "isUs": false,
@@ -8673,17 +8684,6 @@
           "score": "15-9",
           "sets": "36-20",
           "points": "9"
-        },
-        {
-          "pos": "4",
-          "team": "Herlev/Hjorten 2",
-          "teamID": "124650",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "13-3",
-          "sets": "26-9",
-          "points": "7"
         },
         {
           "pos": "5",
@@ -8745,10 +8745,10 @@
           "team": "Ganløse 1",
           "teamID": "124656",
           "isUs": false,
-          "played": "1",
+          "played": "2",
           "won": "0",
-          "score": "3-5",
-          "sets": "4-10",
+          "score": "5-11",
+          "sets": "10-22",
           "points": "1"
         },
         {
@@ -9858,25 +9858,25 @@
         },
         {
           "pos": "4",
-          "team": "Værløse 2",
-          "teamID": "124487",
-          "isUs": false,
-          "played": "3",
-          "won": "2",
-          "score": "19-5",
-          "sets": "39-14",
-          "points": "9"
-        },
-        {
-          "pos": "5",
           "team": "Hillerød 1",
           "teamID": "124481",
           "isUs": false,
-          "played": "3",
-          "won": "1",
-          "score": "13-11",
-          "sets": "32-26",
-          "points": "6"
+          "played": "4",
+          "won": "2",
+          "score": "19-13",
+          "sets": "44-30",
+          "points": "10"
+        },
+        {
+          "pos": "5",
+          "team": "Værløse 2",
+          "teamID": "124487",
+          "isUs": false,
+          "played": "4",
+          "won": "2",
+          "score": "21-11",
+          "sets": "43-26",
+          "points": "9"
         },
         {
           "pos": "6",
