@@ -55,7 +55,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-15.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-15.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -1830,11 +1830,13 @@ function convGet_(file, params) {
   if (r.getResponseCode() !== 200) throw new Error('Conventus svarede HTTP ' + r.getResponseCode());
   return XmlService.parse(r.getContentText()).getRootElement();
 }
-function convKids_(el, name) {   // alle under-elementer med et bestemt navn, uanset dybde
+function convKids_(el, name) {   // alle under-elementer med et bestemt navn, uanset dybde og namespace
   var out = [];
   (function walk(e) { e.getChildren().forEach(function (c) { if (c.getName() === name) out.push(c); else walk(c); }); })(el);
   return out;
 }
+function convChild_(el, name) { var c = el ? el.getChildren().filter(function (x) { return x.getName() === name; }) : []; return c[0] || null; }
+function convText_(el, name) { var c = convChild_(el, name); return c ? c.getText().trim() : ''; }
 function convStale_() {
   var pr = PropertiesService.getScriptProperties();
   if (!pr.getProperty('CONVENTUS_KEY')) return false;
@@ -1842,30 +1844,36 @@ function convStale_() {
 }
 // Kan også køres manuelt fra editoren. Gemmer kun medlemmer med mindst én aktiv gruppe (tidligere medlemmer ligger ofte stadig i Conventus).
 function conventusSync() {
-  var gnames = {};
-  convKids_(convGet_('get_grupper.php'), 'gruppe').forEach(function (g) {
-    var id = g.getChildText('id'), nm = g.getChildText('navn');
-    if (id && nm) gnames[id.trim()] = nm.trim();
-  });
-  var rows = [], now = new Date();
-  convKids_(convGet_('get_medlemmer.php', { type: 'medlem', relationer: 'true' }), 'medlem').forEach(function (m) {
-    if (!m.getChild('id') || m.getChildText('slettet') === 'true') return;
-    var rel = m.getChild('relationer'), part = function (kind) {
-      var k = rel && rel.getChild(kind); if (!k) return [];
-      return k.getChildren('gruppe').map(function (g) { return gnames[g.getText().trim()] || ''; }).filter(String);
+  var gnames = {}, gx = convKids_(convGet_('get_grupper.php'), 'gruppe');
+  gx.forEach(function (g) { var id = convText_(g, 'id'), nm = convText_(g, 'navn'); if (id) gnames[id] = nm || ('Gruppe ' + id); });
+  var mx = convKids_(convGet_('get_medlemmer.php', { relationer: 'true' }), 'medlem').filter(function (m) { return convChild_(m, 'id'); });
+  var rows = [], now = new Date(), st = { medlemmer: mx.length, slettet: 0, typer: {}, medRelationer: 0 };
+  mx.forEach(function (m) {
+    var t = convText_(m, 'type') || '?'; st.typer[t] = (st.typer[t] || 0) + 1;
+    if (convText_(m, 'slettet') === 'true') { st.slettet++; return; }
+    if (t === 'virksomhed') return;
+    var rel = convChild_(m, 'relationer'), part = function (kind) {
+      var k = convChild_(rel, kind); if (!k) return [];
+      return k.getChildren().filter(function (g) { return g.getName() === 'gruppe'; }).map(function (g) { var id = g.getText().trim(); return gnames[id] || ('Gruppe ' + id); });
     };
     var groups = part('medlem'), leads = part('leder');
     if (!groups.length && !leads.length) return;
-    rows.push([m.getChildText('id').trim(), safe_(clean_(m.getChildText('navn'), 120)), safe_(groups.join('; ')), safe_(leads.join('; ')), now]);
+    st.medRelationer++;
+    rows.push([convText_(m, 'id'), safe_(clean_(convText_(m, 'navn'), 120)), safe_(groups.join('; ')), safe_(leads.join('; ')), now]);
   });
-  if (!rows.length) throw new Error('Conventus gav ingen medlemmer med aktive grupper — beholder den gamle liste');
+  Logger.log('Conventus: ' + gx.length + ' grupper · ' + JSON.stringify(st));
+  if (!rows.length) {
+    var m0 = mx[0];
+    if (m0) Logger.log('Felter på første medlem: ' + m0.getChildren().map(function (c) { return c.getName(); }).join(', ') +
+      ' · relationer: ' + (convChild_(m0, 'relationer') ? convChild_(m0, 'relationer').getChildren().map(function (c) { return c.getName() + '(' + c.getChildren().length + ')'; }).join(', ') : 'ingen'));
+    throw new Error('Conventus gav ingen medlemmer med aktive grupper — beholder den gamle liste (se loggen)');
+  }
   withLock_(function () {
     var sh = sh_('Conventus'), n = SHEETS.Conventus.length;
     if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
     sh.getRange(2, 1, rows.length, n).setValues(rows);
   });
   PropertiesService.getScriptProperties().setProperty('CONV_SYNC', String(now.getTime()));
-  Logger.log('Conventus: ' + rows.length + ' medlemmer, ' + Object.keys(gnames).length + ' grupper');
   return rows.length;
 }
 // Medlemslisten til appen — kun for indloggede. Administratorer får også appens brugere (til kilde-filteret).
