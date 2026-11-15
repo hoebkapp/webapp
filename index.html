@@ -776,7 +776,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   // Medlemmer fra Conventus (kun for indloggede). Spillere fra badmintonplayer.dk kobles på via navnet.
   // Almindelige brugere ser kun Conventus-medlemmer; administratorer kan filtrere på, hvor spilleren findes.
   var MEM = { data: null, err: '', loading: false, tok: '' };
-  var PSRC = { alle: ['Alle', '', ''], begge: ['Begge steder', '#DCEFD9', '#1E5B1A'], conventus: ['Kun Conventus', '#E3ECF8', '#1F4E86'],
+  var PSRC = { alle: ['Alle', '', ''], allcon: ['Alle fra Conventus', '', ''], begge: ['Begge steder', '#DCEFD9', '#1E5B1A'], conventus: ['Kun Conventus', '#E3ECF8', '#1F4E86'],
                bp: ['Kun badmintonplayer', '#FCEBD7', '#8A4B0F'], ingen: ['Ingen af dem', '#F6DADA', '#8A1F1F'], foraeldre: ['Forældre', '#E6EED3', '#3E5209'] };
   var PSRC_TAG = { begge: 'Conventus + BP', conventus: 'Conventus', bp: 'BP', ingen: 'Ingen', foraeldre: 'Forælder' };
   function nameKeys(n) {   // [hele navnet, fornavn + efternavn] — så mellemnavne i Conventus stadig matcher
@@ -839,10 +839,11 @@ textarea.inp{resize:vertical;line-height:1.45}
     }
     return rows;
   }
+  function srcIs(r, k) { return k === 'alle' || (k === 'allcon' ? r.src === 'begge' || r.src === 'conventus' : r.src === k); }
   function srcRows() {   // rækker efter administratorens kilde-filter
     var rows = memberRows();
     if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old'; });
-    return UI.psrc === 'alle' ? rows : rows.filter(function (r) { return r.src === UI.psrc; });
+    return UI.psrc === 'alle' ? rows : rows.filter(function (r) { return srcIs(r, UI.psrc); });
   }
   // Holdets kategori til klubranglisten: ungdom (U..), motionist (MOT ..), veteran (4 Spillere, A-/B-/C-række, 40+ …) ellers senior
   function teamCat(l) {
@@ -873,7 +874,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (memAdmin()) {
       var all = memberRows();
       h += '<span class="lbl">Administrator · hvor findes spilleren?</span><div class="chips regchips" role="group" aria-label="Filtrér efter kilde">' + Object.keys(PSRC).map(function (k) {
-        var n = k === 'alle' ? all.length : all.filter(function (r) { return r.src === k; }).length;
+        var n = all.filter(function (r) { return srcIs(r, k); }).length;
         return '<button class="chip" data-psrc="' + k + '" aria-pressed="' + (UI.psrc === k) + '">' + PSRC[k][0] + ' <span class="xs">' + n + '</span></button>'; }).join('') + '</div>';
     }
     if (mode === 'old' && ME.role && ME.role.admin) h += '<p class="note">Medlemmer fra Conventus vises, når den nye version af Apps Script er implementeret. Indtil da vises spillerne fra badmintonplayer.dk.</p>';
