@@ -909,6 +909,38 @@ textarea.inp{resize:vertical;line-height:1.45}
   function viewPlayer(id) {
     var p = D.players[id]; if (!p) return viewSpillere();
     setHeader(p.name, teamsTxt(p), true);
+    return playerBody(id) + shopCard();
+  }
+  // Én kamp (række) fra spillerens holdkampe
+  function gameCard(g) {
+    return '<div class="card" style="padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center">' +
+      '<div class="col" style="line-height:1.35"><span class="xs">' + dTxt(g.date) + ' · ' + esc(g.team) + ' · ' + esc(g.discipline) + '</span>' +
+      '<span style="font-size:13px;font-weight:600">' + (g.partner.length ? 'med ' + esc(g.partner.join(' / ')) : 'Single') + '</span>' +
+      '<span class="xs" style="color:#3C4A57">mod ' + esc(g.opponents.join(' / ')) + ' (' + esc(g.opponentTeam) + ')</span></div>' +
+      '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(g.sets) || 'W.O.') + '</span>' +
+      '<span class="mark" style="background:' + (g.won ? 'var(--accent)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
+  }
+  function gamesNewest(p) { return (p.games || []).slice().sort(function (a, b) { return (b.date || '').localeCompare(a.date || ''); }); }
+  // Underside: alle spillerens kampe i sæsonen
+  function viewPlayerGames(id) {
+    var p = D.players[id]; if (!p) return viewSpillere();
+    var gs = gamesNewest(p);
+    setHeader('Kampe i sæsonen', p.name + ' · ' + gs.length + ' kampe', true);
+    return gs.length ? gs.map(gameCard).join('') : '<p class="empty">Ingen holdkampe i denne sæson endnu.</p>';
+  }
+  // Underside: turneringer der passer spillerens niveau
+  function viewPlayerTours(id) {
+    var p = D.players[id]; if (!p) return viewSpillere();
+    setHeader('Turneringer', p.name, true);
+    return playerTourBlock(p, 200) || '<p class="empty">Spilleren har ikke noget niveau på badmintonplayer.dk endnu, så vi kan ikke vælge turneringer. Se alle turneringer under Kalender.</p>';
+  }
+  function playerTourCount(p) {
+    var keys = playerLevels(p); if (!keys.length || !D.tours) return -1;
+    var today = iso(new Date());
+    return D.tours.filter(function (t) { return (t.end || t.start) >= today && tourFits(t, keys) && tourPass(t); }).length;
+  }
+  function playerBody(id) {
+    var p = D.players[id];
     var prof = p.profile || { rankings: [] };
     var h = '<div style="display:flex;align-items:center;gap:12px;margin:0 2px">' +
       '<span class="av" style="width:56px;height:56px;font-size:19px;' + avStyle(p) + '">' + esc(ini(p.name)) + '</span>' +
@@ -925,24 +957,20 @@ textarea.inp{resize:vertical;line-height:1.45}
             '<span class="col" style="align-items:flex-end;min-width:58px"><span class="h" style="font-size:16px">' + (r.placement ? 'nr. ' + esc(r.placement) : '–') + '</span><span style="font-size:11px;color:var(--muted)">i DK</span></span></div>';
         }).join('') + '</div>';
     }
+    var gs = gamesNewest(p), enc = encodeURIComponent(id);
+    h += '<div style="display:flex;justify-content:space-between;align-items:baseline"><span class="lbl">Seneste kampe</span>' +
+      (gs.length > 5 ? '<button class="pl xs" data-go="#/spiller/' + enc + '/kampe">Alle ' + gs.length + ' ›</button>' : '') + '</div>';
+    h += gs.length ? gs.slice(0, 5).map(gameCard).join('') : '<p class="empty">Ingen holdkampe i denne sæson endnu.</p>';
     var bd = Object.keys(p.byDiscipline || {}).sort();
     if (bd.length) {
       h += '<span class="lbl">Pr. disciplin</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + bd.map(function (k) {
         var b = p.byDiscipline[k];
         return '<span class="card" style="border-radius:999px;padding:5px 12px;font-size:13px"><strong>' + esc(k) + '</strong> ' + b.won + ' af ' + b.played + '</span>'; }).join('') + '</div>';
     }
-    h += playerTourBlock(p, 6);
+    var tn = playerTourCount(p), lv = playerLevels(p);
+    h += '<button class="card row" style="min-height:56px;border-left:5px solid var(--tour)" data-go="#/spiller/' + enc + '/turneringer"><span class="col"><b style="font-size:15px">Turneringer</b>' +
+      '<span class="xs">' + (lv.length ? (tn >= 0 ? tn + ' kommende på niveau ' + esc(lv.join(', ')) : 'For niveau ' + esc(lv.join(', '))) : 'Turneringer der passer dit niveau') + '</span></span><span class="h" style="font-size:20px">›</span></button>';
     h += playerHistory(id);
-    if (!p.games.length) h += '<span class="lbl">Kampe i sæsonen</span><p class="empty">Ingen holdkampe i denne sæson endnu.</p>';
-    h += (p.games.length ? '<span class="lbl">Kampe i sæsonen</span>' : '') + p.games.map(function (g) {
-      return '<div class="card" style="padding:10px 12px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:center">' +
-        '<div class="col" style="line-height:1.35"><span class="xs">' + dTxt(g.date) + ' · ' + esc(g.team) + ' · ' + esc(g.discipline) + '</span>' +
-        '<span style="font-size:13px;font-weight:600">' + (g.partner.length ? 'med ' + esc(g.partner.join(' / ')) : 'Single') + '</span>' +
-        '<span class="xs" style="color:#3C4A57">mod ' + esc(g.opponents.join(' / ')) + ' (' + esc(g.opponentTeam) + ')</span></div>' +
-        '<div class="col" style="align-items:flex-end;gap:4px"><span style="font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums">' + (setsTxt(g.sets) || 'W.O.') + '</span>' +
-        '<span class="mark" style="background:' + (g.won ? 'var(--accent)' : 'var(--loss)') + '">' + (g.won ? 'V' : 'T') + '</span></div></div>';
-    }).join('');
-    h += shopCard();
     return h;
   }
 
@@ -2239,14 +2267,17 @@ textarea.inp{resize:vertical;line-height:1.45}
     setHeader('Min side', ME.name, false);
     loadRooms(false); loadActs(false);
     // Faner: Program og Chat for alle, derefter én pr. rolle man har
-    var roles = myRoles(), tabs = [['program', 'Program'], ['snak', 'Chat']].concat(roles);
+    var roles = myRoles(), hasPl = roles.some(function (r) { return r[0] === 'spiller'; });
+    // Spillere ser deres spillerside først; forældre uden spillerprofil starter på Program
+    var tabs = (hasPl ? [['spiller', 'Min spillerside']] : []).concat([['program', 'Program'], ['snak', 'Chat']], roles.filter(function (r) { return r[0] !== 'spiller'; }));
     if (sub === 'profil') sub = roles.length ? roles[0][0] : 'program';   // gammel adresse
-    if (!tabs.some(function (t) { return t[0] === sub; })) sub = 'program';
+    if (!sub) sub = hasPl ? 'spiller' : 'program';
+    if (!tabs.some(function (t) { return t[0] === sub; })) sub = tabs[0][0];
     var unreadRooms = (SNAK.rooms || []).reduce(function (n, r) { return n + (r.muted || r.extra ? 0 : unread(r)); }, 0);
     var badge = { snak: unreadRooms, holdleder: missingSelections(), admin: adminChatUnread() + fbOpen() };
     var h = '<nav class="chips mtabs" aria-label="Min side">' + tabs.map(function (x) {
       var on = sub === x[0], n = badge[x[0]] || 0;
-      return '<button class="chip' + (x[0] === 'foraelder' ? ' par' : '') + '" aria-pressed="' + on + '" data-go="#/tilmeld' + (x[0] === 'program' ? '' : '/' + x[0]) + '">' + x[1] +
+      return '<button class="chip' + (x[0] === 'foraelder' ? ' par' : '') + '" aria-pressed="' + on + '" data-go="#/tilmeld/' + x[0] + '">' + x[1] +
         (n ? ' <span class="badge sm' + (x[0] === 'snak' ? '' : ' warnb') + '">' + n + '</span>' : '') + '</button>'; }).join('') + '</nav>';
     if (sub === 'snak') return h + minSnak();
     if (sub === 'spiller') return h + minSpiller(P, myTeams);
@@ -2437,14 +2468,12 @@ textarea.inp{resize:vertical;line-height:1.45}
   function roomsFor(pred) { return sortedRooms().filter(function (r) { return !r.extra && pred(r); }); }
   // ---- Min side · Spiller ----
   function minSpiller(P, myTeams) {
-    var h = '<div class="card me"><span class="av" style="' + avStyle(P) + '">' + esc(ini(ME.name)) + '</span>' +
-      '<span class="col" style="flex:1 1 auto"><b>' + esc(ME.name) + '</b><span class="xs">' + (myTeams.length ? esc(myTeams.join(', ')) : 'Ingen hold endnu') +
-      (P && playerLevels(P).length ? ' · niveau ' + esc(playerLevels(P)[0]) : '') + '</span></span>' +
-      (P ? '<button class="pl xs" data-go="#/spiller/' + encodeURIComponent(P.id) + '">Min spillerside ›</button>' : '') + '</div>';
+    var h = P ? playerBody(P.id) : '<div class="card me"><span class="av" style="' + avStyle(P) + '">' + esc(ini(ME.name)) + '</span>' +
+      '<span class="col" style="flex:1 1 auto"><b>' + esc(ME.name) + '</b><span class="xs">Ingen holdkampe på badmintonplayer.dk endnu</span></span></div>';
+    h += '<span class="lbl" style="margin-top:14px">Dine indstillinger</span>';
     h += shopRow();
     h += groupsBlock();
     h += followBlock(myTeams);
-    if (P) h += '<button class="card row" style="min-height:52px;border-left:5px solid var(--tour)" data-go="#/spiller/' + encodeURIComponent(P.id) + '"><span class="col"><b style="font-size:14px">Turneringer for dit niveau</b><span class="xs">Turneringer der passer dig — og dine resultater</span></span><span class="xs">›</span></button>';
     if (!(ME.kids && ME.kids.length)) h += '<button class="card row" style="min-height:52px;border-left:5px solid ' + PARENT.bg + '" data-go="#/boern"><span class="col"><b style="font-size:14px">Er du også forælder?</b>' +
       '<span class="xs">Tilføj dine børn — så får du en Forælder-fane og kommer med i deres holds chat</span></span><span class="xs">›</span></button>';
     if ((ME.kids && ME.kids.length) || (ME.role && ME.role.admin)) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:8px"><b style="font-size:14px">Spiller du ikke i Hørsholm?</b>' +
@@ -4364,7 +4393,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     else if (parts[0] === 'notifikationer') { lastTab = 'tilmeld'; html = viewNotifikationer(); }
     else if (parts[0] === 'sider') { lastTab = 'sider'; html = viewSider(); }
     else if (parts[0] === 'side') { lastTab = 'sider'; html = viewSide(parts.slice(1).join('/')); }
-    else if (parts[0] === 'spiller') { setTab(lastTab); html = parts[2] ? viewPlayerSeason(decodeURIComponent(parts[1] || ''), parts[2]) : viewPlayer(decodeURIComponent(parts[1] || '')); }
+    else if (parts[0] === 'spiller') { setTab(lastTab); var pid = decodeURIComponent(parts[1] || ''); html = parts[2] === 'turneringer' ? viewPlayerTours(pid) : parts[2] === 'kampe' ? viewPlayerGames(pid) : parts[2] ? viewPlayerSeason(pid, parts[2]) : viewPlayer(pid); }
     else { lastTab = 'hold'; html = viewHoldList(); }
     $main.classList.toggle('chat', /id="msgText"/.test(html));
     $main.innerHTML = html;
