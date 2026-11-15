@@ -49,13 +49,14 @@
  *  newsSave {token, title, text, to[], push, img?} (img = data:image/jpeg;base64,… → gemmes i Drive-mappen "HØBK nyhedsbilleder") / newsDel {token, id} / newsList {token} → administrator skriver nyheder
  *  members  {token}                              → klubbens medlemmer fra Conventus (navn + hold). Administratorer får også appens brugere,
  *           så appen kan vise, om en spiller findes i Conventus, på badmintonplayer.dk, begge steder eller ingen af stederne.
+ *           Kun medlemmer på sæsonens træningshold (CONVENTUS_TRAENING_AFD) — dvs. betalende medlemmer.
  *           Kræver Script properties CONVENTUS_ID + CONVENTUS_KEY. Hentes fra Conventus højst hver 6. time (tick) — eller kør conventusSync.
  *  GET ?action=news            → offentlige nyheder (til alle) · GET ?action=pushqueue&key=NØGLE → push-køen (tømmes)
  *  GET ?action=status          → seneste svar pr. (begivenhed, spiller) — offentlig, uden e-mails
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-15.4';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-15.5';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -84,7 +85,7 @@ var SHEETS = {
   // Kopi af medlemmerne i Conventus (kun navn og aktive hold/grupper — ingen adresser, telefon, e-mail eller fødselsdato)
   Conventus: ['conventusId', 'navn', 'grupper', 'leder af', 'hentet'],
   // Overblik over grupperne i Conventus (ingen persondata — kun antal), opdateres ved hver synkronisering
-  'Conventus grupper': ['gruppeId', 'titel', 'type', 'aktivitet', 'aktiv', 'periode fra', 'periode til', 'pris', 'medlemmer', 'ledere', 'hentet'],
+  'Conventus grupper': ['gruppeId', 'titel', 'type', 'aktivitet', 'aktiv', 'periode fra', 'periode til', 'pris', 'medlemmer', 'ledere', 'hentet', 'afdeling', 'træningshold'],
   'PushKø': ['tidspunkt', 'endpoint', 'p256dh', 'auth', 'titel', 'tekst', 'url', 'tag'],
   // Samkørsel til holdkampe og turneringer: én række pr. person pr. kamp/turnering
   'Kørsel': ['tidspunkt', 'begivenhed', 'titel', 'playerId', 'navn', 'email', 'valg', 'pladser', 'opsamling', 'afgang', 'chauffør', 'note'],
@@ -1824,6 +1825,14 @@ function tick() {
 // ---------- Conventus (klubbens medlemskartotek) ----------
 // Kun læsning. Conventus blokerer GitHubs servere, men ikke Googles — derfor hentes medlemmerne her.
 var CONV_API = 'https://www.conventus.dk/dataudv/api/adressebog/', CONV_HOURS = 6;
+// Afdelingerne i Conventus med sæsonens træningshold. Conventus sætter medlemmet på holdet, når kontingentet er betalt,
+// så "står på et træningshold" = betalende, aktivt medlem. Ny sæson = nye afdelinger: sæt Script property
+// CONVENTUS_TRAENING_AFD (kommasepareret), eller ret standarden her. Se fanen "Conventus grupper" for afdelings-id'er.
+var CONV_TRAINING_AFD = '68381,68711';   // 68381 = træningshold 26/27 · 68711 = ekstratræning
+function convTrainingAfd_() {
+  var v = PropertiesService.getScriptProperties().getProperty('CONVENTUS_TRAENING_AFD') || CONV_TRAINING_AFD;
+  var o = {}; String(v).split(',').forEach(function (x) { x = x.trim(); if (x) o[x] = 1; }); return o;
+}
 function convGet_(file, params) {
   var pr = PropertiesService.getScriptProperties(), id = pr.getProperty('CONVENTUS_ID'), key = pr.getProperty('CONVENTUS_KEY');
   if (!id || !key) throw new Error('CONVENTUS_ID og CONVENTUS_KEY mangler under Script properties');
@@ -1847,14 +1856,15 @@ function convStale_() {
 // Kan også køres manuelt fra editoren. Gemmer kun medlemmer med mindst én aktiv gruppe (tidligere medlemmer ligger ofte stadig i Conventus).
 function conventusSync() {
   var gnames = {}, gx = convKids_(convGet_('get_grupper.php'), 'gruppe');
-  var gmeta = {};
+  var gmeta = {}, tafd = convTrainingAfd_(), training = {};
   gx.forEach(function (g) {
-    var id = convText_(g, 'id'), nm = convText_(g, 'titel') || convText_(g, 'navn'); if (!id) return;
+    var id = convText_(g, 'id'), nm = convText_(g, 'titel') || convText_(g, 'navn'), afd = convText_(g, 'afdeling'); if (!id) return;
     gnames[id] = nm || ('Gruppe ' + id);
-    gmeta[id] = { row: [id, gnames[id], convText_(g, 'type'), convText_(g, 'aktivitet_titel'), convText_(g, 'aktiv'), convText_(g, 'periode_fra'), convText_(g, 'periode_til'), convText_(g, 'pris')], m: 0, l: 0 };
+    if (tafd[afd] && convText_(g, 'aktiv') !== 'false') training[id] = 1;
+    gmeta[id] = { row: [id, gnames[id], convText_(g, 'type'), convText_(g, 'aktivitet_titel'), convText_(g, 'aktiv'), convText_(g, 'periode_fra'), convText_(g, 'periode_til'), convText_(g, 'pris')], m: 0, l: 0, afd: afd };
   });
   var mx = convKids_(convGet_('get_medlemmer.php', { relationer: 'true' }), 'medlem').filter(function (m) { return convChild_(m, 'id'); });
-  var rows = [], now = new Date(), st = { medlemmer: mx.length, slettet: 0, typer: {}, medRelationer: 0 };
+  var rows = [], now = new Date(), st = { medlemmer: mx.length, slettet: 0, typer: {} };
   mx.forEach(function (m) {
     var t = convText_(m, 'type') || '?'; st.typer[t] = (st.typer[t] || 0) + 1;
     if (convText_(m, 'slettet') === 'true') { st.slettet++; return; }
@@ -1863,33 +1873,33 @@ function conventusSync() {
       var k = convChild_(rel, kind); if (!k) return [];
       return k.getChildren().filter(function (g) { return g.getName() === 'gruppe'; }).map(function (g) {
         var id = g.getText().trim(); if (gmeta[id]) gmeta[id][kind === 'leder' ? 'l' : 'm']++;
-        return gnames[id] || ('Gruppe ' + id); });
+        return training[id] ? gnames[id] : ''; }).filter(String);   // kun træningshold — ikke fx Betalingskort, Nøgler eller Bestyrelsen
     };
     var groups = part('medlem'), leads = part('leder');
     if (!groups.length && !leads.length) return;
-    st.medRelationer++;
     rows.push([convText_(m, 'id'), safe_(clean_(convText_(m, 'navn'), 120)), safe_(groups.join('; ')), safe_(leads.join('; ')), now]);
   });
-  Logger.log('Conventus: ' + gx.length + ' grupper · ' + JSON.stringify(st));
+  st.paaTraeningshold = rows.length;
+  Logger.log('Conventus: ' + gx.length + ' grupper (' + Object.keys(training).length + ' træningshold i afdeling ' + Object.keys(tafd).join('+') + ') · ' + JSON.stringify(st));
   if (!rows.length) {
     var m0 = mx[0];
     if (m0) Logger.log('Felter på første medlem: ' + m0.getChildren().map(function (c) { return c.getName(); }).join(', ') +
       ' · relationer: ' + (convChild_(m0, 'relationer') ? convChild_(m0, 'relationer').getChildren().map(function (c) { return c.getName() + '(' + c.getChildren().length + ')'; }).join(', ') : 'ingen'));
-    throw new Error('Conventus gav ingen medlemmer med aktive grupper — beholder den gamle liste (se loggen)');
+    throw new Error('Ingen medlemmer på træningshold (afdeling ' + Object.keys(tafd).join(', ') + ') — beholder den gamle liste (se loggen)');
   }
   withLock_(function () {
     var sh = sh_('Conventus'), n = SHEETS.Conventus.length;
     if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
     sh.getRange(2, 1, rows.length, n).setValues(rows);
   });
-  var grows = Object.keys(gmeta).map(function (id) { var g = gmeta[id]; return g.row.map(function (v) { return safe_(String(v)); }).concat([g.m, g.l, now]); })
+  var grows = Object.keys(gmeta).map(function (id) { var g = gmeta[id]; return g.row.map(function (v) { return safe_(String(v)); }).concat([g.m, g.l, now, g.afd, training[id] ? 'ja' : '']); })
     .sort(function (x, y) { return y[8] - x[8]; });
   withLock_(function () {
     var sh = sh_('Conventus grupper'), n = SHEETS['Conventus grupper'].length;
     if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
     if (grows.length) sh.getRange(2, 1, grows.length, n).setValues(grows);
   });
-  grows.forEach(function (r) { if (r[8] || r[9]) Logger.log(r[8] + ' medl. · ' + r[9] + ' ledere  ' + r[1] + '  [' + r[2] + (r[3] ? ' · ' + r[3] : '') + ' · aktiv=' + r[4] + ' · ' + r[5] + '→' + r[6] + (r[7] ? ' · pris ' + r[7] : '') + ']'); });
+  grows.forEach(function (r) { if (r[8] || r[9]) Logger.log((r[12] ? '✓ ' : '   ') + r[8] + ' medl. · ' + r[9] + ' ledere  ' + r[1] + '  [' + r[2] + (r[3] ? ' · ' + r[3] : '') + ' · aktiv=' + r[4] + ' · ' + r[5] + '→' + r[6] + (r[7] ? ' · pris ' + r[7] : '') + ']'); });
   PropertiesService.getScriptProperties().setProperty('CONV_SYNC', String(now.getTime()));
   return rows.length;
 }
