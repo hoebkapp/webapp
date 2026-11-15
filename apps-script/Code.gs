@@ -55,7 +55,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-15.3';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-15.4';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -83,6 +83,8 @@ var SHEETS = {
   Holdmedlemmer: ['playerId', 'navn', 'gruppe', 'tilføjetAf', 'tidspunkt'],
   // Kopi af medlemmerne i Conventus (kun navn og aktive hold/grupper — ingen adresser, telefon, e-mail eller fødselsdato)
   Conventus: ['conventusId', 'navn', 'grupper', 'leder af', 'hentet'],
+  // Overblik over grupperne i Conventus (ingen persondata — kun antal), opdateres ved hver synkronisering
+  'Conventus grupper': ['gruppeId', 'titel', 'type', 'aktivitet', 'aktiv', 'periode fra', 'periode til', 'pris', 'medlemmer', 'ledere', 'hentet'],
   'PushKø': ['tidspunkt', 'endpoint', 'p256dh', 'auth', 'titel', 'tekst', 'url', 'tag'],
   // Samkørsel til holdkampe og turneringer: én række pr. person pr. kamp/turnering
   'Kørsel': ['tidspunkt', 'begivenhed', 'titel', 'playerId', 'navn', 'email', 'valg', 'pladser', 'opsamling', 'afgang', 'chauffør', 'note'],
@@ -1845,7 +1847,12 @@ function convStale_() {
 // Kan også køres manuelt fra editoren. Gemmer kun medlemmer med mindst én aktiv gruppe (tidligere medlemmer ligger ofte stadig i Conventus).
 function conventusSync() {
   var gnames = {}, gx = convKids_(convGet_('get_grupper.php'), 'gruppe');
-  gx.forEach(function (g) { var id = convText_(g, 'id'), nm = convText_(g, 'titel') || convText_(g, 'navn'); if (id) gnames[id] = nm || ('Gruppe ' + id); });
+  var gmeta = {};
+  gx.forEach(function (g) {
+    var id = convText_(g, 'id'), nm = convText_(g, 'titel') || convText_(g, 'navn'); if (!id) return;
+    gnames[id] = nm || ('Gruppe ' + id);
+    gmeta[id] = { row: [id, gnames[id], convText_(g, 'type'), convText_(g, 'aktivitet_titel'), convText_(g, 'aktiv'), convText_(g, 'periode_fra'), convText_(g, 'periode_til'), convText_(g, 'pris')], m: 0, l: 0 };
+  });
   var mx = convKids_(convGet_('get_medlemmer.php', { relationer: 'true' }), 'medlem').filter(function (m) { return convChild_(m, 'id'); });
   var rows = [], now = new Date(), st = { medlemmer: mx.length, slettet: 0, typer: {}, medRelationer: 0 };
   mx.forEach(function (m) {
@@ -1854,7 +1861,9 @@ function conventusSync() {
     if (t === 'virksomhed') return;
     var rel = convChild_(m, 'relationer'), part = function (kind) {
       var k = convChild_(rel, kind); if (!k) return [];
-      return k.getChildren().filter(function (g) { return g.getName() === 'gruppe'; }).map(function (g) { var id = g.getText().trim(); return gnames[id] || ('Gruppe ' + id); });
+      return k.getChildren().filter(function (g) { return g.getName() === 'gruppe'; }).map(function (g) {
+        var id = g.getText().trim(); if (gmeta[id]) gmeta[id][kind === 'leder' ? 'l' : 'm']++;
+        return gnames[id] || ('Gruppe ' + id); });
     };
     var groups = part('medlem'), leads = part('leder');
     if (!groups.length && !leads.length) return;
@@ -1873,6 +1882,14 @@ function conventusSync() {
     if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
     sh.getRange(2, 1, rows.length, n).setValues(rows);
   });
+  var grows = Object.keys(gmeta).map(function (id) { var g = gmeta[id]; return g.row.map(function (v) { return safe_(String(v)); }).concat([g.m, g.l, now]); })
+    .sort(function (x, y) { return y[8] - x[8]; });
+  withLock_(function () {
+    var sh = sh_('Conventus grupper'), n = SHEETS['Conventus grupper'].length;
+    if (sh.getLastRow() > 1) sh.getRange(2, 1, sh.getLastRow() - 1, n).clearContent();
+    if (grows.length) sh.getRange(2, 1, grows.length, n).setValues(grows);
+  });
+  grows.forEach(function (r) { if (r[8] || r[9]) Logger.log(r[8] + ' medl. · ' + r[9] + ' ledere  ' + r[1] + '  [' + r[2] + (r[3] ? ' · ' + r[3] : '') + ' · aktiv=' + r[4] + ' · ' + r[5] + '→' + r[6] + (r[7] ? ' · pris ' + r[7] : '') + ']'); });
   PropertiesService.getScriptProperties().setProperty('CONV_SYNC', String(now.getTime()));
   return rows.length;
 }
