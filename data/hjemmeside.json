@@ -1,20 +1,9 @@
 {
- "updated": "2026-11-15T10:46:18+00:00",
+ "updated": "2026-11-15T11:02:15+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
  "upcoming": [
-  {
-   "team": "U15 B",
-   "club": "Hørsholm 2",
-   "date": "2026-11-15",
-   "time": "10:00",
-   "opponent": "Lillerød 1",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal 2-5",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19102,5,10,,514330,1151,"
-  },
   {
    "team": "U13 A",
    "club": "Hørsholm 1",
@@ -91,9 +80,34 @@
    "listedHome": true,
    "venue": "Hørsholm Badminton Hal 1-4",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510462,1151,"
+  },
+  {
+   "team": "MOT 4+4 Serie 3-4",
+   "club": "Hørsholm 3",
+   "date": "2026-11-22",
+   "time": "12:00",
+   "opponent": "Hillerød 2",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal 4-7",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18972,16,19,,510518,1151,"
   }
  ],
  "results": [
+  {
+   "team": "U15 B",
+   "club": "Hørsholm 2",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "Lillerød 1",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal 2-5",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19102,5,10,,514330,1151,",
+   "result": "1-7",
+   "outcome": "T",
+   "walkover": ""
+  },
   {
    "team": "U15 A",
    "club": "Hørsholm 1",
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18954,1,10,,512941,1151,",
    "result": "8-0",
    "outcome": "V",
-   "walkover": ""
-  },
-  {
-   "team": "U11 C",
-   "club": "Hørsholm 1",
-   "date": "2026-11-14",
-   "time": "10:30",
-   "opponent": "Humlebæk 1",
-   "home": false,
-   "listedHome": true,
-   "venue": "Hillerød Badmintonklub 1-4",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19079,3,10,,513409,1151,",
-   "result": "1-7",
-   "outcome": "T",
    "walkover": ""
   }
  ]
