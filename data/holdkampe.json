@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T15:47:08+00:00",
+  "updated": "2026-11-15T16:17:13+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -5321,6 +5321,17 @@
         },
         {
           "pos": "5",
+          "team": "Lillerød 2",
+          "teamID": "124647",
+          "isUs": false,
+          "played": "3",
+          "won": "2",
+          "score": "13-11",
+          "sets": "27-22",
+          "points": "7"
+        },
+        {
+          "pos": "6",
           "team": "Ølstykke 2",
           "teamID": "124653",
           "isUs": false,
@@ -5331,7 +5342,7 @@
           "points": "7"
         },
         {
-          "pos": "6",
+          "pos": "7",
           "team": "Gørlev 1",
           "teamID": "124657",
           "isUs": false,
@@ -5339,17 +5350,6 @@
           "won": "1",
           "score": "8-8",
           "sets": "17-17",
-          "points": "4"
-        },
-        {
-          "pos": "7",
-          "team": "Lillerød 2",
-          "teamID": "124647",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "8-8",
-          "sets": "17-18",
           "points": "4"
         },
         {
@@ -5365,6 +5365,17 @@
         },
         {
           "pos": "9",
+          "team": "Ganløse 1",
+          "teamID": "124656",
+          "isUs": false,
+          "played": "1",
+          "won": "0",
+          "score": "3-5",
+          "sets": "4-10",
+          "points": "1"
+        },
+        {
+          "pos": "10",
           "team": "Solrød Strand 4",
           "teamID": "124649",
           "isUs": false,
@@ -5375,7 +5386,7 @@
           "points": "1"
         },
         {
-          "pos": "10",
+          "pos": "11",
           "team": "Vallensbæk 1",
           "teamID": "124655",
           "isUs": false,
@@ -5384,17 +5395,6 @@
           "score": "4-12",
           "sets": "9-19",
           "points": "1"
-        },
-        {
-          "pos": "11",
-          "team": "Ganløse 1",
-          "teamID": "124656",
-          "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
         }
       ],
       "leagueGroupID": "19113",
@@ -13530,7 +13530,7 @@
       "name": "Hørsholm 2",
       "pulje": "U15 B, 6200 (4 spillere) Pulje 2",
       "label": "U15 B",
-      "position": "4",
+      "position": "6",
       "standing": [
         {
           "pos": "1",
@@ -13567,6 +13567,28 @@
         },
         {
           "pos": "4",
+          "team": "Herlev/Hjorten 1",
+          "teamID": "124565",
+          "isUs": false,
+          "played": "4",
+          "won": "2",
+          "score": "16-16",
+          "sets": "40-37",
+          "points": "7"
+        },
+        {
+          "pos": "5",
+          "team": "Hillerød 1",
+          "teamID": "124563",
+          "isUs": false,
+          "played": "4",
+          "won": "1",
+          "score": "15-17",
+          "sets": "34-38",
+          "points": "6"
+        },
+        {
+          "pos": "6",
           "team": "Hørsholm 2",
           "teamID": "124566",
           "isUs": true,
@@ -13577,36 +13599,14 @@
           "points": "6"
         },
         {
-          "pos": "5",
-          "team": "Herlev/Hjorten 1",
-          "teamID": "124565",
-          "isUs": false,
-          "played": "3",
-          "won": "1",
-          "score": "11-13",
-          "sets": "27-30",
-          "points": "4"
-        },
-        {
-          "pos": "6",
-          "team": "Hillerød 1",
-          "teamID": "124563",
-          "isUs": false,
-          "played": "2",
-          "won": "0",
-          "score": "4-12",
-          "sets": "11-25",
-          "points": "1"
-        },
-        {
           "pos": "7",
           "team": "Nivå-Kokkedal 1",
           "teamID": "124567",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "0",
-          "score": "3-21",
-          "sets": "8-45",
+          "score": "3-29",
+          "sets": "8-61",
           "points": "0"
         }
       ],
