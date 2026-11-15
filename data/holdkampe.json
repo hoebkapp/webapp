@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T12:02:13+00:00",
+  "updated": "2026-11-15T12:32:14+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -13537,33 +13537,33 @@
           "team": "Lillerød 1",
           "teamID": "124562",
           "isUs": false,
-          "played": "3",
-          "won": "3",
-          "score": "17-7",
-          "sets": "36-19",
-          "points": "10"
+          "played": "4",
+          "won": "4",
+          "score": "23-9",
+          "sets": "50-24",
+          "points": "14"
         },
         {
           "pos": "2",
-          "team": "Virum 1",
-          "teamID": "124568",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "13-3",
-          "sets": "28-10",
-          "points": "8"
-        },
-        {
-          "pos": "3",
           "team": "Frederikssund 1",
           "teamID": "124564",
           "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "10-6",
-          "sets": "22-15",
-          "points": "5"
+          "played": "3",
+          "won": "2",
+          "score": "18-6",
+          "sets": "38-16",
+          "points": "9"
+        },
+        {
+          "pos": "3",
+          "team": "Virum 1",
+          "teamID": "124568",
+          "isUs": false,
+          "played": "3",
+          "won": "2",
+          "score": "15-9",
+          "sets": "33-24",
+          "points": "8"
         },
         {
           "pos": "4",
@@ -13603,10 +13603,10 @@
           "team": "Nivå-Kokkedal 1",
           "teamID": "124567",
           "isUs": false,
-          "played": "2",
+          "played": "3",
           "won": "0",
-          "score": "3-13",
-          "sets": "7-29",
+          "score": "3-21",
+          "sets": "8-45",
           "points": "0"
         }
       ],
