@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T10:32:13+00:00",
+  "updated": "2026-11-15T10:46:18+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -16007,7 +16007,7 @@
       "name": "Hørsholm 1",
       "pulje": "U15 A, 7200 (4 spillere) Pulje 1",
       "label": "U15 A",
-      "position": "4",
+      "position": "2",
       "standing": [
         {
           "pos": "1",
@@ -16022,6 +16022,17 @@
         },
         {
           "pos": "2",
+          "team": "Hørsholm 1",
+          "teamID": "124884",
+          "isUs": true,
+          "played": "3",
+          "won": "3",
+          "score": "20-4",
+          "sets": "41-10",
+          "points": "11"
+        },
+        {
+          "pos": "3",
           "team": "Gladsaxe Søborg 1",
           "teamID": "124589",
           "isUs": false,
@@ -16032,7 +16043,7 @@
           "points": "10"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Holte 1",
           "teamID": "124882",
           "isUs": false,
@@ -16041,17 +16052,6 @@
           "score": "13-3",
           "sets": "27-7",
           "points": "8"
-        },
-        {
-          "pos": "4",
-          "team": "Hørsholm 1",
-          "teamID": "124884",
-          "isUs": true,
-          "played": "2",
-          "won": "2",
-          "score": "12-4",
-          "sets": "25-9",
-          "points": "7"
         },
         {
           "pos": "5",
@@ -16077,17 +16077,6 @@
         },
         {
           "pos": "7",
-          "team": "Birkerød BK13 1",
-          "teamID": "124881",
-          "isUs": false,
-          "played": "2",
-          "won": "0",
-          "score": "6-10",
-          "sets": "13-21",
-          "points": "2"
-        },
-        {
-          "pos": "8",
           "team": "Lyngby 1",
           "teamID": "124886",
           "isUs": false,
@@ -16095,6 +16084,17 @@
           "won": "0",
           "score": "5-11",
           "sets": "11-23",
+          "points": "2"
+        },
+        {
+          "pos": "8",
+          "team": "Birkerød BK13 1",
+          "teamID": "124881",
+          "isUs": false,
+          "played": "3",
+          "won": "0",
+          "score": "6-18",
+          "sets": "14-37",
           "points": "2"
         },
         {
@@ -16713,14 +16713,267 @@
           "opponent": "Birkerød BK13 1",
           "organiser": "Hørsholm",
           "venue": "Hørsholm Badminton Hal",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "8-0",
+          "points": "4-0",
+          "outcome": "V",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "516374",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. D",
+              "home": [
+                {
+                  "id": "334106",
+                  "name": "Malthe Larsen"
+                },
+                {
+                  "id": "324936",
+                  "name": "Aksel Schroller Broerson"
+                }
+              ],
+              "away": [
+                {
+                  "id": "332920",
+                  "name": "Viktor Astrup"
+                },
+                {
+                  "id": "329565",
+                  "name": "Alfred Lindgreen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  11
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. D",
+              "home": [
+                {
+                  "id": "352483",
+                  "name": "Birk Lund Dujardin"
+                },
+                {
+                  "id": "320930",
+                  "name": "Julius Tolsøe"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335446",
+                  "name": "Eskil Lind Dyssel"
+                },
+                {
+                  "id": "335006",
+                  "name": "Mikkel Plenge Rønsov"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  7
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. D",
+              "home": [
+                {
+                  "id": "324944",
+                  "name": "August Drescher"
+                },
+                {
+                  "id": "320930",
+                  "name": "Julius Tolsøe"
+                }
+              ],
+              "away": [
+                {
+                  "id": "329565",
+                  "name": "Alfred Lindgreen"
+                },
+                {
+                  "id": "335006",
+                  "name": "Mikkel Plenge Rønsov"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  7
+                ],
+                [
+                  15,
+                  6
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. D",
+              "home": [
+                {
+                  "id": "324936",
+                  "name": "Aksel Schroller Broerson"
+                },
+                {
+                  "id": "326116",
+                  "name": "Christopher Johannessen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335443",
+                  "name": "Alfred Kelding Riis Sørensen"
+                },
+                {
+                  "id": "332920",
+                  "name": "Viktor Astrup"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  15,
+                  7
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. S",
+              "home": [
+                {
+                  "id": "334106",
+                  "name": "Malthe Larsen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335006",
+                  "name": "Mikkel Plenge Rønsov"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  11
+                ],
+                [
+                  18,
+                  20
+                ],
+                [
+                  15,
+                  5
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. S",
+              "home": [
+                {
+                  "id": "352483",
+                  "name": "Birk Lund Dujardin"
+                }
+              ],
+              "away": [
+                {
+                  "id": "329565",
+                  "name": "Alfred Lindgreen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  9
+                ],
+                [
+                  16,
+                  14
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "3. S",
+              "home": [
+                {
+                  "id": "324944",
+                  "name": "August Drescher"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335443",
+                  "name": "Alfred Kelding Riis Sørensen"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  9
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "4. S",
+              "home": [
+                {
+                  "id": "326116",
+                  "name": "Christopher Johannessen"
+                }
+              ],
+              "away": [
+                {
+                  "id": "332920",
+                  "name": "Viktor Astrup"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  13
+                ],
+                [
+                  15,
+                  12
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 0,
             "km": 0,
@@ -16917,8 +17170,8 @@
         {
           "id": "324936",
           "name": "Aksel Schroller Broerson",
-          "games": 5,
-          "won": 5,
+          "games": 7,
+          "won": 7,
           "disciplines": [
             "D",
             "S"
@@ -16928,8 +17181,8 @@
         {
           "id": "334106",
           "name": "Malthe Larsen",
-          "games": 5,
-          "won": 4,
+          "games": 7,
+          "won": 6,
           "disciplines": [
             "D",
             "S"
@@ -16939,8 +17192,8 @@
         {
           "id": "324944",
           "name": "August Drescher",
-          "games": 4,
-          "won": 3,
+          "games": 6,
+          "won": 5,
           "disciplines": [
             "D",
             "S"
@@ -16950,8 +17203,8 @@
         {
           "id": "320930",
           "name": "Julius Tolsøe",
-          "games": 4,
-          "won": 3,
+          "games": 6,
+          "won": 5,
           "disciplines": [
             "D",
             "S"
@@ -16961,8 +17214,8 @@
         {
           "id": "352483",
           "name": "Birk Lund Dujardin",
-          "games": 3,
-          "won": 2,
+          "games": 5,
+          "won": 4,
           "disciplines": [
             "D",
             "S"
@@ -16972,8 +17225,8 @@
         {
           "id": "326116",
           "name": "Christopher Johannessen",
-          "games": 3,
-          "won": 1,
+          "games": 5,
+          "won": 3,
           "disciplines": [
             "D",
             "S"

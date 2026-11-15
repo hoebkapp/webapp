@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T05:21:35+00:00",
+ "updated": "2026-11-15T10:46:18+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
@@ -25,17 +25,6 @@
    "listedHome": true,
    "venue": "Værløsehallerne 5-7",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,"
-  },
-  {
-   "team": "U15 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "10:00",
-   "opponent": "Birkerød BK13 1",
-   "home": true,
-   "listedHome": true,
-   "venue": "Hørsholm Badminton Hal",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,"
   },
   {
    "team": "MOT 4+4 Elite/Mester",
@@ -91,9 +80,34 @@
    "listedHome": true,
    "venue": "Ravnsborghallen 1-3",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516375,1151,"
+  },
+  {
+   "team": "MOT 4+4 Elite/Mester",
+   "club": "Hørsholm 2",
+   "date": "2026-11-22",
+   "time": "10:00",
+   "opponent": "Hareskov 2",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal 1-4",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510462,1151,"
   }
  ],
  "results": [
+  {
+   "team": "U15 A",
+   "club": "Hørsholm 1",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "Birkerød BK13 1",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516374,1151,",
+   "result": "8-0",
+   "outcome": "V",
+   "walkover": ""
+  },
   {
    "team": "Danmarksserien",
    "club": "Hørsholm",
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19079,3,10,,513409,1151,",
    "result": "1-7",
    "outcome": "T",
-   "walkover": ""
-  },
-  {
-   "team": "U11 C",
-   "club": "Hørsholm 1",
-   "date": "2026-11-14",
-   "time": "09:00",
-   "opponent": "Hillerød 2",
-   "home": false,
-   "listedHome": false,
-   "venue": "Hillerød Badmintonklub 1-4",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19079,3,10,,513407,1151,",
-   "result": "3-5",
-   "outcome": "V",
    "walkover": ""
   }
  ]
