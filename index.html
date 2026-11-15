@@ -777,13 +777,19 @@ textarea.inp{resize:vertical;line-height:1.45}
   // Almindelige brugere ser kun Conventus-medlemmer; administratorer kan filtrere på, hvor spilleren findes.
   var MEM = { data: null, err: '', loading: false, tok: '' };
   var PSRC = { alle: ['Alle', '', ''], begge: ['Begge steder', '#DCEFD9', '#1E5B1A'], conventus: ['Kun Conventus', '#E3ECF8', '#1F4E86'],
-               bp: ['Kun badmintonplayer', '#FCEBD7', '#8A4B0F'], ingen: ['Ingen af dem', '#F6DADA', '#8A1F1F'] };
-  var PSRC_TAG = { begge: 'Conventus + BP', conventus: 'Conventus', bp: 'BP', ingen: 'Ingen' };
+               bp: ['Kun badmintonplayer', '#FCEBD7', '#8A4B0F'], ingen: ['Ingen af dem', '#F6DADA', '#8A1F1F'], foraeldre: ['Forældre', '#E6EED3', '#3E5209'] };
+  var PSRC_TAG = { begge: 'Conventus + BP', conventus: 'Conventus', bp: 'BP', ingen: 'Ingen', foraeldre: 'Forælder' };
   function nameKeys(n) {   // [hele navnet, fornavn + efternavn] — så mellemnavne i Conventus stadig matcher
     var w = String(n || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9æøå]+/g, ' ').trim().split(' ').filter(String);
     return [w.join(' '), w.length > 1 ? w[0] + ' ' + w[w.length - 1] : w.join(' ')];
   }
   function memAdmin() { return !!(ME && ME.role && ME.role.admin && MEM.data && MEM.data.users); }
+  function loadUsersForSpillere() {   // administratorer: brugerlisten (til forældrene i Spillere)
+    if (!ME || !ME.role || !ME.role.admin || !ME.token || USR.loading || USR.data) return;
+    USR.loading = true;
+    api({ action: 'users', token: ME.token }).then(function (r) { USR.data = r && r.ok ? r.users : null; })
+      .catch(function () {}).then(function () { USR.loading = false; if (/^#\/spillere/.test(location.hash)) route(true); });
+  }
   function loadMembers(force) {
     if (!ME || !ME.token || !REG.url || MEM.loading) return;
     if (MEM.tok === ME.token && (MEM.data || MEM.err) && !force) return;
@@ -822,6 +828,14 @@ textarea.inp{resize:vertical;line-height:1.45}
         var k = nameKeys(u.name)[0]; if (!k || seen[k]) return; seen[k] = 1;
         rows.push({ name: u.name, bp: null, p: pseudoPlayer(u.name), groups: ['bruger i appen'], src: 'ingen' });
       });
+      // Forældre (kun i appen — de er ikke medlemmer). Hentes fra administratorernes brugerliste.
+      if (Array.isArray(USR.data)) USR.data.forEach(function (u) {
+        if (!/^p:/.test(u.id || '')) return;
+        var k = nameKeys(u.name)[0]; if (!k || seen['p|' + k]) return; seen['p|' + k] = 1;
+        var kids = (u.kids || []).map(function (c) { return c.name; }).filter(String);
+        rows.push({ name: u.name, bp: null, p: pseudoPlayer(u.name), parent: true, src: 'foraeldre',
+                    groups: [kids.length ? 'Forælder til ' + kids.join(', ') : 'Forælder (intet barn valgt)'] });
+      });
     }
     return rows;
   }
@@ -835,7 +849,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (!PF[UI.pf]) UI.pf = 'alle';
     if (!UI.psrc) { try { UI.psrc = localStorage.getItem('hoebk_psrc') || 'alle'; } catch (e) { UI.psrc = 'alle'; } }
     if (!PSRC[UI.psrc]) UI.psrc = 'alle';
-    loadMembers();
+    loadMembers(); loadUsersForSpillere();
     var mode = memMode(), rows = mode === 'members' || mode === 'old' ? srcRows() : [];
     setTab('spillere'); setHeader('Spillere', (mode === 'members' ? rows.length + (memAdmin() ? ' personer' : ' medlemmer') : mode === 'old' ? D.ids.length + ' spillere i klubben' : 'Klubbens medlemmer') + ' · ' + updTxt(), false);
     var h = parentCard() + '<button class="card row" style="min-height:56px;border-left:5px solid var(--accent)" data-go="#/rangliste"><span class="col"><b style="font-size:15px">Klubrangliste</b>' +
@@ -873,7 +887,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       list.map(function (r) {
         var p = r.p, tag = admin ? '<span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;white-space:nowrap;background:' + PSRC[r.src][1] + ';color:' + PSRC[r.src][2] + '">' + PSRC_TAG[r.src] + '</span>' : '';
         var sub = r.bp ? teamsTxt(p) : (r.groups.join(', ') || 'Ingen hold');
-        var inner = '<span class="av" style="width:36px;height:36px;font-size:12px;' + avStyle(p) + '">' + esc(ini(r.name)) + '</span>' +
+        var inner = '<span class="av" style="width:36px;height:36px;font-size:12px;' + (r.parent ? 'background:' + PARENT.bg + ';color:' + PARENT.fg : avStyle(p)) + '">' + esc(ini(r.name)) + '</span>' +
           '<span class="col" style="flex:1 1 auto;min-width:0"><b style="font-size:14px">' + esc(r.name) + '</b><span class="xs ellip">' + esc(sub) + '</span></span>' + tag;
         return r.bp ? '<button class="card row" style="min-height:54px;padding:8px 12px" data-go="#/spiller/' + esc(r.bp) + '">' + inner +
             '<span style="font-size:13px;font-weight:700;white-space:nowrap">' + (p.played ? p.won + '/' + p.played : '–') + '</span></button>'
