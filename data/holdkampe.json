@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T19:17:14+00:00",
+  "updated": "2026-11-15T19:45:35+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -5273,10 +5273,21 @@
       "name": "Hørsholm 2",
       "pulje": "U11 Dx, 4200 (4 spillere) Pulje 1",
       "label": "U11 Dx",
-      "position": "1",
+      "position": "2",
       "standing": [
         {
           "pos": "1",
+          "team": "Slagelse 2",
+          "teamID": "124652",
+          "isUs": false,
+          "played": "3",
+          "won": "3",
+          "score": "19-5",
+          "sets": "34-12",
+          "points": "11"
+        },
+        {
+          "pos": "2",
           "team": "Hørsholm 2",
           "teamID": "124651",
           "isUs": true,
@@ -5287,7 +5298,7 @@
           "points": "9"
         },
         {
-          "pos": "2",
+          "pos": "3",
           "team": "Lillerød 3",
           "teamID": "124648",
           "isUs": false,
@@ -5298,7 +5309,7 @@
           "points": "9"
         },
         {
-          "pos": "3",
+          "pos": "4",
           "team": "Herlev/Hjorten 2",
           "teamID": "124650",
           "isUs": false,
@@ -5306,17 +5317,6 @@
           "won": "2",
           "score": "13-3",
           "sets": "26-9",
-          "points": "7"
-        },
-        {
-          "pos": "4",
-          "team": "Slagelse 2",
-          "teamID": "124652",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "12-4",
-          "sets": "19-9",
           "points": "7"
         },
         {
@@ -5376,17 +5376,6 @@
         },
         {
           "pos": "10",
-          "team": "Solrød Strand 4",
-          "teamID": "124649",
-          "isUs": false,
-          "played": "2",
-          "won": "0",
-          "score": "5-11",
-          "sets": "11-24",
-          "points": "1"
-        },
-        {
-          "pos": "11",
           "team": "Vallensbæk 1",
           "teamID": "124655",
           "isUs": false,
@@ -5394,6 +5383,17 @@
           "won": "0",
           "score": "4-12",
           "sets": "9-19",
+          "points": "1"
+        },
+        {
+          "pos": "11",
+          "team": "Solrød Strand 4",
+          "teamID": "124649",
+          "isUs": false,
+          "played": "3",
+          "won": "0",
+          "score": "6-18",
+          "sets": "14-39",
           "points": "1"
         }
       ],
