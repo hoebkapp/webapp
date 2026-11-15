@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T17:39:51+00:00",
+  "updated": "2026-11-15T17:47:13+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -16647,11 +16647,11 @@
           "team": "Værløse 1",
           "teamID": "122743",
           "isUs": false,
-          "played": "2",
+          "played": "3",
           "won": "2",
-          "score": "10-7",
-          "sets": "23-17",
-          "points": "6"
+          "score": "14-12",
+          "sets": "33-27",
+          "points": "8"
         },
         {
           "pos": "2",
@@ -16669,11 +16669,11 @@
           "team": "KBK Kbh. 1",
           "teamID": "122742",
           "isUs": false,
-          "played": "1",
-          "won": "0",
-          "score": "4-5",
-          "sets": "9-9",
-          "points": "2"
+          "played": "2",
+          "won": "1",
+          "score": "9-9",
+          "sets": "19-19",
+          "points": "5"
         },
         {
           "pos": "4",
