@@ -55,7 +55,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-15.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-15.3';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -1845,7 +1845,7 @@ function convStale_() {
 // Kan også køres manuelt fra editoren. Gemmer kun medlemmer med mindst én aktiv gruppe (tidligere medlemmer ligger ofte stadig i Conventus).
 function conventusSync() {
   var gnames = {}, gx = convKids_(convGet_('get_grupper.php'), 'gruppe');
-  gx.forEach(function (g) { var id = convText_(g, 'id'), nm = convText_(g, 'navn'); if (id) gnames[id] = nm || ('Gruppe ' + id); });
+  gx.forEach(function (g) { var id = convText_(g, 'id'), nm = convText_(g, 'titel') || convText_(g, 'navn'); if (id) gnames[id] = nm || ('Gruppe ' + id); });
   var mx = convKids_(convGet_('get_medlemmer.php', { relationer: 'true' }), 'medlem').filter(function (m) { return convChild_(m, 'id'); });
   var rows = [], now = new Date(), st = { medlemmer: mx.length, slettet: 0, typer: {}, medRelationer: 0 };
   mx.forEach(function (m) {
