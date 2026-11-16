@@ -582,7 +582,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     document.title = title + ' · HØBK';
     updHomeBtn();
     var ab = document.getElementById('adminBtn');   // administration — kun for holdledere og administratorer
-    if (ab) { ab.hidden = !(typeof isLeader === 'function' && (isLeader() || isTrainer())); ab.classList.toggle('on', /^#\/(admin|holdleder|ledere|traenere|oevelser|tilmeld\/(admin|holdleder|traener))/.test(location.hash)); }
+    if (ab) { ab.hidden = !(typeof isLeader === 'function' && (isLeader() || isTrainer())); ab.classList.toggle('on', /^#\/(admin|holdleder|ledere|traenere|oevelser|fremmoede|tilmeld\/(admin|holdleder|traener))/.test(location.hash)); }
     if (typeof updHelpBtn === 'function') updHelpBtn();
   }
   // "Gør til min forside": en logget-ind bruger kan vælge den side appen åbner på (gemmes på telefonen)
@@ -3296,18 +3296,32 @@ textarea.inp{resize:vertical;line-height:1.45}
         '<textarea id="trMsg" class="inp" rows="3" maxlength="1000" placeholder="Skrives i trænerchatten og sendes som notifikation til trænerne">' + esc(TRN.msg) + '</textarea>' +
         '<button class="rb ja" aria-pressed="true" data-tx="send" style="align-self:flex-start"' + (TRN.sending ? ' disabled' : '') + '>' + (TRN.sending ? 'Sender …' : 'Send') + '</button></div>';
     }
-    // Fremmøde: trænerens træninger de næste 14 dage med Kommer / Kommer ikke
-    var groups = tr.all ? (TRN.grp ? [TRN.grp] : trGroups()) : tr.groups;
-    h += '<span class="lbl">Fremmøde · de næste 14 dage</span>';
+    // Fremmøde og øvelser ligger på hver sin underside — her kun et kort til hver
+    var sess = trSessions(tr.all ? trGroups() : tr.groups), nx = sess[0], nw = nx ? who(nx.eid) : null;
+    h += '<span class="lbl">Træninger og øvelser</span>' +
+      trCard('#/fremmoede', 'Fremmøde', nx ? 'Næste: ' + esc(trDay(nx.date).toLowerCase() + ' kl. ' + nx.time) + ' · ✓ ' + nw.ja.length + (nw.nej.length ? ' · ✕ ' + nw.nej.length : '') + ' · ' + sess.length + ' træning' + (sess.length === 1 ? '' : 'er') + ' de næste 14 dage' : 'Ingen træninger de næste 14 dage', '#2E8B57') +
+      trCard('#/oevelser', 'Øvelsesbanken', (EX.list && !EX.err ? EX.list.length + ' øvelse' + (EX.list.length === 1 ? '' : 'r') + ' · ' : '') + 'Find, del og læg nye øvelser ind', 'var(--accent)');
+    if (admin) h += '<span class="lbl">Administration</span>' + trCard('#/traenere', 'Udnævn trænere', 'Ungdoms- og seniortrænere — og hvilke hold de træner', 'var(--ink)');
+    return h;
+  }
+  function trSessions(groups) {   // trænerens træninger de næste 14 dage, sorteret
+    var list = [];
+    for (var i = 0; i < 14; i++) { var ds = iso(addDays(new Date(), i)); (EVENTS[ds] || []).forEach(function (e) { if (e.kind === 'training' && trSessionMatch(e, groups)) list.push(e); }); }
+    return list.sort(function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); });
+  }
+  function trDay(d) { return d === iso(new Date()) ? 'I dag' : d === iso(addDays(new Date(), 1)) ? 'I morgen' : DAY_FULL[parseD(d).getDay()] + ' ' + dTxt(d).replace(/^\S+ /, ''); }
+  // ---- Fremmøde (#/fremmoede): trænerens træninger de næste 14 dage med Kommer / Kommer ikke ----
+  function viewFremmoede() {
+    setTab('tilmeld'); setHeader('Fremmøde', 'Dine træninger de næste 14 dage', true);
+    var tr = trainerRole(); if (!tr) return '<p class="empty">Kun for trænere.</p>';
+    var groups = tr.all ? (TRN.grp ? [TRN.grp] : trGroups()) : tr.groups, h = '';
     if (tr.all) h += '<div style="display:flex;flex-wrap:wrap;gap:6px">' + [['', 'Alle']].concat(trGroups().map(function (g) { return [g, g]; })).map(function (o) {
       return '<button class="chip" data-tx="tgrp:' + esc(o[0]) + '" aria-pressed="' + (TRN.grp === o[0]) + '">' + esc(o[1]) + '</button>'; }).join('') + '</div>';
-    var list = [], today = iso(new Date());
-    for (var i = 0; i < 14; i++) { var ds = iso(addDays(new Date(), i)); (EVENTS[ds] || []).forEach(function (e) { if (e.kind === 'training' && trSessionMatch(e, groups)) list.push(e); }); }
-    list.sort(function (a, b) { return (a.date + a.time).localeCompare(b.date + b.time); });
+    var list = trSessions(groups);
     if (!list.length) h += '<p class="empty">Ingen træninger de næste 14 dage.</p>';
     var day = '';
     list.forEach(function (e) {
-      if (e.date !== day) { day = e.date; h += '<span class="xs" style="margin:6px 4px 0;font-weight:700;color:var(--ink)">' + (e.date === today ? 'I dag' : e.date === iso(addDays(new Date(), 1)) ? 'I morgen' : esc(DAY_FULL[parseD(e.date).getDay()] + ' ' + dTxt(e.date).replace(/^\S+ /, ''))) + '</span>'; }
+      if (e.date !== day) { day = e.date; h += '<span class="xs" style="margin:6px 4px 0;font-weight:700;color:var(--ink)">' + esc(trDay(e.date)) + '</span>'; }
       var w = who(e.eid);
       h += '<div class="evwrap tr"><div class="evtop"><span class="col"><b style="font-size:13px">' + esc(e.time) + '</b></span>' +
         '<span class="col"><b style="font-size:14px">' + esc(e.title) + '</b><span class="xs">' + esc(e.time) + '–' + esc(e.end) + ' · ' + esc(e.team) + '</span></span>' +
@@ -3315,9 +3329,6 @@ textarea.inp{resize:vertical;line-height:1.45}
         regBlock('training', e.eid, '', true, { id: ME.id, name: ME.name, viewOnly: true }) + '</div>';
     });
     if (list.length) h += '<p class="note">Viser dem der har svaret <i>Kommer</i> eller <i>Kommer ikke</i> i appen (forældre svarer for deres børn).</p>';
-    h += '<span class="lbl">Øvelser</span>' + trCard('#/oevelser', 'Øvelsesbanken', (EX.list && !EX.err ? EX.list.length + ' øvelse' + (EX.list.length === 1 ? '' : 'r') + ' · ' : '') + 'Find og del øvelser efter niveau og fokus', 'var(--accent)') +
-      trCard('#/oevelser/ny', '+ Ny øvelse', 'Læg en øvelse i banken — skabelonen sikrer, at alle øvelser beskrives ens', 'var(--line)');
-    if (admin) h += '<span class="lbl">Administration</span>' + trCard('#/traenere', 'Udnævn trænere', 'Ungdoms- og seniortrænere — og hvilke hold de træner', 'var(--ink)');
     return h;
   }
   function trSendMsg() {
@@ -4696,6 +4707,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     else if (parts[0] === 'eksport') { html = viewEksport(+parts[1], +parts[2]); }
     else if (parts[0] === 'ledere') { html = viewLedere(); }
     else if (parts[0] === 'traenere') { lastTab = 'tilmeld'; html = viewTraenere(); }
+    else if (parts[0] === 'fremmoede') { lastTab = 'tilmeld'; html = viewFremmoede(); }
     else if (parts[0] === 'oevelser' && parts[1] === 'ny') { lastTab = 'tilmeld'; html = viewExForm(''); }
     else if (parts[0] === 'oevelser' && parts[2] === 'ret') { lastTab = 'tilmeld'; html = viewExForm(decodeURIComponent(parts[1] || '')); }
     else if (parts[0] === 'oevelser') { lastTab = 'tilmeld'; html = viewOevelser(); }
