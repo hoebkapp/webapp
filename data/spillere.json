@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T08:47:00+00:00",
+ "updated": "2026-11-16T09:17:19+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -469,21 +469,6 @@
   },
   {
    "rank": 34,
-   "id": "339514",
-   "name": "Sutthita Høybye",
-   "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
-   ],
-   "played": 9,
-   "won": 7,
-   "winPct": 78,
-   "pointsFor": 239,
-   "avgPoints": 26.6,
-   "avgDiff": 6.7
-  },
-  {
-   "rank": 35,
    "id": "9643",
    "name": "Kim Eriksen",
    "teams": [
@@ -498,7 +483,7 @@
    "avgDiff": 5.9
   },
   {
-   "rank": 36,
+   "rank": 35,
    "id": "338789",
    "name": "Charles Jordahn Brandt",
    "teams": [
@@ -512,7 +497,7 @@
    "avgDiff": 5.8
   },
   {
-   "rank": 37,
+   "rank": 36,
    "id": "309153",
    "name": "Mark saejueng",
    "teams": [
@@ -526,7 +511,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 38,
+   "rank": 37,
    "id": "332881",
    "name": "Agnes Schroller Broerson",
    "teams": [
@@ -540,7 +525,7 @@
    "avgDiff": 4.8
   },
   {
-   "rank": 39,
+   "rank": 38,
    "id": "365721",
    "name": "Sylvester Engen Peetz",
    "teams": [
@@ -554,23 +539,7 @@
    "avgDiff": 4.0
   },
   {
-   "rank": 40,
-   "id": "360548",
-   "name": "MUHAMMAD MOHSIN Ali KHAN",
-   "teams": [
-    "4 Spillere",
-    "MOT 4+4 Elite/Mester",
-    "MOT 4 spillere Mester"
-   ],
-   "played": 11,
-   "won": 8,
-   "winPct": 73,
-   "pointsFor": 351,
-   "avgPoints": 31.9,
-   "avgDiff": 5.0
-  },
-  {
-   "rank": 41,
+   "rank": 39,
    "id": "11839",
    "name": "Morten Plougmann",
    "teams": [
@@ -584,7 +553,7 @@
    "avgDiff": 5.4
   },
   {
-   "rank": 42,
+   "rank": 40,
    "id": "13374",
    "name": "Signe Baldvinsson",
    "teams": [
@@ -598,7 +567,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 43,
+   "rank": 41,
    "id": "13123",
    "name": "Camilla Strøm",
    "teams": [
@@ -612,7 +581,7 @@
    "avgDiff": 3.2
   },
   {
-   "rank": 44,
+   "rank": 42,
    "id": "348034",
    "name": "Dorte Glintborg",
    "teams": [
@@ -626,7 +595,7 @@
    "avgDiff": 14.5
   },
   {
-   "rank": 45,
+   "rank": 43,
    "id": "337294",
    "name": "Julie Bille Rannes",
    "teams": [
@@ -640,7 +609,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 46,
+   "rank": 44,
    "id": "352440",
    "name": "Ethan Jing",
    "teams": [
@@ -654,7 +623,7 @@
    "avgDiff": 5.3
   },
   {
-   "rank": 47,
+   "rank": 45,
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
@@ -669,7 +638,7 @@
    "avgDiff": 4.3
   },
   {
-   "rank": 48,
+   "rank": 46,
    "id": "348495",
    "name": "Alexander Dahl Plougmann",
    "teams": [
@@ -683,7 +652,7 @@
    "avgDiff": 4.2
   },
   {
-   "rank": 49,
+   "rank": 47,
    "id": "251767",
    "name": "Christian Skytt",
    "teams": [
@@ -697,7 +666,7 @@
    "avgDiff": 1.8
   },
   {
-   "rank": 50,
+   "rank": 48,
    "id": "358565",
    "name": "Vincent Ziyu Ding",
    "teams": [
@@ -711,7 +680,23 @@
    "avgDiff": 0.3
   },
   {
-   "rank": 51,
+   "rank": 49,
+   "id": "360548",
+   "name": "MUHAMMAD MOHSIN Ali KHAN",
+   "teams": [
+    "4 Spillere",
+    "MOT 4+4 Elite/Mester",
+    "MOT 4 spillere Mester"
+   ],
+   "played": 14,
+   "won": 9,
+   "winPct": 64,
+   "pointsFor": 424,
+   "avgPoints": 30.3,
+   "avgDiff": 2.9
+  },
+  {
+   "rank": 50,
    "id": "335593",
    "name": "Oliver Vedsted Nørrelund",
    "teams": [
@@ -725,7 +710,7 @@
    "avgDiff": 4.0
   },
   {
-   "rank": 52,
+   "rank": 51,
    "id": "250810",
    "name": "Andreas Qianyou Kristensen",
    "teams": [
@@ -739,7 +724,7 @@
    "avgDiff": 2.9
   },
   {
-   "rank": 53,
+   "rank": 52,
    "id": "359708",
    "name": "Marius Løkke Knutsson",
    "teams": [
@@ -753,7 +738,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 54,
+   "rank": 53,
    "id": "326116",
    "name": "Christopher Johannessen",
    "teams": [
@@ -767,7 +752,7 @@
    "avgDiff": 1.6
   },
   {
-   "rank": 55,
+   "rank": 54,
    "id": "236648",
    "name": "Rasmus Thorsted Mortensen",
    "teams": [
@@ -781,7 +766,7 @@
    "avgDiff": 4.1
   },
   {
-   "rank": 56,
+   "rank": 55,
    "id": "9877",
    "name": "Thomas Steffensen",
    "teams": [
@@ -795,7 +780,7 @@
    "avgDiff": 3.4
   },
   {
-   "rank": 57,
+   "rank": 56,
    "id": "350815",
    "name": "Cornelius Engen Peetz",
    "teams": [
@@ -810,7 +795,7 @@
    "avgDiff": -2.2
   },
   {
-   "rank": 58,
+   "rank": 57,
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
@@ -823,6 +808,21 @@
    "pointsFor": 317,
    "avgPoints": 26.4,
    "avgDiff": 4.7
+  },
+  {
+   "rank": 58,
+   "id": "339514",
+   "name": "Sutthita Høybye",
+   "teams": [
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
+   ],
+   "played": 12,
+   "won": 7,
+   "winPct": 58,
+   "pointsFor": 287,
+   "avgPoints": 23.9,
+   "avgDiff": 1.5
   },
   {
    "rank": 59,
@@ -897,20 +897,6 @@
   },
   {
    "rank": 64,
-   "id": "330569",
-   "name": "Anders Johannessen",
-   "teams": [
-    "4 Spillere"
-   ],
-   "played": 2,
-   "won": 1,
-   "winPct": 50,
-   "pointsFor": 52,
-   "avgPoints": 26.0,
-   "avgDiff": -2.0
-  },
-  {
-   "rank": 65,
    "id": "358845",
    "name": "Thor Evan Seitzberg",
    "teams": [
@@ -924,7 +910,7 @@
    "avgDiff": 0.8
   },
   {
-   "rank": 66,
+   "rank": 65,
    "id": "357320",
    "name": "Sebastian Feodor Nilsson",
    "teams": [
@@ -938,7 +924,7 @@
    "avgDiff": -6.3
   },
   {
-   "rank": 67,
+   "rank": 66,
    "id": "346993",
    "name": "Mikkel Christian Korsholm",
    "teams": [
@@ -952,7 +938,7 @@
    "avgDiff": -0.2
   },
   {
-   "rank": 68,
+   "rank": 67,
    "id": "358591",
    "name": "Bertil Emil Bæhrenz Peetz",
    "teams": [
@@ -966,7 +952,7 @@
    "avgDiff": -6.2
   },
   {
-   "rank": 69,
+   "rank": 68,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -980,7 +966,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 70,
+   "rank": 69,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -994,7 +980,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 71,
+   "rank": 70,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -1008,7 +994,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 72,
+   "rank": 71,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -1022,7 +1008,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 73,
+   "rank": 72,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -1037,7 +1023,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 74,
+   "rank": 73,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -1051,7 +1037,7 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 75,
+   "rank": 74,
    "id": "337844",
    "name": "Ellen Krogh-Larsen",
    "teams": [
@@ -1065,7 +1051,7 @@
    "avgDiff": -2.3
   },
   {
-   "rank": 76,
+   "rank": 75,
    "id": "362341",
    "name": "Villas Alexander Worm",
    "teams": [
@@ -1079,7 +1065,7 @@
    "avgDiff": -2.7
   },
   {
-   "rank": 77,
+   "rank": 76,
    "id": "268924",
    "name": "Marianne Seydel Jørgensen",
    "teams": [
@@ -1093,7 +1079,7 @@
    "avgDiff": -3.7
   },
   {
-   "rank": 78,
+   "rank": 77,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -1107,7 +1093,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 79,
+   "rank": 78,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -1121,7 +1107,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 80,
+   "rank": 79,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -1135,7 +1121,7 @@
    "avgDiff": -3.6
   },
   {
-   "rank": 81,
+   "rank": 80,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -1149,7 +1135,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 82,
+   "rank": 81,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1164,22 +1150,22 @@
    "avgDiff": -4.3
   },
   {
-   "rank": 83,
+   "rank": 82,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
     "MOT 4+4 Elite/Mester",
     "MOT 4+4 Serie 3-4"
    ],
-   "played": 9,
-   "won": 3,
+   "played": 12,
+   "won": 4,
    "winPct": 33,
-   "pointsFor": 217,
-   "avgPoints": 24.1,
-   "avgDiff": -5.9
+   "pointsFor": 295,
+   "avgPoints": 24.6,
+   "avgDiff": -5.2
   },
   {
-   "rank": 84,
+   "rank": 83,
    "id": "346992",
    "name": "Carl Grønfeldt",
    "teams": [
@@ -1193,7 +1179,7 @@
    "avgDiff": -7.7
   },
   {
-   "rank": 85,
+   "rank": 84,
    "id": "348494",
    "name": "Mathilde Dahl Plougmann",
    "teams": [
@@ -1208,22 +1194,7 @@
    "avgDiff": -6.6
   },
   {
-   "rank": 86,
-   "id": "337891",
-   "name": "Ina Finlander",
-   "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
-   ],
-   "played": 8,
-   "won": 2,
-   "winPct": 25,
-   "pointsFor": 219,
-   "avgPoints": 27.4,
-   "avgDiff": -4.4
-  },
-  {
-   "rank": 87,
+   "rank": 85,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -1237,7 +1208,21 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 88,
+   "rank": 86,
+   "id": "330871",
+   "name": "Peter Østergaard",
+   "teams": [
+    "MOT 4+4 Elite/Mester"
+   ],
+   "played": 12,
+   "won": 3,
+   "winPct": 25,
+   "pointsFor": 327,
+   "avgPoints": 27.2,
+   "avgDiff": -3.7
+  },
+  {
+   "rank": 87,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -1251,21 +1236,22 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 89,
-   "id": "330871",
-   "name": "Peter Østergaard",
+   "rank": 88,
+   "id": "330569",
+   "name": "Anders Johannessen",
    "teams": [
+    "4 Spillere",
     "MOT 4+4 Elite/Mester"
    ],
-   "played": 9,
-   "won": 2,
-   "winPct": 22,
-   "pointsFor": 220,
-   "avgPoints": 24.4,
-   "avgDiff": -5.9
+   "played": 5,
+   "won": 1,
+   "winPct": 20,
+   "pointsFor": 133,
+   "avgPoints": 26.6,
+   "avgDiff": -4.8
   },
   {
-   "rank": 90,
+   "rank": 89,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -1279,7 +1265,36 @@
    "avgDiff": -10.0
   },
   {
+   "rank": 90,
+   "id": "337891",
+   "name": "Ina Finlander",
+   "teams": [
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
+   ],
+   "played": 11,
+   "won": 2,
+   "winPct": 18,
+   "pointsFor": 302,
+   "avgPoints": 27.5,
+   "avgDiff": -5.3
+  },
+  {
    "rank": 91,
+   "id": "330795",
+   "name": "Brit Johannessen",
+   "teams": [
+    "MOT 4+4 Elite/Mester"
+   ],
+   "played": 11,
+   "won": 2,
+   "winPct": 18,
+   "pointsFor": 252,
+   "avgPoints": 22.9,
+   "avgDiff": -7.5
+  },
+  {
+   "rank": 92,
    "id": "341039",
    "name": "Ole Friis",
    "teams": [
@@ -1293,36 +1308,7 @@
    "avgDiff": -9.5
   },
   {
-   "rank": 92,
-   "id": "277780",
-   "name": "Mathilde Peetz",
-   "teams": [
-    "4 Spillere",
-    "MOT 4+4 Elite/Mester"
-   ],
-   "played": 7,
-   "won": 1,
-   "winPct": 14,
-   "pointsFor": 132,
-   "avgPoints": 18.9,
-   "avgDiff": -12.4
-  },
-  {
    "rank": 93,
-   "id": "330795",
-   "name": "Brit Johannessen",
-   "teams": [
-    "MOT 4+4 Elite/Mester"
-   ],
-   "played": 8,
-   "won": 1,
-   "winPct": 12,
-   "pointsFor": 173,
-   "avgPoints": 21.6,
-   "avgDiff": -9.2
-  },
-  {
-   "rank": 94,
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
@@ -1335,6 +1321,21 @@
    "pointsFor": 167,
    "avgPoints": 20.9,
    "avgDiff": -9.4
+  },
+  {
+   "rank": 94,
+   "id": "277780",
+   "name": "Mathilde Peetz",
+   "teams": [
+    "4 Spillere",
+    "MOT 4+4 Elite/Mester"
+   ],
+   "played": 10,
+   "won": 1,
+   "winPct": 10,
+   "pointsFor": 205,
+   "avgPoints": 20.5,
+   "avgDiff": -12.0
   },
   {
    "rank": 95,
@@ -3038,6 +3039,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. MD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Preben Bitsch",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. HD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Christian Holst Svenningsen",
+      "Preben Bitsch"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. HD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Preben Bitsch"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       16,
+       14
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -3289,24 +3371,24 @@
      "walkover": ""
     }
    ],
-   "played": 9,
-   "won": 3,
-   "lost": 6,
+   "played": 12,
+   "won": 4,
+   "lost": 8,
    "winPct": 33,
-   "pointsFor": 217,
-   "pointsAgainst": 270,
-   "avgPoints": 24.1,
-   "avgDiff": -5.9,
-   "setsWon": 6,
-   "setsLost": 14,
+   "pointsFor": 295,
+   "pointsAgainst": 357,
+   "avgPoints": 24.6,
+   "avgDiff": -5.2,
+   "setsWon": 8,
+   "setsLost": 18,
    "byDiscipline": {
     "MD": {
-     "played": 3,
+     "played": 4,
      "won": 1
     },
     "HD": {
-     "played": 6,
-     "won": 2
+     "played": 8,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -3673,10 +3755,96 @@
    "id": "330569",
    "name": "Anders Johannessen",
    "teams": [
-    "4 Spillere"
+    "4 Spillere",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. MD",
+     "partner": [
+      "Ina Finlander"
+     ],
+     "opponents": [
+      "Casper Steen Pedersen",
+      "Sarah Nielsen"
+     ],
+     "sets": [
+      [
+       7,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. HD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Casper Steen Pedersen"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. HD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Casper Steen Pedersen",
+      "Christian Holst Svenningsen"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
     {
      "date": "2026-10-24",
      "team": "4 Spillere",
@@ -3732,17 +3900,25 @@
      "walkover": ""
     }
    ],
-   "played": 2,
+   "played": 5,
    "won": 1,
-   "lost": 1,
-   "winPct": 50,
-   "pointsFor": 52,
-   "pointsAgainst": 56,
-   "avgPoints": 26.0,
-   "avgDiff": -2.0,
-   "setsWon": 2,
-   "setsLost": 2,
+   "lost": 4,
+   "winPct": 20,
+   "pointsFor": 133,
+   "pointsAgainst": 157,
+   "avgPoints": 26.6,
+   "avgDiff": -4.8,
+   "setsWon": 3,
+   "setsLost": 8,
    "byDiscipline": {
+    "MD": {
+     "played": 1,
+     "won": 0
+    },
+    "HD": {
+     "played": 2,
+     "won": 0
+    },
     "D": {
      "played": 2,
      "won": 1
@@ -6950,6 +7126,91 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. MD",
+     "partner": [
+      "Peter Østergaard"
+     ],
+     "opponents": [
+      "Christian Holst Svenningsen",
+      "Mie Weiland Skive"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       11,
+       15
+      ],
+      [
+       15,
+       5
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. DD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Loa Grastrup",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. DD",
+     "partner": [
+      "Ina Finlander"
+     ],
+     "opponents": [
+      "Mie Weiland Skive",
+      "Loa Grastrup"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-08",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -7170,23 +7431,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
-   "won": 1,
-   "lost": 7,
-   "winPct": 12,
-   "pointsFor": 173,
-   "pointsAgainst": 247,
-   "avgPoints": 21.6,
-   "avgDiff": -9.2,
-   "setsWon": 3,
-   "setsLost": 14,
+   "played": 11,
+   "won": 2,
+   "lost": 9,
+   "winPct": 18,
+   "pointsFor": 252,
+   "pointsAgainst": 334,
+   "avgPoints": 22.9,
+   "avgDiff": -7.5,
+   "setsWon": 5,
+   "setsLost": 19,
    "byDiscipline": {
     "MD": {
-     "played": 3,
-     "won": 1
+     "played": 4,
+     "won": 2
     },
     "DD": {
-     "played": 5,
+     "played": 7,
      "won": 0
     }
    },
@@ -17322,6 +17583,91 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. MD",
+     "partner": [
+      "Anders Johannessen"
+     ],
+     "opponents": [
+      "Casper Steen Pedersen",
+      "Sarah Nielsen"
+     ],
+     "sets": [
+      [
+       7,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. DD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Mie Weiland Skive",
+      "Sarah Nielsen"
+     ],
+     "sets": [
+      [
+       17,
+       15
+      ],
+      [
+       10,
+       15
+      ],
+      [
+       14,
+       16
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. DD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Mie Weiland Skive",
+      "Loa Grastrup"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-01",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -17554,23 +17900,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
+   "played": 11,
    "won": 2,
-   "lost": 6,
-   "winPct": 25,
-   "pointsFor": 219,
-   "pointsAgainst": 254,
-   "avgPoints": 27.4,
-   "avgDiff": -4.4,
-   "setsWon": 7,
-   "setsLost": 13,
+   "lost": 9,
+   "winPct": 18,
+   "pointsFor": 302,
+   "pointsAgainst": 360,
+   "avgPoints": 27.5,
+   "avgDiff": -5.3,
+   "setsWon": 8,
+   "setsLost": 19,
    "byDiscipline": {
     "MD": {
-     "played": 3,
+     "played": 4,
      "won": 0
     },
     "DD": {
-     "played": 5,
+     "played": 7,
      "won": 2
     }
    },
@@ -22140,6 +22486,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. MD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Loa Grastrup"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. HD",
+     "partner": [
+      "Anders Johannessen"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Casper Steen Pedersen"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       10,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. HD",
+     "partner": [
+      "Anders Franck Berger Christensen"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Preben Bitsch"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       16,
+       14
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-14",
      "team": "4 Spillere",
      "teamName": "Hørsholm 3",
@@ -22446,28 +22873,28 @@
      "walkover": ""
     }
    ],
-   "played": 11,
-   "won": 8,
-   "lost": 3,
-   "winPct": 73,
-   "pointsFor": 351,
-   "pointsAgainst": 296,
-   "avgPoints": 31.9,
-   "avgDiff": 5.0,
-   "setsWon": 17,
-   "setsLost": 8,
+   "played": 14,
+   "won": 9,
+   "lost": 5,
+   "winPct": 64,
+   "pointsFor": 424,
+   "pointsAgainst": 383,
+   "avgPoints": 30.3,
+   "avgDiff": 2.9,
+   "setsWon": 19,
+   "setsLost": 12,
    "byDiscipline": {
-    "D": {
-     "played": 7,
-     "won": 5
-    },
     "MD": {
-     "played": 1,
+     "played": 2,
      "won": 1
     },
     "HD": {
-     "played": 2,
-     "won": 1
+     "played": 4,
+     "won": 2
+    },
+    "D": {
+     "played": 7,
+     "won": 5
     },
     "S": {
      "played": 1,
@@ -26476,6 +26903,91 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. MD",
+     "partner": [
+      "MUHAMMAD MOHSIN Ali KHAN"
+     ],
+     "opponents": [
+      "Anders Millner",
+      "Loa Grastrup"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "1. DD",
+     "partner": [
+      "Ina Finlander"
+     ],
+     "opponents": [
+      "Mie Weiland Skive",
+      "Sarah Nielsen"
+     ],
+     "sets": [
+      [
+       17,
+       15
+      ],
+      [
+       10,
+       15
+      ],
+      [
+       14,
+       16
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. DD",
+     "partner": [
+      "Sutthita Høybye"
+     ],
+     "opponents": [
+      "Sarah Nielsen",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       1,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-08",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -26669,23 +27181,23 @@
      "walkover": ""
     }
    ],
-   "played": 7,
+   "played": 10,
    "won": 1,
-   "lost": 6,
-   "winPct": 14,
-   "pointsFor": 132,
-   "pointsAgainst": 219,
-   "avgPoints": 18.9,
-   "avgDiff": -12.4,
-   "setsWon": 2,
-   "setsLost": 13,
+   "lost": 9,
+   "winPct": 10,
+   "pointsFor": 205,
+   "pointsAgainst": 325,
+   "avgPoints": 20.5,
+   "avgDiff": -12.0,
+   "setsWon": 3,
+   "setsLost": 19,
    "byDiscipline": {
     "MD": {
-     "played": 1,
+     "played": 2,
      "won": 0
     },
     "DD": {
-     "played": 4,
+     "played": 6,
      "won": 1
     },
     "D": {
@@ -32420,6 +32932,95 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. MD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Christian Holst Svenningsen",
+      "Mie Weiland Skive"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       11,
+       15
+      ],
+      [
+       15,
+       5
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. HD",
+     "partner": [
+      "Anders Franck Berger Christensen"
+     ],
+     "opponents": [
+      "Christian Holst Svenningsen",
+      "Preben Bitsch"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "3. HD",
+     "partner": [
+      "Anders Johannessen"
+     ],
+     "opponents": [
+      "Casper Steen Pedersen",
+      "Christian Holst Svenningsen"
+     ],
+     "sets": [
+      [
+       15,
+       11
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       13,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-08",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -32663,23 +33264,23 @@
      "walkover": ""
     }
    ],
-   "played": 9,
-   "won": 2,
-   "lost": 7,
-   "winPct": 22,
-   "pointsFor": 220,
-   "pointsAgainst": 273,
-   "avgPoints": 24.4,
-   "avgDiff": -5.9,
-   "setsWon": 4,
-   "setsLost": 14,
+   "played": 12,
+   "won": 3,
+   "lost": 9,
+   "winPct": 25,
+   "pointsFor": 327,
+   "pointsAgainst": 371,
+   "avgPoints": 27.2,
+   "avgDiff": -3.7,
+   "setsWon": 7,
+   "setsLost": 19,
    "byDiscipline": {
     "MD": {
-     "played": 3,
-     "won": 1
+     "played": 4,
+     "won": 2
     },
     "HD": {
-     "played": 6,
+     "played": 8,
      "won": 1
     }
    },
@@ -36384,6 +36985,87 @@
    "adult": true,
    "games": [
     {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. MD",
+     "partner": [
+      "Anders Franck Berger Christensen"
+     ],
+     "opponents": [
+      "Preben Bitsch",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "2. DD",
+     "partner": [
+      "Brit Johannessen"
+     ],
+     "opponents": [
+      "Loa Grastrup",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       5,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-15",
+     "team": "MOT 4+4 Elite/Mester",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Hareskov 2",
+     "matchID": "510450",
+     "discipline": "4. DD",
+     "partner": [
+      "Mathilde Peetz"
+     ],
+     "opponents": [
+      "Sarah Nielsen",
+      "Lotte Wilde"
+     ],
+     "sets": [
+      [
+       1,
+       15
+      ],
+      [
+       12,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-11-08",
      "team": "MOT 4+4 Elite/Mester",
      "teamName": "Hørsholm 2",
@@ -36627,23 +37309,23 @@
      "walkover": ""
     }
    ],
-   "played": 9,
+   "played": 12,
    "won": 7,
-   "lost": 2,
-   "winPct": 78,
-   "pointsFor": 239,
-   "pointsAgainst": 179,
-   "avgPoints": 26.6,
-   "avgDiff": 6.7,
+   "lost": 5,
+   "winPct": 58,
+   "pointsFor": 287,
+   "pointsAgainst": 269,
+   "avgPoints": 23.9,
+   "avgDiff": 1.5,
    "setsWon": 14,
-   "setsLost": 4,
+   "setsLost": 10,
    "byDiscipline": {
     "MD": {
-     "played": 3,
+     "played": 4,
      "won": 3
     },
     "DD": {
-     "played": 6,
+     "played": 8,
      "won": 4
     }
    },

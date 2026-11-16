@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T08:47:00+00:00",
+ "updated": "2026-11-16T09:17:19+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
@@ -137,6 +137,20 @@
    "walkover": ""
   },
   {
+   "team": "MOT 4+4 Elite/Mester",
+   "club": "Hørsholm 2",
+   "date": "2026-11-15",
+   "time": "11:00",
+   "opponent": "Hareskov 2",
+   "home": false,
+   "listedHome": false,
+   "venue": "Hareskovhallen",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510450,1151,",
+   "result": "10-2",
+   "outcome": "T",
+   "walkover": ""
+  },
+  {
    "team": "U15 B",
    "club": "Hørsholm 2",
    "date": "2026-11-15",
@@ -190,20 +204,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507825,1151,",
    "result": "8-5",
    "outcome": "T",
-   "walkover": ""
-  },
-  {
-   "team": "U13 C-D",
-   "club": "Hørsholm 3",
-   "date": "2026-11-14",
-   "time": "16:00",
-   "opponent": "Nivå-Kokkedal 1",
-   "home": false,
-   "listedHome": false,
-   "venue": "Frederikssundhallen",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19105,4,10,,514462,1151,",
-   "result": "1-7",
-   "outcome": "V",
    "walkover": ""
   }
  ]
