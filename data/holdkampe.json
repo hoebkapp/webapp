@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T08:17:04+00:00",
+  "updated": "2026-11-16T08:47:00+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -13819,10 +13819,10 @@
           "team": "BC37 Amager 1",
           "teamID": "122744",
           "isUs": false,
-          "played": "3",
+          "played": "4",
           "won": "1",
-          "score": "12-14",
-          "sets": "26-32",
+          "score": "14-20",
+          "sets": "34-45",
           "points": "6"
         },
         {
@@ -13830,11 +13830,11 @@
           "team": "Hørsholm 1",
           "teamID": "122746",
           "isUs": true,
-          "played": "1",
-          "won": "0",
-          "score": "3-5",
-          "sets": "6-10",
-          "points": "1"
+          "played": "2",
+          "won": "1",
+          "score": "9-7",
+          "sets": "19-18",
+          "points": "5"
         },
         {
           "pos": "",
@@ -14147,14 +14147,283 @@
           "opponent": "BC37 Amager 1",
           "organiser": "Værløse",
           "venue": "Værløsehallerne 5-7",
-          "result": null,
-          "points": null,
-          "outcome": null,
+          "result": "2-6",
+          "points": "0-4",
+          "outcome": "V",
           "walkover": "",
-          "played": false,
+          "played": true,
           "matchID": "510586",
           "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510586,1151,",
-          "games": [],
+          "games": [
+            {
+              "discipline": "1. MD",
+              "home": [
+                {
+                  "id": "345989",
+                  "name": "Eigil Rahlf Læssø"
+                },
+                {
+                  "id": "357175",
+                  "name": "Agnes Kiil"
+                }
+              ],
+              "away": [
+                {
+                  "id": "358591",
+                  "name": "Bertil Emil Bæhrenz Peetz"
+                },
+                {
+                  "id": "335589",
+                  "name": "Ellen Sams Riemer"
+                }
+              ],
+              "sets": [
+                [
+                  9,
+                  15
+                ],
+                [
+                  11,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. MD",
+              "home": [
+                {
+                  "id": "341904",
+                  "name": "Max Ravn"
+                },
+                {
+                  "id": "345645",
+                  "name": "Asta Pihl Witten"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357320",
+                  "name": "Sebastian Feodor Nilsson"
+                },
+                {
+                  "id": "332881",
+                  "name": "Agnes Schroller Broerson"
+                }
+              ],
+              "sets": [
+                [
+                  12,
+                  15
+                ],
+                [
+                  11,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. DS",
+              "home": [
+                {
+                  "id": "341826",
+                  "name": "Aadhya Mallepalli"
+                }
+              ],
+              "away": [
+                {
+                  "id": "330735",
+                  "name": "Claudia Orholm Nielsen"
+                }
+              ],
+              "sets": [
+                [
+                  13,
+                  15
+                ],
+                [
+                  15,
+                  10
+                ],
+                [
+                  15,
+                  9
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. DS",
+              "home": [
+                {
+                  "id": "357175",
+                  "name": "Agnes Kiil"
+                }
+              ],
+              "away": [
+                {
+                  "id": "335589",
+                  "name": "Ellen Sams Riemer"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  12
+                ],
+                [
+                  13,
+                  15
+                ],
+                [
+                  13,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. HS",
+              "home": [
+                {
+                  "id": "341904",
+                  "name": "Max Ravn"
+                }
+              ],
+              "away": [
+                {
+                  "id": "357320",
+                  "name": "Sebastian Feodor Nilsson"
+                }
+              ],
+              "sets": [
+                [
+                  16,
+                  14
+                ],
+                [
+                  15,
+                  12
+                ]
+              ],
+              "winner": "home",
+              "walkover": ""
+            },
+            {
+              "discipline": "2. HS",
+              "home": [
+                {
+                  "id": "345989",
+                  "name": "Eigil Rahlf Læssø"
+                }
+              ],
+              "away": [
+                {
+                  "id": "358591",
+                  "name": "Bertil Emil Bæhrenz Peetz"
+                }
+              ],
+              "sets": [
+                [
+                  15,
+                  10
+                ],
+                [
+                  11,
+                  15
+                ],
+                [
+                  13,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. DD",
+              "home": [
+                {
+                  "id": "341826",
+                  "name": "Aadhya Mallepalli"
+                },
+                {
+                  "id": "345645",
+                  "name": "Asta Pihl Witten"
+                }
+              ],
+              "away": [
+                {
+                  "id": "330735",
+                  "name": "Claudia Orholm Nielsen"
+                },
+                {
+                  "id": "332881",
+                  "name": "Agnes Schroller Broerson"
+                }
+              ],
+              "sets": [
+                [
+                  13,
+                  15
+                ],
+                [
+                  16,
+                  14
+                ],
+                [
+                  15,
+                  17
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            },
+            {
+              "discipline": "1. HD",
+              "home": [
+                {
+                  "id": "341904",
+                  "name": "Max Ravn"
+                },
+                {
+                  "id": "345989",
+                  "name": "Eigil Rahlf Læssø"
+                }
+              ],
+              "away": [
+                {
+                  "id": "358591",
+                  "name": "Bertil Emil Bæhrenz Peetz"
+                },
+                {
+                  "id": "357320",
+                  "name": "Sebastian Feodor Nilsson"
+                }
+              ],
+              "sets": [
+                [
+                  14,
+                  16
+                ],
+                [
+                  15,
+                  12
+                ],
+                [
+                  13,
+                  15
+                ]
+              ],
+              "winner": "away",
+              "walkover": ""
+            }
+          ],
           "travel": {
             "min": 26,
             "km": 28,
@@ -14273,8 +14542,8 @@
         {
           "id": "358591",
           "name": "Bertil Emil Bæhrenz Peetz",
-          "games": 3,
-          "won": 0,
+          "games": 6,
+          "won": 3,
           "disciplines": [
             "MD",
             "HS",
@@ -14285,8 +14554,8 @@
         {
           "id": "357320",
           "name": "Sebastian Feodor Nilsson",
-          "games": 3,
-          "won": 1,
+          "games": 6,
+          "won": 3,
           "disciplines": [
             "MD",
             "HS",
@@ -14297,19 +14566,20 @@
         {
           "id": "332881",
           "name": "Agnes Schroller Broerson",
-          "games": 2,
-          "won": 1,
+          "games": 4,
+          "won": 3,
           "disciplines": [
             "MD",
-            "DS"
+            "DS",
+            "DD"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#332881"
         },
         {
           "id": "330735",
           "name": "Claudia Orholm Nielsen",
-          "games": 2,
-          "won": 1,
+          "games": 4,
+          "won": 2,
           "disciplines": [
             "DS",
             "DD"
@@ -14319,11 +14589,12 @@
         {
           "id": "335589",
           "name": "Ellen Sams Riemer",
-          "games": 2,
-          "won": 2,
+          "games": 4,
+          "won": 4,
           "disciplines": [
             "MD",
-            "DD"
+            "DD",
+            "DS"
           ],
           "url": "https://badmintonplayer.dk/DBF/Spiller/VisSpiller/#335589"
         }
