@@ -1,42 +1,9 @@
 {
- "updated": "2026-11-15T20:23:23+00:00",
+ "updated": "2026-11-16T05:23:09+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
  "upcoming": [
-  {
-   "team": "MOT 4+4 Elite/Mester",
-   "club": "Hørsholm 2",
-   "date": "2026-11-15",
-   "time": "11:00",
-   "opponent": "Hareskov 2",
-   "home": false,
-   "listedHome": false,
-   "venue": "Hareskovhallen",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510450,1151,"
-  },
-  {
-   "team": "U13 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "11:30",
-   "opponent": "BC37 Amager 1",
-   "home": false,
-   "listedHome": false,
-   "venue": "Værløsehallerne 5-7",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510586,1151,"
-  },
-  {
-   "team": "U15 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "13:00",
-   "opponent": "Køge 1",
-   "home": false,
-   "listedHome": true,
-   "venue": "Ravnsborghallen 1-3",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19106,5,8,,516375,1151,"
-  },
   {
    "team": "MOT 4+4 Elite/Mester",
    "club": "Hørsholm 2",
@@ -91,6 +58,39 @@
    "listedHome": false,
    "venue": "Frederikssundhallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18972,16,19,,510523,1151,"
+  },
+  {
+   "team": "4 Spillere",
+   "club": "Hørsholm 3",
+   "date": "2026-12-05",
+   "time": "12:00",
+   "opponent": "Humlebæk 4",
+   "home": false,
+   "listedHome": false,
+   "venue": "Humlebækhallen",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18954,1,10,,512945,1151,"
+  },
+  {
+   "team": "Serie 2",
+   "club": "Hørsholm 2",
+   "date": "2026-12-05",
+   "time": "13:00",
+   "opponent": "Virum",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18931,1,10,,509698,1151,"
+  },
+  {
+   "team": "Danmarksserien",
+   "club": "Hørsholm",
+   "date": "2026-12-05",
+   "time": "15:30",
+   "opponent": "Herlev/Hjorten 2",
+   "home": true,
+   "listedHome": true,
+   "venue": "Hørsholm Badminton Hal 1-7",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507831,1151,"
   }
  ],
  "results": [

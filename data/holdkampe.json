@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T21:47:07+00:00",
+  "updated": "2026-11-16T05:23:09+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -8,7 +8,7 @@
       "name": "Hørsholm 4",
       "pulje": "U13 D, 4600 (4 spillere) Pulje 3",
       "label": "U13 D",
-      "position": "6",
+      "position": "5",
       "standing": [
         {
           "pos": "1",
@@ -23,28 +23,17 @@
         },
         {
           "pos": "2",
-          "team": "Espergærde 1",
-          "teamID": "124630",
-          "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
-        },
-        {
-          "pos": "2",
           "team": "Frem - Hellebæk 1",
           "teamID": "124628",
           "isUs": false,
-          "played": "0",
-          "won": "0",
-          "score": "0-0",
-          "sets": "0-0",
-          "points": "0"
+          "played": "1",
+          "won": "1",
+          "score": "7-1",
+          "sets": "14-3",
+          "points": "4"
         },
         {
-          "pos": "2",
+          "pos": "3",
           "team": "Græsted 1",
           "teamID": "124631",
           "isUs": false,
@@ -55,7 +44,7 @@
           "points": "0"
         },
         {
-          "pos": "2",
+          "pos": "3",
           "team": "Helsingør 1",
           "teamID": "124629",
           "isUs": false,
@@ -66,7 +55,7 @@
           "points": "0"
         },
         {
-          "pos": "6",
+          "pos": "5",
           "team": "Hørsholm 4",
           "teamID": "124626",
           "isUs": true,
@@ -77,7 +66,7 @@
           "points": "0"
         },
         {
-          "pos": "7",
+          "pos": "6",
           "team": "Nivå-Kokkedal 2",
           "teamID": "124627",
           "isUs": false,
@@ -85,6 +74,17 @@
           "won": "0",
           "score": "1-7",
           "sets": "4-14",
+          "points": "0"
+        },
+        {
+          "pos": "7",
+          "team": "Espergærde 1",
+          "teamID": "124630",
+          "isUs": false,
+          "played": "1",
+          "won": "0",
+          "score": "1-7",
+          "sets": "3-14",
           "points": "0"
         },
         {
