@@ -42,6 +42,10 @@
  *  deviceCode {token} → engangskode til en anden enhed · deviceLogin {code} → login med den
  *  acts {token} / GET ?action=acts → aktiviteter · actSave {…, link} / actDel (administrator) · taskSign {token, act, task, on}
  *  groupList {token} → holdlister man må ændre · groupMember {token, group, playerId, name, on} eller {token, group, players[{id, name}], on} → holdledere sætter spillere på hold/træningsgrupper
+ *  trainers {token} / setTrainer {token, email, name, groups[]} → administrator udnævner trænere (fanen Trænere; groups tom = fjern)
+ *           Trænerchat: rummene x:tr-ungdom og x:tr-senior — trænerne for den del + administratorer
+ *  exList {token} / exSave {token, id?, title, levels[], focus[], players, minutes, setup, text, vary, link} / exDel {token, id}
+ *           → øvelsesbanken (fanen Øvelser) — alle trænere kan oprette; man retter/sletter sine egne (administrator: alle)
  *  Admin-chat: rummet x:admin — kun administratorer. GET ?action=ideas&key=IDEAS_KEY → beskederne (kun læsning, uden e-mails)
  *  rooms    {token, groups[]}                    → mine snak-rum (hold + træningsgrupper) med seneste aktivitet + nyheder til mig
  *  messages {token, room}                        → beskeder i et rum (kun medlemmer) · post {token, room, text} · delMsg {token, id}
@@ -56,7 +60,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-15.5';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-16.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -78,6 +82,10 @@ var SHEETS = {
   Aktiviteter: ['id', 'oprettet', 'navn', 'beskrivelse', 'start', 'slut', 'kalender', 'til', 'af', 'slettet', 'opgaver', 'søgerHjælp', 'link'],
   Opgavetilmeldinger: ['tidspunkt', 'aktivitetId', 'opgaveId', 'email', 'playerId', 'navn', 'status'],
   Administratorer: ['email', 'navn', 'udnævntAf', 'tidspunkt'],
+  // Trænere: grupper = træningsgrupper/-hold de træner, fx "Ungdom/Bredde 1, Senior" ("Ungdom" alene = hele Ungdom)
+  'Trænere': ['email', 'navn', 'grupper', 'udnævntAf', 'tidspunkt'],
+  // Øvelsesbanken: niveauer og fokus er kommaseparerede værdier fra EX_LEVELS / EX_FOCUS
+  'Øvelser': ['id', 'oprettet', 'titel', 'niveauer', 'fokus', 'spillere', 'varighed', 'opstilling', 'beskrivelse', 'variationer', 'link', 'af', 'email', 'slettet', 'opdateret'],
   // Forberedt til godkendelse (bruges først når APPROVAL slås til — se docs/GODKENDELSE.md)
   Medlemmer: ['email', 'navn', 'medlemsnr', 'importeret'],
   Godkendelser: ['tidspunkt', 'email', 'playerId', 'navn', 'rolle', 'status', 'note', 'behandletAf', 'behandlet'],
@@ -296,13 +304,127 @@ function isAdmin_(email, playerId) {
 function role_(email, playerId) {
   var em = String(email || '').toLowerCase().trim();
   if (!em) return { leader: false, teams: [] };
-  if (isAdmin_(em, playerId)) return { leader: true, all: true, admin: true, owner: isOwner_(em, playerId), super: isSuper_(em), teams: [] };
+  var tr = trainerOf_(data_('Trænere'), em);
+  if (isAdmin_(em, playerId)) return { leader: true, all: true, admin: true, owner: isOwner_(em, playerId), super: isSuper_(em), teams: [], trainer: { ungdom: true, senior: true, all: true, groups: tr.groups } };
   var teams = [], all = false;
   data_('Ledere').forEach(function (r) {
     if (String(r[0]).toLowerCase().trim() !== em) return;
     String(r[2]).split(',').forEach(function (t) { t = t.trim(); if (t === '*') all = true; else if (t) teams.push(t); });
   });
-  return { leader: all || teams.length > 0, all: all, teams: teams };
+  return { leader: all || teams.length > 0, all: all, teams: teams, trainer: tr.groups.length ? tr : undefined };
+}
+
+// ---------- Trænere ----------
+// En træner har en eller flere træningsgrupper/-hold ("Ungdom", "Ungdom/Bredde 1", "Senior" …).
+// Ungdom → ungdomstræner (rummet x:tr-ungdom), alle andre grupper → seniortræner (x:tr-senior).
+var TR_ROOMS = { 'x:tr-ungdom': 'Trænere · Ungdom', 'x:tr-senior': 'Trænere · Senior' };
+function trainerOf_(rows, email) {
+  var em = String(email || '').toLowerCase().trim(), groups = [];
+  if (em) rows.forEach(function (r) {
+    if (String(r[0]).toLowerCase().trim() !== em) return;
+    String(r[2]).split(',').forEach(function (g) { g = g.trim(); if (g && groups.indexOf(g) < 0) groups.push(g); });
+  });
+  var main = groups.map(function (g) { return g.split('/')[0]; });
+  return { ungdom: main.indexOf('Ungdom') >= 0, senior: main.some(function (g) { return g !== 'Ungdom'; }), groups: groups };
+}
+function cleanTrGroups_(list) {
+  var out = [];
+  (list || []).slice(0, 20).forEach(function (g) {
+    g = clean_(g, 60).replace(/[,]/g, ' ').trim();
+    var main = g.split('/')[0];
+    if (TR_GROUPS.indexOf(main) >= 0 && out.indexOf(g) < 0) out.push(g);
+  });
+  return out;
+}
+function trainers_(b) {
+  var ses = session_(b.token);
+  if (!ses || !isAdmin_(ses.email, ses.playerId)) return { ok: false, error: 'Kun administrator' };
+  var list = data_('Trænere').filter(function (r) { return String(r[0]) && !isSuper_(r[0]); }).map(function (r) {
+    return { email: String(r[0]), name: String(r[1]), groups: String(r[2]).split(',').map(function (g) { return g.trim(); }).filter(String), by: String(r[3]) };
+  });
+  var emails = {};   // spiller-id → bekræftede e-mails (kun til administrator)
+  data_('Spillere').forEach(function (r) { var id = String(r[0]), e = String(r[2]); if (!e || isSuper_(e)) return; (emails[id] = emails[id] || []); if (emails[id].indexOf(e) < 0) emails[id].push(e); });
+  return { ok: true, trainers: list, emails: emails };
+}
+function setTrainer_(b) {
+  var ses = session_(b.token);
+  if (!ses || !isAdmin_(ses.email, ses.playerId)) return { ok: false, error: 'Kun administrator' };
+  var email = clean_(b.email, 120).toLowerCase();
+  if (!validEmail_(email)) return { ok: false, error: 'Ugyldig e-mail' };
+  var groups = cleanTrGroups_(b.groups), name = clean_(b.name, 80);
+  return withLock_(function () {
+    var sh = sh_('Trænere'), rows = data_('Trænere');
+    for (var i = rows.length - 1; i >= 0; i--) if (String(rows[i][0]).toLowerCase().trim() === email) sh.deleteRow(i + 2);
+    if (groups.length) sh.appendRow([email, safe_(name), safe_(groups.join(', ')), safe_(ses.playerName), new Date()]);
+    return { ok: true, groups: groups };
+  });
+}
+
+// ---------- Øvelsesbanken (trænere) ----------
+var EX_LEVELS = ['Begynder børn', 'Øvede børn', 'Elite børn', 'Begynder senior', 'Øvede senior', 'Elite senior', 'Motion/voksen', 'Veteran'];
+var EX_FOCUS = ['Opvarmning', 'Fodarbejde', 'Slag og teknik', 'Single', 'Double', 'Mix', 'Taktik', 'Fysisk', 'Leg og spil'];
+function exTrainer_(b) {   // {ses, admin} for trænere og administratorer — ellers {err}
+  var ses = session_(b.token);
+  if (!ses) return { err: { ok: false, error: 'login', message: 'Log ind igen' } };
+  var admin = isAdmin_(ses.email, ses.playerId);
+  if (!admin && !trainerOf_(data_('Trænere'), ses.email).groups.length) return { err: { ok: false, error: 'Kun for trænere' } };
+  return { ses: ses, admin: admin };
+}
+function pickList_(list, allowed) { var out = []; (list || []).forEach(function (x) { x = String(x); if (allowed.indexOf(x) >= 0 && out.indexOf(x) < 0) out.push(x); }); return out; }
+function exList_(b) {
+  var a = exTrainer_(b); if (a.err) return a.err;
+  var em = a.ses.email.toLowerCase();
+  var list = data_('Øvelser').filter(function (r) { return r[0] && !bool_(r[13]); }).map(function (r) {
+    var mine = String(r[12]).toLowerCase() === em;
+    return { id: String(r[0]), t: ts_(r[1]), title: String(r[2]), levels: String(r[3]).split(',').map(function (x) { return x.trim(); }).filter(String),
+             focus: String(r[4]).split(',').map(function (x) { return x.trim(); }).filter(String), players: String(r[5]), minutes: String(r[6]),
+             setup: String(r[7]), text: String(r[8]), vary: String(r[9]), link: String(r[10]), by: String(r[11]), upd: ts_(r[14]), mine: mine, canEdit: mine || a.admin };
+  }).sort(function (x, y) { return x.title.localeCompare(y.title, 'da'); });
+  return { ok: true, exercises: list, levels: EX_LEVELS, focus: EX_FOCUS };
+}
+function exSave_(b) {
+  var a = exTrainer_(b); if (a.err) return a.err;
+  var title = clean_(b.title, 100), text = text_(b.text, 3000), levels = pickList_(b.levels, EX_LEVELS), focus = pickList_(b.focus, EX_FOCUS);
+  if (!title) return { ok: false, error: 'Skriv en titel' };
+  if (!levels.length) return { ok: false, error: 'Vælg mindst ét niveau' };
+  if (!focus.length) return { ok: false, error: 'Vælg mindst ét fokus' };
+  if (!text) return { ok: false, error: 'Beskriv øvelsen' };
+  var link = clean_(b.link, 300);
+  if (link && !/^https:\/\/[^\s"'<>]+$/i.test(link)) return { ok: false, error: 'Linket skal starte med https://' };
+  var vals = [safe_(title), levels.join(', '), focus.join(', '), safe_(clean_(b.players, 40)), safe_(clean_(b.minutes, 20)), safe_(text_(b.setup, 1000)),
+              safe_(text), safe_(text_(b.vary, 1500)), safe_(link)];
+  var id = clean_(b.id, 40), em = a.ses.email.toLowerCase();
+  return withLock_(function () {
+    var sh = sh_('Øvelser');
+    if (id) {
+      var rows = data_('Øvelser');
+      for (var i = 0; i < rows.length; i++) {
+        if (String(rows[i][0]) !== id || bool_(rows[i][13])) continue;
+        if (String(rows[i][12]).toLowerCase() !== em && !a.admin) return { ok: false, error: 'Du kan kun rette dine egne øvelser' };
+        sh.getRange(i + 2, 3, 1, vals.length).setValues([vals]);
+        sh.getRange(i + 2, 15).setValue(new Date());
+        return { ok: true, id: id };
+      }
+      return { ok: false, error: 'Øvelsen findes ikke' };
+    }
+    id = newId_('o');
+    sh.appendRow([id, new Date()].concat(vals).concat([safe_(a.ses.playerName), em, false, '']));
+    return { ok: true, id: id };
+  });
+}
+function exDel_(b) {
+  var a = exTrainer_(b); if (a.err) return a.err;
+  var id = clean_(b.id, 40), em = a.ses.email.toLowerCase();
+  return withLock_(function () {
+    var rows = data_('Øvelser');
+    for (var i = 0; i < rows.length; i++) {
+      if (String(rows[i][0]) !== id) continue;
+      if (String(rows[i][12]).toLowerCase() !== em && !a.admin) return { ok: false, error: 'Du kan kun slette dine egne øvelser' };
+      sh_('Øvelser').getRange(i + 2, 14).setValue(true);
+      return { ok: true };
+    }
+    return { ok: false, error: 'Øvelsen findes ikke' };
+  });
 }
 
 function saveLineup_(b) {
@@ -463,7 +585,7 @@ function users_(b) {
   var users = Object.keys(by).map(function (em) {
     var u = by[em], p = u.profiles[u.profiles.length - 1], role = roleIn_(cx, em, p.id);
     return { email: em, name: p.name, id: p.id, profiles: u.profiles, parent: /^p:/.test(p.id) || u.kids.length > 0, kids: u.kids,
-             admin: role.admin, superAdmin: isSuper_(em), leader: role.all || role.teams.length > 0, teams: role.teams, first: u.first, active: Math.max(u.active, u.seen), push: u.push };
+             admin: role.admin, superAdmin: isSuper_(em), leader: role.all || role.teams.length > 0, teams: role.teams, trainer: trainerOf_(cx.trn, em).groups, first: u.first, active: Math.max(u.active, u.seen), push: u.push };
   }).sort(function (a, b) { return a.name.localeCompare(b.name, 'da'); });
   return { ok: true, users: users };
 }
@@ -772,7 +894,7 @@ function bool_(v) { return v === true || String(v).toUpperCase() === 'TRUE'; }
 
 // Alle tabeller der skal bruges til at regne medlemskab — læses én gang pr. kald
 function ctx_() {
-  return { teams: teams_(), fol: data_('Følger'), led: data_('Ledere'), grp: data_('Grupper'), par: data_('Forældre'), admins: {} };
+  return { teams: teams_(), fol: data_('Følger'), led: data_('Ledere'), grp: data_('Grupper'), par: data_('Forældre'), trn: data_('Trænere'), admins: {} };
 }
 function roleIn_(cx, email, pid) {
   var em = String(email || '').toLowerCase().trim(), k = em + '|' + pid;
@@ -791,6 +913,9 @@ var ADMIN_ROOM = 'x:admin';
 function memberRooms_(cx, email, pid, strict) {
   var em = String(email || '').toLowerCase().trim(), role = roleIn_(cx, em, pid), out = {};
   if (role.admin) out[ADMIN_ROOM] = 'Admin-chat';   // administratorernes egen snak
+  var tr = trainerOf_(cx.trn || [], em);   // trænerchat: trænerne for den del; administratorer kan se og skrive i begge (men får ikke push)
+  if (tr.ungdom || (role.admin && !strict)) out['x:tr-ungdom'] = TR_ROOMS['x:tr-ungdom'];
+  if (tr.senior || (role.admin && !strict)) out['x:tr-senior'] = TR_ROOMS['x:tr-senior'];
   if (strict) role = { admin: false, all: false, teams: role.teams };
   var follows = {}; cx.fol.forEach(function (r) { if (String(r[0]).toLowerCase() === em) follows[String(r[3])] = 1; });
   var kids = []; (cx.par || []).forEach(function (r) { if (String(r[0]).toLowerCase() === em) kids.push(String(r[3])); });
@@ -804,6 +929,7 @@ function memberRooms_(cx, email, pid, strict) {
   var listed = function (g) { return gm && (gm['g:' + g] || []).length; };   // gruppe med holdlederliste: listen bestemmer
   if (gm) TR_GROUPS.forEach(function (g) { if (listed(g) && (gm['g:' + g].indexOf(String(pid)) >= 0 || kids.some(function (k) { return gm['g:' + g].indexOf(k) >= 0; }))) groups.push(g); });
   cx.grp.forEach(function (r) { if (String(r[0]).toLowerCase() === em) groups = groups.concat(String(r[2]).split(',').filter(function (g) { return !listed(g.trim()); })); });
+  tr.groups.forEach(function (g) { groups.push(g.split('/')[0]); });   // trænere er med i chatten for de grupper de træner
   groups.forEach(function (g) { g = g.trim(); if (TR_GROUPS.indexOf(g) >= 0) out['g:' + g] = 'Træning · ' + g; });
   return out;
 }
@@ -814,6 +940,8 @@ function memberRooms_(cx, email, pid, strict) {
 function canWrite_(cx, email, pid, room) {
   var em = String(email || '').toLowerCase().trim(), role = roleIn_(cx, em, pid);
   if (role.admin) return { ok: true };
+  if (room && TR_ROOMS[room]) return { ok: true };   // trænerchat: alle med i rummet må skrive (medlemskab tjekkes af post_)
+  if (room && /^g:/.test(room) && trainerOf_(cx.trn || [], em).groups.some(function (g) { return 'g:' + g.split('/')[0] === room; })) return { ok: true };   // træner for gruppen
   if (APPROVAL.enabled && approvalOf_(em) !== 'godkendt') return { ok: false, why: 'afventer', msg: 'Din profil afventer godkendelse — du kan læse med, men ikke skrive endnu' };
   if (role.all || role.teams.length) return { ok: true };
   if (/^p:/.test(String(pid)) || (cx.par || []).some(function (r) { return String(r[0]).toLowerCase() === em; })) return { ok: true };
@@ -1531,6 +1659,11 @@ function route_(b) {
       case 'newsSave': return json_(newsSave_(b));
       case 'newsDel': return json_(newsDel_(b));
       case 'newsList': return json_(newsList_(b));
+      case 'trainers': return json_(trainers_(b));
+      case 'setTrainer': return json_(setTrainer_(b));
+      case 'exList': return json_(exList_(b));
+      case 'exSave': return json_(exSave_(b));
+      case 'exDel': return json_(exDel_(b));
       case 'fbSend': return json_(fbSend_(b));
       case 'fbMine': return json_(fbMine_(b));
       case 'fbList': return json_(fbList_(b));

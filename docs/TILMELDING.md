@@ -85,6 +85,7 @@ Google shows menus in your account's language — Danish names are given first, 
 | **Administrator** | Anders Vedsted Nørrelund (player id `12813`, set in `ADMIN_PLAYER_IDS` at the top of `Code.gs`) | Appoint and remove team leaders in the app (*Min side → Udnævn holdledere*); also acts as leader for all teams |
 | **Appointed administrator** | Anyone a fixed administrator adds under *Administration → Administratorer* (tab *Administratorer*, by login email) | Everything an administrator can — news, activities, team leaders, all teams — except appointing other administrators |
 | **Team leader** | Anyone the administrator appoints (row in the *Ledere* tab) | Pick players and make lineups for their teams |
+| **Trainer** | Anyone an administrator appoints under *Trænere* (tab *Trænere*: email, name, groups such as `Ungdom/Bredde 1, Senior`) | Træner tab: trainer chat, attendance for their sessions, exercise bank. *Ungdom* → youth trainer, any other group → senior trainer |
 | Player | Everyone logged in | Answer availability, see the selected team |
 
 The administrator role belongs to the **first email that confirmed that player** (the earliest row for `12813` in the *Spillere* tab). Someone picking Anders' name later with another email does not become administrator. If the wrong email got there first, delete that row in *Spillere* and have Anders log in again.
@@ -136,6 +137,10 @@ A parent is automatically in the chat rooms of their children's teams (and gets 
 ## Who can write in the chat
 
 Everyone in a room can read; only administrators, team leaders, parents and players on a non-youth team can write (`canWrite_`, checked by the script); adults without a team can write only in the chats of their own training groups (not team chats, not Ungdom). Youth players see a 🔒 note instead of the input field. The planned approval of players and parents, the member-system check and team lists managed by team leaders are prepared but switched off — see [GODKENDELSE.md](GODKENDELSE.md).
+
+## Trainers and the exercise bank (script 2026-11-16.1)
+
+Administrators appoint trainers in the app (`setTrainer`, tab **Trænere**). `role_` returns `trainer: {ungdom, senior, groups}` (administrators always get trainer access). Trainer chats: `x:tr-ungdom` and `x:tr-senior` (`TR_ROOMS`). The exercise bank is the tab **Øvelser** (one row per exercise; `slettet` = TRUE hides it). Levels and focus are fixed lists (`EX_LEVELS`, `EX_FOCUS` in `Code.gs`; the app has the same lists as fallback) so every exercise is described the same way. Nothing from these tabs is synced to GitHub.
 
 ## Admin chat (suggestions for the app)
 
@@ -217,6 +222,8 @@ Trainers can sort and filter the *Tilmeldinger* tab directly, or use the SQLite 
 | `POST {action:"lineup", token, eventId, team, status, squad[], games[], note}` | Save a squad/lineup — only leaders for that team |
 | `POST {action:"toParent", token, email, childId, childName}` | Administrator: a parent who registered as their child becomes a parent (`p:…`, "<child's first name> forælder") with that child; sessions, follows and push follow along |
 | `POST {action:"rename", token, name}` | Parents (`p:` logins) change their own name — players keep their badmintonplayer.dk name |
+| `POST {action:"trainers", token}` / `{action:"setTrainer", token, email, name, groups[]}` | Administrators: list trainers (+ confirmed e-mails per player) / appoint, change or (empty `groups`) remove a trainer |
+| `POST {action:"exList", token}` / `{action:"exSave", token, id?, title, levels[], focus[], players, minutes, setup, text, vary, link}` / `{action:"exDel", token, id}` | Exercise bank — trainers and administrators; edit/delete own exercises (administrators: all) |
 | `POST {action:"users", token}` | All registered users (name, email, role, children, last active, push) — administrators only; the head administrator is shown only to himself |
 | `POST {action:"leaders" / "setLeader" / "leaderMail", token, …}` | List / set team leaders / (re)send the welcome mail — administrator only |
 | `POST {action:"rooms", token, groups[]}` | My chat rooms with latest activity, and news for me; saves my training groups (tab *Grupper*) |
