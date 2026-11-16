@@ -794,7 +794,23 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (!ME || !ME.role || !ME.role.admin || !ME.token || !REG.url || USR.loading || Array.isArray(USR.data) || USR.spTried) return;
     USR.loading = true; USR.spTried = true;   // højst ét forsøg pr. visning af appen — ingen genindlæsnings-løkke ved fejl
     api({ action: 'users', token: ME.token }).then(function (r) { if (r && r.ok) USR.data = r.users; })
-      .catch(function () {}).then(function () { USR.loading = false; if (/^#\/spillere/.test(location.hash)) route(true); });
+      .catch(function () {}).then(function () { USR.loading = false; if (/^#\/(spillere|nyheder\/ny|daekning)/.test(location.hash)) route(true); });
+  }
+  // Holdkamp-hold (badmintonplayer.dk): spillere på holdet, og hvor mange der er i appen — selv (logget ind med spiller-id'et)
+  // eller via en forælder (barnets spiller-id). Kræver brugerlisten (administratorer). {label: {n, app, self, par}} eller null.
+  function teamCov() {
+    if (!Array.isArray(USR.data)) return null;
+    var self = {}, par = {}, out = {};
+    USR.data.forEach(function (u) {
+      (u.profiles || [{ id: u.id }]).concat([{ id: u.id }]).forEach(function (p) { if (p.id && !/^p:/.test(p.id)) self[p.id] = 1; });
+      (u.kids || []).forEach(function (k) { if (k.id) par[k.id] = 1; });
+    });
+    D.teams.forEach(function (t) { out[t.label] = { n: 0, app: 0, self: 0, par: 0 }; });
+    D.ids.forEach(function (id) { (D.players[id].teams || []).forEach(function (l) {
+      var x = out[l]; if (!x) return; x.n++;
+      if (self[id]) { x.app++; x.self++; } else if (par[id]) { x.app++; x.par++; }
+    }); });
+    return out;
   }
   function loadMembers(force) {
     if (!ME || !ME.token || !REG.url || MEM.loading) return;
@@ -2860,7 +2876,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         card('#/holdliste', 'Holdlister', 'Hvem er på hvert hold og i hver træningsgruppe', 'var(--accent)') +
         card('#/traenere', 'Trænere', 'Udnævn ungdoms- og seniortrænere · trænersiden ligger under fanen Træner', '#2E8B57') +
         card('#/brugere', 'Registrerede brugere', 'Alle der har logget ind — søg, se roller, børn og sidst aktiv', 'var(--ink)') +
-        card('#/daekning', 'Appens dækning pr. hold', 'Hvor mange på hvert træningshold i Conventus der bruger appen — og invitér resten på mail', '#1F4E86') +
+        card('#/daekning', 'Appens dækning pr. hold', 'Hvor mange på hvert træningshold og holdkamp-hold der bruger appen — og invitér resten på mail', '#1F4E86') +
         '<a class="card row" style="min-height:56px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="guide.html"><span class="col"><b style="font-size:15px">Oversigt over appen</b><span class="xs">Alle skærme, roller, farver og vejledning — kan deles med udvalgte</span></span><span class="h" style="font-size:20px">↗</span></a>' +
         card('#/ledere', 'Administratorer og holdledere', (ME.role.owner ? 'Udnævn administratorer og holdledere' : 'Udnævn holdledere') + ' · brugerstatistik', 'var(--ink)');
     }
@@ -3954,7 +3970,8 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (!ME || !ME.role || !ME.role.admin) return '<p class="empty">Kun administratorer kan skrive nyheder.</p>';
     var F = SNAK.nf = SNAK.nf || { to: { '*': 1 }, push: true, title: '', text: '' };
     var chip = function (k, l, tip) { return '<button class="chip" data-newsto="' + esc(k) + '" aria-pressed="' + !!F.to[k] + '"' + (tip ? ' title="' + esc(tip) + '"' : '') + '>' + l + '</button>'; };
-    loadMembers();
+    loadMembers(); loadUsersForSpillere();
+    var tcov = teamCov();
     var cgl = cgList(), cgHtml = cgl ? (cgl.length ? cgl.map(function (g) {
         return chip('c:' + g.id, esc(cgShort(g.title)) + ' <span class="xs">' + g.app + '/' + g.n + '</span>', g.title + ' — ' + g.app + ' af ' + g.n + ' kan nås i appen'); }).join('')
         : '<span class="xs">Ingen hold fra Conventus endnu.</span>')
@@ -3974,7 +3991,10 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<span class="lbl">Hvem er nyheden til?</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + chip('*', esc('Alle i klubben')) + '</div>' +
       '<span class="xs" style="margin:0 4px">Træningsgrupper</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + GROUPS.map(function (g) { return chip('g:' + g, esc(g)); }).join('') + '</div>' +
       '<span class="xs" style="margin:0 4px">Træningshold i Conventus (betalende medlemmer · i appen/på holdet)</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + cgHtml + '</div>' +
-      '<span class="xs" style="margin:0 4px">Hold</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + teams.map(function (t) { return chip('h:' + t.leagueGroupTeamID, esc(t.label)); }).join('') + '</div>' +
+      '<span class="xs" style="margin:0 4px">Hold' + (tcov ? ' (spillere · i appen/på holdet)' : '') + '</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + teams.map(function (t) {
+        var c = tcov && tcov[t.label];
+        return c && c.n ? chip('h:' + t.leagueGroupTeamID, esc(t.label) + ' <span class="xs">' + c.app + '/' + c.n + '</span>', t.label + ' — ' + c.app + ' af ' + c.n + ' spillere er i appen (selv ' + c.self + ', via forælder ' + c.par + ')')
+          : chip('h:' + t.leagueGroupTeamID, esc(t.label)); }).join('') + '</div>' +
       '<p class="note">' + (F.to['*'] ? 'Alle kan se nyheden — også før de logger ind.' : sel.length ? 'Kun ' + esc(sel.map(audLabel).join(', ')) + ' ser nyheden: spillere på holdene, holdledere, dem der følger holdene og dem der har valgt træningsgrupperne' +
         (sel.some(function (x) { return /^c:/.test(x); }) ? '. For hold i Conventus: medlemmerne og deres forældre, når de bruger appen (koblet på navnet)' : '') + '.' : 'Vælg mindst én modtager.') + '</p>' +
       '<label class="card" style="padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:14px"><input type="checkbox" id="nwPush"' + (F.push ? ' checked' : '') + ' style="width:20px;height:20px"><span>Send også som notifikation til dem, der har slået notifikationer til</span></label>' +
@@ -4582,7 +4602,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       'Venlig hilsen\nBestyrelsen, Hørsholm Badminton Klub' };
   function invAddrs() { var a = {}; (cgList() || []).forEach(function (g) { if (INV.sel[g.id]) (g.addr || []).forEach(function (x) { a[x] = 1; }); }); return Object.keys(a).length; }
   function viewDaekning() {
-    setTab('tilmeld'); setHeader('Appens dækning', 'Træningshold i Conventus', true);
+    setTab('tilmeld'); setHeader('Appens dækning', 'Træningshold i Conventus og holdkamp-hold', true);
     if (!ME || !ME.role || !ME.role.admin) return '<p class="empty">Kun for administratorer.</p>';
     loadMembers();
     if (!MEM.data) return MEM.err ? '<div class="warn">' + esc(MEM.err) + '</div>' : '<p class="empty">Henter medlemmer fra Conventus …</p>';
@@ -4605,6 +4625,22 @@ textarea.inp{resize:vertical;line-height:1.45}
         '<b style="flex:0 0 auto;font-size:17px;color:' + col + '">' + p + ' %</b></button>';
     }).join('') + '</div>';
     h += '<p class="xs" style="margin:0 4px"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--ink)"></span> selv &nbsp; <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:' + PARENT.bg + '"></span> via forælder</p>';
+    // Holdkamp-hold fra badmintonplayer.dk (spillerne kobles på spiller-id — ingen e-mails, så ingen invitationer herfra)
+    loadUsersForSpillere();
+    var tc = teamCov();
+    h += '<span class="lbl">Holdkamp-hold (badmintonplayer.dk)</span>';
+    if (!tc) h += '<p class="empty">' + (USR.loading ? 'Henter brugerne …' : 'Brugerlisten kunne ikke hentes.') + '</p>';
+    else {
+      var tr = D.teams.filter(function (t) { return tc[t.label] && tc[t.label].n; }).map(function (t) { return { l: t.label, c: tc[t.label] }; })
+        .sort(function (a, b) { return pct(a.c.app, a.c.n) - pct(b.c.app, b.c.n) || b.c.n - a.c.n; });
+      h += '<div class="card" style="overflow:hidden">' + tr.map(function (x) {
+        var c = x.c, p = pct(c.app, c.n), col = p >= 60 ? '#2E8B57' : p >= 30 ? '#C98A12' : '#B3261E';
+        return '<div class="usr" style="border-bottom:1px solid var(--line)"><span class="col" style="flex:1 1 auto;min-width:0;gap:4px"><b style="font-size:14px">' + esc(x.l) + '</b>' +
+          '<span style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line)"><span style="width:' + pct(c.self, c.n) + '%;background:var(--ink)"></span><span style="width:' + pct(c.par, c.n) + '%;background:' + PARENT.bg + '"></span></span>' +
+          '<span class="xs">' + c.app + ' af ' + c.n + ' spillere i appen · selv ' + c.self + ' · via forælder ' + c.par + '</span></span>' +
+          '<b style="flex:0 0 auto;font-size:17px;color:' + col + '">' + p + ' %</b></div>';
+      }).join('') + '</div><p class="note">Spillerne på holdene ifølge badmintonplayer.dk, koblet på spiller-id: "selv" = logget ind som spilleren, "via forælder" = en forælder har tilføjet spilleren som barn. Træningsgrupperne i appen vælger man selv, så de har ingen holdliste at tælle op imod.</p>';
+    }
     // Invitationer
     var n = invAddrs(), nsel = Object.keys(INV.sel).filter(function (k) { return INV.sel[k]; }).length;
     h += '<span class="lbl">Inviter dem, der ikke bruger appen</span>' +
