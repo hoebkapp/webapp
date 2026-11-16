@@ -60,7 +60,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-16.1';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-16.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -1605,6 +1605,8 @@ function groupMembers_() {   // {gruppe: [playerId…]} fra Holdmedlemmer (bruge
 function doPost(e) {
   var b, t0 = Date.now();
   try { b = JSON.parse(e.postData.contents); } catch (err) { return json_({ ok: false, error: 'Ugyldig forespørgsel' }); }
+  if (b && (b.action === 'relayMail' || b.action === 'relayConventus')) return json_(relay_(b));   // for den nye server (Supabase)
+  if (migrated_()) return json_({ ok: false, error: 'Appen er flyttet til en ny server — luk appen helt og åbn den igen', moved: true });
   stat_('req');
   try {
     var out = route_(b);
@@ -1765,7 +1767,7 @@ function doGet(e) {
   var action = (e && e.parameter && e.parameter.action) || 'status';
   if (action === 'version') {
     var pr = PropertiesService.getScriptProperties();
-    return json_({ ok: true, version: SCRIPT_VERSION, scheduler: { token: !!pr.getProperty('GH_TOKEN'), triggers: ScriptApp.getProjectTriggers().filter(function (t) { return t.getHandlerFunction() === 'tick'; }).length,
+    return json_({ ok: true, version: SCRIPT_VERSION, migrated: migrated_(), scheduler: { token: !!pr.getProperty('GH_TOKEN'), triggers: ScriptApp.getProjectTriggers().filter(function (t) { return t.getHandlerFunction() === 'tick'; }).length,
                    lastTick: pr.getProperty('LAST_TICK') || '', last: pr.getProperty('LAST_DISPATCH') || '' } });
   }
   if (action === 'health') return json_(health_());
@@ -1940,6 +1942,7 @@ function ghDispatch_(workflow) {
 // Hvert 15. minut: tilmeldinger altid; kampdags-opdatering hver halve time kl. 9–22 (den stopper selv på dage
 // uden kampe); fuld opdatering én gang om morgenen og én gang om aftenen.
 function tick() {
+  if (migrated_()) return;   // efter flytningen starter Supabase kørslerne (pg_cron)
   var pr = PropertiesService.getScriptProperties(), now = new Date();
   var h = Number(Utilities.formatDate(now, 'Europe/Copenhagen', 'H')), day = Utilities.formatDate(now, 'Europe/Copenhagen', 'yyyy-MM-dd');
   var res = [ghDispatch_('tilmeldinger.yml')];
@@ -2059,3 +2062,64 @@ function members_(b) {
 }
 
 // --- slut på filen (denne linje må gerne mangle ved kopiering) ---
+
+// ======================================================================================
+// FLYTNING TIL SUPABASE (16. nov 2026) — appen kører nu på Supabase (samme projekt som NKB, funktionen "hoebk").
+// Dette script bruges derefter kun som relæ: mails sendes stadig fra klubbens Gmail (relayMail), og Conventus hentes
+// herfra (relayConventus), fordi Conventus blokerer mange servere. Begge kræver nøglen KEY (= REG_KEY).
+// migrateToSupabase() køres ÉN gang fra editoren: stopper skrivning i arket og sender alle faner + indstillinger.
+// ======================================================================================
+var SUPABASE_URL = 'https://rbsuittqekgaudmstpqu.supabase.co/functions/v1/hoebk';
+var MIGRATE_TOKEN = '';   // engangsnøgle — udfyldes kun i den kopi, der indsættes i editoren (står ikke i GitHub)
+function migrated_() { return PropertiesService.getScriptProperties().getProperty('MIGRATED') === '1'; }
+function relay_(b) {
+  var key = PropertiesService.getScriptProperties().getProperty('KEY');
+  if (!key || b.key !== key) return { ok: false, error: 'Forkert nøgle' };
+  try {
+    if (b.action === 'relayMail') {
+      var to = clean_(b.to, 2000), subject = clean_(b.subject, 200), body = String(b.body || '').slice(0, 20000);
+      if (!to || !subject) return { ok: false, error: 'Mangler modtager eller emne' };
+      if (MailApp.getRemainingDailyQuota() < to.split(',').length) return { ok: false, error: 'kvote' };
+      MailApp.sendEmail({ to: to, subject: subject, body: body, name: clean_(b.name, 80) || CLUB });
+      return { ok: true, left: MailApp.getRemainingDailyQuota() };
+    }
+    var file = String(b.file || '');
+    if (['get_grupper.php', 'get_medlemmer.php'].indexOf(file) < 0) return { ok: false, error: 'Ukendt fil' };
+    var pr = PropertiesService.getScriptProperties(), id = pr.getProperty('CONVENTUS_ID'), ck = pr.getProperty('CONVENTUS_KEY');
+    if (!id || !ck) return { ok: false, error: 'CONVENTUS_ID og CONVENTUS_KEY mangler' };
+    var params = b.params || {}, q = Object.keys(params).map(function (k) { return encodeURIComponent(k) + '=' + encodeURIComponent(params[k]); }).join('&');
+    var r = UrlFetchApp.fetch(CONV_API + file + '?forening=' + encodeURIComponent(id) + '&key=' + encodeURIComponent(ck) + (q ? '&' + q : ''), { muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) return { ok: false, error: 'Conventus svarede HTTP ' + r.getResponseCode() };
+    return { ok: true, xml: r.getContentText() };
+  } catch (err) {
+    return { ok: false, error: String(err && err.message || err).slice(0, 200) };
+  }
+}
+function supaPost_(body) {
+  var r = UrlFetchApp.fetch(SUPABASE_URL, { method: 'post', contentType: 'text/plain', payload: JSON.stringify(body), muteHttpExceptions: true });
+  var j = null; try { j = JSON.parse(r.getContentText()); } catch (e) { j = null; }
+  if (!j || !j.ok) throw new Error((body.tab || body.action) + ': ' + ((j && j.error) || ('HTTP ' + r.getResponseCode() + ' ' + r.getContentText().slice(0, 200))));
+  return j;
+}
+function migrateToSupabase() {
+  if (!MIGRATE_TOKEN) throw new Error('MIGRATE_TOKEN mangler — brug den kopi af Code.gs, Claude sendte');
+  var pr = PropertiesService.getScriptProperties();
+  pr.setProperty('MIGRATED', '1');   // fra nu af afviser scriptet alt undtagen relæet — appen skal bruge Supabase
+  withLock_(function () { Utilities.sleep(2000); });   // vent til igangværende skrivninger er færdige
+  var sent = {};
+  Object.keys(SHEETS).forEach(function (tab) {
+    var rows = data_(tab).map(function (r) { return r.map(function (v) { return v instanceof Date ? (isNaN(v.getTime()) ? '' : v.toISOString()) : v; }); });
+    var part = 0;
+    for (var i = 0; i === 0 || i < rows.length; i += 1500) supaPost_({ action: 'importTab', token: MIGRATE_TOKEN, tab: tab, part: part++, rows: rows.slice(i, i + 1500) });
+    sent[tab] = rows.length;
+  });
+  var p = pr.getProperties(), props = {};
+  ['KEY', 'IDEAS_KEY', 'GH_TOKEN', 'CONVENTUS_TRAENING_AFD', 'LEADER_MAIL', 'CONV_SYNC', 'FULL_AM', 'FULL_PM'].forEach(function (k) { if (p[k]) props[k] = p[k]; });
+  var end = supaPost_({ action: 'importEnd', token: MIGRATE_TOKEN, props: props });
+  var bad = Object.keys(sent).filter(function (t) { return end.counts && end.counts[t] !== sent[t]; });
+  Logger.log('Sendt: ' + JSON.stringify(sent));
+  Logger.log('I Supabase: ' + JSON.stringify(end.counts));
+  Logger.log(bad.length ? 'FORSKEL i: ' + bad.join(', ') : 'ALT ER FLYTTET ✓ — giv Claude besked');
+}
+// Fortryd (kun hvis noget går galt): appen skal så også pege tilbage på dette script i config.json
+function undoMigration() { PropertiesService.getScriptProperties().deleteProperty('MIGRATED'); Logger.log('Scriptet tager imod igen'); }

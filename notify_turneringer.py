@@ -24,6 +24,16 @@ import urllib.parse
 import urllib.request
 from datetime import date, datetime, timedelta, timezone
 
+
+def reg_url():
+    """Serverens adresse: registrationUrl i config.json (samme som appen bruger) — ellers secret REG_URL."""
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"), encoding="utf-8") as f:
+            u = (json.load(f).get("registrationUrl") or "").strip()
+    except Exception:
+        u = ""
+    return u or os.environ.get("REG_URL", "").strip()
+
 APP_URL = "https://app.hoebk.dk/"
 MONS = ["jan", "feb", "mar", "apr", "maj", "jun", "jul", "aug", "sep", "okt", "nov", "dec"]
 DAYS = ["man", "tir", "ons", "tor", "fre", "lør", "søn"]
@@ -260,7 +270,7 @@ def main():
     for tid, lines in list(events.items())[:15]:
         print(f"  {tmap.get(tid, olds.get(tid, {})).get('organiser', tid)}: " + " · ".join(lines))
 
-    url, key = os.environ.get("REG_URL", "").strip(), os.environ.get("REG_KEY", "").strip()
+    url, key = reg_url(), os.environ.get("REG_KEY", "").strip()
     if not (events or teams) or not url or not key or a.dry_run:
         print("Ingen afsendelse" + ("" if events or teams else " (intet nyt)") + ("" if url and key else " (REG_URL/REG_KEY mangler)"))
         return 0

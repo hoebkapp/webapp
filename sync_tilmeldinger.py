@@ -20,6 +20,16 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 
+
+def reg_url():
+    """Serverens adresse: registrationUrl i config.json (samme som appen bruger) — ellers secret REG_URL."""
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"), encoding="utf-8") as f:
+            u = (json.load(f).get("registrationUrl") or "").strip()
+    except Exception:
+        u = ""
+    return u or os.environ.get("REG_URL", "").strip()
+
 TIMEOUT = 60
 ATTEMPTS = 3   # Google svarer af og til langsomt — prøv igen før vi giver op
 
@@ -124,7 +134,7 @@ def log_stats(stats, version):
 
 
 def main():
-    url, key = os.environ.get("REG_URL", "").strip(), os.environ.get("REG_KEY", "").strip()
+    url, key = reg_url(), os.environ.get("REG_KEY", "").strip()
     if not url or not key:
         print("REG_URL/REG_KEY er ikke sat endnu — springer over.")
         return 0

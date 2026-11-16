@@ -3686,7 +3686,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (iso(new Date(t)) === iso(addDays(new Date(), -1))) return 'i går ' + hhmm(t);
     return dTxt(iso(new Date(t)));
   }
-  function newsImgUrl(id, w) { return /^data:/.test(id) ? id : 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(id) + '&sz=w' + (w || 1200); }
+  function newsImgUrl(id, w) { return /^(data:|https:)/.test(id) ? id : 'https://drive.google.com/thumbnail?id=' + encodeURIComponent(id) + '&sz=w' + (w || 1200); }
   function newsPlain(s) { return String(s || '').replace(/\*\*/g, '').replace(/^\s*[-•*]\s+/gm, '• '); }
   // Nyheder: links, **fed** og linjer der starter med "-" eller "•" bliver punkter
   function fmtNews(s) {

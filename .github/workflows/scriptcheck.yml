@@ -1,4 +1,4 @@
-name: Tjek Apps Script-version
+name: Tjek serveren
 on: workflow_dispatch
 permissions:
   contents: read
@@ -7,12 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
       - name: Kald follows
         env:
-          REG_URL: ${{ secrets.REG_URL }}
+          SECRET_URL: ${{ secrets.REG_URL }}
           REG_KEY: ${{ secrets.REG_KEY }}
           VAPID: ${{ secrets.VAPID_PRIVATE }}
         run: |
+          REG_URL=$(jq -r '.registrationUrl // empty' config.json); REG_URL=${REG_URL:-$SECRET_URL}
           v=$(curl -sSL -m 30 "$REG_URL?action=version" | head -c 200 | tr -d '\n:')
           echo "::warning title=version::$v"
           r=$(curl -sSL -m 30 "$REG_URL?action=follows&key=$REG_KEY" | head -c 200 | tr -d '\n:')

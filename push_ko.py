@@ -22,6 +22,16 @@ import urllib.request
 from notify_turneringer import send_push
 
 
+def reg_url():
+    """Serverens adresse: registrationUrl i config.json (samme som appen bruger) — ellers secret REG_URL."""
+    try:
+        with open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "config.json"), encoding="utf-8") as f:
+            u = (json.load(f).get("registrationUrl") or "").strip()
+    except Exception:
+        u = ""
+    return u or os.environ.get("REG_URL", "").strip()
+
+
 def fetch_queue(url, key):
     q = url + ("&" if "?" in url else "?") + urllib.parse.urlencode({"action": "pushqueue", "key": key})
     req = urllib.request.Request(q, headers={"User-Agent": "hoebk-push/1.0"})
@@ -40,7 +50,7 @@ def ensure_pywebpush():
 
 
 def main():
-    url, key = os.environ.get("REG_URL", "").strip(), os.environ.get("REG_KEY", "").strip()
+    url, key = reg_url(), os.environ.get("REG_KEY", "").strip()
     if not url or not key:
         print("REG_URL/REG_KEY er ikke sat — intet at gøre.")
         return 0
