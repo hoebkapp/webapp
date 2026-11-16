@@ -4618,7 +4618,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       '<button class="rb ja" aria-pressed="true" data-act="invsend"' + (INV.saving || !n ? ' disabled' : '') + '>' + (INV.saving ? 'Gemmer …' : 'Send til ' + n + ' adresse' + (n === 1 ? '' : 'r')) + '</button></div></div>';
     if (IV) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:6px;font-size:14px">' +
       '<b>Udsendelse</b><span>I kø: <b>' + IV.queued + '</b> · sendt: <b>' + IV.sent + '</b> (i dag ' + IV.sentToday + ' af ' + IV.perDay + ')' + (IV.failed ? ' · fejlet: <b>' + IV.failed + '</b>' : '') + '</span>' +
-      '<span class="xs">Klubbens Gmail kan sende ca. 100 mails i døgnet, og login-koderne bruger samme kvote — også til dem, der bliver inviteret. Derfor sendes højst ' + IV.perDay + ' invitationer om dagen, kl. 8–20, og kun mens der er mindst ' + IV.reserve + ' mails tilbage (lige nu ' + IV.mailLeft + ').' +
+      '<span class="xs">Klubbens Gmail har en daglig grænse for mails, og login-koderne bruger samme kvote — også til dem, der bliver inviteret. Derfor sendes højst ' + IV.perDay + ' invitationer om dagen, kl. 8–20, og kun mens der er mindst ' + IV.reserve + ' mails tilbage (lige nu ' + IV.mailLeft + ').' +
       (IV.queued ? ' Med ' + IV.queued + ' i kø tager det ca. ' + Math.ceil(IV.queued / IV.perDay) + ' dag' + (Math.ceil(IV.queued / IV.perDay) === 1 ? '' : 'e') + '.' : '') + '</span>' +
       (IV.queued ? '<button class="rb" style="align-self:flex-start" data-act="invstop">Stop køen</button>' : '') + '</div>';
     return h;
