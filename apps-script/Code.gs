@@ -60,7 +60,7 @@
  *  GET ?action=all&key=NØGLE   → alle svar (til GitHub-synkronisering) — uden e-mails
  */
 
-var SCRIPT_VERSION = '2026-11-16.2';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
+var SCRIPT_VERSION = '2026-11-16.3';   // vises af ?action=version — så GitHub kan se om den nye version er implementeret
 var CLUB = 'Hørsholm Badminton Klub';
 var TYPES = { match: ['ja', 'nej', 'maaske', 'ryd'], training: ['ja', 'nej', 'ryd'] };   // ryd = fjern sit svar
 var SHEETS = {
@@ -2123,3 +2123,49 @@ function migrateToSupabase() {
 }
 // Fortryd (kun hvis noget går galt): appen skal så også pege tilbage på dette script i config.json
 function undoMigration() { PropertiesService.getScriptProperties().deleteProperty('MIGRATED'); Logger.log('Scriptet tager imod igen'); }
+
+// ---------- Natlig backup af Supabase-data til klubbens Google Drive ----------
+// installBackupTrigger() køres ÉN gang fra editoren: laver en natlig kørsel (ca. kl. 3) og tager den første backup med det samme.
+// backupSupabase() henter hele klubbens data fra serveren (action export, nøgle = KEY) og gemmer den som .json.gz i mappen
+// "HØBK backup (Supabase)". De seneste BACKUP_KEEP_DAYS dage beholdes. Mappen er privat (kun klubbens Google-konto).
+var BACKUP_FOLDER = 'HØBK backup (Supabase)', BACKUP_KEEP_DAYS = 30;
+function backupFolder_() {
+  var pr = PropertiesService.getScriptProperties(), id = pr.getProperty('BACKUP_FOLDER');
+  if (id) { try { var f = DriveApp.getFolderById(id); if (!f.isTrashed()) return f; } catch (e) { /* mappen er væk — opret en ny */ } }
+  var nf = DriveApp.createFolder(BACKUP_FOLDER);
+  pr.setProperty('BACKUP_FOLDER', nf.getId());
+  return nf;
+}
+function backupSupabase() {
+  var key = PropertiesService.getScriptProperties().getProperty('KEY');
+  var r = UrlFetchApp.fetch(SUPABASE_URL, { method: 'post', contentType: 'text/plain', payload: JSON.stringify({ action: 'export', key: key }), muteHttpExceptions: true });
+  var txt = r.getContentText(), j = null;
+  try { j = JSON.parse(txt); } catch (e) { j = null; }
+  if (!j || !j.ok) throw new Error('Backup fejlede: ' + ((j && j.error) || ('HTTP ' + r.getResponseCode())));
+  var name = 'hoebk-' + Utilities.formatDate(new Date(), 'Europe/Copenhagen', 'yyyy-MM-dd-HHmm') + '.json';
+  var folder = backupFolder_();
+  folder.createFile(Utilities.gzip(Utilities.newBlob(txt, 'application/json', name), name + '.gz'));
+  var cut = Date.now() - BACKUP_KEEP_DAYS * 86400000, it = folder.getFiles();
+  while (it.hasNext()) { var f = it.next(); if (/^hoebk-.*\.json\.gz$/.test(f.getName()) && f.getDateCreated().getTime() < cut) f.setTrashed(true); }
+  Logger.log('Backup gemt: ' + name + '.gz (' + Math.round(txt.length / 1024) + ' KB) · ' + JSON.stringify(j.counts));
+}
+function installBackupTrigger() {
+  ScriptApp.getProjectTriggers().forEach(function (t) { if (t.getHandlerFunction() === 'backupSupabase') ScriptApp.deleteTrigger(t); });
+  ScriptApp.newTrigger('backupSupabase').timeBased().everyDays(1).atHour(3).inTimezone('Europe/Copenhagen').create();
+  Logger.log('Natlig backup installeret (ca. kl. 3). Tager den første backup nu …');
+  backupSupabase();
+  Logger.log('Mappe: ' + backupFolder_().getUrl());
+}
+// Kun hvis data er gået tabt: læg en backup tilbage. Kræver en engangsnøgle (dens SHA-256 skal ligge i hoebk.kv som import_token_sha).
+// Kør fra editoren, fx restoreFromBackup('<Drive-fil-id på .json.gz>', '<engangsnøgle>'). Hver tabel tømmes og fyldes fra backuppen.
+function restoreFromBackup(fileId, token) {
+  if (!fileId || !token) throw new Error('Angiv fil-id og engangsnøgle');
+  var d = JSON.parse(Utilities.ungzip(DriveApp.getFileById(fileId).getBlob()).getDataAsString());
+  Object.keys(d.tabs || {}).forEach(function (tab) {
+    var rows = d.tabs[tab], part = 0;
+    for (var i = 0; i === 0 || i < rows.length; i += 1500) supaPost_({ action: 'importTab', token: token, tab: tab, part: part++, rows: rows.slice(i, i + 1500) });
+  });
+  var kv = {}; (d.kv || []).forEach(function (x) { kv[x.key] = x.value; });
+  var end = supaPost_({ action: 'importEnd', token: token, props: { KEY: kv['cfg:REG_KEY'], IDEAS_KEY: kv['cfg:IDEAS_KEY'], GH_TOKEN: kv['cfg:GH_TOKEN'], LEADER_MAIL: kv['LEADER_MAIL'] } });
+  Logger.log('Lagt tilbage fra ' + d.at + ': ' + JSON.stringify(end.counts));
+}
