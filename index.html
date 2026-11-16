@@ -2713,10 +2713,19 @@ textarea.inp{resize:vertical;line-height:1.45}
   function leaderTeams() {
     return D.teams.map(function (t, i) { return i; }).filter(function (i) { return isLeader(D.teams[i].label); });
   }
+  // Behold sidst kendte rolle: mister man administrator/holdleder i ét svar fra serveren (fx et midlertidigt udfald),
+  // vises rettighederne stadig — først når to svar i træk siger det, fjernes de i appen. Serveren tjekker altid selv rettighederne.
+  function roleRank(r) { return !r ? 0 : r.super ? 4 : r.admin ? 3 : r.all ? 2 : r.leader ? 1 : 0; }
+  function keepRole(old, nu) {
+    if (roleRank(nu) >= roleRank(old) || !old) { if (ME) delete ME.roleDrop; return nu; }
+    if (ME && !ME.roleDrop) { ME.roleDrop = 1; try { console.warn('HØBK: serveren gav en lavere rolle — beholder den sidst kendte indtil næste tjek'); } catch (e) {} return old; }
+    if (ME) delete ME.roleDrop;
+    return nu;
+  }
   function refreshRole() {
     if (!REG.url || !ME || !ME.token) return Promise.resolve();
     return api({ action: 'me', token: ME.token }).then(function (res) {
-      if (res && res.ok) { if (res.player && (res.player.id !== ME.id || res.player.name !== ME.name)) { ME.id = res.player.id; ME.name = res.player.name; } ME.role = res.role || null; if (Array.isArray(res.follows)) ME.follows = res.follows; if (res.settings) ME.settings = res.settings; if (Array.isArray(res.kids)) ME.kids = res.kids; saveMe(); route(true); }
+      if (res && res.ok) { if (res.player && (res.player.id !== ME.id || res.player.name !== ME.name)) { ME.id = res.player.id; ME.name = res.player.name; } ME.role = keepRole(ME.role, res.role || null); if (Array.isArray(res.follows)) ME.follows = res.follows; if (res.settings) ME.settings = res.settings; if (Array.isArray(res.kids)) ME.kids = res.kids; saveMe(); route(true); }
       else if (res && res.error === 'login') { ME = null; saveMe(); route(true); }
     }).catch(function () {});
   }
