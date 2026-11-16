@@ -804,7 +804,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       if (r && r.ok) { MEM.data = r; MEM.err = ''; (r.cgroups || []).forEach(function (g) { CGL['c:' + g.id] = g.title; }); }
       else { MEM.data = null; MEM.err = (r && r.error) || 'Ukendt fejl'; }
     }).catch(function () { MEM.data = null; MEM.err = 'Ingen forbindelse'; })
-      .then(function () { MEM.loading = false; if (/^#\/(spillere|nyheder\/ny)/.test(location.hash)) route(true); });
+      .then(function () { MEM.loading = false; if (/^#\/(spillere|nyheder\/ny|daekning)/.test(location.hash)) route(true); });
   }
   function pseudoPlayer(name) { return { name: name, teams: [], games: [], played: 0, won: 0, profile: { rankings: [] } }; }
   // 'old' = serveren kender ikke medlemslisten endnu (gammel Apps Script-version) → vis badmintonplayer-listen som før
@@ -2860,6 +2860,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         card('#/holdliste', 'Holdlister', 'Hvem er på hvert hold og i hver træningsgruppe', 'var(--accent)') +
         card('#/traenere', 'Trænere', 'Udnævn ungdoms- og seniortrænere · trænersiden ligger under fanen Træner', '#2E8B57') +
         card('#/brugere', 'Registrerede brugere', 'Alle der har logget ind — søg, se roller, børn og sidst aktiv', 'var(--ink)') +
+        card('#/daekning', 'Appens dækning pr. hold', 'Hvor mange på hvert træningshold i Conventus der bruger appen — og invitér resten på mail', '#1F4E86') +
         '<a class="card row" style="min-height:56px;border-left:5px solid var(--ink);text-decoration:none;color:inherit" href="guide.html"><span class="col"><b style="font-size:15px">Oversigt over appen</b><span class="xs">Alle skærme, roller, farver og vejledning — kan deles med udvalgte</span></span><span class="h" style="font-size:20px">↗</span></a>' +
         card('#/ledere', 'Administratorer og holdledere', (ME.role.owner ? 'Udnævn administratorer og holdledere' : 'Udnævn holdledere') + ' · brugerstatistik', 'var(--ink)');
     }
@@ -4570,6 +4571,80 @@ textarea.inp{resize:vertical;line-height:1.45}
     return h;
   }
 
+  // ---------- Appens dækning pr. træningshold i Conventus + invitationer (administratorer) ----------
+  // Tallene kommer fra serverens medlemsliste (action members): pr. hold medlemmer, i appen selv / via forælder, og hvem der mangler.
+  // E-mailadresserne bliver på serveren — appen får kun numre (addr), så den kan tælle unikke adresser for de valgte hold.
+  var INV = { sel: {}, subject: 'Hørsholm Badminton Klub har fået en app – kom med!', saving: false,
+    text: 'Hej\n\nHørsholm Badminton Klub har fået sin egen app, og vi vil gerne have alle med – også {fornavn} ({hold}).\n\n' +
+      'I appen får du nyheder fra klubben og trænerne, kampprogram og resultater, og du kan melde fremmøde og afbud.\n\n' +
+      'Sådan kommer du i gang (2 minutter):\n- Åbn {link} på din telefon\n- Log ind med din e-mail – du får en kode på mail\n' +
+      '- Er du forælder: opret dig med dit eget navn og vælg dit barn\n- Læg appen på hjemmeskærmen: {link}kom-i-gang.html\n\n' +
+      'Venlig hilsen\nBestyrelsen, Hørsholm Badminton Klub' };
+  function invAddrs() { var a = {}; (cgList() || []).forEach(function (g) { if (INV.sel[g.id]) (g.addr || []).forEach(function (x) { a[x] = 1; }); }); return Object.keys(a).length; }
+  function viewDaekning() {
+    setTab('tilmeld'); setHeader('Appens dækning', 'Træningshold i Conventus', true);
+    if (!ME || !ME.role || !ME.role.admin) return '<p class="empty">Kun for administratorer.</p>';
+    loadMembers();
+    if (!MEM.data) return MEM.err ? '<div class="warn">' + esc(MEM.err) + '</div>' : '<p class="empty">Henter medlemmer fra Conventus …</p>';
+    var gl = cgList(), T = MEM.data.ctotal, IV = MEM.data.invite;
+    if (!gl || !T || !gl.length || gl[0].self === undefined) return '<p class="empty">Tallene kræver, at klubbens server er opdateret (version 2026-11-17.2).</p>';
+    var pct = function (a, n) { return n ? Math.round(100 * a / n) : 0; };
+    var app = T.self + T.par;
+    var h = '<div class="tiles">' + [['Medlemmer', T.n], ['I appen', app + ' <span class="xs">' + pct(app, T.n) + ' %</span>'], ['Selv', T.self], ['Via forælder', T.par]].map(function (x) {
+      return '<div class="card tile"><span class="lbl" style="margin:0">' + x[0] + '</span><b>' + x[1] + '</b></div>'; }).join('') + '</div>';
+    h += '<p class="note">Et medlem tæller som "i appen", når det selv er logget ind, eller en forælder har tilføjet det som barn — koblet på navn eller e-mail fra Conventus. Ledere tæller med på deres hold. Lavest dækning øverst. Tryk på et hold for at vælge det til en invitation.</p>';
+    var rows = gl.slice().sort(function (a, b) { return pct(a.app, a.n) - pct(b.app, b.n) || b.n - a.n; });
+    h += '<div class="card" style="overflow:hidden">' + rows.map(function (g) {
+      var p = pct(g.app, g.n), miss = g.n - g.app, on = !!INV.sel[g.id], col = p >= 60 ? '#2E8B57' : p >= 30 ? '#C98A12' : '#B3261E';
+      return '<button class="usr" data-invsel="' + esc(g.id) + '" aria-pressed="' + on + '" title="' + esc(g.title) + '" style="width:100%;text-align:left;background:' + (on ? 'var(--soft)' : 'transparent') + ';border:0;border-bottom:1px solid var(--line);cursor:pointer;font:inherit;color:inherit">' +
+        '<span style="flex:0 0 auto;font-size:18px">' + (on ? '☑' : '☐') + '</span>' +
+        '<span class="col" style="flex:1 1 auto;min-width:0;gap:4px"><b style="font-size:14px">' + esc(cgShort(g.title)) + '</b>' +
+        '<span style="display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line)"><span style="width:' + pct(g.self, g.n) + '%;background:var(--ink)"></span><span style="width:' + pct(g.par, g.n) + '%;background:' + PARENT.bg + '"></span></span>' +
+        '<span class="xs">' + g.app + ' af ' + g.n + ' i appen · selv ' + g.self + ' · via forælder ' + g.par +
+          (miss ? ' · mangler ' + miss + (g.invited ? ' (' + g.invited + ' inviteret)' : '') + (g.nomail ? ' · ' + g.nomail + ' uden e-mail' : '') : '') + '</span></span>' +
+        '<b style="flex:0 0 auto;font-size:17px;color:' + col + '">' + p + ' %</b></button>';
+    }).join('') + '</div>';
+    h += '<p class="xs" style="margin:0 4px"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--ink)"></span> selv &nbsp; <span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:' + PARENT.bg + '"></span> via forælder</p>';
+    // Invitationer
+    var n = invAddrs(), nsel = Object.keys(INV.sel).filter(function (k) { return INV.sel[k]; }).length;
+    h += '<span class="lbl">Inviter dem, der ikke bruger appen</span>' +
+      '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px">' +
+      '<div style="display:flex;flex-wrap:wrap;gap:6px"><button class="chip" data-act="invall">Vælg alle hold</button><button class="chip" data-act="invnone">Fravælg alle</button></div>' +
+      '<p class="xs" style="margin:0">' + (nsel ? nsel + ' hold valgt · <b>' + n + ' e-mailadresse' + (n === 1 ? '' : 'r') + '</b> får invitationen (søskende med samme e-mail får én mail; dem, der allerede er inviteret, springes over).' : 'Vælg hold i listen ovenfor.') + '</p>' +
+      '<label class="col" style="gap:4px"><span class="lbl" style="margin:0">Emne</span><input id="invSubj" class="inp" maxlength="120" value="' + esc(INV.subject) + '"></label>' +
+      '<label class="col" style="gap:4px"><span class="lbl" style="margin:0">Tekst</span><textarea id="invText" class="inp" rows="12" maxlength="4000">' + esc(INV.text) + '</textarea></label>' +
+      '<p class="xs" style="margin:0">Flettes ind: <b>{fornavn}</b> og <b>{navn}</b> (medlemmet — eller søskende: "Emma og Oliver"), <b>{hold}</b>, <b>{link}</b> (appens adresse). Under teksten tilføjes automatisk, hvorfor de får mailen.</p>' +
+      '<div style="display:flex;flex-wrap:wrap;gap:8px"><button class="rb" data-act="invtest"' + (INV.saving ? ' disabled' : '') + '>Send en prøve til mig</button>' +
+      '<button class="rb ja" aria-pressed="true" data-act="invsend"' + (INV.saving || !n ? ' disabled' : '') + '>' + (INV.saving ? 'Gemmer …' : 'Send til ' + n + ' adresse' + (n === 1 ? '' : 'r')) + '</button></div></div>';
+    if (IV) h += '<div class="card" style="padding:12px 14px;display:flex;flex-direction:column;gap:6px;font-size:14px">' +
+      '<b>Udsendelse</b><span>I kø: <b>' + IV.queued + '</b> · sendt: <b>' + IV.sent + '</b> (i dag ' + IV.sentToday + ' af ' + IV.perDay + ')' + (IV.failed ? ' · fejlet: <b>' + IV.failed + '</b>' : '') + '</span>' +
+      '<span class="xs">Klubbens Gmail kan sende ca. 100 mails i døgnet, og login-koderne bruger samme kvote — også til dem, der bliver inviteret. Derfor sendes højst ' + IV.perDay + ' invitationer om dagen, kl. 8–20, og kun mens der er mindst ' + IV.reserve + ' mails tilbage (lige nu ' + IV.mailLeft + ').' +
+      (IV.queued ? ' Med ' + IV.queued + ' i kø tager det ca. ' + Math.ceil(IV.queued / IV.perDay) + ' dag' + (Math.ceil(IV.queued / IV.perDay) === 1 ? '' : 'e') + '.' : '') + '</span>' +
+      (IV.queued ? '<button class="rb" style="align-self:flex-start" data-act="invstop">Stop køen</button>' : '') + '</div>';
+    return h;
+  }
+  function invGrab() { var a = document.getElementById('invSubj'), b = document.getElementById('invText'); if (a) INV.subject = a.value; if (b) INV.text = b.value; }
+  function invSave(test) {
+    invGrab(); if (INV.saving) return;
+    if (!INV.subject.trim() || !INV.text.trim()) { toast('Skriv emne og tekst'); return; }
+    var groups = Object.keys(INV.sel).filter(function (k) { return INV.sel[k]; }), n = invAddrs();
+    if (!test && !confirm('Send invitationen til ' + n + ' e-mailadresse' + (n === 1 ? '' : 'r') + '? Den sendes i løbet af de næste dage (højst ' + ((MEM.data.invite || {}).perDay || 30) + ' om dagen).')) return;
+    INV.saving = true; route(true);
+    api({ action: 'inviteSave', token: ME.token, subject: INV.subject, text: INV.text, groups: groups, test: !!test }).then(function (r) {
+      INV.saving = false;
+      if (!r || !r.ok) throw new Error((r && r.error === 'Ukendt handling') ? 'Klubbens server skal opdateres først' : (r && r.error) || 'Kunne ikke gemme');
+      if (test) toast('Prøven er sendt til din e-mail'); else { toast(r.queued + ' invitation' + (r.queued === 1 ? '' : 'er') + ' lagt i kø'); INV.sel = {}; }
+      loadMembers(true); route(true);
+    }).catch(function (err) { INV.saving = false; route(true); toast(err.message); });
+  }
+  function invStop() {
+    if (!confirm('Stop køen? De invitationer, der ikke er sendt endnu, bliver ikke sendt.')) return;
+    api({ action: 'inviteStop', token: ME.token }).then(function (r) {
+      if (!r || !r.ok) throw new Error((r && r.error) || 'Kunne ikke stoppe');
+      toast(r.stopped + ' invitation' + (r.stopped === 1 ? '' : 'er') + ' stoppet'); loadMembers(true); route(true);
+    }).catch(function (err) { toast(err.message); });
+  }
+
   // ---------- Hjælp og feedback (spørgsmålstegnet øverst) ----------
   var GUIDE_URL = 'guide.html', INSTALL_URL = 'kom-i-gang.html';   // ligger i repoet ved siden af appen
   var FB = { type: 'idé', text: '', mine: null, all: null, f: 'aabne', from: '', busy: false, loadingMine: false, loadingAll: false, reply: {}, open: {} };
@@ -4739,6 +4814,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     else if (parts[0] === 'hjaelp') { html = viewHjaelp(); }
     else if (parts[0] === 'feedback') { lastTab = 'tilmeld'; html = viewFeedback(); }
     else if (parts[0] === 'brugere') { lastTab = 'tilmeld'; html = viewBrugere(); }
+    else if (parts[0] === 'daekning') { lastTab = 'tilmeld'; html = viewDaekning(); }
     else if (parts[0] === 'holdleder' || parts[0] === 'admin') { html = viewHoldleder(); }
     else if (parts[0] === 'aktiviteter' && parts[1] === 'oversigt') { lastTab = 'tilmeld'; html = viewOversigt(); }
     else if (parts[0] === 'aktiviteter' && parts[1] === 'ny') { lastTab = 'tilmeld'; html = viewActForm(''); }
@@ -4826,6 +4902,10 @@ textarea.inp{resize:vertical;line-height:1.45}
     }
     if (document.querySelector('.ridebox')) bindRides();
     var devok = document.getElementById('devok'); if (devok) { devok.addEventListener('click', deviceLogin); document.getElementById('devin').addEventListener('keydown', function (e) { if (e.key === 'Enter') deviceLogin(); }); }
+    if (parts[0] === 'daekning' && document.getElementById('invText')) {
+      document.getElementById('invSubj').addEventListener('input', function (e) { INV.subject = e.target.value; });
+      document.getElementById('invText').addEventListener('input', function (e) { INV.text = e.target.value; });
+    }
     if (parts[0] === 'nyheder' && parts[1] === 'ny' && document.getElementById('nwTitle')) {
       document.getElementById('nwTitle').addEventListener('input', function (e) { SNAK.nf.title = e.target.value; });
       document.getElementById('nwText').addEventListener('input', function (e) { SNAK.nf.text = e.target.value; });
@@ -4919,7 +4999,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (history.length > 1) history.back(); else location.hash = '#/hold';
   });
   $main.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-leadmail],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-psrc],[data-pcg],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst],[data-tx]');
+    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-leadmail],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-psrc],[data-pcg],[data-invsel],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst],[data-tx]');
     if (b) { UI.calPick = !!b.dataset.calpick; if (b.dataset.calpick) UI.calScrollTo = (b.dataset.go || '').split('/').pop(); }
     if (!b) return;
     if (b.dataset.act === 'pnamesave') {
@@ -5097,6 +5177,10 @@ textarea.inp{resize:vertical;line-height:1.45}
       saveMe(); route(true); return;
     }
     if (b.dataset.pcg !== undefined) { UI.pcg = b.dataset.pcg; route(true); return; }
+    if (b.dataset.invsel) { invGrab(); INV.sel[b.dataset.invsel] = !INV.sel[b.dataset.invsel]; route(true); return; }
+    if (b.dataset.act === 'invall' || b.dataset.act === 'invnone') { invGrab(); INV.sel = {}; if (b.dataset.act === 'invall') (cgList() || []).forEach(function (g) { if ((g.addr || []).length) INV.sel[g.id] = true; }); route(true); return; }
+    if (b.dataset.act === 'invtest' || b.dataset.act === 'invsend') { invSave(b.dataset.act === 'invtest'); return; }
+    if (b.dataset.act === 'invstop') { invStop(); return; }
     if (b.dataset.psrc) {
       UI.psrc = b.dataset.psrc; try { localStorage.setItem('hoebk_psrc', UI.psrc); } catch (e3) {}
       route(true); return;
