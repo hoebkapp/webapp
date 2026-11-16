@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T07:21:09+00:00",
+ "updated": "2026-11-16T07:31:46+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -465,6 +465,13 @@
   },
   {
    "e": "t:2026-11-16:Voksenfjer",
+   "p": "250193",
+   "n": "Hans Christian Blomberg",
+   "s": "ja",
+   "ts": "2026-11-16T07:26:38.698Z"
+  },
+  {
+   "e": "t:2026-11-16:Voksenfjer",
    "p": "309153",
    "n": "Mark saejueng",
    "s": "ja",
@@ -518,6 +525,13 @@
    "n": "Daniel Lee Skriver",
    "s": "nej",
    "ts": "2026-11-12T18:24:33.926Z"
+  },
+  {
+   "e": "t:2026-11-18:Voksenfjer",
+   "p": "250193",
+   "n": "Hans Christian Blomberg",
+   "s": "nej",
+   "ts": "2026-11-16T07:26:38.227Z"
   },
   {
    "e": "t:2026-11-19:Senior",
