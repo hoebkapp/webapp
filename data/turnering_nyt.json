@@ -504,6 +504,10 @@
   ],
   "117495": [
    {
+    "d": "2026-11-16",
+    "t": "Tilmeldingsfristen er ændret til tor 24. dec (var tor 17. dec)"
+   },
+   {
     "d": "2026-11-11",
     "t": "Navnet er ændret til DGI Sønderjylland - Sønderjysk Nytårsstævne"
    },
@@ -746,6 +750,10 @@
   ],
   "117388": [
    {
+    "d": "2026-11-16",
+    "t": "Invitationen er lagt ud"
+   },
+   {
     "d": "2026-11-11",
     "t": "Navnet er ændret til DGI Sydøstjylland - Egtved"
    }
@@ -981,6 +989,22 @@
     "d": "2026-11-16",
     "t": "Deltagerlisten er offentliggjort"
    }
+  ],
+  "123654": [
+   {
+    "d": "2026-11-16",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "116677": [
+   {
+    "d": "2026-11-16",
+    "t": "Invitationen er lagt ud"
+   },
+   {
+    "d": "2026-11-16",
+    "t": "Programmet er klar (lodtrækning og spilletider)"
+   }
   ]
  },
  "alias": {
@@ -992,5 +1016,5 @@
   "xb540de5e1a": "123645",
   "xddfcf04009": "121353"
  },
- "updated": "2026-11-16T19:58:19+00:00"
+ "updated": "2026-11-16T20:22:11+00:00"
 }

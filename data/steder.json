@@ -705,6 +705,15 @@
   "min": 145,
   "roadKm": 215
  },
+ "Elitecenter Aarhus": {
+  "sted": "Aarhus",
+  "lat": 56.1496,
+  "lon": 10.2134,
+  "region": "Midtjylland",
+  "via": "nominatim",
+  "min": 214,
+  "roadKm": 323
+ },
  "Elitetalentcenter Øst 2026/2027": {
   "sted": "Øst",
   "lat": 55.5771,

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T06:39:55+00:00",
+ "updated": "2026-11-16T20:03:07+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -13575,6 +13575,39 @@
    }
   },
   {
+   "id": "123654",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123654"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2026-12-12",
+   "end": "2026-12-13",
+   "week": "50",
+   "deadline": "2026-12-31",
+   "organiser": "Elitecenter Aarhus",
+   "classes": [
+    {
+     "raw": "Andet X",
+     "ages": [],
+     "levels": [],
+     "days": "lø 12-sø 13"
+    }
+   ],
+   "place": {
+    "name": "Aarhus",
+    "lat": 56.1496,
+    "lon": 10.2134,
+    "km": 145,
+    "region": "Midtjylland",
+    "min": 214,
+    "roadKm": 323
+   }
+  },
+  {
    "id": "115354",
    "links": [
     "invitation",
@@ -14111,9 +14144,11 @@
   {
    "id": "117388",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117388,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117388"
    },
    "entryOpen": true,
@@ -16070,7 +16105,7 @@
    "start": "2027-01-09",
    "end": "2027-01-10",
    "week": "1",
-   "deadline": "2026-12-17",
+   "deadline": "2026-12-24",
    "organiser": "DGI Sønderjylland - Sønderjysk Nytårsstævne",
    "classes": [
     {
@@ -18185,9 +18220,15 @@
   {
    "id": "116677",
    "links": [
+    "invitation",
+    "program",
+    "resultater",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116677,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116677,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116677,-8",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#116677"
    },
    "entryOpen": true,

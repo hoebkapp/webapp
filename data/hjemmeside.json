@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T09:17:19+00:00",
+ "updated": "2026-11-16T20:22:06+00:00",
  "season": "2026",
  "app": "https://app.hoebk.dk/",
  "teams": 15,
@@ -27,17 +27,6 @@
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18972,16,19,,510518,1151,"
   },
   {
-   "team": "MOT 4 spillere Mester",
-   "club": "Hørsholm 1",
-   "date": "2026-11-25",
-   "time": "19:15",
-   "opponent": "Grantoften 1",
-   "home": false,
-   "listedHome": false,
-   "venue": "Grantoftehallen",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18960,16,19,,510413,1151,"
-  },
-  {
    "team": "MOT 4+4 Elite/Mester",
    "club": "Hørsholm 2",
    "date": "2026-11-29",
@@ -58,6 +47,17 @@
    "listedHome": false,
    "venue": "Frederikssundhallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18972,16,19,,510523,1151,"
+  },
+  {
+   "team": "MOT 4 spillere Mester",
+   "club": "Hørsholm 1",
+   "date": "2026-12-02",
+   "time": "19:15",
+   "opponent": "Grantoften 1",
+   "home": false,
+   "listedHome": false,
+   "venue": "Grantoftehallen",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18960,16,19,,510413,1151,"
   },
   {
    "team": "4 Spillere",
@@ -109,20 +109,6 @@
    "walkover": ""
   },
   {
-   "team": "U13 D",
-   "club": "Hørsholm 4",
-   "date": "2026-11-15",
-   "time": "11:30",
-   "opponent": "Farum 4",
-   "home": false,
-   "listedHome": true,
-   "venue": "Stenvadhallen 6-9",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,",
-   "result": "1-7",
-   "outcome": "T",
-   "walkover": ""
-  },
-  {
    "team": "U13 A",
    "club": "Hørsholm 1",
    "date": "2026-11-15",
@@ -137,6 +123,20 @@
    "walkover": ""
   },
   {
+   "team": "U13 D",
+   "club": "Hørsholm 4",
+   "date": "2026-11-15",
+   "time": "11:30",
+   "opponent": "Farum 4",
+   "home": false,
+   "listedHome": true,
+   "venue": "Stenvadhallen 6-9",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19110,4,10,,514612,1151,",
+   "result": "1-7",
+   "outcome": "T",
+   "walkover": ""
+  },
+  {
    "team": "MOT 4+4 Elite/Mester",
    "club": "Hørsholm 2",
    "date": "2026-11-15",
@@ -147,6 +147,20 @@
    "venue": "Hareskovhallen",
    "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18971,16,19,,510450,1151,",
    "result": "10-2",
+   "outcome": "T",
+   "walkover": ""
+  },
+  {
+   "team": "U13 A",
+   "club": "Hørsholm 1",
+   "date": "2026-11-15",
+   "time": "10:00",
+   "opponent": "KBK Kbh. 1",
+   "home": false,
+   "listedHome": true,
+   "venue": "Værløsehallerne 5-7",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,",
+   "result": "3-5",
    "outcome": "T",
    "walkover": ""
   },
@@ -179,31 +193,17 @@
    "walkover": ""
   },
   {
-   "team": "U13 A",
-   "club": "Hørsholm 1",
-   "date": "2026-11-15",
-   "time": "10:00",
-   "opponent": "KBK Kbh. 1",
-   "home": false,
-   "listedHome": true,
-   "venue": "Værløsehallerne 5-7",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18975,4,8,,510584,1151,",
-   "result": "3-5",
-   "outcome": "T",
-   "walkover": ""
-  },
-  {
-   "team": "Danmarksserien",
-   "club": "Hørsholm",
+   "team": "U13 C-D",
+   "club": "Hørsholm 3",
    "date": "2026-11-14",
    "time": "16:00",
-   "opponent": "KBK Kbh. 4",
+   "opponent": "Nivå-Kokkedal 1",
    "home": false,
    "listedHome": false,
-   "venue": "KBK-Hallen 4-6",
-   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,18858,1,1,,507825,1151,",
-   "result": "8-5",
-   "outcome": "T",
+   "venue": "Frederikssundhallen",
+   "url": "https://badmintonplayer.dk/DBF/HoldTurnering/Stilling/#5,2026,19105,4,10,,514462,1151,",
+   "result": "1-7",
+   "outcome": "V",
    "walkover": ""
   }
  ]
