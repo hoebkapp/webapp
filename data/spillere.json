@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T06:57:28+00:00",
+ "updated": "2026-11-16T08:17:04+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -242,6 +242,34 @@
   },
   {
    "rank": 18,
+   "id": "348191",
+   "name": "Manfred Bjørn Kirk",
+   "teams": [
+    "U13 C-D"
+   ],
+   "played": 11,
+   "won": 10,
+   "winPct": 91,
+   "pointsFor": 328,
+   "avgPoints": 29.8,
+   "avgDiff": 13.1
+  },
+  {
+   "rank": 19,
+   "id": "362187",
+   "name": "Max van Daalen",
+   "teams": [
+    "U13 C-D"
+   ],
+   "played": 11,
+   "won": 10,
+   "winPct": 91,
+   "pointsFor": 355,
+   "avgPoints": 32.3,
+   "avgDiff": 9.1
+  },
+  {
+   "rank": 20,
    "id": "13008",
    "name": "Anders Frewald",
    "teams": [
@@ -255,7 +283,7 @@
    "avgDiff": 12.3
   },
   {
-   "rank": 19,
+   "rank": 21,
    "id": "328467",
    "name": "Mathilde Baldvinsson Frewald",
    "teams": [
@@ -270,7 +298,7 @@
    "avgDiff": 12.2
   },
   {
-   "rank": 20,
+   "rank": 22,
    "id": "12992",
    "name": "Henriette Stang Hellen",
    "teams": [
@@ -285,7 +313,7 @@
    "avgDiff": 6.1
   },
   {
-   "rank": 21,
+   "rank": 23,
    "id": "38545",
    "name": "Shankar Ralhan",
    "teams": [
@@ -299,7 +327,7 @@
    "avgDiff": 8.4
   },
   {
-   "rank": 22,
+   "rank": 24,
    "id": "12881",
    "name": "Katrine Schou Andersen",
    "teams": [
@@ -313,7 +341,7 @@
    "avgDiff": 10.7
   },
   {
-   "rank": 23,
+   "rank": 25,
    "id": "334106",
    "name": "Malthe Larsen",
    "teams": [
@@ -327,7 +355,7 @@
    "avgDiff": 7.3
   },
   {
-   "rank": 24,
+   "rank": 26,
    "id": "362880",
    "name": "Jonas Gaudesen",
    "teams": [
@@ -341,7 +369,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 25,
+   "rank": 27,
    "id": "320930",
    "name": "Julius Tolsøe",
    "teams": [
@@ -355,7 +383,7 @@
    "avgDiff": 10.3
   },
   {
-   "rank": 26,
+   "rank": 28,
    "id": "324944",
    "name": "August Drescher",
    "teams": [
@@ -369,7 +397,7 @@
    "avgDiff": 10.0
   },
   {
-   "rank": 27,
+   "rank": 29,
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
@@ -384,7 +412,21 @@
    "avgDiff": 7.2
   },
   {
-   "rank": 28,
+   "rank": 30,
+   "id": "357023",
+   "name": "Ellie Schroller Broerson",
+   "teams": [
+    "U13 C-D"
+   ],
+   "played": 11,
+   "won": 9,
+   "winPct": 82,
+   "pointsFor": 331,
+   "avgPoints": 30.1,
+   "avgDiff": 7.4
+  },
+  {
+   "rank": 31,
    "id": "352483",
    "name": "Birk Lund Dujardin",
    "teams": [
@@ -398,21 +440,7 @@
    "avgDiff": 7.4
   },
   {
-   "rank": 29,
-   "id": "348191",
-   "name": "Manfred Bjørn Kirk",
-   "teams": [
-    "U13 C-D"
-   ],
-   "played": 5,
-   "won": 4,
-   "winPct": 80,
-   "pointsFor": 148,
-   "avgPoints": 29.6,
-   "avgDiff": 10.8
-  },
-  {
-   "rank": 30,
+   "rank": 32,
    "id": "366509",
    "name": "Oscar spliid",
    "teams": [
@@ -426,7 +454,7 @@
    "avgDiff": 6.2
   },
   {
-   "rank": 31,
+   "rank": 33,
    "id": "338663",
    "name": "Sebastian Rossau",
    "teams": [
@@ -438,34 +466,6 @@
    "pointsFor": 304,
    "avgPoints": 30.4,
    "avgDiff": 6.0
-  },
-  {
-   "rank": 32,
-   "id": "357023",
-   "name": "Ellie Schroller Broerson",
-   "teams": [
-    "U13 C-D"
-   ],
-   "played": 5,
-   "won": 4,
-   "winPct": 80,
-   "pointsFor": 150,
-   "avgPoints": 30.0,
-   "avgDiff": 5.2
-  },
-  {
-   "rank": 33,
-   "id": "362187",
-   "name": "Max van Daalen",
-   "teams": [
-    "U13 C-D"
-   ],
-   "played": 5,
-   "won": 4,
-   "winPct": 80,
-   "pointsFor": 153,
-   "avgPoints": 30.6,
-   "avgDiff": 3.4
   },
   {
    "rank": 34,
@@ -797,6 +797,21 @@
   },
   {
    "rank": 57,
+   "id": "362142",
+   "name": "Maximilian Vessel Nielsen",
+   "teams": [
+    "U15 B",
+    "U13 C-D"
+   ],
+   "played": 12,
+   "won": 7,
+   "winPct": 58,
+   "pointsFor": 317,
+   "avgPoints": 26.4,
+   "avgDiff": 4.7
+  },
+  {
+   "rank": 58,
    "id": "336079",
    "name": "Stefanie Flamand",
    "teams": [
@@ -810,7 +825,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 58,
+   "rank": 59,
    "id": "275709",
    "name": "Sebastian Søbjerg Lynfort",
    "teams": [
@@ -824,7 +839,7 @@
    "avgDiff": 0.2
   },
   {
-   "rank": 59,
+   "rank": 60,
    "id": "12813",
    "name": "Anders Vedsted Nørrelund",
    "teams": [
@@ -838,7 +853,7 @@
    "avgDiff": 0.3
   },
   {
-   "rank": 60,
+   "rank": 61,
    "id": "332881",
    "name": "Agnes Schroller Broerson",
    "teams": [
@@ -852,7 +867,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 61,
+   "rank": 62,
    "id": "320827",
    "name": "Emma Sejberg Rasmussen",
    "teams": [
@@ -867,7 +882,7 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 62,
+   "rank": 63,
    "id": "330735",
    "name": "Claudia Orholm Nielsen",
    "teams": [
@@ -881,7 +896,7 @@
    "avgDiff": -0.5
   },
   {
-   "rank": 63,
+   "rank": 64,
    "id": "330569",
    "name": "Anders Johannessen",
    "teams": [
@@ -895,7 +910,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 64,
+   "rank": 65,
    "id": "358845",
    "name": "Thor Evan Seitzberg",
    "teams": [
@@ -909,7 +924,7 @@
    "avgDiff": 0.8
   },
   {
-   "rank": 65,
+   "rank": 66,
    "id": "346993",
    "name": "Mikkel Christian Korsholm",
    "teams": [
@@ -923,7 +938,7 @@
    "avgDiff": -0.2
   },
   {
-   "rank": 66,
+   "rank": 67,
    "id": "366570",
    "name": "Malthe Hommel",
    "teams": [
@@ -937,7 +952,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 67,
+   "rank": 68,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -951,7 +966,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 68,
+   "rank": 69,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -965,7 +980,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 69,
+   "rank": 70,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -979,7 +994,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 70,
+   "rank": 71,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -994,7 +1009,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 71,
+   "rank": 72,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -1008,7 +1023,7 @@
    "avgDiff": -1.5
   },
   {
-   "rank": 72,
+   "rank": 73,
    "id": "337844",
    "name": "Ellen Krogh-Larsen",
    "teams": [
@@ -1022,7 +1037,7 @@
    "avgDiff": -2.3
   },
   {
-   "rank": 73,
+   "rank": 74,
    "id": "362341",
    "name": "Villas Alexander Worm",
    "teams": [
@@ -1036,7 +1051,7 @@
    "avgDiff": -2.7
   },
   {
-   "rank": 74,
+   "rank": 75,
    "id": "268924",
    "name": "Marianne Seydel Jørgensen",
    "teams": [
@@ -1050,7 +1065,7 @@
    "avgDiff": -3.7
   },
   {
-   "rank": 75,
+   "rank": 76,
    "id": "339513",
    "name": "Camilla Engel Post",
    "teams": [
@@ -1064,7 +1079,7 @@
    "avgDiff": -5.3
   },
   {
-   "rank": 76,
+   "rank": 77,
    "id": "314546",
    "name": "Andreas Tønnesen",
    "teams": [
@@ -1078,7 +1093,7 @@
    "avgDiff": -1.3
   },
   {
-   "rank": 77,
+   "rank": 78,
    "id": "357024",
    "name": "Ella Baldvinsson Frewald",
    "teams": [
@@ -1092,7 +1107,7 @@
    "avgDiff": -3.6
   },
   {
-   "rank": 78,
+   "rank": 79,
    "id": "364056",
    "name": "Mikkel Honoré Hansen",
    "teams": [
@@ -1106,7 +1121,7 @@
    "avgDiff": -5.5
   },
   {
-   "rank": 79,
+   "rank": 80,
    "id": "357320",
    "name": "Sebastian Feodor Nilsson",
    "teams": [
@@ -1120,7 +1135,7 @@
    "avgDiff": -13.7
   },
   {
-   "rank": 80,
+   "rank": 81,
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
@@ -1135,7 +1150,7 @@
    "avgDiff": -4.3
   },
   {
-   "rank": 81,
+   "rank": 82,
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
@@ -1150,7 +1165,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 82,
+   "rank": 83,
    "id": "346992",
    "name": "Carl Grønfeldt",
    "teams": [
@@ -1164,7 +1179,7 @@
    "avgDiff": -7.7
   },
   {
-   "rank": 83,
+   "rank": 84,
    "id": "348494",
    "name": "Mathilde Dahl Plougmann",
    "teams": [
@@ -1179,7 +1194,7 @@
    "avgDiff": -6.6
   },
   {
-   "rank": 84,
+   "rank": 85,
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
@@ -1194,7 +1209,7 @@
    "avgDiff": -4.4
   },
   {
-   "rank": 85,
+   "rank": 86,
    "id": "310855",
    "name": "Emil Tvedergaard Blöndal",
    "teams": [
@@ -1208,7 +1223,7 @@
    "avgDiff": -4.2
   },
   {
-   "rank": 86,
+   "rank": 87,
    "id": "357481",
    "name": "Nikolaj Feodor Nilsson",
    "teams": [
@@ -1222,7 +1237,7 @@
    "avgDiff": -2.4
   },
   {
-   "rank": 87,
+   "rank": 88,
    "id": "330871",
    "name": "Peter Østergaard",
    "teams": [
@@ -1236,7 +1251,7 @@
    "avgDiff": -5.9
   },
   {
-   "rank": 88,
+   "rank": 89,
    "id": "365636",
    "name": "Bertram Stenbæk Bro",
    "teams": [
@@ -1248,20 +1263,6 @@
    "pointsFor": 111,
    "avgPoints": 22.2,
    "avgDiff": -10.0
-  },
-  {
-   "rank": 89,
-   "id": "362142",
-   "name": "Maximilian Vessel Nielsen",
-   "teams": [
-    "U15 B"
-   ],
-   "played": 6,
-   "won": 1,
-   "winPct": 17,
-   "pointsFor": 137,
-   "avgPoints": 22.8,
-   "avgDiff": -7.0
   },
   {
    "rank": 90,
@@ -12492,6 +12493,166 @@
    "adult": false,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "4. D",
+     "partner": [
+      "Maximilian Vessel Nielsen"
+     ],
+     "opponents": [
+      "Cornelius Gulmann",
+      "Arthur Egdal Dyrlund"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       11
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "3. D",
+     "partner": [
+      "Max van Daalen"
+     ],
+     "opponents": [
+      "Liva Larsen",
+      "Arthur Egdal Dyrlund"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Arthur Egdal Dyrlund"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "4. D",
+     "partner": [
+      "Max van Daalen"
+     ],
+     "opponents": [
+      "Mathias Mønsted Nybroe",
+      "Vitus Roug"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "3. D",
+     "partner": [
+      "Manfred Bjørn Kirk"
+     ],
+     "opponents": [
+      "Vitus Roug",
+      "Elias Søgaard Ørum"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Elias Søgaard Ørum"
+     ],
+     "sets": [
+      [
+       8,
+       15
+      ],
+      [
+       11,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "U13 C-D",
      "teamName": "Hørsholm 3",
@@ -12628,24 +12789,24 @@
      "walkover": ""
     }
    ],
-   "played": 5,
-   "won": 4,
-   "lost": 1,
-   "winPct": 80,
-   "pointsFor": 150,
-   "pointsAgainst": 124,
-   "avgPoints": 30.0,
-   "avgDiff": 5.2,
-   "setsWon": 8,
-   "setsLost": 3,
+   "played": 11,
+   "won": 9,
+   "lost": 2,
+   "winPct": 82,
+   "pointsFor": 331,
+   "pointsAgainst": 250,
+   "avgPoints": 30.1,
+   "avgDiff": 7.4,
+   "setsWon": 18,
+   "setsLost": 6,
    "byDiscipline": {
     "D": {
-     "played": 4,
-     "won": 4
+     "played": 8,
+     "won": 8
     },
     "S": {
-     "played": 1,
-     "won": 0
+     "played": 3,
+     "won": 1
     }
    },
    "clubMember": true,
@@ -23161,6 +23322,162 @@
    "adult": false,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "1. D",
+     "partner": [
+      "Max van Daalen"
+     ],
+     "opponents": [
+      "Montgomery Gunner Schermer",
+      "Liva Larsen"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "2. D",
+     "partner": [
+      "Maximilian Vessel Nielsen"
+     ],
+     "opponents": [
+      "Cornelius Gulmann",
+      "Alexander Singh Mouritsen"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Montgomery Gunner Schermer"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       3
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "1. D",
+     "partner": [
+      "Maximilian Vessel Nielsen"
+     ],
+     "opponents": [
+      "Theodor Rahman Fink",
+      "Elias Søgaard Ørum"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "3. D",
+     "partner": [
+      "Ellie Schroller Broerson"
+     ],
+     "opponents": [
+      "Vitus Roug",
+      "Elias Søgaard Ørum"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Vitus Roug"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "U13 C-D",
      "teamName": "Hørsholm 3",
@@ -23290,24 +23607,24 @@
      "walkover": ""
     }
    ],
-   "played": 5,
-   "won": 4,
+   "played": 11,
+   "won": 10,
    "lost": 1,
-   "winPct": 80,
-   "pointsFor": 148,
-   "pointsAgainst": 94,
-   "avgPoints": 29.6,
-   "avgDiff": 10.8,
-   "setsWon": 8,
+   "winPct": 91,
+   "pointsFor": 328,
+   "pointsAgainst": 184,
+   "avgPoints": 29.8,
+   "avgDiff": 13.1,
+   "setsWon": 20,
    "setsLost": 2,
    "byDiscipline": {
     "D": {
-     "played": 3,
-     "won": 2
+     "played": 7,
+     "won": 6
     },
     "S": {
-     "played": 2,
-     "won": 2
+     "played": 4,
+     "won": 4
     }
    },
    "clubMember": true,
@@ -26531,6 +26848,170 @@
    "adult": false,
    "games": [
     {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "1. D",
+     "partner": [
+      "Manfred Bjørn Kirk"
+     ],
+     "opponents": [
+      "Montgomery Gunner Schermer",
+      "Liva Larsen"
+     ],
+     "sets": [
+      [
+       15,
+       8
+      ],
+      [
+       15,
+       9
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "3. D",
+     "partner": [
+      "Ellie Schroller Broerson"
+     ],
+     "opponents": [
+      "Liva Larsen",
+      "Arthur Egdal Dyrlund"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Alexander Singh Mouritsen"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       10,
+       15
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "4. D",
+     "partner": [
+      "Ellie Schroller Broerson"
+     ],
+     "opponents": [
+      "Mathias Mønsted Nybroe",
+      "Vitus Roug"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "2. D",
+     "partner": [
+      "Maximilian Vessel Nielsen"
+     ],
+     "opponents": [
+      "Theodor Rahman Fink",
+      "Mathias Mønsted Nybroe"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       8
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Mathias Mønsted Nybroe"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       5
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
      "date": "2026-10-24",
      "team": "U13 C-D",
      "teamName": "Hørsholm 3",
@@ -26664,24 +27145,24 @@
      "walkover": ""
     }
    ],
-   "played": 5,
-   "won": 4,
+   "played": 11,
+   "won": 10,
    "lost": 1,
-   "winPct": 80,
-   "pointsFor": 153,
-   "pointsAgainst": 136,
-   "avgPoints": 30.6,
-   "avgDiff": 3.4,
-   "setsWon": 8,
-   "setsLost": 3,
+   "winPct": 91,
+   "pointsFor": 355,
+   "pointsAgainst": 255,
+   "avgPoints": 32.3,
+   "avgDiff": 9.1,
+   "setsWon": 20,
+   "setsLost": 5,
    "byDiscipline": {
     "D": {
-     "played": 3,
-     "won": 3
+     "played": 7,
+     "won": 7
     },
     "S": {
-     "played": 2,
-     "won": 1
+     "played": 4,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -26711,7 +27192,8 @@
    "id": "362142",
    "name": "Maximilian Vessel Nielsen",
    "teams": [
-    "U15 B"
+    "U15 B",
+    "U13 C-D"
    ],
    "adult": false,
    "games": [
@@ -26761,6 +27243,162 @@
       ]
      ],
      "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "4. D",
+     "partner": [
+      "Ellie Schroller Broerson"
+     ],
+     "opponents": [
+      "Cornelius Gulmann",
+      "Arthur Egdal Dyrlund"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       11
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "2. D",
+     "partner": [
+      "Manfred Bjørn Kirk"
+     ],
+     "opponents": [
+      "Cornelius Gulmann",
+      "Alexander Singh Mouritsen"
+     ],
+     "sets": [
+      [
+       15,
+       7
+      ],
+      [
+       15,
+       7
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Rudersdal 1",
+     "matchID": "514869",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Liva Larsen"
+     ],
+     "sets": [
+      [
+       15,
+       2
+      ],
+      [
+       15,
+       2
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "1. D",
+     "partner": [
+      "Manfred Bjørn Kirk"
+     ],
+     "opponents": [
+      "Theodor Rahman Fink",
+      "Elias Søgaard Ørum"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       4
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "2. D",
+     "partner": [
+      "Max van Daalen"
+     ],
+     "opponents": [
+      "Theodor Rahman Fink",
+      "Mathias Mønsted Nybroe"
+     ],
+     "sets": [
+      [
+       15,
+       10
+      ],
+      [
+       15,
+       8
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U13 C-D",
+     "teamName": "Hørsholm 3",
+     "opponentTeam": "Nivå-Kokkedal 1",
+     "matchID": "514462",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Theodor Rahman Fink"
+     ],
+     "sets": [
+      [
+       15,
+       6
+      ],
+      [
+       15,
+       3
+      ]
+     ],
+     "won": true,
      "walkover": ""
     },
     {
@@ -26870,24 +27508,24 @@
      "walkover": ""
     }
    ],
-   "played": 6,
-   "won": 1,
+   "played": 12,
+   "won": 7,
    "lost": 5,
-   "winPct": 17,
-   "pointsFor": 137,
-   "pointsAgainst": 179,
-   "avgPoints": 22.8,
-   "avgDiff": -7.0,
-   "setsWon": 3,
+   "winPct": 58,
+   "pointsFor": 317,
+   "pointsAgainst": 261,
+   "avgPoints": 26.4,
+   "avgDiff": 4.7,
+   "setsWon": 15,
    "setsLost": 10,
    "byDiscipline": {
     "S": {
-     "played": 4,
-     "won": 1
+     "played": 6,
+     "won": 3
     },
     "D": {
-     "played": 2,
-     "won": 0
+     "played": 6,
+     "won": 4
     }
    },
    "clubMember": true,
