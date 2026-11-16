@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T05:23:09+00:00",
+  "updated": "2026-11-16T06:57:28+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -11365,6 +11365,17 @@
         },
         {
           "pos": "5",
+          "team": "Frederikssund/Jyllinge",
+          "teamID": "122523",
+          "isUs": false,
+          "played": "5",
+          "won": "2",
+          "score": "27-38",
+          "sets": "54-78",
+          "points": "6"
+        },
+        {
+          "pos": "6",
           "team": "Farum 2",
           "teamID": "122519",
           "isUs": false,
@@ -11375,26 +11386,15 @@
           "points": "5"
         },
         {
-          "pos": "6",
+          "pos": "7",
           "team": "Ølstykke 2",
           "teamID": "122518",
           "isUs": false,
-          "played": "4",
+          "played": "5",
           "won": "1",
-          "score": "23-29",
-          "sets": "46-65",
+          "score": "28-37",
+          "sets": "53-83",
           "points": "5"
-        },
-        {
-          "pos": "7",
-          "team": "Frederikssund/Jyllinge",
-          "teamID": "122523",
-          "isUs": false,
-          "played": "4",
-          "won": "1",
-          "score": "19-33",
-          "sets": "36-71",
-          "points": "3"
         },
         {
           "pos": "8",
