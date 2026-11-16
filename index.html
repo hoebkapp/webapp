@@ -776,6 +776,12 @@ textarea.inp{resize:vertical;line-height:1.45}
   // Medlemmer fra Conventus (kun for indloggede). Spillere fra badmintonplayer.dk kobles på via navnet.
   // Almindelige brugere ser kun Conventus-medlemmer; administratorer kan filtrere på, hvor spilleren findes.
   var MEM = { data: null, err: '', loading: false, tok: '' };
+  // Træningshold i Conventus (betalende medlemmer). Nøglen i nyheder er "c:<gruppeId>"; CGL = {"c:<id>": titel} fra serveren.
+  var CGL = {};
+  function cgShort(t) { return String(t || '').split(', ')[0]; }   // "1.0 Ungdom Bredde 1 - Årgang 2016 - 2021, mandag …" → før første komma
+  function cgList() {   // administratorer: [{id, title, n, app}] — kun når serveren sender dem (script 2026-11-17.1+)
+    return (MEM.data && Array.isArray(MEM.data.cgroups)) ? MEM.data.cgroups : null;
+  }
   var PSRC = { alle: ['Alle', '', ''], allcon: ['Alle fra Conventus', '', ''], begge: ['Begge steder', '#DCEFD9', '#1E5B1A'], conventus: ['Kun Conventus', '#E3ECF8', '#1F4E86'],
                bp: ['Kun badmintonplayer', '#FCEBD7', '#8A4B0F'], ingen: ['Ingen af dem', '#F6DADA', '#8A1F1F'], foraeldre: ['Forældre', '#E6EED3', '#3E5209'] };
   var PSRC_TAG = { begge: 'Conventus + BP', conventus: 'Conventus', bp: 'BP', ingen: 'Ingen', foraeldre: 'Forælder' };
@@ -795,9 +801,10 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (MEM.tok === ME.token && (MEM.data || MEM.err) && !force) return;
     MEM.loading = true; MEM.tok = ME.token;
     api({ action: 'members', token: ME.token }).then(function (r) {
-      if (r && r.ok) { MEM.data = r; MEM.err = ''; } else { MEM.data = null; MEM.err = (r && r.error) || 'Ukendt fejl'; }
+      if (r && r.ok) { MEM.data = r; MEM.err = ''; (r.cgroups || []).forEach(function (g) { CGL['c:' + g.id] = g.title; }); }
+      else { MEM.data = null; MEM.err = (r && r.error) || 'Ukendt fejl'; }
     }).catch(function () { MEM.data = null; MEM.err = 'Ingen forbindelse'; })
-      .then(function () { MEM.loading = false; if (/^#\/spillere/.test(location.hash)) route(true); });
+      .then(function () { MEM.loading = false; if (/^#\/(spillere|nyheder\/ny)/.test(location.hash)) route(true); });
   }
   function pseudoPlayer(name) { return { name: name, teams: [], games: [], played: 0, won: 0, profile: { rankings: [] } }; }
   // 'old' = serveren kender ikke medlemslisten endnu (gammel Apps Script-version) → vis badmintonplayer-listen som før
@@ -818,7 +825,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     d.members.forEach(function (m) {
       var id = match(m.name); if (id) used[id] = 1;
       rows.push({ name: m.name, bp: id, p: id ? D.players[id] : pseudoPlayer(m.name), src: id ? 'begge' : 'conventus',
-                  groups: (m.groups || []).concat((m.leads || []).map(function (g) { return g + ' (leder)'; })) });
+                  groups: (m.groups || []).concat((m.leads || []).map(function (g) { return g + ' (leder)'; })), cg: (m.groups || []).concat(m.leads || []) });
     });
     if (memAdmin()) {
       D.ids.forEach(function (id) { if (!used[id]) { used[id] = 1; rows.push({ name: D.players[id].name, bp: id, p: D.players[id], groups: [], src: 'bp' }); } });
@@ -852,6 +859,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   function srcRows() {   // rækker efter administratorens kilde-filter
     var rows = memberRows();
     if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old'; });
+    if (UI.pcg) rows = rows.filter(function (r) { return (r.cg || []).indexOf(UI.pcg) >= 0; });
     return UI.psrc === 'alle' ? rows : rows.filter(function (r) { return srcIs(r, UI.psrc); });
   }
   // Holdets kategori til klubranglisten: ungdom (U..), motionist (MOT ..), veteran (4 Spillere, A-/B-/C-række, 40+ …) ellers senior
@@ -881,10 +889,17 @@ textarea.inp{resize:vertical;line-height:1.45}
     h += '<label class="card search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5866" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>' +
       '<input id="q" type="search" value="' + esc(UI.q) + '" placeholder="Søg spiller eller hold" aria-label="Søg spiller eller hold" autocomplete="off"></label>';
     if (memAdmin()) {
-      var all = memberRows();
+      var all = memberRows(), allF = UI.pcg ? all.filter(function (r) { return (r.cg || []).indexOf(UI.pcg) >= 0; }) : all;   // kildetal følger det valgte Conventus-hold
       h += '<span class="lbl">Administrator · hvor findes spilleren?</span><div class="chips regchips" role="group" aria-label="Filtrér efter kilde">' + Object.keys(PSRC).map(function (k) {
-        var n = all.filter(function (r) { return srcIs(r, k); }).length;
+        var n = allF.filter(function (r) { return srcIs(r, k); }).length;
         return '<button class="chip" data-psrc="' + k + '" aria-pressed="' + (UI.psrc === k) + '">' + PSRC[k][0] + ' <span class="xs">' + (k === 'foraeldre' && !Array.isArray(USR.data) ? (USR.loading ? '…' : '?') : n) + '</span></button>'; }).join('') + '</div>';
+      // Hold i Conventus: titlerne fra medlemslisten (medlem eller leder af holdet)
+      var cgs = {}; all.forEach(function (r) { (r.cg || []).forEach(function (t) { cgs[t] = (cgs[t] || 0) + 1; }); });
+      var cgk = Object.keys(cgs).sort(function (a, b) { return a.localeCompare(b, 'da', { numeric: true }); });
+      if (UI.pcg && !cgs[UI.pcg]) UI.pcg = '';
+      if (cgk.length) h += '<span class="lbl">Administrator · hold i Conventus</span><div class="chips regchips" role="group" aria-label="Filtrér efter hold i Conventus">' +
+        '<button class="chip" data-pcg="" aria-pressed="' + !UI.pcg + '">Alle hold</button>' +
+        cgk.map(function (t) { return '<button class="chip" data-pcg="' + esc(t) + '" title="' + esc(t) + '" aria-pressed="' + (UI.pcg === t) + '">' + esc(cgShort(t)) + ' <span class="xs">' + cgs[t] + '</span></button>'; }).join('') + '</div>';
     }
     if (mode === 'old' && ME.role && ME.role.admin) h += '<p class="note">Medlemmer fra Conventus vises, når den nye version af Apps Script er implementeret. Indtil da vises spillerne fra badmintonplayer.dk.</p>';
     h += '<div class="chips regchips" role="group" aria-label="Filtrér spillere">' + Object.keys(PF).map(function (k) {
@@ -3653,6 +3668,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       SNAK.loading = false;
       if (r && r.ok) {
         SNAK.rooms = r.rooms || []; SNAK.news = r.news || []; SNAK.canNews = !!r.canNews; SNAK.at = Date.now();
+        SNAK.news.forEach(function (n) { Object.keys(n.lbl || {}).forEach(function (k) { CGL[k] = n.lbl[k]; }); });   // navne på Conventus-hold
         SNAK.rooms.forEach(function (x) { if (SEEN[x.id] === undefined) SEEN[x.id] = x.last; });   // nye rum: kun nyt fra nu af tæller som ulæst
         saveSeen(); updDot();
         if (!onChatRoom()) route(true);
@@ -3717,6 +3733,7 @@ textarea.inp{resize:vertical;line-height:1.45}
   function audLabel(x) {
     if (x === '*') return 'Alle';
     if (/^g:/.test(x)) return 'Træning · ' + x.slice(2);
+    if (/^c:/.test(x)) return CGL[x] ? cgShort(CGL[x]) : 'Hold i Conventus';
     var t = D.teams.filter(function (tt) { return 'h:' + tt.leagueGroupTeamID === x; })[0];
     return t ? t.label : x;
   }
@@ -3935,7 +3952,12 @@ textarea.inp{resize:vertical;line-height:1.45}
     setTab('tilmeld'); setHeader('Skriv en nyhed', 'Til alle eller udvalgte hold', true);
     if (!ME || !ME.role || !ME.role.admin) return '<p class="empty">Kun administratorer kan skrive nyheder.</p>';
     var F = SNAK.nf = SNAK.nf || { to: { '*': 1 }, push: true, title: '', text: '' };
-    var chip = function (k, l) { return '<button class="chip" data-newsto="' + esc(k) + '" aria-pressed="' + !!F.to[k] + '">' + esc(l) + '</button>'; };
+    var chip = function (k, l, tip) { return '<button class="chip" data-newsto="' + esc(k) + '" aria-pressed="' + !!F.to[k] + '"' + (tip ? ' title="' + esc(tip) + '"' : '') + '>' + l + '</button>'; };
+    loadMembers();
+    var cgl = cgList(), cgHtml = cgl ? (cgl.length ? cgl.map(function (g) {
+        return chip('c:' + g.id, esc(cgShort(g.title)) + ' <span class="xs">' + g.app + '/' + g.n + '</span>', g.title + ' — ' + g.app + ' af ' + g.n + ' kan nås i appen'); }).join('')
+        : '<span class="xs">Ingen hold fra Conventus endnu.</span>')
+      : '<span class="xs">' + (MEM.loading || (!MEM.data && !MEM.err) ? 'Henter hold fra Conventus …' : 'Hold fra Conventus kræver, at klubbens server er opdateret.') + '</span>';
     var teams = D.teams.slice().sort(function (a, b) { return a.label.localeCompare(b.label, 'da', { numeric: true }); });
     var sel = Object.keys(F.to);
     return '<span class="lbl">Hjælp til opsætning — start fra en skabelon</span><div class="tpls">' +
@@ -3948,10 +3970,12 @@ textarea.inp{resize:vertical;line-height:1.45}
              : '<label class="rb" style="align-self:flex-start;display:inline-flex;align-items:center;cursor:pointer">' + (SNAK.imgBusy ? 'Forbereder billede …' : '📷 Tilføj billede') +
                '<input type="file" id="nwImg" accept="image/*" style="display:none"></label>') +
       '</div>' +
-      '<span class="lbl">Hvem er nyheden til?</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + chip('*', 'Alle i klubben') + '</div>' +
-      '<span class="xs" style="margin:0 4px">Træningsgrupper</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + GROUPS.map(function (g) { return chip('g:' + g, g); }).join('') + '</div>' +
-      '<span class="xs" style="margin:0 4px">Hold</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + teams.map(function (t) { return chip('h:' + t.leagueGroupTeamID, t.label); }).join('') + '</div>' +
-      '<p class="note">' + (F.to['*'] ? 'Alle kan se nyheden — også før de logger ind.' : sel.length ? 'Kun ' + esc(sel.map(audLabel).join(', ')) + ' ser nyheden: spillere på holdene, holdledere, dem der følger holdene og dem der har valgt træningsgrupperne.' : 'Vælg mindst én modtager.') + '</p>' +
+      '<span class="lbl">Hvem er nyheden til?</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + chip('*', esc('Alle i klubben')) + '</div>' +
+      '<span class="xs" style="margin:0 4px">Træningsgrupper</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + GROUPS.map(function (g) { return chip('g:' + g, esc(g)); }).join('') + '</div>' +
+      '<span class="xs" style="margin:0 4px">Træningshold i Conventus (betalende medlemmer · i appen/på holdet)</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + cgHtml + '</div>' +
+      '<span class="xs" style="margin:0 4px">Hold</span><div style="display:flex;flex-wrap:wrap;gap:6px">' + teams.map(function (t) { return chip('h:' + t.leagueGroupTeamID, esc(t.label)); }).join('') + '</div>' +
+      '<p class="note">' + (F.to['*'] ? 'Alle kan se nyheden — også før de logger ind.' : sel.length ? 'Kun ' + esc(sel.map(audLabel).join(', ')) + ' ser nyheden: spillere på holdene, holdledere, dem der følger holdene og dem der har valgt træningsgrupperne' +
+        (sel.some(function (x) { return /^c:/.test(x); }) ? '. For hold i Conventus: medlemmerne og deres forældre, når de bruger appen (koblet på navnet)' : '') + '.' : 'Vælg mindst én modtager.') + '</p>' +
       '<label class="card" style="padding:12px 14px;display:flex;align-items:center;gap:10px;font-size:14px"><input type="checkbox" id="nwPush"' + (F.push ? ' checked' : '') + ' style="width:20px;height:20px"><span>Send også som notifikation til dem, der har slået notifikationer til</span></label>' +
       '<button class="rb" style="min-height:44px" data-act="nwprev">' + (F.prev ? 'Skjul forhåndsvisning' : 'Forhåndsvis nyheden') + '</button>' +
       (F.prev ? '<span class="lbl">Sådan ser nyheden ud</span><article class="card" style="padding:16px;display:flex;flex-direction:column;gap:8px">' +
@@ -4895,7 +4919,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (history.length > 1) history.back(); else location.hash = '#/hold';
   });
   $main.addEventListener('click', function (e) {
-    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-leadmail],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-psrc],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst],[data-tx]');
+    var b = e.target.closest('[data-go],[data-welcome],[data-seg],[data-metric],[data-filter],[data-reg],[data-me],[data-act],[data-group],[data-tuage],[data-pick],[data-lustatus],[data-lufilter],[data-leadmail],[data-admpick],[data-admedit],[data-admemail],[data-admteam],[data-admcancel],[data-follow],[data-tfreg],[data-tulvl],[data-pf],[data-psrc],[data-pcg],[data-trg],[data-trh],[data-mhold],[data-calpre],[data-calteam],[data-calx],[data-msgdel],[data-newsto],[data-newsdel],[data-kid],[data-sign],[data-actto],[data-taskdel],[data-ov],[data-admdel],[data-usrf],[data-toparent],[data-ride],[data-ridetake],[data-ridesave],[data-ridecancel],[data-rpm],[data-fbtype],[data-fbf],[data-fbopen],[data-fbsendreply],[data-fbchat],[data-fbst],[data-tx]');
     if (b) { UI.calPick = !!b.dataset.calpick; if (b.dataset.calpick) UI.calScrollTo = (b.dataset.go || '').split('/').pop(); }
     if (!b) return;
     if (b.dataset.act === 'pnamesave') {
@@ -5072,6 +5096,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       if (hi >= 0) ME.holds.splice(hi, 1); else ME.holds.push(b.dataset.mhold);
       saveMe(); route(true); return;
     }
+    if (b.dataset.pcg !== undefined) { UI.pcg = b.dataset.pcg; route(true); return; }
     if (b.dataset.psrc) {
       UI.psrc = b.dataset.psrc; try { localStorage.setItem('hoebk_psrc', UI.psrc); } catch (e3) {}
       route(true); return;
