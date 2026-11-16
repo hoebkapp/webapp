@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T17:15:12+00:00",
+ "updated": "2026-11-16T17:30:13+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -500,6 +500,13 @@
   },
   {
    "e": "t:2026-11-17:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "nej",
+   "ts": "2026-11-16T17:27:01.107Z"
+  },
+  {
+   "e": "t:2026-11-17:Senior",
    "p": "328467",
    "n": "Mathilde Baldvinsson Frewald",
    "s": "nej",
@@ -546,6 +553,13 @@
    "n": "Hans Christian Blomberg",
    "s": "nej",
    "ts": "2026-11-16T07:26:38.227Z"
+  },
+  {
+   "e": "t:2026-11-19:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-16T17:27:06.419Z"
   },
   {
    "e": "t:2026-11-19:Senior",
@@ -598,6 +612,13 @@
   },
   {
    "e": "t:2026-11-24:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "nej",
+   "ts": "2026-11-16T17:27:23.408Z"
+  },
+  {
+   "e": "t:2026-11-24:Senior",
    "p": "13374",
    "n": "Signe Baldvinsson",
    "s": "ja",
@@ -609,6 +630,13 @@
    "n": "Daniel Lee Skriver",
    "s": "nej",
    "ts": "2026-11-12T18:24:37.695Z"
+  },
+  {
+   "e": "t:2026-11-26:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "nej",
+   "ts": "2026-11-16T17:27:26.923Z"
   },
   {
    "e": "t:2026-11-26:Senior",
