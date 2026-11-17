@@ -18,7 +18,7 @@
 <style>
 :root{--akt:#7A4FC9;--plan:#C2255C;--tour:#1E6B3A;--ink:#0E2236;--muted:#4A5866;--muted2:#6A7682;--ground:#F7F7F2;--card:#FFFFFF;--line:#E2E5DC;--line2:#EDEFE8;--accent:#D4F25A;--win:#9FE0AE;--loss:#F3D6D2;--draw:#E7ECF1;--soft:#F1F2EC;--hi:#F4FBD9;--navy2:#1B3550;--seg:#E7EAE1}
 *{box-sizing:border-box}
-html,body{margin:0;background:var(--ground);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.4;-webkit-text-size-adjust:100%}
+html,body{margin:0;height:100%;overflow:hidden;overscroll-behavior:none;background:var(--ground);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:15px;line-height:1.4;-webkit-text-size-adjust:100%}
 button{font-family:inherit;color:inherit;cursor:pointer}
 a{color:var(--ink)}
 /* Fast ramme: top og menu ligger fast, kun indholdet ruller (undgår at menuen hopper på iPhone-hjemmeskærmsapps) */
@@ -5298,6 +5298,19 @@ textarea.inp{resize:vertical;line-height:1.45}
     $main.innerHTML = '<p class="empty">Kunne ikke hente data. Prøv igen om lidt.</p>';
     document.getElementById('subtitle').textContent = 'Fejl ved hentning';
   });
+})();
+</script>
+<script>
+/* iOS: tastaturet ruller hele siden op og glemmer at rulle tilbage, så knapperne kun kan trykkes over deres plads. Nulstil sidens rulning. */
+(function () {
+  function reset() { if (window.scrollY || window.scrollX || document.documentElement.scrollTop || document.body.scrollTop) { window.scrollTo(0, 0); document.documentElement.scrollTop = 0; document.body.scrollTop = 0; } }
+  function later() { setTimeout(reset, 60); setTimeout(reset, 350); }
+  document.addEventListener('focusout', later, true);
+  window.addEventListener('scroll', function () { var a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) reset(); }, { passive: true });
+  if (window.visualViewport) window.visualViewport.addEventListener('resize', function () { if (window.visualViewport.height >= window.innerHeight - 1) later(); });
+  window.addEventListener('orientationchange', later);
+  document.addEventListener('visibilitychange', function () { if (!document.hidden) later(); });
+  document.addEventListener('touchend', function () { var a = document.activeElement; if (!a || !/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)) reset(); }, { passive: true, capture: true });
 })();
 </script>
 </body>
