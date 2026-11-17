@@ -1452,6 +1452,15 @@
   "min": 25,
   "roadKm": 27
  },
+ "Kredsmesterskaber Sjælland: Finaler i Herlev": {
+  "sted": "Herlev",
+  "lat": 55.7338,
+  "lon": 12.4294,
+  "region": "Hovedstaden",
+  "via": "nominatim",
+  "min": 23,
+  "roadKm": 24
+ },
  "Kullerup/Refsvindinge": {
   "sted": "Kullerup",
   "lat": 55.3132,

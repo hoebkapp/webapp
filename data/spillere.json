@@ -1,23 +1,9 @@
 {
- "updated": "2026-11-17T19:45:16+00:00",
+ "updated": "2026-11-17T20:23:03+00:00",
  "season": "2026",
  "clubRanking": [
   {
    "rank": 1,
-   "id": "365654",
-   "name": "Max Han Chen",
-   "teams": [
-    "U11 Dx"
-   ],
-   "played": 7,
-   "won": 7,
-   "winPct": 100,
-   "pointsFor": 180,
-   "avgPoints": 30.0,
-   "avgDiff": 14.7
-  },
-  {
-   "rank": 2,
    "id": "250193",
    "name": "Hans Christian Blomberg",
    "teams": [
@@ -31,7 +17,7 @@
    "avgDiff": 14.7
   },
   {
-   "rank": 3,
+   "rank": 2,
    "id": "156777",
    "name": "Jonas Aarup Iversen",
    "teams": [
@@ -45,7 +31,7 @@
    "avgDiff": 12.5
   },
   {
-   "rank": 4,
+   "rank": 3,
    "id": "237819",
    "name": "Gitte Kruse",
    "teams": [
@@ -59,7 +45,7 @@
    "avgDiff": 9.2
   },
   {
-   "rank": 5,
+   "rank": 4,
    "id": "365034",
    "name": "Anders Lillelund",
    "teams": [
@@ -73,7 +59,7 @@
    "avgDiff": 7.5
   },
   {
-   "rank": 6,
+   "rank": 5,
    "id": "237773",
    "name": "Olivia Høberg Brams",
    "teams": [
@@ -87,7 +73,7 @@
    "avgDiff": 6.7
   },
   {
-   "rank": 7,
+   "rank": 6,
    "id": "46285",
    "name": "Maria O. Arildsen",
    "teams": [
@@ -99,6 +85,20 @@
    "pointsFor": 33,
    "avgPoints": 33.0,
    "avgDiff": 6.0
+  },
+  {
+   "rank": 7,
+   "id": "365654",
+   "name": "Max Han Chen",
+   "teams": [
+    "U11 Dx"
+   ],
+   "played": 10,
+   "won": 10,
+   "winPct": 100,
+   "pointsFor": 285,
+   "avgPoints": 31.7,
+   "avgDiff": 13.4
   },
   {
    "rank": 8,
@@ -158,20 +158,6 @@
   },
   {
    "rank": 12,
-   "id": "367929",
-   "name": "liam yuliang zhang",
-   "teams": [
-    "U11 Dx"
-   ],
-   "played": 3,
-   "won": 3,
-   "winPct": 100,
-   "pointsFor": 99,
-   "avgPoints": 33.0,
-   "avgDiff": 14.0
-  },
-  {
-   "rank": 13,
    "id": "310497",
    "name": "Alexander Frode Barfod",
    "teams": [
@@ -185,7 +171,7 @@
    "avgDiff": 12.0
   },
   {
-   "rank": 14,
+   "rank": 13,
    "id": "318475",
    "name": "Emil Thaysen",
    "teams": [
@@ -199,7 +185,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 15,
+   "rank": 14,
    "id": "339431",
    "name": "Hektor Shi Lorenzen",
    "teams": [
@@ -213,7 +199,7 @@
    "avgDiff": 3.5
   },
   {
-   "rank": 16,
+   "rank": 15,
    "id": "364606",
    "name": "Torbjørn Petersson",
    "teams": [
@@ -227,7 +213,7 @@
    "avgDiff": 3.0
   },
   {
-   "rank": 17,
+   "rank": 16,
    "id": "46015",
    "name": "Line Lindquist",
    "teams": [
@@ -241,7 +227,7 @@
    "avgDiff": 0
   },
   {
-   "rank": 18,
+   "rank": 17,
    "id": "348191",
    "name": "Manfred Bjørn Kirk",
    "teams": [
@@ -255,7 +241,7 @@
    "avgDiff": 13.1
   },
   {
-   "rank": 19,
+   "rank": 18,
    "id": "362187",
    "name": "Max van Daalen",
    "teams": [
@@ -269,7 +255,7 @@
    "avgDiff": 9.1
   },
   {
-   "rank": 20,
+   "rank": 19,
    "id": "13008",
    "name": "Anders Frewald",
    "teams": [
@@ -283,7 +269,7 @@
    "avgDiff": 12.3
   },
   {
-   "rank": 21,
+   "rank": 20,
    "id": "328467",
    "name": "Mathilde Baldvinsson Frewald",
    "teams": [
@@ -298,7 +284,7 @@
    "avgDiff": 12.2
   },
   {
-   "rank": 22,
+   "rank": 21,
    "id": "12992",
    "name": "Henriette Stang Hellen",
    "teams": [
@@ -313,7 +299,7 @@
    "avgDiff": 6.1
   },
   {
-   "rank": 23,
+   "rank": 22,
    "id": "38545",
    "name": "Shankar Ralhan",
    "teams": [
@@ -327,7 +313,7 @@
    "avgDiff": 8.4
   },
   {
-   "rank": 24,
+   "rank": 23,
    "id": "12881",
    "name": "Katrine Schou Andersen",
    "teams": [
@@ -341,7 +327,7 @@
    "avgDiff": 10.7
   },
   {
-   "rank": 25,
+   "rank": 24,
    "id": "334106",
    "name": "Malthe Larsen",
    "teams": [
@@ -355,7 +341,7 @@
    "avgDiff": 7.3
   },
   {
-   "rank": 26,
+   "rank": 25,
    "id": "362880",
    "name": "Jonas Gaudesen",
    "teams": [
@@ -369,7 +355,7 @@
    "avgDiff": 8.2
   },
   {
-   "rank": 27,
+   "rank": 26,
    "id": "320930",
    "name": "Julius Tolsøe",
    "teams": [
@@ -383,7 +369,7 @@
    "avgDiff": 10.3
   },
   {
-   "rank": 28,
+   "rank": 27,
    "id": "324944",
    "name": "August Drescher",
    "teams": [
@@ -397,7 +383,7 @@
    "avgDiff": 10.0
   },
   {
-   "rank": 29,
+   "rank": 28,
    "id": "158737",
    "name": "Michael Schutt Nielsen",
    "teams": [
@@ -412,7 +398,7 @@
    "avgDiff": 7.2
   },
   {
-   "rank": 30,
+   "rank": 29,
    "id": "357023",
    "name": "Ellie Schroller Broerson",
    "teams": [
@@ -426,7 +412,7 @@
    "avgDiff": 7.4
   },
   {
-   "rank": 31,
+   "rank": 30,
    "id": "352483",
    "name": "Birk Lund Dujardin",
    "teams": [
@@ -440,7 +426,7 @@
    "avgDiff": 7.4
   },
   {
-   "rank": 32,
+   "rank": 31,
    "id": "366509",
    "name": "Oscar spliid",
    "teams": [
@@ -454,7 +440,7 @@
    "avgDiff": 6.2
   },
   {
-   "rank": 33,
+   "rank": 32,
    "id": "338663",
    "name": "Sebastian Rossau",
    "teams": [
@@ -468,7 +454,7 @@
    "avgDiff": 6.0
   },
   {
-   "rank": 34,
+   "rank": 33,
    "id": "9643",
    "name": "Kim Eriksen",
    "teams": [
@@ -483,7 +469,7 @@
    "avgDiff": 5.9
   },
   {
-   "rank": 35,
+   "rank": 34,
    "id": "338789",
    "name": "Charles Jordahn Brandt",
    "teams": [
@@ -497,7 +483,7 @@
    "avgDiff": 5.8
   },
   {
-   "rank": 36,
+   "rank": 35,
    "id": "309153",
    "name": "Mark saejueng",
    "teams": [
@@ -511,7 +497,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 37,
+   "rank": 36,
    "id": "332881",
    "name": "Agnes Schroller Broerson",
    "teams": [
@@ -525,21 +511,21 @@
    "avgDiff": 4.8
   },
   {
-   "rank": 38,
+   "rank": 37,
    "id": "365721",
    "name": "Sylvester Engen Peetz",
    "teams": [
     "U11 Dx"
    ],
-   "played": 8,
-   "won": 6,
-   "winPct": 75,
-   "pointsFor": 160,
-   "avgPoints": 26.7,
-   "avgDiff": 4.0
+   "played": 11,
+   "won": 8,
+   "winPct": 73,
+   "pointsFor": 267,
+   "avgPoints": 29.7,
+   "avgDiff": 4.2
   },
   {
-   "rank": 39,
+   "rank": 38,
    "id": "11839",
    "name": "Morten Plougmann",
    "teams": [
@@ -553,7 +539,7 @@
    "avgDiff": 5.4
   },
   {
-   "rank": 40,
+   "rank": 39,
    "id": "13374",
    "name": "Signe Baldvinsson",
    "teams": [
@@ -567,7 +553,7 @@
    "avgDiff": 5.0
   },
   {
-   "rank": 41,
+   "rank": 40,
    "id": "13123",
    "name": "Camilla Strøm",
    "teams": [
@@ -581,7 +567,7 @@
    "avgDiff": 3.2
   },
   {
-   "rank": 42,
+   "rank": 41,
    "id": "348034",
    "name": "Dorte Glintborg",
    "teams": [
@@ -595,7 +581,7 @@
    "avgDiff": 14.5
   },
   {
-   "rank": 43,
+   "rank": 42,
    "id": "337294",
    "name": "Julie Bille Rannes",
    "teams": [
@@ -609,7 +595,7 @@
    "avgDiff": 6.5
   },
   {
-   "rank": 44,
+   "rank": 43,
    "id": "352440",
    "name": "Ethan Jing",
    "teams": [
@@ -623,7 +609,7 @@
    "avgDiff": 5.3
   },
   {
-   "rank": 45,
+   "rank": 44,
    "id": "355614",
    "name": "Kent bisgaard",
    "teams": [
@@ -636,6 +622,20 @@
    "pointsFor": 171,
    "avgPoints": 28.5,
    "avgDiff": 4.3
+  },
+  {
+   "rank": 45,
+   "id": "367929",
+   "name": "liam yuliang zhang",
+   "teams": [
+    "U11 Dx"
+   ],
+   "played": 6,
+   "won": 4,
+   "winPct": 67,
+   "pointsFor": 178,
+   "avgPoints": 29.7,
+   "avgDiff": 5.2
   },
   {
    "rank": 46,
@@ -953,20 +953,6 @@
   },
   {
    "rank": 68,
-   "id": "366570",
-   "name": "Malthe Hommel",
-   "teams": [
-    "U11 Dx"
-   ],
-   "played": 8,
-   "won": 4,
-   "winPct": 50,
-   "pointsFor": 206,
-   "avgPoints": 29.4,
-   "avgDiff": -2.4
-  },
-  {
-   "rank": 69,
    "id": "11745",
    "name": "Steffen Bille Rannes",
    "teams": [
@@ -980,7 +966,7 @@
    "avgDiff": -6.7
   },
   {
-   "rank": 70,
+   "rank": 69,
    "id": "308293",
    "name": "Henrik Lund Frandsen",
    "teams": [
@@ -994,7 +980,7 @@
    "avgDiff": -2.0
   },
   {
-   "rank": 71,
+   "rank": 70,
    "id": "352443",
    "name": "Anton Kromann-Bach",
    "teams": [
@@ -1008,7 +994,7 @@
    "avgDiff": -1.8
   },
   {
-   "rank": 72,
+   "rank": 71,
    "id": "318476",
    "name": "Valdemar Bæhrenz Peetz",
    "teams": [
@@ -1023,7 +1009,7 @@
    "avgDiff": -3.2
   },
   {
-   "rank": 73,
+   "rank": 72,
    "id": "92804",
    "name": "Jack Søgaard",
    "teams": [
@@ -1035,6 +1021,20 @@
    "pointsFor": 216,
    "avgPoints": 27.0,
    "avgDiff": -1.5
+  },
+  {
+   "rank": 73,
+   "id": "366570",
+   "name": "Malthe Hommel",
+   "teams": [
+    "U11 Dx"
+   ],
+   "played": 11,
+   "won": 4,
+   "winPct": 36,
+   "pointsFor": 277,
+   "avgPoints": 27.7,
+   "avgDiff": -5.7
   },
   {
    "rank": 74,
@@ -23183,6 +23183,92 @@
      "date": "2026-11-14",
      "team": "U11 Dx",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "4. D",
+     "partner": [
+      "liam yuliang zhang"
+     ],
+     "opponents": [
+      "Anvitaa Pramod Mundanat",
+      "Asbjørn Sørensen"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "3. D",
+     "partner": [
+      "Sylvester Engen Peetz"
+     ],
+     "opponents": [
+      "Axel Stage Silkensen",
+      "Anvitaa Pramod Mundanat"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "2. S",
+     "partner": [],
+     "opponents": [
+      "Birk Plum Gadsbøll"
+     ],
+     "sets": [
+      [
+       2,
+       15
+      ],
+      [
+       15,
+       11
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Ledøje-Smørum 1",
      "matchID": "514721",
      "discipline": "4. D",
@@ -23387,23 +23473,23 @@
      "walkover": ""
     }
    ],
-   "played": 8,
+   "played": 11,
    "won": 4,
-   "lost": 4,
-   "winPct": 50,
-   "pointsFor": 206,
-   "pointsAgainst": 223,
-   "avgPoints": 29.4,
-   "avgDiff": -2.4,
-   "setsWon": 7,
-   "setsLost": 10,
+   "lost": 7,
+   "winPct": 36,
+   "pointsFor": 277,
+   "pointsAgainst": 334,
+   "avgPoints": 27.7,
+   "avgDiff": -5.7,
+   "setsWon": 9,
+   "setsLost": 16,
    "byDiscipline": {
     "D": {
-     "played": 5,
+     "played": 7,
      "won": 3
     },
     "S": {
-     "played": 3,
+     "played": 4,
      "won": 1
     }
    },
@@ -27359,6 +27445,88 @@
      "date": "2026-11-14",
      "team": "U11 Dx",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "1. D",
+     "partner": [
+      "Sylvester Engen Peetz"
+     ],
+     "opponents": [
+      "Axel Stage Silkensen",
+      "Birk Plum Gadsbøll"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       4
+      ],
+      [
+       17,
+       15
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "2. D",
+     "partner": [
+      "liam yuliang zhang"
+     ],
+     "opponents": [
+      "Birk Plum Gadsbøll",
+      "Asbjørn Sørensen"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "1. S",
+     "partner": [],
+     "opponents": [
+      "Axel Stage Silkensen"
+     ],
+     "sets": [
+      [
+       16,
+       14
+      ],
+      [
+       15,
+       3
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Ledøje-Smørum 1",
      "matchID": "514721",
      "discipline": "1. D",
@@ -27524,24 +27692,24 @@
      "walkover": ""
     }
    ],
-   "played": 7,
-   "won": 7,
+   "played": 10,
+   "won": 10,
    "lost": 0,
    "winPct": 100,
-   "pointsFor": 180,
-   "pointsAgainst": 92,
-   "avgPoints": 30.0,
-   "avgDiff": 14.7,
-   "setsWon": 12,
-   "setsLost": 0,
+   "pointsFor": 285,
+   "pointsAgainst": 164,
+   "avgPoints": 31.7,
+   "avgDiff": 13.4,
+   "setsWon": 18,
+   "setsLost": 1,
    "byDiscipline": {
     "D": {
-     "played": 4,
-     "won": 4
+     "played": 6,
+     "won": 6
     },
     "S": {
-     "played": 3,
-     "won": 3
+     "played": 4,
+     "won": 4
     }
    },
    "clubMember": true,
@@ -37389,6 +37557,92 @@
      "date": "2026-11-14",
      "team": "U11 Dx",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "1. D",
+     "partner": [
+      "Max Han Chen"
+     ],
+     "opponents": [
+      "Axel Stage Silkensen",
+      "Birk Plum Gadsbøll"
+     ],
+     "sets": [
+      [
+       12,
+       15
+      ],
+      [
+       15,
+       4
+      ],
+      [
+       17,
+       15
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "3. D",
+     "partner": [
+      "Malthe Hommel"
+     ],
+     "opponents": [
+      "Axel Stage Silkensen",
+      "Anvitaa Pramod Mundanat"
+     ],
+     "sets": [
+      [
+       9,
+       15
+      ],
+      [
+       15,
+       10
+      ],
+      [
+       9,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "3. S",
+     "partner": [],
+     "opponents": [
+      "Asbjørn Sørensen"
+     ],
+     "sets": [
+      [
+       15,
+       13
+      ],
+      [
+       15,
+       6
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Ledøje-Smørum 1",
      "matchID": "514721",
      "discipline": "1. D",
@@ -37577,24 +37831,24 @@
      "walkover": "H"
     }
    ],
-   "played": 8,
-   "won": 6,
-   "lost": 2,
-   "winPct": 75,
-   "pointsFor": 160,
-   "pointsAgainst": 136,
-   "avgPoints": 26.7,
-   "avgDiff": 4.0,
-   "setsWon": 8,
-   "setsLost": 5,
+   "played": 11,
+   "won": 8,
+   "lost": 3,
+   "winPct": 73,
+   "pointsFor": 267,
+   "pointsAgainst": 229,
+   "avgPoints": 29.7,
+   "avgDiff": 4.2,
+   "setsWon": 13,
+   "setsLost": 8,
    "byDiscipline": {
     "D": {
-     "played": 6,
-     "won": 4
+     "played": 8,
+     "won": 5
     },
     "S": {
-     "played": 2,
-     "won": 2
+     "played": 3,
+     "won": 3
     }
    },
    "clubMember": true,
@@ -40577,6 +40831,88 @@
      "date": "2026-11-14",
      "team": "U11 Dx",
      "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "4. D",
+     "partner": [
+      "Malthe Hommel"
+     ],
+     "opponents": [
+      "Anvitaa Pramod Mundanat",
+      "Asbjørn Sørensen"
+     ],
+     "sets": [
+      [
+       6,
+       15
+      ],
+      [
+       8,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "2. D",
+     "partner": [
+      "Max Han Chen"
+     ],
+     "opponents": [
+      "Birk Plum Gadsbøll",
+      "Asbjørn Sørensen"
+     ],
+     "sets": [
+      [
+       15,
+       9
+      ],
+      [
+       15,
+       12
+      ]
+     ],
+     "won": true,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
+     "opponentTeam": "Lillerød 3",
+     "matchID": "514718",
+     "discipline": "4. S",
+     "partner": [],
+     "opponents": [
+      "Anvitaa Pramod Mundanat"
+     ],
+     "sets": [
+      [
+       13,
+       15
+      ],
+      [
+       15,
+       9
+      ],
+      [
+       7,
+       15
+      ]
+     ],
+     "won": false,
+     "walkover": ""
+    },
+    {
+     "date": "2026-11-14",
+     "team": "U11 Dx",
+     "teamName": "Hørsholm 2",
      "opponentTeam": "Ledøje-Smørum 1",
      "matchID": "514721",
      "discipline": "4. D",
@@ -40656,23 +40992,23 @@
      "walkover": ""
     }
    ],
-   "played": 3,
-   "won": 3,
-   "lost": 0,
-   "winPct": 100,
-   "pointsFor": 99,
-   "pointsAgainst": 57,
-   "avgPoints": 33.0,
-   "avgDiff": 14.0,
-   "setsWon": 6,
-   "setsLost": 1,
+   "played": 6,
+   "won": 4,
+   "lost": 2,
+   "winPct": 67,
+   "pointsFor": 178,
+   "pointsAgainst": 147,
+   "avgPoints": 29.7,
+   "avgDiff": 5.2,
+   "setsWon": 9,
+   "setsLost": 5,
    "byDiscipline": {
     "D": {
-     "played": 2,
-     "won": 2
+     "played": 4,
+     "won": 3
     },
     "S": {
-     "played": 1,
+     "played": 2,
      "won": 1
     }
    },

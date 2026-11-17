@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T06:15:33+00:00",
+ "updated": "2026-11-17T20:03:20+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -12968,6 +12968,80 @@
     "region": "Hovedstaden",
     "min": 25,
     "roadKm": 27
+   }
+  },
+  {
+   "id": "x456c6b3ee4",
+   "links": [],
+   "urls": {},
+   "entryOpen": false,
+   "hasResults": false,
+   "start": "2026-11-28",
+   "end": "2026-11-29",
+   "week": "48",
+   "deadline": "2026-11-12",
+   "organiser": "Kredsmesterskaber Sjælland: Finaler i Herlev",
+   "classes": [
+    {
+     "raw": "U11 B,C,D",
+     "ages": [
+      "U11"
+     ],
+     "levels": [
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 28-sø 29"
+    },
+    {
+     "raw": "U13 B,C,D",
+     "ages": [
+      "U13"
+     ],
+     "levels": [
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 28-sø 29"
+    },
+    {
+     "raw": "U15 A,B,C,D",
+     "ages": [
+      "U15"
+     ],
+     "levels": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 28-sø 29"
+    },
+    {
+     "raw": "U17/U19 A,B,C,D",
+     "ages": [
+      "U17",
+      "U19"
+     ],
+     "levels": [
+      "A",
+      "B",
+      "C",
+      "D"
+     ],
+     "days": "lø 28-sø 29"
+    }
+   ],
+   "place": {
+    "name": "Herlev",
+    "lat": 55.7338,
+    "lon": 12.4294,
+    "km": 17,
+    "region": "Hovedstaden",
+    "min": 23,
+    "roadKm": 24
    }
   },
   {
