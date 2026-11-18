@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T06:19:54+00:00",
+ "updated": "2026-11-18T20:03:36+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -15903,6 +15903,38 @@
    }
   },
   {
+   "id": "123656",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123656"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2026-12-28",
+   "end": "2026-12-30",
+   "week": "53",
+   "deadline": "2026-11-29",
+   "organiser": "U17 IC Hoensbroek",
+   "classes": [
+    {
+     "raw": "U17 E",
+     "ages": [
+      "U17"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "ma 28-on 30"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
+   }
+  },
+  {
    "id": "118752",
    "links": [
     "invitation",
@@ -19634,9 +19666,11 @@
   {
    "id": "116160",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116160,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#116160"
    },
    "entryOpen": true,
