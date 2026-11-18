@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T14:30:18+00:00",
+ "updated": "2026-11-18T14:45:23+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -590,6 +590,13 @@
    "ts": "2026-11-16T20:22:57.010Z"
   },
   {
+   "e": "t:2026-11-18:Ungdom:Elite 2",
+   "p": "335593",
+   "n": "Oliver Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-18T14:33:51.066Z"
+  },
+  {
    "e": "t:2026-11-18:Ungdom:Elite 4",
    "p": "360548",
    "n": "MUHAMMAD MOHSIN Ali KHAN",
@@ -646,6 +653,13 @@
    "ts": "2026-11-16T07:45:31.715Z"
   },
   {
+   "e": "t:2026-11-19:Ungdom:Øvede 3",
+   "p": "335593",
+   "n": "Oliver Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-18T14:33:49.936Z"
+  },
+  {
    "e": "t:2026-11-22:Veteran",
    "p": "245961",
    "n": "Jesper Østergaard",
@@ -672,6 +686,13 @@
    "n": "MUHAMMAD MOHSIN Ali KHAN",
    "s": "ja",
    "ts": "2026-11-12T17:32:57.583Z"
+  },
+  {
+   "e": "t:2026-11-23:Ungdom:Elite 3",
+   "p": "335593",
+   "n": "Oliver Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-18T14:33:48.614Z"
   },
   {
    "e": "t:2026-11-24:Senior",
