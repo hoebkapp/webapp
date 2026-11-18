@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T20:03:20+00:00",
+ "updated": "2026-11-18T05:02:52+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -10169,14 +10169,16 @@
    "id": "119982",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://web.badminton.dk/upload/Invitation---NAVEK-T-rkiye-International-Future-Series-2026-1.pdf",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119982"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119982",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119982,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-18",
    "end": "2026-11-22",
    "week": "47",
