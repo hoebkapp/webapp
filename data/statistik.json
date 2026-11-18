@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T15:54:22+00:00",
+ "updated": "2026-11-18T16:45:14+00:00",
  "scriptVersion": "2026-11-17.3",
  "latest": {
   "players": 67,
@@ -15,7 +15,7 @@
   "mailOff": 2,
   "leaders": 9,
   "admins": 8,
-  "parents": 37
+  "parents": 38
  },
  "history": [
   {
@@ -428,7 +428,7 @@
    "mailOff": 2,
    "leaders": 9,
    "admins": 8,
-   "parents": 37,
+   "parents": 38,
    "date": "2026-11-18"
   }
  ]
