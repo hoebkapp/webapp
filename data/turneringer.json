@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-18T20:03:36+00:00",
+ "updated": "2026-11-19T05:03:11+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -10205,14 +10205,16 @@
    "id": "119983",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://web.badminton.dk/upload/Invitation---Scottish-Open-2026.pdf",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119983"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119983",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119983,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-19",
    "end": "2026-11-22",
    "week": "47",
@@ -12227,7 +12229,7 @@
    "start": "2026-11-28",
    "end": "2026-11-28",
    "week": "48",
-   "deadline": "2026-11-15",
+   "deadline": "2026-11-12",
    "organiser": "Jyske Mesterskaber i Hammel",
    "classes": [
     {
