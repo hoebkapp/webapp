@@ -1,11 +1,11 @@
 {
- "updated": "2026-11-19T19:00:15+00:00",
+ "updated": "2026-11-19T20:47:54+00:00",
  "scriptVersion": "2026-11-17.3",
  "latest": {
   "players": 70,
   "emails": 66,
   "loggedIn": 100,
-  "active7": 59,
+  "active7": 58,
   "active30": 69,
   "followers": 21,
   "teamFollows": 25,
@@ -435,7 +435,7 @@
    "players": 70,
    "emails": 66,
    "loggedIn": 100,
-   "active7": 59,
+   "active7": 58,
    "active30": 69,
    "followers": 21,
    "teamFollows": 25,
