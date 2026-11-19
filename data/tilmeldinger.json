@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T06:30:13+00:00",
+ "updated": "2026-11-19T06:45:12+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -660,6 +660,13 @@
    "ts": "2026-11-18T14:33:49.936Z"
   },
   {
+   "e": "t:2026-11-20:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:19.166Z"
+  },
+  {
    "e": "t:2026-11-22:Veteran",
    "p": "245961",
    "n": "Jesper Østergaard",
@@ -679,6 +686,13 @@
    "n": "Steffen Bille Rannes",
    "s": "ja",
    "ts": "2026-11-07T08:55:18.783Z"
+  },
+  {
+   "e": "t:2026-11-23:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:20.308Z"
   },
   {
    "e": "t:2026-11-23:Ungdom:Elite 3",
@@ -730,11 +744,25 @@
    "ts": "2026-11-12T20:02:34.004Z"
   },
   {
+   "e": "t:2026-11-27:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:21.641Z"
+  },
+  {
    "e": "t:2026-11-29:Veteran",
    "p": "245961",
    "n": "Jesper Østergaard",
    "s": "nej",
    "ts": "2026-11-13T11:12:43.288Z"
+  },
+  {
+   "e": "t:2026-11-30:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:23.347Z"
   },
   {
    "e": "t:2026-11-30:Ungdom:Elite 3",
@@ -772,11 +800,25 @@
    "ts": "2026-11-12T20:02:38.796Z"
   },
   {
+   "e": "t:2026-12-04:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:24.427Z"
+  },
+  {
    "e": "t:2026-12-06:Veteran",
    "p": "11745",
    "n": "Steffen Bille Rannes",
    "s": "ja",
    "ts": "2026-11-07T09:05:25.140Z"
+  },
+  {
+   "e": "t:2026-12-07:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:26.374Z"
   },
   {
    "e": "t:2026-12-09:Voksenfjer",
@@ -786,11 +828,32 @@
    "ts": "2026-11-12T18:24:43.822Z"
   },
   {
+   "e": "t:2026-12-11:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:27.475Z"
+  },
+  {
    "e": "t:2026-12-13:Veteran",
    "p": "245961",
    "n": "Jesper Østergaard",
    "s": "nej",
    "ts": "2026-11-13T11:12:56.456Z"
+  },
+  {
+   "e": "t:2026-12-14:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:28.411Z"
+  },
+  {
+   "e": "t:2026-12-18:Ungdom:Bredde 3",
+   "p": "n:albert-klint-henneberg",
+   "n": "Albert Klint Henneberg",
+   "s": "ja",
+   "ts": "2026-11-19T06:37:29.550Z"
   }
  ],
  "lineups": [
