@@ -58,17 +58,29 @@
   ],
   "117945": [
    {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
+   {
     "d": "2026-10-27",
     "t": "Invitationen er lagt ud"
    }
   ],
   "118985": [
    {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
+   {
     "d": "2026-10-27",
     "t": "Invitationen er lagt ud"
    }
   ],
   "116212": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
    {
     "d": "2026-11-06",
     "t": "Programmet er klar (lodtrækning og spilletider)"
@@ -474,6 +486,10 @@
   ],
   "119994": [
    {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
+   {
     "d": "2026-11-16",
     "t": "Programmet er klar (lodtrækning og spilletider)"
    },
@@ -610,6 +626,10 @@
   ],
   "116886": [
    {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
+   {
     "d": "2026-11-19",
     "t": "Tilmeldingsfristen er ændret til tor 12. nov (var søn 15. nov)"
    },
@@ -631,6 +651,10 @@
    }
   ],
   "119657": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
    {
     "d": "2026-11-15",
     "t": "Tilmeldingsfristen er ændret til tor 12. nov (var lør 14. nov)"
@@ -755,6 +779,10 @@
    }
   ],
   "118947": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
    {
     "d": "2026-11-11",
     "t": "Navnet er ændret til Kredsmesterskaber Sjælland i Værløse og Solrød"
@@ -1018,12 +1046,6 @@
     "t": "Programmet er klar (lodtrækning og spilletider)"
    }
   ],
-  "x456c6b3ee4": [
-   {
-    "d": "2026-11-17",
-    "t": "Ny turnering i kalenderen"
-   }
-  ],
   "123656": [
    {
     "d": "2026-11-18",
@@ -1051,6 +1073,94 @@
     "d": "2026-11-19",
     "t": "Invitationen er lagt ud"
    }
+  ],
+  "118959": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   },
+   {
+    "d": "2026-11-17",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "116666": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118851": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "119065": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "117163": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "116842": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118837": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118967": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118976": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118980": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118970": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118984": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "118971": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
+  ],
+  "119858": [
+   {
+    "d": "2026-11-20",
+    "t": "Deltagerlisten er offentliggjort"
+   }
   ]
  },
  "alias": {
@@ -1060,7 +1170,8 @@
   "116880": "116886",
   "x0532541790": "116323",
   "xb540de5e1a": "123645",
-  "xddfcf04009": "121353"
+  "xddfcf04009": "121353",
+  "x456c6b3ee4": "118959"
  },
- "updated": "2026-11-19T20:23:27+00:00"
+ "updated": "2026-11-20T05:21:27+00:00"
 }
