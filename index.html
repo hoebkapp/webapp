@@ -823,6 +823,26 @@ textarea.inp{resize:vertical;line-height:1.45}
     }).catch(function () { MEM.data = null; MEM.err = 'Ingen forbindelse'; })
       .then(function () { MEM.loading = false; if (/^#\/(spillere|nyheder\/ny|daekning)/.test(location.hash)) route(true); });
   }
+  // Søg i Conventus-medlemmerne uden login (kun navne) — til gæster på Spillere og til at finde sit barn ved registrering
+  var MS = { q: '', hits: [], t: 0, names: {} };
+  function memberSearch(q, done) {   // done kaldes kun, når et nyt svar er kommet
+    q = String(q || '').trim();
+    if (q.length < 2 || !REG.url) { if (MS.q) { MS.q = ''; MS.hits = []; } return; }
+    if (q === MS.q) return;
+    clearTimeout(MS.t);
+    MS.t = setTimeout(function () {
+      api({ action: 'memberSearch', q: q }).then(function (r) {
+        MS.q = q; MS.hits = (r && r.ok && r.members) || [];
+        MS.hits.forEach(function (m) { MS.names['c:' + m.cid] = m.name; });
+        if (done) done();
+      }).catch(function () {});
+    }, 250);
+  }
+  function bpByName(name) {   // badmintonplayer-spiller med samme navn (hele navnet, ellers fornavn + efternavn hvis entydigt)
+    var k = nameKeys(name), a = [], b = [];
+    D.ids.forEach(function (id) { var x = nameKeys(D.players[id].name); if (x[0] === k[0]) a.push(id); else if (x[1] === k[1]) b.push(id); });
+    return a[0] || (b.length === 1 ? b[0] : null);
+  }
   function pseudoPlayer(name) { return { name: name, teams: [], games: [], played: 0, won: 0, profile: { rankings: [] } }; }
   // 'old' = serveren kender ikke medlemslisten endnu (gammel Apps Script-version) → vis badmintonplayer-listen som før
   function memMode() {
@@ -833,6 +853,15 @@ textarea.inp{resize:vertical;line-height:1.45}
     return 'loading';
   }
   function memberRows() {
+    if (memMode() === 'login') {   // gæst: rangerede spillere fra badmintonplayer.dk + medlemmer fundet ved søgning
+      var gq = String(UI.q || '').trim(), out = [], got = {};
+      if (gq.length >= 2 && MS.q === gq) MS.hits.forEach(function (m) {
+        var id = bpByName(m.name); if (id) got[id] = 1;
+        out.push({ name: m.name, bp: id, p: id ? D.players[id] : pseudoPlayer(m.name), groups: [], src: id ? 'begge' : 'conventus' });
+      });
+      D.ids.forEach(function (id) { if (!got[id]) out.push({ name: D.players[id].name, bp: id, p: D.players[id], groups: [], src: 'bp' }); });
+      return out;
+    }
     if (memMode() === 'old') return D.ids.map(function (id) { return { name: D.players[id].name, bp: id, p: D.players[id], groups: [], src: 'bp' }; });
     var d = MEM.data; if (!d) return [];
     var full = {}, fl = {}, used = {}, rows = [];
@@ -844,8 +873,8 @@ textarea.inp{resize:vertical;line-height:1.45}
       rows.push({ name: m.name, bp: id, p: id ? D.players[id] : pseudoPlayer(m.name), src: id ? 'begge' : 'conventus',
                   groups: (m.groups || []).concat((m.leads || []).map(function (g) { return g + ' (leder)'; })), cg: (m.groups || []).concat(m.leads || []) });
     });
+    D.ids.forEach(function (id) { if (!used[id]) { used[id] = 1; rows.push({ name: D.players[id].name, bp: id, p: D.players[id], groups: [], src: 'bp' }); } });
     if (memAdmin()) {
-      D.ids.forEach(function (id) { if (!used[id]) { used[id] = 1; rows.push({ name: D.players[id].name, bp: id, p: D.players[id], groups: [], src: 'bp' }); } });
       var seen = {}; rows.forEach(function (r) { seen[nameKeys(r.name)[0]] = 1; });
       (d.users || []).forEach(function (u) {
         if (D.players[u.id]) return;
@@ -875,7 +904,8 @@ textarea.inp{resize:vertical;line-height:1.45}
   function srcIs(r, k) { return k === 'alle' || (k === 'allcon' ? r.src === 'begge' || r.src === 'conventus' : k === 'foraeldre' ? !!r.parent : r.src === k); }
   function srcRows() {   // rækker efter administratorens kilde-filter
     var rows = memberRows();
-    if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old'; });
+    // Alle andre end administratorer: medlemmer fra Conventus + spillere med rangering på badmintonplayer.dk
+    if (!memAdmin()) return rows.filter(function (r) { return r.src === 'begge' || r.src === 'conventus' || memMode() === 'old' || (r.src === 'bp' && hasRank(r.p)); });
     if (UI.pcg) rows = rows.filter(function (r) { return (r.cg || []).indexOf(UI.pcg) >= 0; });
     return UI.psrc === 'alle' ? rows : rows.filter(function (r) { return srcIs(r, UI.psrc); });
   }
@@ -893,18 +923,16 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (!UI.psrc) { try { UI.psrc = localStorage.getItem('hoebk_psrc') || 'alle'; } catch (e) { UI.psrc = 'alle'; } }
     if (!PSRC[UI.psrc]) UI.psrc = 'alle';
     loadMembers(); loadUsersForSpillere();
-    var mode = memMode(), rows = mode === 'members' || mode === 'old' ? srcRows() : [];
-    setTab('spillere'); setHeader('Spillere', (mode === 'members' ? rows.length + (memAdmin() ? ' personer' : ' medlemmer') : mode === 'old' ? D.ids.length + ' spillere i klubben' : 'Klubbens medlemmer') + ' · ' + updTxt(), false);
+    var mode = memMode(), rows = mode === 'members' || mode === 'old' || mode === 'login' ? srcRows() : [];
+    setTab('spillere'); setHeader('Spillere', (mode === 'members' ? rows.length + (memAdmin() ? ' personer' : ' medlemmer og spillere') : mode === 'old' ? D.ids.length + ' spillere i klubben' : 'Klubbens medlemmer og spillere') + ' · ' + updTxt(), false);
     var h = parentCard() + '<button class="card row" style="min-height:56px;border-left:5px solid var(--accent)" data-go="#/rangliste"><span class="col"><b style="font-size:15px">Klubrangliste</b>' +
       '<span class="xs">Vundne kampe, sejr-%, point og snit for alle hold</span></span><span class="h" style="font-size:20px">›</span></button>' + (isLeader() ? '<button class="rb ja" aria-pressed="true" style="min-height:44px" data-go="#/udtag">Udtag spillere til næste holdkamp ›</button>' : '');
-    if (mode === 'login') return h + '<div class="card" style="padding:14px;display:flex;flex-direction:column;gap:10px"><b style="font-size:15px">Log ind for at se klubbens medlemmer</b>' +
-      '<span class="xs">Medlemslisten kommer fra klubbens medlemssystem og vises kun for medlemmer og forældre, der er logget ind.</span>' +
-      '<button class="rb ja" aria-pressed="true" style="min-height:44px" data-go="#/tilmeld">Log ind ›</button></div>';
+    if (mode === 'login') h += '<p class="note" style="margin:0 4px">Søg efter et navn for at finde klubbens medlemmer — fx dit barn, så du kan registrere dig som forælder. Uden søgning vises spillere med rangering på badmintonplayer.dk.</p>';
     if (mode === 'loading') return h + '<p class="empty">Henter medlemmer …</p>';
     if (mode === 'error') return h + '<p class="empty">Medlemslisten kunne ikke hentes' + (ME.role && ME.role.admin ? ' (' + esc(MEM.err) + ')' : '') + '.</p>' +
       '<button class="rb" style="min-height:44px" data-act="memretry">Prøv igen</button>';
     h += '<label class="card search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4A5866" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>' +
-      '<input id="q" type="search" value="' + esc(UI.q) + '" placeholder="Søg spiller eller hold" aria-label="Søg spiller eller hold" autocomplete="off"></label>';
+      '<input id="q" type="search" value="' + esc(UI.q) + '" placeholder="' + (memAdmin() ? 'Søg spiller eller hold' : 'Søg navn') + '" aria-label="Søg spiller" autocomplete="off"></label>';
     if (memAdmin()) {
       var all = memberRows(), allF = UI.pcg ? all.filter(function (r) { return (r.cg || []).indexOf(UI.pcg) >= 0; }) : all;   // kildetal følger det valgte Conventus-hold
       h += '<span class="lbl">Administrator · hvor findes spilleren?</span><div class="chips regchips" role="group" aria-label="Filtrér efter kilde">' + Object.keys(PSRC).map(function (k) {
@@ -929,14 +957,17 @@ textarea.inp{resize:vertical;line-height:1.45}
   function renderPlayerList() {
     var el = document.getElementById('plist'); if (!el) return;
     var q = UI.q.toLowerCase().trim(), admin = memAdmin();
+    if (memMode() === 'login') memberSearch(UI.q, renderPlayerList);
     var list = srcRows().filter(function (r) {
       if (!PF[UI.pf][1](r.p)) return false;
-      return !q || r.name.toLowerCase().indexOf(q) >= 0 || (r.bp ? teamsTxt(r.p) : r.groups.join(', ')).toLowerCase().indexOf(q) >= 0;
+      if (!q) return true;
+      if (r.name.toLowerCase().indexOf(q) >= 0 || (r.src !== 'bp' && memMode() === 'login' && q.length >= 2)) return true;   // gæst: serveren har allerede søgt
+      return (r.bp ? teamsTxt(r.p) : admin ? r.groups.join(', ') : '').toLowerCase().indexOf(q) >= 0;
     }).sort(function (a, b) { return a.name.localeCompare(b.name, 'da'); });
-    el.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="lbl">' + list.length + (memAdmin() ? ' personer' : memMode() === 'members' ? ' medlemmer' : ' spillere') + '</span>' + colorLegend() + '</div>' +
+    el.innerHTML = '<div style="display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap"><span class="lbl">' + list.length + (memAdmin() ? ' personer' : ' medlemmer og spillere') + '</span>' + colorLegend() + '</div>' +
       list.map(function (r) {
         var p = r.p, tag = admin ? '<span style="font-size:10px;font-weight:700;padding:2px 6px;border-radius:999px;white-space:nowrap;background:' + PSRC[r.src][1] + ';color:' + PSRC[r.src][2] + '">' + PSRC_TAG[r.src] + '</span>' : '';
-        var sub = r.bp ? teamsTxt(p) + (r.ptxt ? ' · ' + r.ptxt : '') : (r.groups.join(', ') || 'Ingen hold');
+        var sub = r.bp ? teamsTxt(p) + (r.ptxt ? ' · ' + r.ptxt : '') : admin ? (r.groups.join(', ') || 'Ingen hold') : 'Medlem af klubben';
         var inner = '<span class="av" style="width:36px;height:36px;font-size:12px;' + (r.ponly ? 'background:' + PARENT.bg + ';color:' + PARENT.fg : avStyle(p)) + '">' + esc(ini(r.name)) + '</span>' +
           '<span class="col" style="flex:1 1 auto;min-width:0"><b style="font-size:14px">' + esc(r.name) + '</b><span class="xs ellip">' + esc(sub) + '</span></span>' + tag;
         return r.bp ? '<button class="card row" style="min-height:54px;padding:8px 12px" data-go="#/spiller/' + esc(r.bp) + '">' + inner +
@@ -3619,6 +3650,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     var el = document.getElementById('klist'); if (!el) return;
     var q = (UI.kq || '').toLowerCase().trim();
     if (q.length < 2) { el.innerHTML = ''; return; }
+    memberSearch(UI.kq, renderKidList);
     var list = D.ids.filter(function (id) { var p = D.players[id]; return !UI.kids[id] && id !== (ME && ME.id) && p.name.toLowerCase().indexOf(q) >= 0; })
       .sort(function (a, b) { return D.players[a].name.localeCompare(D.players[b].name, 'da'); }).slice(0, 12);
     el.innerHTML = list.map(function (id) {
@@ -3626,11 +3658,24 @@ textarea.inp{resize:vertical;line-height:1.45}
       return '<button class="card row" style="min-height:52px;padding:8px 12px" data-kid="' + esc(id) + '">' +
         '<span class="av" style="width:34px;height:34px;font-size:12px;' + avStyle(p) + '">' + esc(ini(p.name)) + '</span>' +
         '<span class="col" style="flex:1 1 auto"><b style="font-size:14px">' + esc(p.name) + '</b><span class="xs ellip">' + esc(teamsTxt(p)) + '</span></span><span class="xs">+ Vælg</span></button>';
-    }).join('') || '<p class="empty">Ingen spiller med det navn.</p>';
+    }).join('') + kidConvRows(list) || (MS.q === (UI.kq || '').trim() ? '<p class="empty">Ingen med det navn.</p>' : '<p class="empty">Søger …</p>');
+  }
+  function kidConvRows(shown) {   // medlemmer fra Conventus, som ikke allerede står på listen fra badmintonplayer.dk
+    if (MS.q !== (UI.kq || '').trim()) return '';
+    var have = {}; shown.forEach(function (id) { have[nameKeys(D.players[id].name)[0]] = 1; });
+    return MS.hits.filter(function (m) {
+      var id = bpByName(m.name);
+      return !have[nameKeys(m.name)[0]] && !(id && (UI.kids[id] || shown.indexOf(id) >= 0)) && !UI.kids['c:' + m.cid];
+    }).map(function (m) {
+      var id = bpByName(m.name), kid = id || 'c:' + m.cid;
+      return '<button class="card row" style="min-height:52px;padding:8px 12px" data-kid="' + esc(kid) + '">' +
+        '<span class="av" style="width:34px;height:34px;font-size:12px;' + avStyle(id ? D.players[id] : pseudoPlayer(m.name)) + '">' + esc(ini(m.name)) + '</span>' +
+        '<span class="col" style="flex:1 1 auto"><b style="font-size:14px">' + esc(m.name) + '</b><span class="xs ellip">' + (id ? esc(teamsTxt(D.players[id])) : 'Medlem af klubben') + '</span></span><span class="xs">+ Vælg</span></button>';
+    }).join('');
   }
   function toggleKid(id) {
     UI.kids = UI.kids || {};
-    if (UI.kids[id]) delete UI.kids[id]; else { UI.kids[id] = D.players[id] ? D.players[id].name : id; UI.kq = ''; }
+    if (UI.kids[id]) delete UI.kids[id]; else { UI.kids[id] = D.players[id] ? D.players[id].name : MS.names[id] || id; UI.kq = ''; }
     route(true);
   }
   // Børnenes fornavne ved egne beskeder: forældre altid, spillere der er forældre kun i børnenes holds rum (som serveren)
