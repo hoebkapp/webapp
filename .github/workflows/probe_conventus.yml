@@ -1,4 +1,4 @@
-name: Tjek Apps Script (midlertidig)
+name: Tjek server (midlertidig)
 on:
   push:
     branches: [test-conventus-login]
@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 3
     steps:
-      - env:
-          REG_URL: ${{ secrets.REG_URL }}
-        run: |
-          echo "VERSION: $(curl -sSL -m 30 "$REG_URL?action=version" | head -c 200)"
-          echo "MEMBERS-UDEN-LOGIN: $(curl -sSL -m 60 -H 'Content-Type: text/plain' -d '{"action":"members","token":"x"}' "$REG_URL" | head -c 200)"
+      - run: |
+          U=https://rbsuittqekgaudmstpqu.supabase.co/functions/v1/hoebk
+          echo "VERSION: $(curl -sS -m 30 "$U?action=version")"
+          for q in an han x; do
+            echo "SOEG[$q]: $(curl -sS -m 30 -H 'Content-Type: text/plain' -d "{\"action\":\"memberSearch\",\"q\":\"$q\"}" $U | python3 -c 'import sys,json;d=json.load(sys.stdin);m=d.get("members",[]);print(d.get("ok"),len(m),"træf; felter:",sorted(m[0].keys()) if m else "-")')"
+          done
+          echo "MEMBERS-UDEN-LOGIN: $(curl -sS -m 30 -H 'Content-Type: text/plain' -d '{"action":"members","token":"x"}' $U)"
