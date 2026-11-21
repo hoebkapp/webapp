@@ -79,7 +79,7 @@ Team order is fixed in `ORDER` at the top of the script (seniors, motion, youth)
 
 ## Help and feedback
 
-**The shop icon** (shopping bag) in the header opens the Transocean club shop (`SHOP_URL`) in a new tab; a slim shop row also sits at the top of Min side → Spiller and → Forælder.
+**The shop button** (Transocean Sport wordmark, `assets/transocean-sport.png`, in a white pill) in the header opens the Transocean club shop (`SHOP_URL`) in a new tab; a slim shop row also sits at the top of Min side → Spiller and → Forælder.
 
 **The ? icon** in the header (next to refresh, on every screen) opens `#/hjaelp`: links to the app guide (`guide.html`) and the home-screen install guide (`kom-i-gang.html`) — both static pages in the repo root (`GUIDE_URL`, `INSTALL_URL` in index.html) — a *Log ind på en anden enhed* card (logged in) and a feedback form. Logged-in users pick a type (*Idé*, *Fejl*, *Spørgsmål*, *Andet*), write up to 2000 characters and send (`fbSend`, max 6 an hour). The screen they came from and app/browser + user agent are sent along. Admins get a push. Below the form, *Dine henvendelser* lists the user's own messages with status and replies (`fbMine`); a new reply puts a green dot on the ? icon until it has been seen (`hoebk_fbseen` in `localStorage`). Logged-out users see the guide and a link to log in.
 
