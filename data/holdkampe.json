@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T16:48:18+00:00",
+  "updated": "2026-11-22T17:15:21+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -19423,10 +19423,21 @@
       "name": "Hørsholm 3",
       "pulje": "MOT 4+4 Serie 3-4 Pulje 1",
       "label": "MOT 4+4 Serie 3-4",
-      "position": "1",
+      "position": "2",
       "standing": [
         {
           "pos": "1",
+          "team": "Hareskov 3",
+          "teamID": "122734",
+          "isUs": false,
+          "played": "3",
+          "won": "3",
+          "score": "25-11",
+          "sets": "54-27",
+          "points": "8"
+        },
+        {
+          "pos": "2",
           "team": "Hørsholm 3",
           "teamID": "122731",
           "isUs": true,
@@ -19435,17 +19446,6 @@
           "score": "17-7",
           "sets": "35-19",
           "points": "6"
-        },
-        {
-          "pos": "2",
-          "team": "Hareskov 3",
-          "teamID": "122734",
-          "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "15-9",
-          "sets": "34-22",
-          "points": "5"
         },
         {
           "pos": "3",
@@ -19463,10 +19463,10 @@
           "team": "Frem - Hellebæk 1",
           "teamID": "122732",
           "isUs": false,
-          "played": "1",
+          "played": "2",
           "won": "1",
-          "score": "9-3",
-          "sets": "19-9",
+          "score": "11-13",
+          "sets": "24-29",
           "points": "3"
         },
         {
