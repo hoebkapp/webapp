@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T19:52:04+00:00",
+  "updated": "2026-11-22T20:23:38+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -18596,7 +18596,7 @@
       "name": "Hørsholm 1",
       "pulje": "MOT 4 spillere Mester Pulje 1",
       "label": "MOT 4 spillere Mester",
-      "position": "4",
+      "position": "5",
       "standing": [
         {
           "pos": "1",
@@ -18611,6 +18611,17 @@
         },
         {
           "pos": "2",
+          "team": "Slangerup 3",
+          "teamID": "122645",
+          "isUs": false,
+          "played": "5",
+          "won": "2",
+          "score": "15-15",
+          "sets": "33-34",
+          "points": "7"
+        },
+        {
+          "pos": "3",
           "team": "Ganløse 1",
           "teamID": "122644",
           "isUs": false,
@@ -18621,18 +18632,18 @@
           "points": "6"
         },
         {
-          "pos": "3",
-          "team": "Slangerup 3",
-          "teamID": "122645",
+          "pos": "4",
+          "team": "Herlev/Hjorten 2",
+          "teamID": "122640",
           "isUs": false,
-          "played": "4",
-          "won": "2",
-          "score": "12-12",
-          "sets": "26-27",
-          "points": "6"
+          "played": "3",
+          "won": "1",
+          "score": "10-8",
+          "sets": "24-19",
+          "points": "5"
         },
         {
-          "pos": "4",
+          "pos": "5",
           "team": "Hørsholm 1",
           "teamID": "122641",
           "isUs": true,
@@ -18640,17 +18651,6 @@
           "won": "1",
           "score": "8-4",
           "sets": "18-9",
-          "points": "4"
-        },
-        {
-          "pos": "5",
-          "team": "Herlev/Hjorten 2",
-          "teamID": "122640",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "7-5",
-          "sets": "17-12",
           "points": "4"
         },
         {
