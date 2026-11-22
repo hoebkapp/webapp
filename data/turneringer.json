@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T21:20:07+00:00",
+ "updated": "2026-11-22T05:02:53+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -10169,11 +10169,9 @@
    "id": "119982",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://web.badminton.dk/upload/Invitation---NAVEK-T-rkiye-International-Future-Series-2026-1.pdf",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119982",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119982,"
    },
@@ -10205,11 +10203,9 @@
    "id": "119983",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://web.badminton.dk/upload/Invitation---Scottish-Open-2026.pdf",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119983",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119983,"
    },
@@ -10241,11 +10237,9 @@
    "id": "116647",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116647,",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116647",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116647,"
    },
@@ -10382,12 +10376,10 @@
    "id": "119786",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119786,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119786,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119786,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119786"
@@ -10659,12 +10651,10 @@
    "id": "118258",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118258,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118258,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118258,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118258"
@@ -10714,12 +10704,10 @@
    "id": "118303",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118303,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118303,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118303,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118303"
@@ -10815,16 +10803,14 @@
    "id": "116325",
    "links": [
     "deltagere",
-    "program",
     "resultater"
    ],
    "urls": {
-    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116325,-8",
-    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116325,-8",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116325"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116325",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116325,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-21",
    "end": "2026-11-21",
    "week": "47",
@@ -10933,12 +10919,10 @@
    "id": "118623",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118623,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118623,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118623,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118623"
@@ -10978,12 +10962,10 @@
    "id": "117266",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117266,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117266,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117266,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117266"
@@ -11045,11 +11027,9 @@
    "id": "116691",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116691,",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116691",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116691,"
    },
@@ -11139,12 +11119,10 @@
    "id": "117667",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117667,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117667,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117667,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117667"
@@ -11192,11 +11170,9 @@
    "id": "116242",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116242,",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/116242",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#116242,"
    },
@@ -11233,12 +11209,10 @@
    "id": "115592",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#115592,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115592,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115592,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115592"
@@ -11297,12 +11271,10 @@
    "id": "118244",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118244,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118244,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118244,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118244"
@@ -11409,11 +11381,9 @@
    "id": "117643",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117643,",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/117643",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117643,"
    },
@@ -11497,12 +11467,10 @@
    "id": "115815",
    "links": [
     "deltagere",
-    "invitation",
     "program",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#115815,",
     "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115815,-8",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#115815,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/115815"
@@ -11541,11 +11509,9 @@
    "id": "118395",
    "links": [
     "deltagere",
-    "invitation",
     "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118395,",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118395",
     "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118395,"
    },
@@ -11582,14 +11548,14 @@
    "id": "119944",
    "links": [
     "deltagere",
-    "invitation"
+    "resultater"
    ],
    "urls": {
-    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119944,",
-    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119944"
+    "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/119944",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#119944,"
    },
    "entryOpen": false,
-   "hasResults": false,
+   "hasResults": true,
    "start": "2026-11-22",
    "end": "2026-11-22",
    "week": "47",
