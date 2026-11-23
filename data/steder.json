@@ -71,6 +71,14 @@
   "min": 231,
   "roadKm": 331
  },
+ "Aftensmad EFTERSKOLEMESTERSKABER": {
+  "ukendt": true,
+  "prøvet": [
+   "Aftensmad EFTERSKOLEMESTERSKABER",
+   "Aftensmad",
+   "EFTERSKOLEMESTERSKABER"
+  ]
+ },
  "Artic Open 2026 Super 500": {
   "abroad": true
  },
@@ -671,6 +679,9 @@
    "Drive"
   ]
  },
+ "Dutch Junior U19": {
+  "abroad": true
+ },
  "Dutch Open IC": {
   "abroad": true
  },
@@ -797,6 +808,9 @@
   "via": "nominatim",
   "min": 18,
   "roadKm": 17
+ },
+ "German Junior U19": {
+  "abroad": true
  },
  "German Open 2027 Super 500": {
   "abroad": true

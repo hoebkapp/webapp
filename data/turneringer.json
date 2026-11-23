@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T06:22:13+00:00",
+ "updated": "2026-11-23T20:03:05+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -13219,6 +13219,35 @@
    }
   },
   {
+   "id": "123705",
+   "links": [
+    "invitation",
+    "tilmelding"
+   ],
+   "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#123705,",
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123705"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2026-12-10",
+   "end": "2026-12-10",
+   "week": "50",
+   "deadline": "2026-11-26",
+   "organiser": "Aftensmad EFTERSKOLEMESTERSKABER",
+   "classes": [
+    {
+     "raw": "Andet X",
+     "ages": [],
+     "levels": [],
+     "days": "to 10"
+    }
+   ],
+   "place": {
+    "unknown": true
+   }
+  },
+  {
    "id": "123645",
    "links": [
     "deltagere",
@@ -14937,9 +14966,15 @@
   {
    "id": "117187",
    "links": [
+    "invitation",
+    "program",
+    "resultater",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117187,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117187,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#117187,-8",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117187"
    },
    "entryOpen": true,
@@ -15854,16 +15889,6 @@
      "days": "ma 28"
     },
     {
-     "raw": "U09 C",
-     "ages": [
-      "U09"
-     ],
-     "levels": [
-      "C"
-     ],
-     "days": "ma 28-on 30"
-    },
-    {
      "raw": "U15 B,C,D",
      "ages": [
       "U15"
@@ -15890,11 +15915,12 @@
      "days": "ti 29"
     },
     {
-     "raw": "U09 D",
+     "raw": "U09 C,D",
      "ages": [
       "U09"
      ],
      "levels": [
+      "C",
       "D"
      ],
      "days": "on 30"
@@ -22359,6 +22385,70 @@
    ],
    "place": {
     "unknown": true
+   }
+  },
+  {
+   "id": "123706",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123706"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2027-03-03",
+   "end": "2027-03-07",
+   "week": "9",
+   "deadline": "2027-01-31",
+   "organiser": "Dutch Junior U19",
+   "classes": [
+    {
+     "raw": "U19 E",
+     "ages": [
+      "U19"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "on 03-sø 07"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
+   }
+  },
+  {
+   "id": "123707",
+   "links": [
+    "tilmelding"
+   ],
+   "urls": {
+    "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123707"
+   },
+   "entryOpen": true,
+   "hasResults": false,
+   "start": "2027-03-10",
+   "end": "2027-03-14",
+   "week": "10",
+   "deadline": "2027-02-07",
+   "organiser": "German Junior U19",
+   "classes": [
+    {
+     "raw": "U19 E",
+     "ages": [
+      "U19"
+     ],
+     "levels": [
+      "E"
+     ],
+     "days": "on 10-sø 14"
+    }
+   ],
+   "place": {
+    "abroad": true,
+    "region": "Udland"
    }
   },
   {

@@ -814,6 +814,14 @@
   ],
   "117353": [
    {
+    "d": "2026-11-23",
+    "t": "Nye rækker: U09 C,D"
+   },
+   {
+    "d": "2026-11-23",
+    "t": "Rækker fjernet: U09 C, U09 D"
+   },
+   {
     "d": "2026-11-11",
     "t": "Nye rækker: U09 C"
    },
@@ -1249,6 +1257,34 @@
     "d": "2026-11-23",
     "t": "Programmet er klar (lodtrækning og spilletider)"
    }
+  ],
+  "123705": [
+   {
+    "d": "2026-11-23",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "117187": [
+   {
+    "d": "2026-11-23",
+    "t": "Invitationen er lagt ud"
+   },
+   {
+    "d": "2026-11-23",
+    "t": "Programmet er klar (lodtrækning og spilletider)"
+   }
+  ],
+  "123706": [
+   {
+    "d": "2026-11-23",
+    "t": "Ny turnering i kalenderen"
+   }
+  ],
+  "123707": [
+   {
+    "d": "2026-11-23",
+    "t": "Ny turnering i kalenderen"
+   }
   ]
  },
  "alias": {
@@ -1261,5 +1297,5 @@
   "xddfcf04009": "121353",
   "x456c6b3ee4": "118959"
  },
- "updated": "2026-11-23T19:45:21+00:00"
+ "updated": "2026-11-23T20:21:20+00:00"
 }

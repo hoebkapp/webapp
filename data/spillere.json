@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-23T19:45:15+00:00",
+ "updated": "2026-11-23T20:21:13+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -828,8 +828,8 @@
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "played": 15,
    "won": 8,
@@ -1139,8 +1139,8 @@
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "played": 6,
    "won": 2,
@@ -1154,8 +1154,8 @@
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "played": 12,
    "won": 4,
@@ -1269,8 +1269,8 @@
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "played": 11,
    "won": 2,
@@ -1326,8 +1326,8 @@
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "played": 8,
    "won": 1,
@@ -3047,8 +3047,8 @@
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
@@ -5873,6 +5873,31 @@
    "byDiscipline": {},
    "clubMember": true,
    "gender": "M",
+   "profile": {
+    "level": "",
+    "rankings": [],
+    "license": "Ingen"
+   }
+  },
+  {
+   "id": "368798",
+   "name": "Ashvika Jain",
+   "teams": [],
+   "adult": false,
+   "games": [],
+   "played": 0,
+   "won": 0,
+   "lost": 0,
+   "winPct": 0,
+   "pointsFor": 0,
+   "pointsAgainst": 0,
+   "avgPoints": 0,
+   "avgDiff": 0,
+   "setsWon": 0,
+   "setsLost": 0,
+   "byDiscipline": {},
+   "clubMember": true,
+   "gender": "K",
    "profile": {
     "level": "",
     "rankings": [],
@@ -17858,8 +17883,8 @@
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
@@ -23890,8 +23915,8 @@
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
@@ -37363,8 +37388,8 @@
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
@@ -37687,8 +37712,8 @@
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
-    "MOT 4+4 Elite/Mester",
-    "MOT 4+4 Serie 3-4"
+    "MOT 4+4 Serie 3-4",
+    "MOT 4+4 Elite/Mester"
    ],
    "adult": true,
    "games": [
