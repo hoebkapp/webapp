@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T12:15:18+00:00",
+  "updated": "2026-11-23T12:45:17+00:00",
   "season": "2026",
   "clubID": "1151",
   "source": "badmintonplayer.dk",
@@ -1473,11 +1473,11 @@
           "team": "Måløv 1",
           "teamID": "122725",
           "isUs": false,
-          "played": "2",
-          "won": "2",
-          "score": "19-5",
-          "sets": "40-15",
-          "points": "6"
+          "played": "3",
+          "won": "3",
+          "score": "26-10",
+          "sets": "56-27",
+          "points": "8"
         },
         {
           "pos": "3",
@@ -1492,6 +1492,17 @@
         },
         {
           "pos": "4",
+          "team": "Holte 3",
+          "teamID": "122724",
+          "isUs": false,
+          "played": "3",
+          "won": "1",
+          "score": "18-18",
+          "sets": "43-40",
+          "points": "4"
+        },
+        {
+          "pos": "5",
           "team": "Lillerød 2",
           "teamID": "122722",
           "isUs": false,
@@ -1500,17 +1511,6 @@
           "score": "21-27",
           "sets": "53-61",
           "points": "4"
-        },
-        {
-          "pos": "5",
-          "team": "Holte 3",
-          "teamID": "122724",
-          "isUs": false,
-          "played": "2",
-          "won": "1",
-          "score": "13-11",
-          "sets": "31-24",
-          "points": "3"
         },
         {
           "pos": "6",
