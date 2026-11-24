@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-24T16:59:04+00:00",
+ "updated": "2026-11-24T17:30:14+00:00",
  "scriptVersion": "2026-11-21.1",
  "latest": {
-  "players": 79,
+  "players": 80,
   "emails": 74,
-  "loggedIn": 109,
-  "active7": 44,
-  "active30": 78,
+  "loggedIn": 110,
+  "active7": 45,
+  "active30": 79,
   "followers": 23,
   "teamFollows": 28,
   "tourFollows": 0,
@@ -517,11 +517,11 @@
    "date": "2026-11-23"
   },
   {
-   "players": 79,
+   "players": 80,
    "emails": 74,
-   "loggedIn": 109,
-   "active7": 44,
-   "active30": 78,
+   "loggedIn": 110,
+   "active7": 45,
+   "active30": 79,
    "followers": 23,
    "teamFollows": 28,
    "tourFollows": 0,
