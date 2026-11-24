@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T17:30:14+00:00",
+ "updated": "2026-11-24T17:45:12+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -728,6 +728,13 @@
    "n": "Anders Vedsted Nørrelund",
    "s": "nej",
    "ts": "2026-11-16T17:27:23.408Z"
+  },
+  {
+   "e": "t:2026-11-24:Senior",
+   "p": "n:morten-plougmann",
+   "n": "Morten Plougmann",
+   "s": "ja",
+   "ts": "2026-11-24T17:38:51.585Z"
   },
   {
    "e": "t:2026-11-24:Senior",
