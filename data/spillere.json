@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T08:15:28+00:00",
+ "updated": "2026-11-24T20:25:04+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -828,8 +828,8 @@
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "played": 15,
    "won": 8,
@@ -1097,8 +1097,8 @@
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "played": 9,
    "won": 3,
@@ -1183,8 +1183,8 @@
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "played": 15,
    "won": 4,
@@ -1311,8 +1311,8 @@
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "played": 14,
    "won": 2,
@@ -1340,8 +1340,8 @@
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "played": 11,
    "won": 1,
@@ -3047,8 +3047,8 @@
    "id": "339512",
    "name": "Anders Franck Berger Christensen",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [
@@ -18053,8 +18053,8 @@
    "id": "337891",
    "name": "Ina Finlander",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [
@@ -24251,8 +24251,8 @@
    "id": "344356",
    "name": "Malthe Kiilerich",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [
@@ -37983,8 +37983,8 @@
    "id": "361298",
    "name": "Stine Lund Nielsen",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [
@@ -38392,8 +38392,8 @@
    "id": "339514",
    "name": "Sutthita Høybye",
    "teams": [
-    "MOT 4+4 Serie 3-4",
-    "MOT 4+4 Elite/Mester"
+    "MOT 4+4 Elite/Mester",
+    "MOT 4+4 Serie 3-4"
    ],
    "adult": true,
    "games": [

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T06:12:33+00:00",
+ "updated": "2026-11-24T20:03:37+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -12753,10 +12753,14 @@
    "id": "118970",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118970,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118970,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118970,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118970"
    },
    "entryOpen": false,
@@ -12793,10 +12797,14 @@
    "id": "118984",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118984,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118984,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118984,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118984"
    },
    "entryOpen": false,
@@ -12835,10 +12843,14 @@
    "id": "118971",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118971,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118971,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118971,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118971"
    },
    "entryOpen": false,
@@ -12884,10 +12896,14 @@
    "id": "118947",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118947,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118947,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118947,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118947"
    },
    "entryOpen": false,
@@ -14840,9 +14856,11 @@
   {
    "id": "118528",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118528,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118528"
    },
    "entryOpen": true,
@@ -22390,9 +22408,11 @@
   {
    "id": "123706",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://web.badminton.dk/upload/Invitation---YONEX-Dutch-Junior-International-2027-1.pdf",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123706"
    },
    "entryOpen": true,
@@ -22422,9 +22442,11 @@
   {
    "id": "123707",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://web.badminton.dk/upload/Invitation---YONEX-German-Junior-2027-1.pdf",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#123707"
    },
    "entryOpen": true,
