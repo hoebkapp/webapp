@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T06:13:40+00:00",
+ "updated": "2026-11-25T20:03:25+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -14872,13 +14872,11 @@
    "organiser": "Taastrup TIK",
    "classes": [
     {
-     "raw": "U13 B,C,D",
+     "raw": "U13 D",
      "ages": [
       "U13"
      ],
      "levels": [
-      "B",
-      "C",
       "D"
      ],
      "days": "lø 19"
@@ -14892,6 +14890,17 @@
       "A"
      ],
      "days": "lø 19-sø 20"
+    },
+    {
+     "raw": "U13 B,C",
+     "ages": [
+      "U13"
+     ],
+     "levels": [
+      "B",
+      "C"
+     ],
+     "days": "sø 20"
     }
    ],
    "place": {
@@ -16921,9 +16930,11 @@
   {
    "id": "116458",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#116458,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#116458"
    },
    "entryOpen": true,
@@ -21886,9 +21897,15 @@
   {
    "id": "118787",
    "links": [
+    "invitation",
+    "program",
+    "resultater",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118787,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118787,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118787,-8",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118787"
    },
    "entryOpen": true,
@@ -23029,6 +23046,16 @@
      "days": "lø 13"
     },
     {
+     "raw": "U09 C",
+     "ages": [
+      "U09"
+     ],
+     "levels": [
+      "C"
+     ],
+     "days": "lø 13-sø 14"
+    },
+    {
      "raw": "U11 C,D",
      "ages": [
       "U11"
@@ -23695,11 +23722,12 @@
    "organiser": "BC37 Amager",
    "classes": [
     {
-     "raw": "U09 D",
+     "raw": "U09 C,D",
      "ages": [
       "U09"
      ],
      "levels": [
+      "C",
       "D"
      ],
      "days": "on 24"
@@ -23715,12 +23743,13 @@
      "days": "on 24"
     },
     {
-     "raw": "U11 B",
+     "raw": "U11 B,C",
      "ages": [
       "U11"
      ],
      "levels": [
-      "B"
+      "B",
+      "C"
      ],
      "days": "to 25"
     },
@@ -23753,16 +23782,6 @@
       "B"
      ],
      "days": "fr 26-lø 27"
-    },
-    {
-     "raw": "U11 C",
-     "ages": [
-      "U11"
-     ],
-     "levels": [
-      "C"
-     ],
-     "days": "lø 27"
     },
     {
      "raw": "U13 C",

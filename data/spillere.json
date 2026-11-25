@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T06:32:06+00:00",
+ "updated": "2026-11-25T20:23:52+00:00",
  "season": "2026",
  "clubRanking": [
   {
@@ -6295,6 +6295,31 @@
    }
   },
   {
+   "id": "368845",
+   "name": "Augusta Thies Hansen",
+   "teams": [],
+   "adult": false,
+   "games": [],
+   "played": 0,
+   "won": 0,
+   "lost": 0,
+   "winPct": 0,
+   "pointsFor": 0,
+   "pointsAgainst": 0,
+   "avgPoints": 0,
+   "avgDiff": 0,
+   "setsWon": 0,
+   "setsLost": 0,
+   "byDiscipline": {},
+   "clubMember": true,
+   "gender": "K",
+   "profile": {
+    "level": "",
+    "rankings": [],
+    "license": "Ingen"
+   }
+  },
+  {
    "id": "276283",
    "name": "Bastian Nederveen Meyer",
    "teams": [],
@@ -7322,7 +7347,7 @@
    "clubMember": true,
    "gender": "M",
    "profile": {
-    "level": "1690",
+    "level": "1701",
     "rankings": [
      {
       "list": "Double",
@@ -35819,7 +35844,7 @@
    "clubMember": true,
    "gender": "M",
    "profile": {
-    "level": "1531",
+    "level": "1494",
     "rankings": [
      {
       "list": "Single",
@@ -39184,7 +39209,7 @@
    "clubMember": true,
    "gender": "M",
    "profile": {
-    "level": "1000",
+    "level": "949",
     "rankings": [],
     "license": "Ingen"
    }
