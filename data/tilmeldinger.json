@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25T19:15:12+00:00",
+ "updated": "2026-11-25T19:30:21+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -378,6 +378,20 @@
    "n": "Nikolaj Feodor Nilsson",
    "s": "ja",
    "ts": "2026-11-18T05:25:56.498Z"
+  },
+  {
+   "e": "m:514341",
+   "p": "335593",
+   "n": "Oliver Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-25T19:22:56.831Z"
+  },
+  {
+   "e": "m:514341",
+   "p": "335592",
+   "n": "William Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-25T19:22:56.142Z"
   },
   {
    "e": "m:514342",
@@ -1769,6 +1783,41 @@
    "games": [],
    "note": "",
    "by": "Sandra Feodor Nilsson"
+  },
+  {
+   "e": "m:514341",
+   "team": "U15 B",
+   "status": "udkast",
+   "t": 1795634981561,
+   "squad": [
+    {
+     "id": "335592",
+     "name": "William Vedsted Nørrelund"
+    },
+    {
+     "id": "335593",
+     "name": "Oliver Vedsted Nørrelund"
+    },
+    {
+     "id": "346992",
+     "name": "Carl Grønfeldt"
+    },
+    {
+     "id": "346993",
+     "name": "Mikkel Christian Korsholm"
+    },
+    {
+     "id": "357481",
+     "name": "Nikolaj Feodor Nilsson"
+    },
+    {
+     "id": "362142",
+     "name": "Maximilian Vessel Nielsen"
+    }
+   ],
+   "games": [],
+   "note": "",
+   "by": "Anders Vedsted Nørrelund"
   }
  ],
  "scriptHasLineups": true
