@@ -307,6 +307,8 @@ nav.tabs a .dot{position:absolute;top:8px;left:calc(50% + 8px);width:9px;height:
 .alert{border-left:5px solid #F3B35B;background:#FFF7EC}
 .tile.warn2{background:#FFF7EC;border-color:#F3D3A6}
 .evwrap.ans{box-shadow:inset 0 0 0 2px #F3C58F}
+.evwrap.akt{border-left-color:var(--akt)}.evwrap.akt .ev{border:0;padding:0;background:transparent}
+.cvsign{display:flex;align-items:center;justify-content:center;min-height:40px;border-radius:999px;background:var(--accent);color:var(--ink);font-weight:800;font-size:14px;text-decoration:none}
 .need{color:#8A4B00}
 .ovhead{width:100%;text-align:left;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:inherit;border-left:5px solid var(--plan);margin-top:6px}
 .ovtasks{overflow:hidden;margin-top:-4px}
@@ -1792,6 +1794,43 @@ textarea.inp{resize:vertical;line-height:1.45}
     });
     return out;
   }
+  // Tilmelding i Conventus: grupper med online-tilmelding slået til (fra serveren, uden login). En aktivitet fra hoebk.dk kobles
+  // til en gruppe, når (1) gruppen har en dato, der dækker dagen, og navnene deler aktivitetens første ord, eller (2) gruppen er
+  // uden dato (fx MiniTon), starter med samme ord og rummer alle aktivitetens ord — er der flere, vælges sæsonens træningshold.
+  var CONV_FORENING = '6493';
+  var CVS = { groups: [], t: 0, loading: false };
+  try { var cvs0 = JSON.parse(localStorage.getItem('hoebk_cvs') || 'null'); if (cvs0 && cvs0.groups) { CVS.groups = cvs0.groups; CVS.t = cvs0.t || 0; } } catch (e) {}
+  function loadConvSignup(force) {
+    if (CVS.loading || !REG.url || (!force && Date.now() - CVS.t < 3600000)) return;
+    CVS.loading = true;
+    api({ action: 'convSignup' }).then(function (r) {
+      if (!r || !r.ok || !Array.isArray(r.groups)) return;
+      CVS.groups = r.groups; CVS.t = Date.now();
+      try { localStorage.setItem('hoebk_cvs', JSON.stringify({ t: CVS.t, groups: r.groups })); } catch (e) {}
+      if (D) { buildEvents(); if (/^#\/(kalender|nyt|tilmeld)/.test(location.hash) || !location.hash) route(true); }
+    }).catch(function () {}).then(function () { CVS.loading = false; });
+  }
+  var CV_STOP = /^(evt|ny|nyt|hoebk|høbk|hørsholm|sjov|stor|lille|ekstra|åben|aaben|og|for|fra|til|med|den|det|de)$/;
+  function cvWords(t) {
+    return String(t || '').toLowerCase().normalize('NFC').replace(/^\s*\d+(\.\d+)*\s*/, '').replace(/[^a-zæøå0-9]+/g, ' ').trim().split(' ')
+      .filter(function (w) { return w.length >= 3 && !/^\d+$/.test(w) && !CV_STOP.test(w); });
+  }
+  function convSignupFor(title, date) {
+    var w = cvWords(title)[0]; if (!w || !CVS.groups.length) return null;
+    var dated = CVS.groups.filter(function (g) {
+      return g.from && date >= g.from && date <= (g.to || g.from) && cvWords(g.title).join(' ').indexOf(w) >= 0;
+    });
+    if (dated.length) return dated[0];
+    if (w.length < 5) return null;
+    var ws = cvWords(title);   // uden dato: gruppen skal starte med samme ord og indeholde alle aktivitetens ord ("Voksenfjer julefrokost" ≠ VoksenFjer-træning)
+    var und = CVS.groups.filter(function (g) {
+      var gw = cvWords(g.title), gs = ' ' + gw.join(' ') + ' ';
+      return !g.from && gw[0] === w && ws.every(function (x) { return gs.indexOf(' ' + x) >= 0; });
+    });
+    if (und.length > 1) und = und.filter(function (g) { return g.team; });
+    return und.length === 1 ? und[0] : null;
+  }
+  function convSignupUrl(id) { return 'https://www.conventus.dk/dataudv/www/new_tilmelding.php?foreningsid=' + CONV_FORENING + '&gruppe=' + encodeURIComponent(id); }
   function loadActivities(force) {
     if (ACT.loading || (!force && Date.now() - ACT.updated < 3600000)) return;
     ACT.loading = true;
@@ -1843,7 +1882,7 @@ textarea.inp{resize:vertical;line-height:1.45}
         var ds3 = iso(d3);
         // samme begivenhed kan også komme fra Conventus — vis den kun én gang
         var dup = ACT.events.some(function (c) { return c.date === ds3 && normT(c.title).indexOf(normT(a.title).split(' ')[0]) >= 0; });
-        if (!dup) add({ kind: 'akt', date: ds3, time: a.time || '', end: a.end || '', team: 'Aktivitet', title: a.title, place: a.note || '', bg: 'var(--akt)', fg: '#FFFFFF', go: '' });
+        if (!dup) add({ kind: 'akt', date: ds3, time: a.time || '', end: a.end || '', team: 'Aktivitet', title: a.title, place: a.note || '', bg: 'var(--akt)', fg: '#FFFFFF', go: '', cv: convSignupFor(a.title, ds3) });
       }
     });
     (D.tours || []).forEach(function (t) {
@@ -1853,7 +1892,7 @@ textarea.inp{resize:vertical;line-height:1.45}
       }
     });
     ACT.events.forEach(function (a) {
-      add({ kind: 'akt', date: a.date, time: a.time, end: a.end, team: 'Aktivitet', title: a.title, place: a.place, bg: 'var(--akt)', fg: '#FFFFFF', go: '' });
+      add({ kind: 'akt', date: a.date, time: a.time, end: a.end, team: 'Aktivitet', title: a.title, place: a.place, bg: 'var(--akt)', fg: '#FFFFFF', go: '', cv: convSignupFor(a.title, a.date) });
     });
     (typeof PLAN !== 'undefined' && PLAN.list || []).forEach(function (a) {   // klubbens egne aktiviteter (Vis i kalenderen)
       if (!a.cal) return;
@@ -1889,6 +1928,12 @@ textarea.inp{resize:vertical;line-height:1.45}
       return '<button class="ev planev" style="border-left-color:' + e.bg + ';width:100%;text-align:left;font-size:inherit;background:var(--card)" data-go="' + esc(e.go) + '">' +
         '<span class="tm">' + esc(e.time || '–') + '</span><span class="col"><b style="font-size:14px" class="ellip">' + esc(e.title) + '</b><span class="xs ellip">Aktivitet i appen' + (e.place ? ' · ' + esc(e.place) : '') + '</span></span>' +
         (e.end ? '<span class="xs">til ' + esc(e.end) + '</span>' : '<span></span>') + '</button>';
+    }
+    if (e.kind === 'akt' && e.cv) {   // med tilmelding i Conventus
+      return '<div class="evwrap akt"><a class="ev" style="text-decoration:none;color:inherit" href="https://hoebk.dk/kalender" target="_blank" rel="noopener">' +
+        '<span class="tm">' + esc(e.time || '–') + '</span><span class="col"><b style="font-size:14px" class="ellip">' + esc(e.title) + '</b><span class="xs ellip">Fra hoebk.dk' + (e.place ? ' · ' + esc(e.place) : '') + '</span></span>' +
+        (e.end ? '<span class="xs">til ' + esc(e.end) + '</span>' : '<span></span>') + '</a>' +
+        '<a class="cvsign" href="' + esc(convSignupUrl(e.cv.id)) + '" target="_blank" rel="noopener" title="' + esc(e.cv.title) + '">Tilmeld i Conventus ↗</a></div>';
     }
     if (e.kind === 'akt') {
       return '<a class="ev" style="border-left-color:var(--akt);text-decoration:none;color:inherit" href="https://hoebk.dk/kalender" target="_blank" rel="noopener">' +
@@ -5312,7 +5357,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     btn.classList.add('spin'); FORCE = Date.now();
     checkAppVersion(true).then(function (reloading) {
       if (reloading) { toast('Ny version af appen — genindlæser…'); return new Promise(function () {}); }
-      loadActivities(true);
+      loadActivities(true); loadConvSignup(true);
       return load();
     }).then(function () { return loadReg(); })
       .then(function () { route(true); SNAK.pub = null; USR.data = null; FB.mine = null; FB.all = null; loadFbMine(true); loadFbAll(true); loadPub(); var rm = curRoom(); if (rm && ME && ME.token) fetchMsgs(rm, true); loadActs(true); return loadRooms(true); })
@@ -5340,7 +5385,7 @@ textarea.inp{resize:vertical;line-height:1.45}
     if (location.hash !== START) { try { history.replaceState(null, '', location.pathname + location.search + START); } catch (e) { location.hash = START; } }
   }
 
-  load().then(function () { prevHash = location.hash; route(); loadActivities(); return loadReg(); }).then(function () { route(true); return refreshRole(); }).then(function () { loadActs(true); loadFbMine(false); loadFbAll(false); return loadRooms(true); }).catch(function () {
+  load().then(function () { prevHash = location.hash; route(); loadActivities(); return loadReg(); }).then(function () { route(true); loadConvSignup(); return refreshRole(); }).then(function () { loadActs(true); loadFbMine(false); loadFbAll(false); return loadRooms(true); }).catch(function () {
     $main.innerHTML = '<p class="empty">Kunne ikke hente data. Prøv igen om lidt.</p>';
     document.getElementById('subtitle').textContent = 'Fejl ved hentning';
   });
