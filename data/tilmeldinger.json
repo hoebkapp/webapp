@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T07:00:17+00:00",
+ "updated": "2026-11-26T07:15:12+00:00",
  "status": [
   {
    "e": "m:507825",
@@ -899,6 +899,13 @@
   },
   {
    "e": "t:2026-12-01:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "ja",
+   "ts": "2026-11-26T07:07:44.016Z"
+  },
+  {
+   "e": "t:2026-12-01:Senior",
    "p": "13374",
    "n": "Signe Baldvinsson",
    "s": "ja",
@@ -938,6 +945,13 @@
    "n": "Albert Klint Henneberg",
    "s": "ja",
    "ts": "2026-11-19T06:37:26.374Z"
+  },
+  {
+   "e": "t:2026-12-08:Senior",
+   "p": "12813",
+   "n": "Anders Vedsted Nørrelund",
+   "s": "nej",
+   "ts": "2026-11-26T07:08:05.258Z"
   },
   {
    "e": "t:2026-12-09:Voksenfjer",
