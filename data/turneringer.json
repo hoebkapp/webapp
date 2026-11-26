@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T06:11:41+00:00",
+ "updated": "2026-11-26T20:03:24+00:00",
  "season": "2026",
  "source": "badmintonplayer.dk sæsonplan",
  "levels": [
@@ -12715,10 +12715,14 @@
    "id": "118980",
    "links": [
     "deltagere",
-    "invitation"
+    "invitation",
+    "program",
+    "resultater"
    ],
    "urls": {
     "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118980,",
+    "program": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118980,-8",
+    "resultater": "https://www.badmintonplayer.dk/DBF/Turnering/VisResultater/#118980,-8",
     "deltagere": "https://www.badmintonplayer.dk/DBF/Turnering/DeltagerListe/118980"
    },
    "entryOpen": false,
@@ -16613,9 +16617,11 @@
   {
    "id": "119269",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#119269,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#119269"
    },
    "entryOpen": true,
@@ -18046,9 +18052,11 @@
   {
    "id": "118073",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#118073,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#118073"
    },
    "entryOpen": true,
@@ -18358,9 +18366,11 @@
   {
    "id": "115410",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#115410,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#115410"
    },
    "entryOpen": true,
@@ -22371,9 +22381,11 @@
   {
    "id": "117894",
    "links": [
+    "invitation",
     "tilmelding"
    ],
    "urls": {
+    "invitation": "https://www.badmintonplayer.dk/DBF/Turnering/VisInvitation/#117894,",
     "tilmelding": "https://www.badmintonplayer.dk/DBF/Turnering/TilmeldTurnering/#117894"
    },
    "entryOpen": true,
