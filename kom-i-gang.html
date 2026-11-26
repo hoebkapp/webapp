@@ -14,7 +14,7 @@ body{margin:0}
 .lead a{color:inherit}
 .row a.btn{display:inline-flex;align-items:center;text-decoration:none}
 
-/* Layout: én smal kolonne som appen selv — teksten først, så guiden med faner for iPhone, Android og computer */
+/* Layout: én smal kolonne som appen selv — teksten først, så guiden med faner for iPhone (Safari og Chrome), Android og computer */
 :root{
   --ground:#F7F7F2; --card:#FFFFFF; --ink:#0E2236; --muted:#4A5866; --line:#E2E5DC; --soft:#F1F2EC;
   --accent:#D4F25A; --accent-ink:#0E2236; --hi:#F4FBD9; --phone:#0E2236; --screen:#FFFFFF; --sheet:#F1F2EC;
@@ -127,6 +127,7 @@ section{display:flex;flex-direction:column;gap:14px}
     <h2 id="t2">Vælg din enhed</h2>
     <div class="tabs" role="tablist" aria-label="Vælg enhed">
       <button class="tab" role="tab" id="tab-ios" aria-controls="p-ios" aria-selected="true">iPhone og iPad</button>
+      <button class="tab" role="tab" id="tab-ioc" aria-controls="p-ioc" aria-selected="false">iPhone med Chrome</button>
       <button class="tab" role="tab" id="tab-and" aria-controls="p-and" aria-selected="false">Android</button>
       <button class="tab" role="tab" id="tab-pc" aria-controls="p-pc" aria-selected="false">Computer</button>
     </div>
@@ -177,6 +178,55 @@ section{display:flex;flex-direction:column;gap:14px}
         </li>
       </ol>
       <p class="note" style="margin-top:12px">Ældre iPhone (før iOS 26): tryk direkte på <b>Del-knappen</b> (firkanten med pilen op) nederst i Safari. Notifikationer på iPhone virker kun, når appen er åbnet fra hjemmeskærmen (iOS 16.4 eller nyere).</p>
+    </div>
+
+    <div role="tabpanel" id="p-ioc" aria-labelledby="tab-ioc" hidden>
+      <ol class="steps">
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span><span class="ico hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span><span></span></div>
+          </div></div>
+          <p class="txt"><span class="num">1</span><span>Åbn linket i <b>Chrome</b>. Tryk på <b>Del-ikonet</b> (firkanten med pilen op) til højre i adresselinjen øverst.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span><span class="ico"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg></span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="sheet">
+              <div class="it">Kopiér</div>
+              <div class="it">Føj til læseliste</div>
+              <div class="it hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg>Føj til hjemmeskærm</div>
+              <div class="it">Find på side</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">2</span><span>Rul ned i menuen og vælg <b>Føj til hjemmeskærm</b>.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="ios-top"><span>Annuller</span><b>Føj til hjemmeskærm</b><span class="ico hl" style="width:auto;padding:0 5px;font-weight:700">Tilføj</span></div>
+            <div style="padding:10px;display:flex;flex-direction:column;gap:10px">
+              <div class="dlg" style="position:static;box-shadow:none;border:1px solid #E2E5DC">
+                <div class="app"><img src="icon-180.png" alt=""><b>HØBK</b></div>
+              </div>
+              <div class="tg" style="background:#F1F2EC;border-radius:8px;padding:7px 8px"><span>Åbn som webapp</span><span class="sw"></span></div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">3</span><span>Lad <b>Åbn som webapp</b> være slået til (hvis du ser den), og tryk <b>Tilføj</b>.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="home">
+              <div class="a"><i></i>Chrome</div><div class="a"><i></i>Fotos</div><div class="a"><i></i>Kort</div><div class="a"><i></i>Ur</div>
+              <div class="a"><i></i>Mail</div><div class="a hl"><img src="icon-180.png" alt="">HØBK</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">4</span><span>Åbn <b>HØBK</b> fra ikonet på hjemmeskærmen. Nu kan du også få notifikationer.</span></p>
+        </li>
+      </ol>
+      <p class="note" style="margin-top:12px">Kan du ikke se Del-ikonet? Tryk på <b>•••</b> nederst til højre i Chrome → <b>Del</b> → <b>Føj til hjemmeskærm</b>. Mangler punktet helt, så opdatér iPhone (iOS 16.4 eller nyere) og Chrome — eller brug Safari (fanen <b>iPhone og iPad</b>).</p>
     </div>
 
     <div role="tabpanel" id="p-and" aria-labelledby="tab-and" hidden>
@@ -305,7 +355,7 @@ section{display:flex;flex-direction:column;gap:14px}
     t.addEventListener('keydown',function(e){ var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d)return; var n=tabs[(i+d+tabs.length)%tabs.length]; show(n.id); n.focus(); });
   });
   var ua=navigator.userAgent||'';
-  show(/Android/i.test(ua)?'tab-and':/iPhone|iPad|iPod/i.test(ua)?'tab-ios':/Mobi/i.test(ua)?'tab-ios':'tab-ios');
+  show(/Android/i.test(ua)?'tab-and':/CriOS/i.test(ua)?'tab-ioc':'tab-ios');  // CriOS = Chrome på iPhone/iPad
 })();
 </script>
 
