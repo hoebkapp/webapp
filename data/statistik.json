@@ -1,12 +1,12 @@
 {
- "updated": "2026-11-26T06:42:30+00:00",
+ "updated": "2026-11-26T07:00:17+00:00",
  "scriptVersion": "2026-11-21.1",
  "latest": {
-  "players": 88,
-  "emails": 81,
-  "loggedIn": 119,
-  "active7": 51,
-  "active30": 87,
+  "players": 89,
+  "emails": 82,
+  "loggedIn": 120,
+  "active7": 52,
+  "active30": 88,
   "followers": 25,
   "teamFollows": 30,
   "tourFollows": 0,
@@ -15,7 +15,7 @@
   "mailOff": 2,
   "leaders": 9,
   "admins": 8,
-  "parents": 52
+  "parents": 53
  },
  "history": [
   {
@@ -551,11 +551,11 @@
    "date": "2026-11-25"
   },
   {
-   "players": 88,
-   "emails": 81,
-   "loggedIn": 119,
-   "active7": 51,
-   "active30": 87,
+   "players": 89,
+   "emails": 82,
+   "loggedIn": 120,
+   "active7": 52,
+   "active30": 88,
    "followers": 25,
    "teamFollows": 30,
    "tourFollows": 0,
@@ -564,7 +564,7 @@
    "mailOff": 2,
    "leaders": 9,
    "admins": 8,
-   "parents": 52,
+   "parents": 53,
    "date": "2026-11-26"
   }
  ]
