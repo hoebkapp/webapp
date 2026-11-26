@@ -14,7 +14,7 @@ body{margin:0}
 .lead a{color:inherit}
 .row a.btn{display:inline-flex;align-items:center;text-decoration:none}
 
-/* Layout: én smal kolonne som appen selv — teksten først, så guiden med faner for iPhone (Safari og Chrome), Android og computer */
+/* Layout: én smal kolonne som appen selv — teksten først, så guiden med faner for iPhone (Safari, Chrome og Edge), Android og computer */
 :root{
   --ground:#F7F7F2; --card:#FFFFFF; --ink:#0E2236; --muted:#4A5866; --line:#E2E5DC; --soft:#F1F2EC;
   --accent:#D4F25A; --accent-ink:#0E2236; --hi:#F4FBD9; --phone:#0E2236; --screen:#FFFFFF; --sheet:#F1F2EC;
@@ -106,6 +106,7 @@ section{display:flex;flex-direction:column;gap:14px}
 .qr #qr img,.qr #qr canvas{width:132px;height:132px}
 .qr .col{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 220px}
 .tips{padding:14px 16px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.bbar{display:flex;justify-content:space-around;align-items:center;padding:6px 4px;border-top:1px solid #E2E5DC;background:#F7F7F2;font-size:10px;color:#4A5866}
 .tips ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:4px}
 </style>
 
@@ -128,6 +129,7 @@ section{display:flex;flex-direction:column;gap:14px}
     <div class="tabs" role="tablist" aria-label="Vælg enhed">
       <button class="tab" role="tab" id="tab-ios" aria-controls="p-ios" aria-selected="true">iPhone og iPad</button>
       <button class="tab" role="tab" id="tab-ioc" aria-controls="p-ioc" aria-selected="false">iPhone med Chrome</button>
+      <button class="tab" role="tab" id="tab-ioe" aria-controls="p-ioe" aria-selected="false">iPhone med Edge</button>
       <button class="tab" role="tab" id="tab-and" aria-controls="p-and" aria-selected="false">Android</button>
       <button class="tab" role="tab" id="tab-pc" aria-controls="p-pc" aria-selected="false">Computer</button>
     </div>
@@ -227,6 +229,57 @@ section{display:flex;flex-direction:column;gap:14px}
         </li>
       </ol>
       <p class="note" style="margin-top:12px">Kan du ikke se Del-ikonet? Tryk på <b>•••</b> nederst til højre i Chrome → <b>Del</b> → <b>Føj til hjemmeskærm</b>. Mangler punktet helt, så opdatér iPhone (iOS 16.4 eller nyere) og Chrome — eller brug Safari (fanen <b>iPhone og iPad</b>).</p>
+    </div>
+
+    <div role="tabpanel" id="p-ioe" aria-labelledby="tab-ioe" hidden>
+      <ol class="steps">
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span><span></span><span></span></div>
+            <div class="bbar"><span>‹</span><span>›</span><span class="ico hl">•••</span><span>▢</span><span>⌂</span></div>
+          </div></div>
+          <p class="txt"><span class="num">1</span><span>Åbn linket i <b>Edge</b>. Tryk på de <b>tre prikker •••</b> i midten af bjælken nederst.</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="addr" style="margin-top:8px"><span class="u">app.hoebk.dk</span></div>
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="sheet" style="bottom:0">
+              <div class="it">Favoritter</div>
+              <div class="it">Historik</div>
+              <div class="it hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>Del</div>
+              <div class="it">Indstillinger</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">2</span><span>Tryk på <b>Del</b> i menuen (stryg til siden, hvis du ikke kan se den).</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="appbar"><i></i>HØBK</div>
+            <div class="pagebody"><span></span><span></span></div>
+            <div class="sheet">
+              <div class="it">Kopiér</div>
+              <div class="it">Føj til læseliste</div>
+              <div class="it hl"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M12 8v8M8 12h8"/></svg>Føj til hjemmeskærm</div>
+              <div class="it">Find på side</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">3</span><span>Rul ned, vælg <b>Føj til hjemmeskærm</b> og tryk <b>Tilføj</b> (lad <b>Åbn som webapp</b> være slået til, hvis du ser den).</span></p>
+        </li>
+        <li class="step">
+          <div class="phone" aria-hidden="true"><div class="scr">
+            <div class="home">
+              <div class="a"><i></i>Edge</div><div class="a"><i></i>Fotos</div><div class="a"><i></i>Kort</div><div class="a"><i></i>Ur</div>
+              <div class="a"><i></i>Mail</div><div class="a hl"><img src="icon-180.png" alt="">HØBK</div>
+            </div>
+          </div></div>
+          <p class="txt"><span class="num">4</span><span>Åbn <b>HØBK</b> fra ikonet på hjemmeskærmen. Nu kan du også få notifikationer.</span></p>
+        </li>
+      </ol>
+      <p class="note" style="margin-top:12px">Menuen i Edge ser lidt forskellig ud fra version til version. Mangler <b>Føj til hjemmeskærm</b>, så opdatér iPhone (iOS 16.4 eller nyere) og Edge — eller brug Safari (fanen <b>iPhone og iPad</b>).</p>
     </div>
 
     <div role="tabpanel" id="p-and" aria-labelledby="tab-and" hidden>
@@ -355,7 +408,7 @@ section{display:flex;flex-direction:column;gap:14px}
     t.addEventListener('keydown',function(e){ var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0; if(!d)return; var n=tabs[(i+d+tabs.length)%tabs.length]; show(n.id); n.focus(); });
   });
   var ua=navigator.userAgent||'';
-  show(/Android/i.test(ua)?'tab-and':/CriOS/i.test(ua)?'tab-ioc':'tab-ios');  // CriOS = Chrome på iPhone/iPad
+  show(/Android/i.test(ua)?'tab-and':/CriOS/i.test(ua)?'tab-ioc':/EdgiOS/i.test(ua)?'tab-ioe':'tab-ios');  // CriOS = Chrome, EdgiOS = Edge på iPhone/iPad
 })();
 </script>
 
