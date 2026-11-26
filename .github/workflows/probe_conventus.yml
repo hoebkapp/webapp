@@ -11,8 +11,5 @@ jobs:
     steps:
       - run: |
           U=https://rbsuittqekgaudmstpqu.supabase.co/functions/v1/hoebk
-          echo "VERSION: $(curl -sS -m 30 "$U?action=version")"
-          for q in an han x; do
-            echo "SOEG[$q]: $(curl -sS -m 30 -H 'Content-Type: text/plain' -d "{\"action\":\"memberSearch\",\"q\":\"$q\"}" $U | python3 -c 'import sys,json;d=json.load(sys.stdin);m=d.get("members",[]);print(d.get("ok"),len(m),"træf; felter:",sorted(m[0].keys()) if m else "-")')"
-          done
-          echo "MEMBERS-UDEN-LOGIN: $(curl -sS -m 30 -H 'Content-Type: text/plain' -d '{"action":"members","token":"x"}' $U)"
+          echo "VERSION: $(curl -sS -m 30 "$U?action=version" | head -c 60)"
+          echo "SIGNUP: $(curl -sS -m 30 -H 'Content-Type: text/plain' -d '{"action":"convSignup"}' $U | python3 -c 'import sys,json;d=json.load(sys.stdin);g=d.get("groups",[]);print(d.get("ok"),len(g),"grupper ·",[x["title"][:28]+("@"+x["from"] if x["from"] else "") for x in g if "inton" in x["title"].lower() or x["from"]])')"
