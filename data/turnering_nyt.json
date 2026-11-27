@@ -100,6 +100,14 @@
   ],
   "122061": [
    {
+    "d": "2026-11-27",
+    "t": "Tilmeldingsfristen er ændret til fre 27. nov (var tor 26. nov)"
+   },
+   {
+    "d": "2026-11-27",
+    "t": "Tilmeldingen er åbnet"
+   },
+   {
     "d": "2026-10-27",
     "t": "Ny turnering i kalenderen"
    }
@@ -1292,6 +1300,14 @@
   ],
   "123705": [
    {
+    "d": "2026-11-27",
+    "t": "Tilmeldingsfristen er ændret til man 30. nov (var tor 26. nov)"
+   },
+   {
+    "d": "2026-11-27",
+    "t": "Tilmeldingen er åbnet"
+   },
+   {
     "d": "2026-11-23",
     "t": "Ny turnering i kalenderen"
    }
@@ -1413,5 +1429,5 @@
   "xddfcf04009": "121353",
   "x456c6b3ee4": "118959"
  },
- "updated": "2026-11-27T05:24:42+00:00"
+ "updated": "2026-11-27T06:35:59+00:00"
 }
