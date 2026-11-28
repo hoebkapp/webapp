@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T19:30:12+00:00",
+ "updated": "2026-11-28T00:00:13+00:00",
  "scriptVersion": "2026-11-26.1",
  "latest": {
   "players": 94,
@@ -583,6 +583,23 @@
    "admins": 8,
    "parents": 56,
    "date": "2026-11-27"
+  },
+  {
+   "players": 94,
+   "emails": 87,
+   "loggedIn": 128,
+   "active7": 59,
+   "active30": 93,
+   "followers": 27,
+   "teamFollows": 33,
+   "tourFollows": 0,
+   "pushDevices": 12,
+   "pushUsers": 11,
+   "mailOff": 2,
+   "leaders": 9,
+   "admins": 8,
+   "parents": 56,
+   "date": "2026-11-28"
   }
  ]
 }
