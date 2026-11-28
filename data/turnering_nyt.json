@@ -58,6 +58,10 @@
   ],
   "117945": [
    {
+    "d": "2026-11-28",
+    "t": "Resultaterne er klar"
+   },
+   {
     "d": "2026-11-20",
     "t": "Deltagerlisten er offentliggjort"
    },
@@ -67,6 +71,10 @@
    }
   ],
   "118985": [
+   {
+    "d": "2026-11-28",
+    "t": "Resultaterne er klar"
+   },
    {
     "d": "2026-11-20",
     "t": "Deltagerlisten er offentliggjort"
@@ -99,6 +107,10 @@
    }
   ],
   "122061": [
+   {
+    "d": "2026-11-28",
+    "t": "Tilmeldingsfristen er ændret til tor 26. nov (var fre 27. nov)"
+   },
    {
     "d": "2026-11-27",
     "t": "Tilmeldingsfristen er ændret til fre 27. nov (var tor 26. nov)"
@@ -1178,6 +1190,10 @@
   ],
   "116666": [
    {
+    "d": "2026-11-28",
+    "t": "Resultaterne er klar"
+   },
+   {
     "d": "2026-11-20",
     "t": "Deltagerlisten er offentliggjort"
    }
@@ -1445,5 +1461,5 @@
   "xddfcf04009": "121353",
   "x456c6b3ee4": "118959"
  },
- "updated": "2026-11-27T20:23:38+00:00"
+ "updated": "2026-11-28T05:24:34+00:00"
 }
